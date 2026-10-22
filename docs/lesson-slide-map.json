@@ -70,12 +70,12 @@
     "lesson": "04_toon",
     "slides": [
       {
-        "number": 69,
+        "number": 71,
         "id": "w08-048",
         "title": "Toon bands in GLSL"
       },
       {
-        "number": 70,
+        "number": 72,
         "id": "w08-049",
         "title": "Toon bands in Unreal HLSL"
       }
@@ -89,7 +89,7 @@
     "lesson": "05_fresnel",
     "slides": [
       {
-        "number": 83,
+        "number": 85,
         "id": "w08-061",
         "title": "View-angle mask in code and nodes"
       }
@@ -103,12 +103,12 @@
     "lesson": "06_painted_bands",
     "slides": [
       {
-        "number": 78,
+        "number": 80,
         "id": "w08-057",
         "title": "Brush texture perturbs the light signal"
       },
       {
-        "number": 79,
+        "number": 81,
         "id": "lookdev-student-code",
         "title": "The complete painted-band study"
       }

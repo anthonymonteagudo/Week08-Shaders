@@ -3,9 +3,9 @@
   "galleryExhibits": 42,
   "exportedPackages": 82,
   "lessonPairs": 6,
-  "slides": 102,
-  "mainSlides": 69,
-  "appendixSlides": 33,
+  "slides": 111,
+  "mainSlides": 71,
+  "appendixSlides": 40,
   "animatedSlides": 2,
   "scope": "Original classroom studies; attributed source imagery in the lecture; Three.js MIT runtime; Engine built-ins referenced from installed Unreal."
 }

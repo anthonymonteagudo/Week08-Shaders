@@ -263,7 +263,7 @@
   {
     "number": 11,
     "id": "w08-008",
-    "title": "Classroom workspace",
+    "title": "Shader workspace",
     "section": "02 · SHADERS: GLSL, HLSL & UE",
     "subsection": null,
     "kind": "workspace",
@@ -1858,6 +1858,45 @@
   },
   {
     "number": 58,
+    "id": "lighting-physical",
+    "title": "Rim lighting in photography",
+    "section": "06 · LIGHTING & STYLIZATION",
+    "subsection": null,
+    "kind": "physical-light",
+    "notes": "A rim light describes a job and a position, not a special type of lamp. Sunlight, a studio flash or a stage light can create it. In this portrait, a second flash above and to the model’s left adds warm edge illumination. Look at the hair and shoulder on the right side of the image. The key provides the main illumination. Fill reveals shadow detail. A rim helps separate the subject from the background. Unreal light actors can play these same roles. A view-angle mask alone does not know where a scene light is. Toggle the actual light to test its contribution.",
+    "sources": [
+      "https://www.nikonusa.com/learn-and-explore/c/tips-and-techniques/simple-two-flash-set-up",
+      "https://www.3drender.com/light/3point.html"
+    ],
+    "key_sources": [
+      {
+        "id": "nikon-rim",
+        "label": "Nikon / David Tejada",
+        "title": "Nikon / David Tejada",
+        "url": "https://www.nikonusa.com/learn-and-explore/c/tips-and-techniques/simple-two-flash-set-up",
+        "focus": "Compare the portrait with the flash setup. Find the warm edge light.",
+        "context": "Photograph copyright David Tejada. Separate real-world example; not a matched Unreal scene.",
+        "category": "Further study"
+      },
+      {
+        "id": "birn",
+        "label": "Jeremy Birn: three-point light",
+        "title": "Jeremy Birn — Three-Point Lighting for 3D Renderings",
+        "url": "https://www.3drender.com/light/3point.html",
+        "focus": "Follow the key, fill and rim additions. Observe how illumination and separation change before adjusting material color.",
+        "context": "Artistic lighting study; actual scene lights differ from our Unlit view-angle accents.",
+        "category": "Reference"
+      }
+    ],
+    "appendix": false,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#95601B",
+    "preview": "previews/58.jpg",
+    "lesson": null
+  },
+  {
+    "number": 59,
     "id": "w08-043",
     "title": "Key and fill",
     "section": "06 · LIGHTING & STYLIZATION",
@@ -1882,13 +1921,13 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/58.jpg",
+    "preview": "previews/59.jpg",
     "lesson": null
   },
   {
-    "number": 59,
+    "number": 60,
     "id": "w08-044",
-    "title": "A real rim light",
+    "title": "Rim lighting in Unreal",
     "section": "06 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "pair",
@@ -1911,11 +1950,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/59.jpg",
+    "preview": "previews/60.jpg",
     "lesson": null
   },
   {
-    "number": 60,
+    "number": 61,
     "id": "w08-045",
     "title": "Lighting choices",
     "section": "06 · LIGHTING & STYLIZATION",
@@ -1941,11 +1980,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/60.jpg",
+    "preview": "previews/61.jpg",
     "lesson": null
   },
   {
-    "number": 61,
+    "number": 62,
     "id": "w08-046",
     "title": "Surface color and the lit result",
     "section": "06 · LIGHTING & STYLIZATION",
@@ -1970,11 +2009,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/61.jpg",
+    "preview": "previews/62.jpg",
     "lesson": null
   },
   {
-    "number": 62,
+    "number": 63,
     "id": "w08-021",
     "title": "Where the tint goes in a lit material",
     "section": "06 · LIGHTING & STYLIZATION",
@@ -2000,11 +2039,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/62.jpg",
+    "preview": "previews/63.jpg",
     "lesson": null
   },
   {
-    "number": 63,
+    "number": 64,
     "id": "w08-063",
     "title": "Roughness and reflection",
     "section": "06 · LIGHTING & STYLIZATION",
@@ -2029,11 +2068,40 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/63.jpg",
+    "preview": "previews/64.jpg",
     "lesson": null
   },
   {
-    "number": 64,
+    "number": 65,
+    "id": "color-recall",
+    "title": "Color: hue, saturation and value",
+    "section": "06 · LIGHTING & STYLIZATION",
+    "subsection": null,
+    "kind": "color-refresher",
+    "notes": "Hue names the color family. Saturation describes how vivid or muted it looks. Value is the artist’s light-to-dark description. A shadow can stay green while becoming darker. The gradient here uses the familiar ShadowColor and Tint from our mask example. Its purple and mint endpoints differ in hue, saturation and value. The mask chooses the blend between them. RGB encodes the color sent to the shader. Equal HSV Value numbers do not guarantee equal perceived brightness. Keep lighting and exposure fixed while comparing palette choices.",
+    "sources": [
+      "https://helpx.adobe.com/photoshop-elements/desktop/working-with-colors/color.html"
+    ],
+    "key_sources": [
+      {
+        "id": "adobe-color",
+        "label": "Adobe: color vocabulary",
+        "title": "Adobe: color vocabulary",
+        "url": "https://helpx.adobe.com/photoshop-elements/desktop/working-with-colors/color.html",
+        "focus": "Review hue, saturation and brightness. Distinguish a color control from the final lit appearance.",
+        "context": "",
+        "category": "Further study"
+      }
+    ],
+    "appendix": false,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#95601B",
+    "preview": "previews/65.jpg",
+    "lesson": null
+  },
+  {
+    "number": 66,
     "id": "lookdev-production",
     "title": "Wind Waker: a stylized shading target",
     "section": "06 · LIGHTING & STYLIZATION",
@@ -2058,17 +2126,17 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/64.jpg",
+    "preview": "previews/66.jpg",
     "lesson": null
   },
   {
-    "number": 65,
+    "number": 67,
     "id": "lookdev-target",
-    "title": "Break down the tunic shading",
+    "title": "Value, edge and color in the tunic",
     "section": "06 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "zelda-breakdown",
-    "notes": "This is a crop of the same screenshot. Point to the left side of the tunic, then the bright green region on the right. We can approximate this relationship with a normalized normal and light direction, a dot product, a threshold and a blend between two colors. Moving the threshold changes the size of the regions. Changing the palette changes the mood without changing the boundary. A screen image does not prove how Nintendo implemented the effect. A light-driven boundary should move when the light direction changes; a painted texture alone would remain attached to the surface.",
+    "notes": "Compare the dark green region with the bright strip on the right side of the tunic. The first arrow locates the value contrast. The second points to the boundary between the regions. The third points inside the green shadow. These observations describe the visible screenshot. They do not establish Nintendo’s implementation. In the next example, we will control a light-response threshold and choose the two colors ourselves.",
     "sources": [
       "https://www.nintendo.com/en-gb/Games/Wii-U-games/The-Legend-of-Zelda-The-Wind-Waker-HD-765386.html"
     ],
@@ -2087,28 +2155,28 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/65.jpg",
+    "preview": "previews/67.jpg",
     "lesson": null
   },
   {
-    "number": 66,
+    "number": 68,
     "id": "lookdev-recipe",
     "title": "Two bands with a view-angle accent",
     "section": "06 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "look-recipe",
-    "notes": "The capture provenance records two bands on the left and two bands plus a rim on the right, with Bands 2 and RimStrength 0.65 in the earlier lighting manifest. The broad view-angle blend introduces gradients inside the underlying band regions; it should not be described as a separate smooth-base shader. First understand the band boundary, then decide whether this much edge influence supports the intended look. Lesson 04 isolates the threshold and palette; lesson 05 isolates the view-angle mask. Our exaggerated accent is a teaching choice, not a claim about Nintendo’s shader. A restrained version using the same green palette would make a useful future comparison.",
+    "notes": "The left image uses two light-response bands. The right adds a view-angle blend. That broad blend introduces gradients within the bands. Compare the region boundary first, then the palette and the edge width. The edge effect responds to the camera and surface normal. It does not sample the direction of a scene light. These examples explore visible features from the reference without claiming to reproduce Nintendo’s shader.",
     "sources": [],
     "key_sources": [],
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/66.jpg",
+    "preview": "previews/68.jpg",
     "lesson": null
   },
   {
-    "number": 67,
+    "number": 69,
     "id": "w08-042",
     "title": "Value and visual hierarchy",
     "section": "06 · LIGHTING & STYLIZATION",
@@ -2133,11 +2201,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/67.jpg",
+    "preview": "previews/69.jpg",
     "lesson": null
   },
   {
-    "number": 68,
+    "number": 70,
     "id": "w08-047",
     "title": "Turn a light response into bands",
     "section": "06 · LIGHTING & STYLIZATION",
@@ -2172,11 +2240,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/68.jpg",
+    "preview": "previews/70.jpg",
     "lesson": null
   },
   {
-    "number": 69,
+    "number": 71,
     "id": "w08-048",
     "title": "Toon bands in GLSL",
     "section": "06 · LIGHTING & STYLIZATION",
@@ -2212,11 +2280,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/69.jpg",
+    "preview": "previews/71.jpg",
     "lesson": "04_toon"
   },
   {
-    "number": 70,
+    "number": 72,
     "id": "w08-049",
     "title": "Toon bands in Unreal HLSL",
     "section": "06 · LIGHTING & STYLIZATION",
@@ -2252,11 +2320,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/70.jpg",
+    "preview": "previews/72.jpg",
     "lesson": "04_toon"
   },
   {
-    "number": 71,
+    "number": 73,
     "id": "w08-050",
     "title": "Toon bands as material nodes",
     "section": "06 · LIGHTING & STYLIZATION",
@@ -2282,11 +2350,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/71.jpg",
+    "preview": "previews/73.jpg",
     "lesson": null
   },
   {
-    "number": 72,
+    "number": 74,
     "id": "w08-051",
     "title": "Toon controls in Unreal",
     "section": "06 · LIGHTING & STYLIZATION",
@@ -2311,11 +2379,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/72.jpg",
+    "preview": "previews/74.jpg",
     "lesson": null
   },
   {
-    "number": 73,
+    "number": 75,
     "id": "w08-052",
     "title": "What this toon study leaves out",
     "section": "06 · LIGHTING & STYLIZATION",
@@ -2340,11 +2408,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/73.jpg",
+    "preview": "previews/75.jpg",
     "lesson": null
   },
   {
-    "number": 74,
+    "number": 76,
     "id": "w08-054",
     "title": "Custom palette",
     "section": "06 · LIGHTING & STYLIZATION",
@@ -2379,11 +2447,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/74.jpg",
+    "preview": "previews/76.jpg",
     "lesson": null
   },
   {
-    "number": 75,
+    "number": 77,
     "id": "w08-055",
     "title": "Choose the palette colors",
     "section": "06 · LIGHTING & STYLIZATION",
@@ -2418,11 +2486,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/75.jpg",
+    "preview": "previews/77.jpg",
     "lesson": "06_painted_bands"
   },
   {
-    "number": 76,
+    "number": 78,
     "id": "palette-thresholds",
     "title": "Place the palette boundaries",
     "section": "06 · LIGHTING & STYLIZATION",
@@ -2454,11 +2522,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/76.jpg",
+    "preview": "previews/78.jpg",
     "lesson": null
   },
   {
-    "number": 77,
+    "number": 79,
     "id": "w08-056",
     "title": "Brush texture in the light response",
     "section": "06 · LIGHTING & STYLIZATION",
@@ -2493,11 +2561,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/77.jpg",
+    "preview": "previews/79.jpg",
     "lesson": null
   },
   {
-    "number": 78,
+    "number": 80,
     "id": "w08-057",
     "title": "Brush texture perturbs the light signal",
     "section": "06 · LIGHTING & STYLIZATION",
@@ -2532,11 +2600,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/78.jpg",
+    "preview": "previews/80.jpg",
     "lesson": "06_painted_bands"
   },
   {
-    "number": 79,
+    "number": 81,
     "id": "lookdev-student-code",
     "title": "The complete painted-band study",
     "section": "06 · LIGHTING & STYLIZATION",
@@ -2549,11 +2617,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/79.jpg",
+    "preview": "previews/81.jpg",
     "lesson": "06_painted_bands"
   },
   {
-    "number": 80,
+    "number": 82,
     "id": "w08-058",
     "title": "Texture scale and shading style",
     "section": "06 · LIGHTING & STYLIZATION",
@@ -2588,11 +2656,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/80.jpg",
+    "preview": "previews/82.jpg",
     "lesson": null
   },
   {
-    "number": 81,
+    "number": 83,
     "id": "w08-059",
     "title": "View angle can control an edge accent",
     "section": "06 · LIGHTING & STYLIZATION",
@@ -2617,11 +2685,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/81.jpg",
+    "preview": "previews/83.jpg",
     "lesson": null
   },
   {
-    "number": 82,
+    "number": 84,
     "id": "w08-060",
     "title": "Bright and dark view edges",
     "section": "06 · LIGHTING & STYLIZATION",
@@ -2646,11 +2714,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/82.jpg",
+    "preview": "previews/84.jpg",
     "lesson": null
   },
   {
-    "number": 83,
+    "number": 85,
     "id": "w08-061",
     "title": "View-angle mask in code and nodes",
     "section": "06 · LIGHTING & STYLIZATION",
@@ -2686,11 +2754,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/83.jpg",
+    "preview": "previews/85.jpg",
     "lesson": "05_fresnel"
   },
   {
-    "number": 84,
+    "number": 86,
     "id": "native-edge-reference",
     "title": "A view-angle mask in an actual material graph",
     "section": "06 · LIGHTING & STYLIZATION",
@@ -2715,11 +2783,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/84.jpg",
+    "preview": "previews/86.jpg",
     "lesson": null
   },
   {
-    "number": 85,
+    "number": 87,
     "id": "w08-062",
     "title": "Unreal Fresnel controls",
     "section": "06 · LIGHTING & STYLIZATION",
@@ -2745,11 +2813,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/85.jpg",
+    "preview": "previews/87.jpg",
     "lesson": null
   },
   {
-    "number": 86,
+    "number": 88,
     "id": "w08-064",
     "title": "Lighting playground · one intentional change",
     "section": "06 · LIGHTING & STYLIZATION",
@@ -2774,11 +2842,186 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#95601B",
-    "preview": "previews/86.jpg",
+    "preview": "previews/88.jpg",
     "lesson": null
   },
   {
-    "number": 87,
+    "number": 89,
+    "id": "trick-dot",
+    "title": "Shader tricks 1 · Direction becomes a signal",
+    "section": "06 · LIGHTING & STYLIZATION",
+    "subsection": null,
+    "kind": "shader-trick",
+    "notes": "This is the geometric dot-product equation from Wikipedia. Normalizing nonzero directions removes their lengths, leaving the cosine of the angle. Clamp removes negative values for this simple diffuse response. The displayed toon result applies a threshold afterward. Dot itself gives a continuous signal. Our N and L must use the same coordinate space. A material parameter called LightDirection is an input we supply; it does not automatically query an Unreal light actor.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Dot_product#Geometric_definition"
+    ],
+    "key_sources": [
+      {
+        "id": "wiki-dot",
+        "label": "Wikipedia: dot product",
+        "title": "Wikipedia: dot product",
+        "url": "https://en.wikipedia.org/wiki/Dot_product#Geometric_definition",
+        "focus": "Connect the geometric dot-product equation to normalized shader directions.",
+        "context": "",
+        "category": "Further study"
+      }
+    ],
+    "appendix": true,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#95601B",
+    "preview": "previews/89.jpg",
+    "lesson": null
+  },
+  {
+    "number": 90,
+    "id": "trick-lerp",
+    "title": "Shader tricks 2 · A mask chooses the blend",
+    "section": "06 · LIGHTING & STYLIZATION",
+    "subsection": null,
+    "kind": "shader-trick",
+    "notes": "The weighted-average form of linear interpolation is the same operation as mix or lerp. Apply it component by component to RGB or vectors. The illustrated mask comes from the existing UV example. A blend factor outside zero to one extrapolates, so clamp only when that is the intended behavior. A shader development habit is to display the mask directly before trusting the final colored image.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Linear_interpolation",
+      "https://thebookofshaders.com/05/"
+    ],
+    "key_sources": [
+      {
+        "id": "wiki-lerp",
+        "label": "Wikipedia: interpolation",
+        "title": "Wikipedia: interpolation",
+        "url": "https://en.wikipedia.org/wiki/Linear_interpolation",
+        "focus": "Read the weighted-average form and evaluate the endpoints and midpoint.",
+        "context": "",
+        "category": "Further study"
+      },
+      {
+        "id": "bos-shaping",
+        "label": "Book of Shaders: shaping",
+        "title": "Book of Shaders: shaping",
+        "url": "https://thebookofshaders.com/05/",
+        "focus": "Change one shaping function in the embedded editor. Predict the curve before running it.",
+        "context": "",
+        "category": "Further study"
+      }
+    ],
+    "appendix": true,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#95601B",
+    "preview": "previews/90.jpg",
+    "lesson": null
+  },
+  {
+    "number": 91,
+    "id": "trick-smooth",
+    "title": "Shader tricks 3 · Shape a transition",
+    "section": "06 · LIGHTING & STYLIZATION",
+    "subsection": null,
+    "kind": "shader-trick",
+    "notes": "Wikipedia shows smoothstep as a clamped cubic Hermite interpolation. First map the interval from a to b into zero to one, then apply the polynomial. At zero the result is zero; at one it is one; the slope is zero at both ends. Step is a hard threshold. Smoothstep is a smooth transition. Its softness is a chosen width, not an automatic guarantee of screen-space antialiasing. For later study, choose one of Iñigo Quílez’s shaping functions and compare its graph.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Smoothstep",
+      "https://iquilezles.org/articles/functions/"
+    ],
+    "key_sources": [
+      {
+        "id": "wiki-smooth",
+        "label": "Wikipedia: smoothstep",
+        "title": "Wikipedia: smoothstep",
+        "url": "https://en.wikipedia.org/wiki/Smoothstep",
+        "focus": "Read the cubic polynomial and its clamped domain. Compare the mathematical formula with the shader function.",
+        "context": "",
+        "category": "Further study"
+      },
+      {
+        "id": "iq-functions",
+        "label": "Iñigo Quílez: useful functions",
+        "title": "Iñigo Quílez: useful functions",
+        "url": "https://iquilezles.org/articles/functions/",
+        "focus": "Pick one shaping function and plot its input and output before composing it with another.",
+        "context": "Original-author reference. Start with one function and verify its domain, range and inputs.",
+        "category": "Further study"
+      }
+    ],
+    "appendix": true,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#95601B",
+    "preview": "previews/91.jpg",
+    "lesson": null
+  },
+  {
+    "number": 92,
+    "id": "trick-distance",
+    "title": "Shader tricks 4 · Coordinates become a shape",
+    "section": "06 · LIGHTING & STYLIZATION",
+    "subsection": null,
+    "kind": "shader-trick",
+    "notes": "A circle is the set of points at radius r from its center. Subtracting the radius from Euclidean distance makes the value negative inside, zero on the boundary and positive outside. This is an original small example of that standard definition. Preview d as a clamped grayscale value or preview the mask. The same operation can make a reveal, soft spot or ring. Inigo’s 2D distance-function reference is a good next destination: start with a circle before combining many shapes. A circle in UV coordinates can appear stretched if the surface mapping or display aspect is stretched.",
+    "sources": [
+      "https://iquilezles.org/articles/distfunctions2d/"
+    ],
+    "key_sources": [
+      {
+        "id": "iq-sdf",
+        "label": "Iñigo Quílez: 2D distances",
+        "title": "Iñigo Quílez: 2D distances",
+        "url": "https://iquilezles.org/articles/distfunctions2d/",
+        "focus": "Start with one circle. Identify coordinate space, radius and the sign of distance.",
+        "context": "Original-author reference. Start with one function and verify its domain, range and inputs.",
+        "category": "Further study"
+      }
+    ],
+    "appendix": true,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#95601B",
+    "preview": "previews/92.jpg",
+    "lesson": null
+  },
+  {
+    "number": 93,
+    "id": "trick-compose",
+    "title": "Shader tricks 5 · Build and inspect small pieces",
+    "section": "06 · LIGHTING & STYLIZATION",
+    "subsection": null,
+    "kind": "shader-trick",
+    "notes": "Shader development often combines a handful of operations and inspects intermediate results. This example moves the lookup address, samples one channel, and uses that channel as a blend factor. It reuses the moving-texture lesson. In HLSL, use float2 and lerp with the host’s texture sampler. In Unreal, use TextureCoordinate, Multiply, Time, Add, TextureSample and Lerp. Repeat addressing is a sampler setting. Explicit fract or frac can repeat coordinates, but introduces discontinuities that can affect texture derivatives. Start with the texture’s intended addressing mode before adding manual wrapping.",
+    "sources": [
+      "https://thebookofshaders.com/05/",
+      "https://iquilezles.org/articles/functions/"
+    ],
+    "key_sources": [
+      {
+        "id": "bos-shaping",
+        "label": "Book of Shaders: shaping",
+        "title": "Book of Shaders: shaping",
+        "url": "https://thebookofshaders.com/05/",
+        "focus": "Change one shaping function in the embedded editor. Predict the curve before running it.",
+        "context": "",
+        "category": "Further study"
+      },
+      {
+        "id": "iq-functions",
+        "label": "Iñigo Quílez: useful functions",
+        "title": "Iñigo Quílez: useful functions",
+        "url": "https://iquilezles.org/articles/functions/",
+        "focus": "Pick one shaping function and plot its input and output before composing it with another.",
+        "context": "Original-author reference. Start with one function and verify its domain, range and inputs.",
+        "category": "Further study"
+      }
+    ],
+    "appendix": true,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#95601B",
+    "preview": "previews/93.jpg",
+    "lesson": null
+  },
+  {
+    "number": 94,
     "id": "w08-070",
     "title": "07 · LAB 2\nORIGINAL SHADER",
     "section": "07 · LAB 2: ORIGINAL SHADER",
@@ -2791,11 +3034,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#874462",
-    "preview": "previews/87.jpg",
+    "preview": "previews/94.jpg",
     "lesson": null
   },
   {
-    "number": 88,
+    "number": 95,
     "id": "w08-071",
     "title": "Lab 2: start your shader homework",
     "section": "07 · LAB 2: ORIGINAL SHADER",
@@ -2830,11 +3073,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#874462",
-    "preview": "previews/88.jpg",
+    "preview": "previews/95.jpg",
     "lesson": null
   },
   {
-    "number": 89,
+    "number": 96,
     "id": "w08-072",
     "title": "Choose a small visual goal",
     "section": "07 · LAB 2: ORIGINAL SHADER",
@@ -2859,11 +3102,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#874462",
-    "preview": "previews/89.jpg",
+    "preview": "previews/96.jpg",
     "lesson": null
   },
   {
-    "number": 90,
+    "number": 97,
     "id": "w08-073",
     "title": "Explain your shader briefly",
     "section": "07 · LAB 2: ORIGINAL SHADER",
@@ -2888,11 +3131,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#874462",
-    "preview": "previews/90.jpg",
+    "preview": "previews/97.jpg",
     "lesson": null
   },
   {
-    "number": 91,
+    "number": 98,
     "id": "w08-074",
     "title": "Save the Week 9 comparison",
     "section": "07 · LAB 2: ORIGINAL SHADER",
@@ -2907,11 +3150,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#874462",
-    "preview": "previews/91.jpg",
+    "preview": "previews/98.jpg",
     "lesson": null
   },
   {
-    "number": 92,
+    "number": 99,
     "id": "w08-075",
     "title": "Exit questions",
     "section": "Wrap-up",
@@ -2924,11 +3167,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#874462",
-    "preview": "previews/92.jpg",
+    "preview": "previews/99.jpg",
     "lesson": null
   },
   {
-    "number": 93,
+    "number": 100,
     "id": "w08-076",
     "title": "Next week · Evidence and production tradeoffs",
     "section": "Wrap-up",
@@ -2941,70 +3184,77 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#874462",
-    "preview": "previews/93.jpg",
+    "preview": "previews/100.jpg",
     "lesson": null
   },
   {
-    "number": 94,
+    "number": 101,
     "id": "w08-078",
-    "title": "Key sources by topic",
+    "title": "Explore further 1 · Build one small effect",
     "section": "REFERENCE LIBRARY",
     "subsection": null,
-    "kind": "sourceguide",
-    "notes": "Use the reading guide by topic. Epic is the first stop for Unreal settings. Ben Cloward explains the same calculations in artist-friendly node examples. Iñigo Quílez offers further shader experiments. The Unity Shaders Bible is an optional Unity-focused book, so its engine code needs translation. Ned’s original PDF is available for notes, and his closing slide credits LearnOpenGL for diagram inspiration. Mark Finch’s GPU Gems chapter provides the wave-math extension. Each topic in our deck has a short source pointer and a focused reading note.",
+    "kind": "study-path",
+    "notes": "Use this path if you want more practice. Start with the Book of Shaders page and edit one curve. Then choose one Ben Cloward material lesson that answers your next question. You do not need to complete a whole channel. Keep the source URL with your experiment and write what you changed. Recreate the small idea in your own material before adding complexity.",
     "sources": [
-      "https://www.nintendo.com/en-gb/Iwata-Asks/Iwata-Asks-The-Legend-of-Zelda-The-Wind-Waker-HD/The-Legend-of-Zelda-The-Wind-Waker-HD/5-Over-designed/5-Over-designed-807330.html",
-      "https://history.siggraph.org/wp-content/uploads/2022/09/2018-Talks-Ang_The-Technical-Art-of-Sea-of-Thieves.pdf",
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/material-expressions-in-unreal-engine?application_version=5.7",
-      "https://www.unrealengine.com/developer-interviews/unreal-engine-powers-marvel-rivals-to-create-a-new-multiverse-of-marvel-heroes",
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/content-examples-sample-project-for-unreal-engine?application_version=5.7",
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/utility-material-expressions-in-unreal-engine?application_version=5.7",
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/texturing-material-functions-in-unreal-engine?application_version=5.7",
-      "https://dev.epicgames.com/documentation/unreal-engine/single-layer-water-shading-model-in-unreal-engine?application_version=5.7",
-      "https://www.bencloward.com/resources.shtml",
-      "https://iquilezles.org/articles/palettes/",
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-main-material-node-in-unreal-engine?application_version=5.7",
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7",
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-asset-editor-in-unreal-engine?application_version=5.7",
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/material-blend-modes-in-unreal-engine?application_version=5.7",
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-transparency-in-unreal-engine-materials?application_version=5.7",
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/coordinates-material-expressions-in-unreal-engine?application_version=5.7",
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/physically-based-materials-in-unreal-engine?application_version=5.7",
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/content-examples-sample-project-for-unreal-engine",
-      "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
-      "https://jettelly.com/store/the-unity-shaders-bible",
-      "https://thebookofshaders.com/06/",
       "https://thebookofshaders.com/05/",
-      "https://learnopengl.com/Getting-started/Shaders",
-      "https://learnopengl.com/Lighting/Basic-Lighting",
-      "https://anthonymonteagudo.github.io/Week08-Shaders/docs/guest/Rasterization.pdf",
-      "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models",
-      "https://www.3drender.com/light/3point.html",
-      "https://www.khanacademy.org/computing/pixar/art-of-lighting",
-      "https://simondev.teachable.com/",
-      "https://simonschreibt.de/gat/tech-art-course/",
-      "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
-      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf"
+      "https://www.bencloward.com/resources.shtml"
     ],
     "key_sources": [
       {
-        "id": "benvideos",
-        "label": "Ben Cloward: tutorials",
-        "title": "Ben Cloward — Shader tutorial videos and HLSL resources",
-        "url": "https://www.bencloward.com/resources.shtml",
-        "focus": "Use Shader Tutorial Videos for artist-focused node lessons and HLSL Training Videos for code.",
-        "context": "Author-maintained resource index. Tutorial engine versions vary.",
+        "id": "bos-shaping",
+        "label": "Book of Shaders: shaping",
+        "title": "Book of Shaders: shaping",
+        "url": "https://thebookofshaders.com/05/",
+        "focus": "Change one shaping function in the embedded editor. Predict the curve before running it.",
+        "context": "",
         "category": "Further study"
       },
       {
-        "id": "iq",
-        "label": "Iñigo Quílez: Palettes",
-        "title": "Iñigo Quílez — Palettes",
-        "url": "https://iquilezles.org/articles/palettes/",
-        "focus": "Explore procedural palettes as an extension to choosing the colors in our banded study.",
-        "context": "Optional extension. The classroom example uses explicit color parameters, not this article’s palette implementation.",
+        "id": "ben",
+        "label": "Ben Cloward: resources",
+        "title": "Ben Cloward — Shaders 101, GDC 2016",
+        "url": "https://www.bencloward.com/resources.shtml",
+        "focus": "Optional artist-focused shader tutorials. Full Shader 101 slides and transcripts have not been reviewed in this revision.",
+        "context": "Historical talk and author-maintained tutorial index; use current Epic documentation for UE controls.",
+        "category": "Reference"
+      }
+    ],
+    "appendix": true,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#435663",
+    "preview": "previews/101.jpg",
+    "lesson": null
+  },
+  {
+    "number": 102,
+    "id": "study-math",
+    "title": "Explore further 2 · Connect the math",
+    "section": "REFERENCE LIBRARY",
+    "subsection": null,
+    "kind": "study-path",
+    "notes": "Choose the mathematical idea you already used today. Follow the Wikipedia equation links in the shader-tricks slides. Evaluate a few values by hand. Then visit Inigo’s original articles and investigate one function. Identify the domain, range, parameters and assumptions. Build a small visualization before composing it with another technique. A compact formula is useful when you can explain why its output changes.",
+    "sources": [
+      "https://iquilezles.org/articles/distfunctions2d/",
+      "https://iquilezles.org/articles/functions/"
+    ],
+    "key_sources": [
+      {
+        "id": "iq-sdf",
+        "label": "Iñigo Quílez: 2D distances",
+        "title": "Iñigo Quílez: 2D distances",
+        "url": "https://iquilezles.org/articles/distfunctions2d/",
+        "focus": "Start with one circle. Identify coordinate space, radius and the sign of distance.",
+        "context": "Original-author reference. Start with one function and verify its domain, range and inputs.",
+        "category": "Further study"
+      },
+      {
+        "id": "iq-functions",
+        "label": "Iñigo Quílez: useful functions",
+        "title": "Iñigo Quílez: useful functions",
+        "url": "https://iquilezles.org/articles/functions/",
+        "focus": "Pick one shaping function and plot its input and output before composing it with another.",
+        "context": "Original-author reference. Start with one function and verify its domain, range and inputs.",
         "category": "Further study"
       }
     ],
@@ -3012,11 +3262,50 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#435663",
-    "preview": "previews/94.jpg",
+    "preview": "previews/102.jpg",
     "lesson": null
   },
   {
-    "number": 95,
+    "number": 103,
+    "id": "study-engine",
+    "title": "Explore further 3 · Apply it in Unreal",
+    "section": "REFERENCE LIBRARY",
+    "subsection": null,
+    "kind": "study-path",
+    "notes": "Use this route when you know the effect but need the engine behavior. Read the precise input or expression documentation for your Unreal version, inspect the actual parent graph, and compare one change with the original. For a longer guided course, SimonDev is an optional paid route through the same kinds of building blocks. It is not required. If water is your interest, GPU Gems Chapter 1 is a mathematical extension after the moving-UV and wave comparisons. Keep a short record of the source, your adaptation, and what your experiment actually demonstrates.",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/physically-based-materials-in-unreal-engine?application_version=5.7",
+      "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models"
+    ],
+    "key_sources": [
+      {
+        "id": "pbr",
+        "label": "Epic: PBR inputs",
+        "title": "Epic Games — Physically Based Materials",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/physically-based-materials-in-unreal-engine?application_version=5.7",
+        "focus": "Read Base Color, Roughness, Metallic and Specular. Compare the material input with its lit appearance.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      },
+      {
+        "id": "gpu-water",
+        "label": "GPU Gems: water simulation",
+        "title": "GPU Gems: water simulation",
+        "url": "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models",
+        "focus": "Follow the relationship between wave shape, surface detail and normals.",
+        "context": "",
+        "category": "Further study"
+      }
+    ],
+    "appendix": true,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#435663",
+    "preview": "previews/103.jpg",
+    "lesson": null
+  },
+  {
+    "number": 104,
     "id": "w08-079",
     "title": "Color building blocks",
     "section": "REFERENCE LIBRARY",
@@ -3052,11 +3341,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#435663",
-    "preview": "previews/95.jpg",
+    "preview": "previews/104.jpg",
     "lesson": null
   },
   {
-    "number": 96,
+    "number": 105,
     "id": "w08-080",
     "title": "Masks and repeating values",
     "section": "REFERENCE LIBRARY",
@@ -3093,11 +3382,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#435663",
-    "preview": "previews/96.jpg",
+    "preview": "previews/105.jpg",
     "lesson": null
   },
   {
-    "number": 97,
+    "number": 106,
     "id": "w08-081",
     "title": "Coordinates and texture data",
     "section": "REFERENCE LIBRARY",
@@ -3135,11 +3424,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#435663",
-    "preview": "previews/97.jpg",
+    "preview": "previews/106.jpg",
     "lesson": null
   },
   {
-    "number": 98,
+    "number": 107,
     "id": "w08-082",
     "title": "Lighting building blocks",
     "section": "REFERENCE LIBRARY",
@@ -3176,11 +3465,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#435663",
-    "preview": "previews/98.jpg",
+    "preview": "previews/107.jpg",
     "lesson": null
   },
   {
-    "number": 99,
+    "number": 108,
     "id": "w08-083",
     "title": "Motion and shader stages",
     "section": "REFERENCE LIBRARY",
@@ -3217,11 +3506,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#435663",
-    "preview": "previews/99.jpg",
+    "preview": "previews/108.jpg",
     "lesson": null
   },
   {
-    "number": 100,
+    "number": 109,
     "id": "w08-084",
     "title": "Use the function library",
     "section": "REFERENCE LIBRARY",
@@ -3256,11 +3545,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#435663",
-    "preview": "previews/100.jpg",
+    "preview": "previews/109.jpg",
     "lesson": null
   },
   {
-    "number": 101,
+    "number": 110,
     "id": "w08-085",
     "title": "Explore Epic Content Examples",
     "section": "REFERENCE LIBRARY",
@@ -3286,11 +3575,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#435663",
-    "preview": "previews/101.jpg",
+    "preview": "previews/110.jpg",
     "lesson": null
   },
   {
-    "number": 102,
+    "number": 111,
     "id": "w08-086",
     "title": "Content Examples study route",
     "section": "REFERENCE LIBRARY",
@@ -3317,7 +3606,7 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#435663",
-    "preview": "previews/102.jpg",
+    "preview": "previews/111.jpg",
     "lesson": null
   }
 ]
