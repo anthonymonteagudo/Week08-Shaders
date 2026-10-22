@@ -1,5 +1,7 @@
 # Learning references
 
+See the [topic-by-topic reading guide](docs/references.html) and its [structured source list](docs/references.json). Each slide names its key reading pointers. Tutorial inspiration, engine documentation and production examples are identified separately. Ned’s closing slide credits LearnOpenGL.com for diagram inspiration.
+
 - [Ned’s original Rasterization presentation](docs/guest/Rasterization.pdf): supplied guest PDF, reproduced byte-for-byte for class note-taking. Attribution: Ned / NedMakesGames, rendering engineer at GOLF+. File integrity recorded in `docs/guest/provenance.json`.
 
 - SimonDev: https://simondev.teachable.com/ — sequencing inspiration; no paid course code included.

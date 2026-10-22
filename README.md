@@ -32,6 +32,10 @@ Open `Unreal/Week08Student.uproject` in Unreal Engine 5.7. The startup map is **
 
 Open `docs/activities.html`. Lab 1 investigates a supplied water material; Lab 2 begins a small original shader. Save baseline A and modified B for Week 9. A visual change is not evidence of a speed improvement.
 
+## Key sources
+
+The slides link directly to topic-specific references. Open [the reading guide](docs/references.html) for Epic documentation, Ben Cloward, Iñigo Quílez, The Unity Shaders Bible, LearnOpenGL, GPU Gems and other sources, with starting sections and engine context.
+
 ## Sources and permissions
 
 See `SOURCES.md` and `THIRD_PARTY_NOTICES.md`. This repository contains original classroom code/assets and the MIT-licensed Three.js runtime. Ned’s original guest PDF is also included for note-taking. External courses, game images, Epic sample packages and meeting links are not included. Unreal Engine itself is obtained separately from Epic under its terms. No license grant is implied for linked external resources.

@@ -1,0 +1,272 @@
+[
+  {
+    "id": "main",
+    "label": "Epic: Material Editor",
+    "title": "Epic Games — Using the Main Material Node",
+    "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-main-material-node-in-unreal-engine?application_version=5.7",
+    "focus": "Read Material Inputs and Material Properties for enabled pins, defaults and the output node.",
+    "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+    "category": "Reference"
+  },
+  {
+    "id": "custom",
+    "label": "Epic: Custom HLSL",
+    "title": "Epic Games — Custom Material Expressions",
+    "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
+    "focus": "Read Using the Custom Material Expression: named inputs, return value, Output Type and the texture sampler example.",
+    "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+    "category": "Reference"
+  },
+  {
+    "id": "math",
+    "label": "Epic: material math",
+    "title": "Epic Games — Math Material Expressions",
+    "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+    "focus": "Look up Multiply, LinearInterpolate, DotProduct, Step and Sine. Check each input order and Sine Period.",
+    "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+    "category": "Reference"
+  },
+  {
+    "id": "mi",
+    "label": "Epic: Material Instances",
+    "title": "Epic Games — Material Instances",
+    "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7",
+    "focus": "Read Material Parameterization and Static Parameters. Ordinary value overrides differ from compile-time switches.",
+    "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+    "category": "Reference"
+  },
+  {
+    "id": "texture",
+    "label": "Epic: texture data",
+    "title": "Epic Games — Texture Asset Editor",
+    "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-asset-editor-in-unreal-engine?application_version=5.7",
+    "focus": "Find sRGB, channel preview, filtering and mip settings. Distinguish color images from numerical data.",
+    "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+    "category": "Reference"
+  },
+  {
+    "id": "blend",
+    "label": "Epic: blend modes",
+    "title": "Epic Games — Material Blend Modes",
+    "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/material-blend-modes-in-unreal-engine?application_version=5.7",
+    "focus": "Compare Opaque, Masked and Translucent, then locate Opacity Mask Clip Value.",
+    "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+    "category": "Reference"
+  },
+  {
+    "id": "transparency",
+    "label": "Epic: transparency",
+    "title": "Epic Games — Using Transparency in Materials",
+    "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-transparency-in-unreal-engine-materials?application_version=5.7",
+    "focus": "Read Using Transparency in Materials and Transparency Sorting. Check the material settings before adjusting Opacity.",
+    "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+    "category": "Reference"
+  },
+  {
+    "id": "coords",
+    "label": "Epic: UVs and Panner",
+    "title": "Epic Games — Coordinates Material Expressions",
+    "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/coordinates-material-expressions-in-unreal-engine?application_version=5.7",
+    "focus": "Find TextureCoordinate, Panner, PixelNormalWS and VertexNormalWS. Match coordinate space to the calculation.",
+    "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+    "category": "Reference"
+  },
+  {
+    "id": "pbr",
+    "label": "Epic: PBR inputs",
+    "title": "Epic Games — Physically Based Materials",
+    "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/physically-based-materials-in-unreal-engine?application_version=5.7",
+    "focus": "Read Base Color, Roughness, Metallic and Specular. Compare the material input with its lit appearance.",
+    "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+    "category": "Reference"
+  },
+  {
+    "id": "utility",
+    "label": "Epic: Fresnel / DepthFade",
+    "title": "Epic Games — Utility Material Expressions",
+    "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/utility-material-expressions-in-unreal-engine?application_version=5.7",
+    "focus": "Find Fresnel for view-angle controls, or DepthFade for translucent intersections. These perform different jobs.",
+    "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+    "category": "Reference"
+  },
+  {
+    "id": "texturing",
+    "label": "Epic: world projection",
+    "title": "Epic Games — Texturing Material Functions",
+    "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/texturing-material-functions-in-unreal-engine?application_version=5.7",
+    "focus": "Read WorldAlignedTexture and WorldAlignedNormal. Check scale, coordinate conventions and the warning about moving objects.",
+    "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+    "category": "Reference"
+  },
+  {
+    "id": "water",
+    "label": "Epic: Single Layer Water",
+    "title": "Epic Games — Single Layer Water Shading Model",
+    "url": "https://dev.epicgames.com/documentation/unreal-engine/single-layer-water-shading-model-in-unreal-engine?application_version=5.7",
+    "focus": "Read the implementation and material setup. Its Opaque/Masked blend setting can still produce a transparent-looking water surface.",
+    "context": "Unreal Engine 5.7; this is an optional engine water model, distinct from the classroom water masters.",
+    "category": "Reference"
+  },
+  {
+    "id": "samples",
+    "label": "Epic: Content Examples",
+    "title": "Epic Games — Content Examples",
+    "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/content-examples-sample-project-for-unreal-engine",
+    "focus": "Use the Materials and related example maps as a separate guided exploration. Follow the stations named in the course reference room.",
+    "context": "Official sample project. Obtain a version compatible with your Unreal installation.",
+    "category": "Further study"
+  },
+  {
+    "id": "ben",
+    "label": "Ben Cloward: Shaders 101",
+    "title": "Ben Cloward — Shaders 101, GDC 2016",
+    "url": "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
+    "focus": "Read PDF pages 18–38 for UV scale, scrolling and layered distortion, and pages 54–67 for mask-based blending.",
+    "context": "A historical talk explaining calculations shared by code and node editors; its screenshots are not UE 5.7 UI instructions.",
+    "category": "Reference"
+  },
+  {
+    "id": "benvideos",
+    "label": "Ben Cloward: tutorials",
+    "title": "Ben Cloward — Shader tutorial videos and HLSL resources",
+    "url": "https://www.bencloward.com/resources.shtml",
+    "focus": "Use Shader Tutorial Videos for artist-focused node lessons and HLSL Training Videos for code.",
+    "context": "Author-maintained resource index. Tutorial engine versions vary.",
+    "category": "Further study"
+  },
+  {
+    "id": "iq",
+    "label": "Iñigo Quílez: Palettes",
+    "title": "Iñigo Quílez — Palettes",
+    "url": "https://iquilezles.org/articles/palettes/",
+    "focus": "Explore procedural palettes as an extension to choosing the colors in our banded study.",
+    "context": "Optional extension. The classroom example uses explicit color parameters, not this article’s palette implementation.",
+    "category": "Further study"
+  },
+  {
+    "id": "bible",
+    "label": "Jettelly: Unity Shaders Bible",
+    "title": "Fabrizio Espíndola / Jettelly — The Unity Shaders Bible",
+    "url": "https://jettelly.com/store/the-unity-shaders-bible",
+    "focus": "Use Introduction to the Programming Language for HLSL and node concepts; Lighting, Shadows, and Surfaces for deeper lighting study.",
+    "context": "Optional paid book with a publisher-provided sample. Unity HLSL, ShaderLab and Shader Graph require adaptation to Unreal; no purchase is required.",
+    "category": "Further study"
+  },
+  {
+    "id": "boscolor",
+    "label": "Book of Shaders: Color",
+    "title": "Patricio Gonzalez Vivo & Jen Lowe — The Book of Shaders, Colors",
+    "url": "https://thebookofshaders.com/06/",
+    "focus": "Try the Mixing color examples, then compare GLSL mix with HLSL lerp and Unreal Lerp.",
+    "context": "Free interactive GLSL chapter; the engine wrapper differs from the classroom Three.js and Unreal projects.",
+    "category": "Reference"
+  },
+  {
+    "id": "bosshape",
+    "label": "Book of Shaders: functions",
+    "title": "Patricio Gonzalez Vivo & Jen Lowe — The Book of Shaders, Shaping functions",
+    "url": "https://thebookofshaders.com/05/",
+    "focus": "Start with Step and Smoothstep. Change the threshold or transition interval before combining operations.",
+    "context": "Free interactive GLSL exercises; compare the argument order with Unreal nodes.",
+    "category": "Reference"
+  },
+  {
+    "id": "learn",
+    "label": "LearnOpenGL: Shaders",
+    "title": "Joey de Vries — LearnOpenGL, Shaders",
+    "url": "https://learnopengl.com/Getting-started/Shaders",
+    "focus": "Read Types, Ins and outs, and Uniforms after Ned’s presentation.",
+    "context": "Ned’s final slide credits LearnOpenGL.com as diagram inspiration. This chapter is an additional course reading pointer, not a separate recommendation claimed from Ned.",
+    "category": "Reference"
+  },
+  {
+    "id": "diffuse",
+    "label": "LearnOpenGL: diffuse light",
+    "title": "Joey de Vries — LearnOpenGL, Basic Lighting",
+    "url": "https://learnopengl.com/Lighting/Basic-Lighting",
+    "focus": "Read Diffuse lighting for the normal/light dot product. Our toon study adds thresholds and artist-selected colors.",
+    "context": "An OpenGL lighting explanation, not Unreal’s complete Default Lit implementation.",
+    "category": "Reference"
+  },
+  {
+    "id": "ned",
+    "label": "Ned: original slides",
+    "title": "Ned / NedMakesGames — Rasterization",
+    "url": "https://anthonymonteagudo.github.io/Week08-Shaders/docs/guest/Rasterization.pdf",
+    "focus": "Download the unchanged guest presentation to annotate. Its final slide credits LearnOpenGL.com for diagram inspiration.",
+    "context": "Original guest material supplied for this class; presented by Ned through screen sharing.",
+    "category": "Reference"
+  },
+  {
+    "id": "gems",
+    "label": "Mark Finch: GPU Gems water",
+    "title": "Mark Finch — Effective Water Simulation from Physical Models, GPU Gems ch. 1",
+    "url": "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models",
+    "focus": "Read 1.2 The Sum of Sines Approximation and the Gerstner Waves subsection, then 1.2.4 Texture Waves for surface detail.",
+    "context": "Historical implementation with useful wave mathematics. The course pool grid is an original teaching study.",
+    "category": "Reference"
+  },
+  {
+    "id": "rare",
+    "label": "Rare: Sea of Thieves",
+    "title": "Ang, Catling, Cifariello Ciardi & Kozin — The Technical Art of Sea of Thieves, SIGGRAPH 2018",
+    "url": "https://history.siggraph.org/wp-content/uploads/2022/09/2018-Talks-Ang_The-Technical-Art-of-Sea-of-Thieves.pdf",
+    "focus": "Read section 1.1 Ocean for the game’s FFT ocean, wave-peak color mask and foam art direction.",
+    "context": "Documented production context. Our Gerstner study does not reproduce Rare’s FFT ocean.",
+    "category": "Production example"
+  },
+  {
+    "id": "birn",
+    "label": "Jeremy Birn: three-point light",
+    "title": "Jeremy Birn — Three-Point Lighting for 3D Renderings",
+    "url": "https://www.3drender.com/light/3point.html",
+    "focus": "Follow the key, fill and rim additions. Observe how illumination and separation change before adjusting material color.",
+    "context": "Artistic lighting study; actual scene lights differ from our Unlit view-angle accents.",
+    "category": "Reference"
+  },
+  {
+    "id": "pixar",
+    "label": "Pixar: Art of Lighting",
+    "title": "Pixar in a Box / Khan Academy — Art of Lighting",
+    "url": "https://www.khanacademy.org/computing/pixar/art-of-lighting",
+    "focus": "Explore lighting as a way to direct attention and support a scene’s visual intent.",
+    "context": "Artistic further study, independent of the engine.",
+    "category": "Further study"
+  },
+  {
+    "id": "simon",
+    "label": "SimonDev: GLSL course",
+    "title": "SimonDev — GLSL Shaders from Scratch",
+    "url": "https://simondev.teachable.com/",
+    "focus": "Optional structured GLSL study alongside the numbered classroom examples.",
+    "context": "Paid course; its lesson progression inspired the workspace organization. Supplied classroom code is original.",
+    "category": "Further study"
+  },
+  {
+    "id": "simont",
+    "label": "Simon Trümpler: tech art",
+    "title": "Simon Trümpler / Simonschreibt — Tech Art Learning Materials",
+    "url": "https://simonschreibt.de/gat/tech-art-course/",
+    "focus": "Open My Document/Slides and its shader section for the Unreal-node and Unity-code teaching bridge.",
+    "context": "A separate educator from SimonDev. Historical engine examples need current-engine adaptation.",
+    "category": "Further study"
+  },
+  {
+    "id": "hlsl",
+    "label": "Microsoft: HLSL functions",
+    "title": "Microsoft — HLSL Intrinsic Functions",
+    "url": "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+    "focus": "Follow the per-function links for lerp, saturate, step, normalize and dot. Check arguments and return values.",
+    "context": "Language reference; Unreal’s Custom node supplies its own input/output wrapper.",
+    "category": "Reference"
+  },
+  {
+    "id": "glsl",
+    "label": "Khronos: GLSL reference",
+    "title": "Khronos — GLSL 4.50 Specification",
+    "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf",
+    "focus": "Use the built-in function reference to cross-check the common arithmetic operations in the appendix.",
+    "context": "Desktop GLSL reference. Browser WebGL uses GLSL ES, so version-specific features are not automatically portable.",
+    "category": "Further study"
+  }
+]

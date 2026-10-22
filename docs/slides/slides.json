@@ -18,7 +18,8 @@
     "previous_number": 1,
     "preview": "previews/01.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": []
   },
   {
     "title": "The learning route",
@@ -31,7 +32,10 @@
     "section": "Opening",
     "notes": "We will use only a few lines of shader code at a time. You will see those same operations as Unreal nodes. The first lab is a controlled investigation. The second is time to begin the shader homework with a small experiment.",
     "rationale": "Keep a complete example together: result, calculation, Unreal control, then a prediction.",
-    "sources": [],
+    "sources": [
+      "https://simondev.teachable.com/",
+      "https://simonschreibt.de/gat/tech-art-course/"
+    ],
     "old_numbers": [
       2
     ],
@@ -41,7 +45,27 @@
     "previous_number": 2,
     "preview": "previews/02.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "simon",
+        "label": "SimonDev: GLSL course",
+        "title": "SimonDev — GLSL Shaders from Scratch",
+        "url": "https://simondev.teachable.com/",
+        "focus": "Optional structured GLSL study alongside the numbered classroom examples.",
+        "context": "Paid course; its lesson progression inspired the workspace organization. Supplied classroom code is original.",
+        "category": "Further study"
+      },
+      {
+        "id": "simont",
+        "label": "Simon Trümpler: tech art",
+        "title": "Simon Trümpler / Simonschreibt — Tech Art Learning Materials",
+        "url": "https://simonschreibt.de/gat/tech-art-course/",
+        "focus": "Open My Document/Slides and its shader section for the Unreal-node and Unity-code teaching bridge.",
+        "context": "A separate educator from SimonDev. Historical engine examples need current-engine adaptation.",
+        "category": "Further study"
+      }
+    ]
   },
   {
     "title": "The choices we control",
@@ -65,7 +89,8 @@
     "previous_number": 3,
     "preview": "previews/03.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": []
   },
   {
     "title": "Ned",
@@ -91,7 +116,18 @@
     "previous_number": 4,
     "preview": "previews/04.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "ned",
+        "label": "Ned: original slides",
+        "title": "Ned / NedMakesGames — Rasterization",
+        "url": "https://anthonymonteagudo.github.io/Week08-Shaders/docs/guest/Rasterization.pdf",
+        "focus": "Download the unchanged guest presentation to annotate. Its final slide credits LearnOpenGL.com for diagram inspiration.",
+        "context": "Original guest material supplied for this class; presented by Ned through screen sharing.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Questions for Ned",
@@ -105,7 +141,8 @@
     "notes": "What questions do you have for Ned? Point to an example or a step that raised the question. If you are still thinking, I would like to ask how he separates a material issue from a renderer issue, and what evidence is most useful when artists and rendering engineers work together. Thank you, Ned. We will now try a few of those artist-facing choices in Unreal.",
     "rationale": "Keep a complete example together: result, calculation, Unreal control, then a prediction.",
     "sources": [
-      "https://anthonymonteagudo.github.io/Week08-Shaders/docs/guest/Rasterization.pdf"
+      "https://anthonymonteagudo.github.io/Week08-Shaders/docs/guest/Rasterization.pdf",
+      "https://learnopengl.com/Getting-started/Shaders"
     ],
     "old_numbers": [
       5
@@ -116,7 +153,27 @@
     "previous_number": 5,
     "preview": "previews/05.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "learn",
+        "label": "LearnOpenGL: Shaders",
+        "title": "Joey de Vries — LearnOpenGL, Shaders",
+        "url": "https://learnopengl.com/Getting-started/Shaders",
+        "focus": "Read Types, Ins and outs, and Uniforms after Ned’s presentation.",
+        "context": "Ned’s final slide credits LearnOpenGL.com as diagram inspiration. This chapter is an additional course reading pointer, not a separate recommendation claimed from Ned.",
+        "category": "Reference"
+      },
+      {
+        "id": "ned",
+        "label": "Ned: original slides",
+        "title": "Ned / NedMakesGames — Rasterization",
+        "url": "https://anthonymonteagudo.github.io/Week08-Shaders/docs/guest/Rasterization.pdf",
+        "focus": "Download the unchanged guest presentation to annotate. Its final slide credits LearnOpenGL.com for diagram inspiration.",
+        "context": "Original guest material supplied for this class; presented by Ned through screen sharing.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Materials in Unreal",
@@ -127,14 +184,37 @@
     "notes": "A material supplies values and behavior. A material instance exposes choices.",
     "section": "Materials in Unreal",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
-    "sources": [],
+    "sources": [
+      "https://www.bencloward.com/resources.shtml",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-main-material-node-in-unreal-engine?application_version=5.7"
+    ],
     "old_numbers": [],
     "anchor": "NEW",
     "appendix": false,
     "number": 6,
     "preview": "previews/06.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "benvideos",
+        "label": "Ben Cloward: tutorials",
+        "title": "Ben Cloward — Shader tutorial videos and HLSL resources",
+        "url": "https://www.bencloward.com/resources.shtml",
+        "focus": "Use Shader Tutorial Videos for artist-focused node lessons and HLSL Training Videos for code.",
+        "context": "Author-maintained resource index. Tutorial engine versions vary.",
+        "category": "Further study"
+      },
+      {
+        "id": "main",
+        "label": "Epic: Material Editor",
+        "title": "Epic Games — Using the Main Material Node",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-main-material-node-in-unreal-engine?application_version=5.7",
+        "focus": "Read Material Inputs and Material Properties for enabled pins, defaults and the output node.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "The Unreal Material Editor",
@@ -159,7 +239,18 @@
     "previous_number": 6,
     "preview": "previews/07.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "main",
+        "label": "Epic: Material Editor",
+        "title": "Epic Games — Using the Main Material Node",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-main-material-node-in-unreal-engine?application_version=5.7",
+        "focus": "Read Material Inputs and Material Properties for enabled pins, defaults and the output node.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "The student project",
@@ -172,7 +263,9 @@
     "notes": "The project includes the Three.js runtime locally. You do not need npm install. If you prefer Python, use its local HTTP server. The hosted page works for exploration without installing anything. Only GLSL executes in the browser; the adjacent HLSL belongs in Unreal.",
     "section": "Materials in Unreal",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
-    "sources": [],
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7"
+    ],
     "old_numbers": [],
     "anchor": "NEW",
     "appendix": false,
@@ -181,7 +274,18 @@
     "caption": "Three.js is bundled. No npm install is needed. HLSL runs in Unreal, not in this browser.",
     "preview": "previews/08.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "mi",
+        "label": "Epic: Material Instances",
+        "title": "Epic Games — Material Instances",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7",
+        "focus": "Read Material Parameterization and Static Parameters. Ordinary value overrides differ from compile-time switches.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "The Unreal gallery",
@@ -193,14 +297,27 @@
     "notes": "The gallery is organized by concepts, not by capture cameras. The central aisle connects code and materials, opacity, water, palettes, view masks and actual lighting. Read the sign in each bay, predict a change, then edit one control. F frames the selected object; right mouse and WASD fly in the editor.",
     "section": "Materials in Unreal",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
-    "sources": [],
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/content-examples-sample-project-for-unreal-engine"
+    ],
     "old_numbers": [],
     "anchor": "NEW",
     "appendix": false,
     "number": 9,
     "preview": "previews/09.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "samples",
+        "label": "Epic: Content Examples",
+        "title": "Epic Games — Content Examples",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/content-examples-sample-project-for-unreal-engine",
+        "focus": "Use the Materials and related example maps as a separate guided exploration. Follow the stations named in the course reference room.",
+        "context": "Official sample project. Obtain a version compatible with your Unreal installation.",
+        "category": "Further study"
+      }
+    ]
   },
   {
     "title": "Texture tint",
@@ -211,7 +328,9 @@
     ],
     "notes": "This is our original texture beside the tinted result in Unreal. Each sampled RGB value is multiplied by the Tint parameter. For example, multiplying a red value by 0.2 leaves one fifth of that channel’s linear value. Let’s identify that operation in three authoring views.",
     "section": "Tint",
-    "sources": [],
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7"
+    ],
     "anchor": "CLEANUP-30",
     "rationale": "Apply Ned’s rendering model to a concrete material change.",
     "number": 10,
@@ -223,7 +342,18 @@
     "previous_number": 7,
     "preview": "previews/10.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "math",
+        "label": "Epic: material math",
+        "title": "Epic Games — Math Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Look up Multiply, LinearInterpolate, DotProduct, Step and Sine. Check each input order and Sine Period.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "GLSL, HLSL, and nodes",
@@ -234,14 +364,37 @@
     "notes": "The calculation stays recognizable. The host supplies textures, time, and geometry.",
     "section": "GLSL, HLSL, and nodes",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
-    "sources": [],
+    "sources": [
+      "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
+      "https://jettelly.com/store/the-unity-shaders-bible"
+    ],
     "old_numbers": [],
     "anchor": "NEW",
     "appendix": false,
     "number": 11,
     "preview": "previews/11.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "ben",
+        "label": "Ben Cloward: Shaders 101",
+        "title": "Ben Cloward — Shaders 101, GDC 2016",
+        "url": "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
+        "focus": "Read PDF pages 18–38 for UV scale, scrolling and layered distortion, and pages 54–67 for mask-based blending.",
+        "context": "A historical talk explaining calculations shared by code and node editors; its screenshots are not UE 5.7 UI instructions.",
+        "category": "Reference"
+      },
+      {
+        "id": "bible",
+        "label": "Jettelly: Unity Shaders Bible",
+        "title": "Fabrizio Espíndola / Jettelly — The Unity Shaders Bible",
+        "url": "https://jettelly.com/store/the-unity-shaders-bible",
+        "focus": "Use Introduction to the Programming Language for HLSL and node concepts; Lighting, Shadows, and Surfaces for deeper lighting study.",
+        "context": "Optional paid book with a publisher-provided sample. Unity HLSL, ShaderLab and Shader Graph require adaptation to Unreal; no purchase is required.",
+        "category": "Further study"
+      }
+    ]
   },
   {
     "title": "GLSL → HLSL",
@@ -251,7 +404,8 @@
     "section": "Code and nodes",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
     "sources": [
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7"
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions"
     ],
     "old_numbers": [],
     "anchor": "NEW",
@@ -276,7 +430,27 @@
     "blendDiagram": true,
     "preview": "previews/12.jpg",
     "lesson": "02_uv_mask",
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "custom",
+        "label": "Epic: Custom HLSL",
+        "title": "Epic Games — Custom Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Read Using the Custom Material Expression: named inputs, return value, Output Type and the texture sampler example.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      },
+      {
+        "id": "hlsl",
+        "label": "Microsoft: HLSL functions",
+        "title": "Microsoft — HLSL Intrinsic Functions",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+        "focus": "Follow the per-function links for lerp, saturate, step, normalize and dot. Check arguments and return values.",
+        "context": "Language reference; Unreal’s Custom node supplies its own input/output wrapper.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Translation checks",
@@ -286,7 +460,8 @@
     "section": "Code and nodes",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
     "sources": [
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7"
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions"
     ],
     "old_numbers": [],
     "anchor": "NEW",
@@ -322,7 +497,27 @@
     "number": 13,
     "preview": "previews/13.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "custom",
+        "label": "Epic: Custom HLSL",
+        "title": "Epic Games — Custom Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Read Using the Custom Material Expression: named inputs, return value, Output Type and the texture sampler example.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      },
+      {
+        "id": "hlsl",
+        "label": "Microsoft: HLSL functions",
+        "title": "Microsoft — HLSL Intrinsic Functions",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+        "focus": "Follow the per-function links for lerp, saturate, step, normalize and dot. Check arguments and return values.",
+        "context": "Language reference; Unreal’s Custom node supplies its own input/output wrapper.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Tint in GLSL",
@@ -335,7 +530,9 @@
     "notes": "This is a running GLSL material in Three.js. The host provides the texture, UV coordinates, and Tint. The calculation samples the texture and multiplies its RGB. Change the green component and predict which parts of the texture will change. The browser preview is part of the slide, so we can see the result directly.",
     "rationale": "Keep a complete example together: result, calculation, Unreal control, then a prediction.",
     "sources": [
-      "Week08ShaderLab/Workshop/Shaders/tint.glsl"
+      "Week08ShaderLab/Workshop/Shaders/tint.glsl",
+      "https://thebookofshaders.com/06/",
+      "https://learnopengl.com/Getting-started/Shaders"
     ],
     "old_numbers": [
       8
@@ -349,7 +546,27 @@
     "previous_number": 8,
     "preview": "previews/14.jpg",
     "lesson": "01_color",
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "boscolor",
+        "label": "Book of Shaders: Color",
+        "title": "Patricio Gonzalez Vivo & Jen Lowe — The Book of Shaders, Colors",
+        "url": "https://thebookofshaders.com/06/",
+        "focus": "Try the Mixing color examples, then compare GLSL mix with HLSL lerp and Unreal Lerp.",
+        "context": "Free interactive GLSL chapter; the engine wrapper differs from the classroom Three.js and Unreal projects.",
+        "category": "Reference"
+      },
+      {
+        "id": "learn",
+        "label": "LearnOpenGL: Shaders",
+        "title": "Joey de Vries — LearnOpenGL, Shaders",
+        "url": "https://learnopengl.com/Getting-started/Shaders",
+        "focus": "Read Types, Ins and outs, and Uniforms after Ned’s presentation.",
+        "context": "Ned’s final slide credits LearnOpenGL.com as diagram inspiration. This chapter is an additional course reading pointer, not a separate recommendation claimed from Ned.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Tint in Unreal HLSL",
@@ -362,7 +579,8 @@
     "notes": "The same calculation uses Unreal’s texture sampling helper. Name the texture input BaseTexture and Unreal supplies BaseTextureSampler. UV is a float2, and Tint is a float3. Set the Custom expression output to Float3. This expression returns a material value. Unreal generates the surrounding shader, which is why this small body has no PSMain entry point.",
     "rationale": "Keep a complete example together: result, calculation, Unreal control, then a prediction.",
     "sources": [
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7"
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://jettelly.com/store/the-unity-shaders-bible"
     ],
     "old_numbers": [
       9
@@ -376,7 +594,27 @@
     "previous_number": 9,
     "preview": "previews/15.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "custom",
+        "label": "Epic: Custom HLSL",
+        "title": "Epic Games — Custom Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Read Using the Custom Material Expression: named inputs, return value, Output Type and the texture sampler example.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      },
+      {
+        "id": "bible",
+        "label": "Jettelly: Unity Shaders Bible",
+        "title": "Fabrizio Espíndola / Jettelly — The Unity Shaders Bible",
+        "url": "https://jettelly.com/store/the-unity-shaders-bible",
+        "focus": "Use Introduction to the Programming Language for HLSL and node concepts; Lighting, Shadows, and Surfaces for deeper lighting study.",
+        "context": "Optional paid book with a publisher-provided sample. Unity HLSL, ShaderLab and Shader Graph require adaptation to Unreal; no purchase is required.",
+        "category": "Further study"
+      }
+    ]
   },
   {
     "title": "Tint as material nodes",
@@ -386,7 +624,9 @@
     "notes": "Follow the texture’s RGB output into Multiply A. Tint enters Multiply B. The result connects to Emissive Color. The texture sample uses the mesh UVs. The graph and code express the same operation. Ordinary nodes are the first choice for this example. A Custom expression is useful here for seeing the translation, not because a tint needs custom code.",
     "rationale": "Keep a complete example together: result, calculation, Unreal control, then a prediction.",
     "sources": [
-      "Week08ShaderLab/MaterialBasics/material-graphs.json"
+      "Week08ShaderLab/MaterialBasics/material-graphs.json",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf"
     ],
     "old_numbers": [
       10
@@ -398,7 +638,27 @@
     "previous_number": 10,
     "preview": "previews/16.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "math",
+        "label": "Epic: material math",
+        "title": "Epic Games — Math Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Look up Multiply, LinearInterpolate, DotProduct, Step and Sine. Check each input order and Sine Period.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      },
+      {
+        "id": "ben",
+        "label": "Ben Cloward: Shaders 101",
+        "title": "Ben Cloward — Shaders 101, GDC 2016",
+        "url": "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
+        "focus": "Read PDF pages 18–38 for UV scale, scrolling and layered distortion, and pages 54–67 for mask-based blending.",
+        "context": "A historical talk explaining calculations shared by code and node editors; its screenshots are not UE 5.7 UI instructions.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Change a material instance",
@@ -423,7 +683,18 @@
     "previous_number": 11,
     "preview": "previews/17.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "mi",
+        "label": "Epic: Material Instances",
+        "title": "Epic Games — Material Instances",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7",
+        "focus": "Read Material Parameterization and Static Parameters. Ordinary value overrides differ from compile-time switches.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "A mask selects between colors",
@@ -433,7 +704,9 @@
     "section": "Code and nodes",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
     "sources": [
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7"
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://thebookofshaders.com/05/",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7"
     ],
     "old_numbers": [],
     "anchor": "NEW",
@@ -457,7 +730,27 @@
     "number": 18,
     "preview": "previews/18.jpg",
     "lesson": "02_uv_mask",
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "bosshape",
+        "label": "Book of Shaders: functions",
+        "title": "Patricio Gonzalez Vivo & Jen Lowe — The Book of Shaders, Shaping functions",
+        "url": "https://thebookofshaders.com/05/",
+        "focus": "Start with Step and Smoothstep. Change the threshold or transition interval before combining operations.",
+        "context": "Free interactive GLSL exercises; compare the argument order with Unreal nodes.",
+        "category": "Reference"
+      },
+      {
+        "id": "math",
+        "label": "Epic: material math",
+        "title": "Epic Games — Math Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Look up Multiply, LinearInterpolate, DotProduct, Step and Sine. Check each input order and Sine Period.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Color operations",
@@ -466,7 +759,10 @@
     "notes": "These are familiar image-editing operations expressed as material math. Multiplication is component-wise. Lerp blends toward a chosen value; adding a positive color cannot darken the input. Values used for lighting and emissive effects may exceed one, so clamping every result is not a general rule.",
     "section": "Code and nodes",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
-    "sources": [],
+    "sources": [
+      "https://thebookofshaders.com/06/",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7"
+    ],
     "old_numbers": [],
     "anchor": "NEW",
     "appendix": false,
@@ -501,7 +797,27 @@
     "number": 19,
     "preview": "previews/19.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "boscolor",
+        "label": "Book of Shaders: Color",
+        "title": "Patricio Gonzalez Vivo & Jen Lowe — The Book of Shaders, Colors",
+        "url": "https://thebookofshaders.com/06/",
+        "focus": "Try the Mixing color examples, then compare GLSL mix with HLSL lerp and Unreal Lerp.",
+        "context": "Free interactive GLSL chapter; the engine wrapper differs from the classroom Three.js and Unreal projects.",
+        "category": "Reference"
+      },
+      {
+        "id": "math",
+        "label": "Epic: material math",
+        "title": "Epic Games — Math Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Look up Multiply, LinearInterpolate, DotProduct, Step and Sine. Check each input order and Sine Period.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Color textures and numerical masks",
@@ -526,7 +842,18 @@
     "previous_number": 13,
     "preview": "previews/20.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "texture",
+        "label": "Epic: texture data",
+        "title": "Epic Games — Texture Asset Editor",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-asset-editor-in-unreal-engine?application_version=5.7",
+        "focus": "Find sRGB, channel preview, filtering and mip settings. Distinguish color images from numerical data.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Base Color and the lit result",
@@ -538,7 +865,8 @@
     "notes": "This material uses the same sample and tint, but sends the result to Base Color in a Default Lit material. Roughness is a separate scalar input. Both objects use the same parent material, and their instances supply different roughness values. Lighting and viewing direction now contribute to appearance. Emissive and Base Color are different outputs, even when the values entering them look similar. Base Color is a surface property, not a promise of identical displayed pixel RGB. Unlit plus Emissive removes the surface-lighting response, but exposure and display processing still affect the view. The Unlit shading model and viewport Unlit view mode are different controls.",
     "section": "Tint",
     "sources": [
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/material-inputs-in-unreal-engine"
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/material-inputs-in-unreal-engine",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/physically-based-materials-in-unreal-engine?application_version=5.7"
     ],
     "anchor": "CLEANUP-39",
     "rationale": "Apply Ned’s rendering model to a concrete material change.",
@@ -551,7 +879,18 @@
     "previous_number": 12,
     "preview": "previews/21.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "pbr",
+        "label": "Epic: PBR inputs",
+        "title": "Epic Games — Physically Based Materials",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/physically-based-materials-in-unreal-engine?application_version=5.7",
+        "focus": "Read Base Color, Roughness, Metallic and Specular. Compare the material input with its lit appearance.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Opacity and material settings",
@@ -562,14 +901,27 @@
     "notes": "A numeric value and a material setting do different jobs.",
     "section": "Opacity and material settings",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
-    "sources": [],
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/material-blend-modes-in-unreal-engine?application_version=5.7"
+    ],
     "old_numbers": [],
     "anchor": "NEW",
     "appendix": false,
     "number": 22,
     "preview": "previews/22.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "blend",
+        "label": "Epic: blend modes",
+        "title": "Epic Games — Material Blend Modes",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/material-blend-modes-in-unreal-engine?application_version=5.7",
+        "focus": "Compare Opaque, Masked and Translucent, then locate Opacity Mask Clip Value.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Make a material translucent",
@@ -596,7 +948,18 @@
     "previous_number": 14,
     "preview": "previews/23.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "transparency",
+        "label": "Epic: transparency",
+        "title": "Epic Games — Using Transparency in Materials",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-transparency-in-unreal-engine-materials?application_version=5.7",
+        "focus": "Read Using Transparency in Materials and Transparency Sorting. Check the material settings before adjusting Opacity.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Opacity in motion",
@@ -607,7 +970,9 @@
     ],
     "notes": "Watch the right-hand material fade while the opaque and cutout examples stay fixed. Change the Opacity parameter, not the texture RGB. An opacity of one can look solid, but the asset is still configured as Translucent. We are applying the rendering behavior Ned described through a specific Unreal control.",
     "section": "Transparency",
-    "sources": [],
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-transparency-in-unreal-engine-materials?application_version=5.7"
+    ],
     "anchor": "CLEANUP-43",
     "rationale": "Apply Ned’s rendering model to a concrete material change.",
     "number": 24,
@@ -619,7 +984,18 @@
     "previous_number": 15,
     "preview": "previews/24.jpg",
     "lesson": null,
-    "motion": "media/slide-24.gif"
+    "motion": "media/slide-24.gif",
+    "key_sources": [
+      {
+        "id": "transparency",
+        "label": "Epic: transparency",
+        "title": "Epic Games — Using Transparency in Materials",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-transparency-in-unreal-engine-materials?application_version=5.7",
+        "focus": "Read Using Transparency in Materials and Transparency Sorting. Check the material settings before adjusting Opacity.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Make a cutout",
@@ -644,7 +1020,18 @@
     "previous_number": 16,
     "preview": "previews/25.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "blend",
+        "label": "Epic: blend modes",
+        "title": "Epic Games — Material Blend Modes",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/material-blend-modes-in-unreal-engine?application_version=5.7",
+        "focus": "Compare Opaque, Masked and Translucent, then locate Opacity Mask Clip Value.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Check the intended result",
@@ -653,7 +1040,9 @@
     "section": "Transparency",
     "notes": "The word mask describes a value’s role. A mask connected to Opacity Mask controls cutout visibility. The foam mask that we use next will blend two colors in an opaque material. It will not make holes in the water. Before wiring a value, identify the output you want it to control. What would you like clarified about choosing a material input?",
     "rationale": "Keep a complete example together: result, calculation, Unreal control, then a prediction.",
-    "sources": [],
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/material-blend-modes-in-unreal-engine?application_version=5.7"
+    ],
     "old_numbers": [
       17
     ],
@@ -668,7 +1057,18 @@
     "previous_number": 17,
     "preview": "previews/26.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "blend",
+        "label": "Epic: blend modes",
+        "title": "Epic Games — Material Blend Modes",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/material-blend-modes-in-unreal-engine?application_version=5.7",
+        "focus": "Compare Opaque, Masked and Translucent, then locate Opacity Mask Clip Value.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Opaque, masked, translucent",
@@ -709,7 +1109,18 @@
     "number": 27,
     "preview": "previews/27.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "blend",
+        "label": "Epic: blend modes",
+        "title": "Epic Games — Material Blend Modes",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/material-blend-modes-in-unreal-engine?application_version=5.7",
+        "focus": "Compare Opaque, Masked and Translucent, then locate Opacity Mask Clip Value.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Water",
@@ -720,14 +1131,37 @@
     "notes": "Separate the surface finish from the motion that produces the wave form.",
     "section": "Water",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
-    "sources": [],
+    "sources": [
+      "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
+      "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models"
+    ],
     "old_numbers": [],
     "anchor": "NEW",
     "appendix": false,
     "number": 28,
     "preview": "previews/28.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "ben",
+        "label": "Ben Cloward: Shaders 101",
+        "title": "Ben Cloward — Shaders 101, GDC 2016",
+        "url": "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
+        "focus": "Read PDF pages 18–38 for UV scale, scrolling and layered distortion, and pages 54–67 for mask-based blending.",
+        "context": "A historical talk explaining calculations shared by code and node editors; its screenshots are not UE 5.7 UI instructions.",
+        "category": "Reference"
+      },
+      {
+        "id": "gems",
+        "label": "Mark Finch: GPU Gems water",
+        "title": "Mark Finch — Effective Water Simulation from Physical Models, GPU Gems ch. 1",
+        "url": "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models",
+        "focus": "Read 1.2 The Sum of Sines Approximation and the Gerstner Waves subsection, then 1.2.4 Texture Waves for surface detail.",
+        "context": "Historical implementation with useful wave mathematics. The course pool grid is an original teaching study.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Water in games",
@@ -742,7 +1176,8 @@
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
     "sources": [
       "https://www.nintendo.com/en-gb/Iwata-Asks/Iwata-Asks-The-Legend-of-Zelda-The-Wind-Waker-HD/The-Legend-of-Zelda-The-Wind-Waker-HD/1-Opening-Up-New-Possibilities/1-Opening-Up-New-Possibilities-797515.html",
-      "https://advances.realtimerendering.com/s2018/index.htm"
+      "https://advances.realtimerendering.com/s2018/index.htm",
+      "https://history.siggraph.org/wp-content/uploads/2022/09/2018-Talks-Ang_The-Technical-Art-of-Sea-of-Thieves.pdf"
     ],
     "old_numbers": [],
     "anchor": "NEW",
@@ -750,7 +1185,18 @@
     "number": 29,
     "preview": "previews/29.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "rare",
+        "label": "Rare: Sea of Thieves",
+        "title": "Ang, Catling, Cifariello Ciardi & Kozin — The Technical Art of Sea of Thieves, SIGGRAPH 2018",
+        "url": "https://history.siggraph.org/wp-content/uploads/2022/09/2018-Talks-Ang_The-Technical-Art-of-Sea-of-Thieves.pdf",
+        "focus": "Read section 1.1 Ocean for the game’s FFT ocean, wave-peak color mask and foam art direction.",
+        "context": "Documented production context. Our Gerstner study does not reproduce Rare’s FFT ocean.",
+        "category": "Production example"
+      }
+    ]
   },
   {
     "title": "Water in GLSL",
@@ -764,7 +1210,9 @@
     "rationale": "Keep a complete example together: result, calculation, Unreal control, then a prediction.",
     "sources": [
       "Week08ShaderLab/Workshop/Shaders/water.glsl",
-      "Week08ShaderLab/Workshop/Shaders/foam-texture.glsl"
+      "Week08ShaderLab/Workshop/Shaders/foam-texture.glsl",
+      "https://simonschreibt.de/gat/tech-art-course/",
+      "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf"
     ],
     "old_numbers": [
       20
@@ -778,7 +1226,27 @@
     "previous_number": 20,
     "preview": "previews/30.jpg",
     "lesson": "03_texture_flow",
-    "motion": "media/slide-30.gif"
+    "motion": "media/slide-30.gif",
+    "key_sources": [
+      {
+        "id": "simont",
+        "label": "Simon Trümpler: tech art",
+        "title": "Simon Trümpler / Simonschreibt — Tech Art Learning Materials",
+        "url": "https://simonschreibt.de/gat/tech-art-course/",
+        "focus": "Open My Document/Slides and its shader section for the Unreal-node and Unity-code teaching bridge.",
+        "context": "A separate educator from SimonDev. Historical engine examples need current-engine adaptation.",
+        "category": "Further study"
+      },
+      {
+        "id": "ben",
+        "label": "Ben Cloward: Shaders 101",
+        "title": "Ben Cloward — Shaders 101, GDC 2016",
+        "url": "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
+        "focus": "Read PDF pages 18–38 for UV scale, scrolling and layered distortion, and pages 54–67 for mask-based blending.",
+        "context": "A historical talk explaining calculations shared by code and node editors; its screenshots are not UE 5.7 UI instructions.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Water in Unreal HLSL",
@@ -792,7 +1260,8 @@
     "rationale": "Keep a complete example together: result, calculation, Unreal control, then a prediction.",
     "sources": [
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
-      "Week08ShaderLab/Workshop/material-graphs.json"
+      "Week08ShaderLab/Workshop/material-graphs.json",
+      "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf"
     ],
     "old_numbers": [
       21
@@ -805,7 +1274,27 @@
     "previous_number": 21,
     "preview": "previews/31.jpg",
     "lesson": null,
-    "motion": "media/slide-31.gif"
+    "motion": "media/slide-31.gif",
+    "key_sources": [
+      {
+        "id": "custom",
+        "label": "Epic: Custom HLSL",
+        "title": "Epic Games — Custom Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Read Using the Custom Material Expression: named inputs, return value, Output Type and the texture sampler example.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      },
+      {
+        "id": "ben",
+        "label": "Ben Cloward: Shaders 101",
+        "title": "Ben Cloward — Shaders 101, GDC 2016",
+        "url": "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
+        "focus": "Read PDF pages 18–38 for UV scale, scrolling and layered distortion, and pages 54–67 for mask-based blending.",
+        "context": "A historical talk explaining calculations shared by code and node editors; its screenshots are not UE 5.7 UI instructions.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Water as material nodes",
@@ -815,7 +1304,9 @@
     "notes": "The upper path creates the texture coordinates. Multiply applies tiling, and Add applies the time offset. AppendVector supplies the zero vertical component. The Texture Sample’s red output becomes Lerp Alpha. DeepColor and FoamColor are Lerp A and B. These are ordinary material nodes. The diagram groups the small coordinate calculation so the route stays readable.",
     "rationale": "A short calculation map supports the real exported graph and avoids a wall of small nodes.",
     "sources": [
-      "Week08ShaderLab/Workshop/material-graphs.json"
+      "Week08ShaderLab/Workshop/material-graphs.json",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/coordinates-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf"
     ],
     "old_numbers": [
       22
@@ -827,7 +1318,27 @@
     "previous_number": 22,
     "preview": "previews/32.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "coords",
+        "label": "Epic: UVs and Panner",
+        "title": "Epic Games — Coordinates Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/coordinates-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Find TextureCoordinate, Panner, PixelNormalWS and VertexNormalWS. Match coordinate space to the calculation.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      },
+      {
+        "id": "ben",
+        "label": "Ben Cloward: Shaders 101",
+        "title": "Ben Cloward — Shaders 101, GDC 2016",
+        "url": "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
+        "focus": "Read PDF pages 18–38 for UV scale, scrolling and layered distortion, and pages 54–67 for mask-based blending.",
+        "context": "A historical talk explaining calculations shared by code and node editors; its screenshots are not UE 5.7 UI instructions.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Water controls in Unreal",
@@ -841,7 +1352,8 @@
     "notes": "Open the water instance and expand Workshop. Start with Speed 0.125 and Tiling 2. Change only one control, predict the result, and restore it before the next experiment. FreezeTime is a capture convenience: zero uses live Time and one uses the Seconds parameter. If the water has unexpectedly stopped, inspect that value before changing the shader. Keep the common surface finish while comparing wave motion. SingleLayerWater is a separate optional shading-model study in the appendix.",
     "rationale": "Keep a complete example together: result, calculation, Unreal control, then a prediction.",
     "sources": [
-      "https://dev.epicgames.com/documentation/unreal-engine/single-layer-water-shading-model-in-unreal-engine?application_version=5.7"
+      "https://dev.epicgames.com/documentation/unreal-engine/single-layer-water-shading-model-in-unreal-engine?application_version=5.7",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7"
     ],
     "old_numbers": [
       23
@@ -852,7 +1364,27 @@
     "previous_number": 23,
     "preview": "previews/33.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "mi",
+        "label": "Epic: Material Instances",
+        "title": "Epic Games — Material Instances",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7",
+        "focus": "Read Material Parameterization and Static Parameters. Ordinary value overrides differ from compile-time switches.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      },
+      {
+        "id": "water",
+        "label": "Epic: Single Layer Water",
+        "title": "Epic Games — Single Layer Water Shading Model",
+        "url": "https://dev.epicgames.com/documentation/unreal-engine/single-layer-water-shading-model-in-unreal-engine?application_version=5.7",
+        "focus": "Read the implementation and material setup. Its Opaque/Masked blend setting can still produce a transparent-looking water surface.",
+        "context": "Unreal Engine 5.7; this is an optional engine water model, distinct from the classroom water masters.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Water: explain the change",
@@ -865,7 +1397,9 @@
     "section": "Water",
     "notes": "Use the texture image and calculation to answer. Time multiplied by Speed changes the address. The sampled red value controls the color mixture. None of the current inputs moves the mesh because the result is connected only to Emissive Color. A displacement extension would need a separate World Position Offset calculation. We will keep that extension for later. What questions do you have about these controls or connections?",
     "rationale": "Keep a complete example together: result, calculation, Unreal control, then a prediction.",
-    "sources": [],
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7"
+    ],
     "old_numbers": [
       24
     ],
@@ -876,7 +1410,18 @@
     "previous_number": 24,
     "preview": "previews/34.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "mi",
+        "label": "Epic: Material Instances",
+        "title": "Epic Games — Material Instances",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7",
+        "focus": "Read Material Parameterization and Static Parameters. Ordinary value overrides differ from compile-time switches.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "UV motion in code and nodes",
@@ -886,7 +1431,9 @@
     "section": "Code and nodes",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
     "sources": [
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7"
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/coordinates-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf"
     ],
     "old_numbers": [],
     "anchor": "NEW",
@@ -910,7 +1457,27 @@
     "number": 35,
     "preview": "previews/35.jpg",
     "lesson": "03_texture_flow",
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "coords",
+        "label": "Epic: UVs and Panner",
+        "title": "Epic Games — Coordinates Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/coordinates-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Find TextureCoordinate, Panner, PixelNormalWS and VertexNormalWS. Match coordinate space to the calculation.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      },
+      {
+        "id": "ben",
+        "label": "Ben Cloward: Shaders 101",
+        "title": "Ben Cloward — Shaders 101, GDC 2016",
+        "url": "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
+        "focus": "Read PDF pages 18–38 for UV scale, scrolling and layered distortion, and pages 54–67 for mask-based blending.",
+        "context": "A historical talk explaining calculations shared by code and node editors; its screenshots are not UE 5.7 UI instructions.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "The water comparison",
@@ -922,14 +1489,27 @@
     "notes": "All three final examples share a restrained finish so wave form and movement remain visible. Simple stays flat, Intermediate adds texture-driven height, and Advanced uses Gerstner motion. The controls that isolate a visual contribution do not necessarily remove its GPU work.",
     "section": "Water",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
-    "sources": [],
+    "sources": [
+      "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models"
+    ],
     "old_numbers": [],
     "anchor": "NEW",
     "appendix": false,
     "number": 36,
     "preview": "previews/36.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "gems",
+        "label": "Mark Finch: GPU Gems water",
+        "title": "Mark Finch — Effective Water Simulation from Physical Models, GPU Gems ch. 1",
+        "url": "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models",
+        "focus": "Read 1.2 The Sum of Sines Approximation and the Gerstner Waves subsection, then 1.2.4 Texture Waves for surface detail.",
+        "context": "Historical implementation with useful wave mathematics. The course pool grid is an original teaching study.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Simple: cross-panning and distortion",
@@ -938,7 +1518,9 @@
     "notes": "Trace coordinates to samples to the final color. First set speed to zero, then restore it. Cross-panning combines motion directions; distortion offsets the lookup before sampling.",
     "section": "Water",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
-    "sources": [],
+    "sources": [
+      "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf"
+    ],
     "old_numbers": [],
     "anchor": "NEW",
     "appendix": false,
@@ -950,7 +1532,18 @@
     "number": 37,
     "preview": "previews/37.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "ben",
+        "label": "Ben Cloward: Shaders 101",
+        "title": "Ben Cloward — Shaders 101, GDC 2016",
+        "url": "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
+        "focus": "Read PDF pages 18–38 for UV scale, scrolling and layered distortion, and pages 54–67 for mask-based blending.",
+        "context": "A historical talk explaining calculations shared by code and node editors; its screenshots are not UE 5.7 UI instructions.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Intermediate: height and normals",
@@ -959,7 +1552,10 @@
     "notes": "A normal change alters light response, not geometry. Vertex displacement changes the surface and can change the silhouette. It requires sufficient geometry, but dense geometry alone does not fix texture sampling.",
     "section": "Water",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
-    "sources": [],
+    "sources": [
+      "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/coordinates-material-expressions-in-unreal-engine?application_version=5.7"
+    ],
     "old_numbers": [],
     "anchor": "NEW",
     "appendix": false,
@@ -971,7 +1567,27 @@
     "number": 38,
     "preview": "previews/38.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "gems",
+        "label": "Mark Finch: GPU Gems water",
+        "title": "Mark Finch — Effective Water Simulation from Physical Models, GPU Gems ch. 1",
+        "url": "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models",
+        "focus": "Read 1.2 The Sum of Sines Approximation and the Gerstner Waves subsection, then 1.2.4 Texture Waves for surface detail.",
+        "context": "Historical implementation with useful wave mathematics. The course pool grid is an original teaching study.",
+        "category": "Reference"
+      },
+      {
+        "id": "coords",
+        "label": "Epic: UVs and Panner",
+        "title": "Epic Games — Coordinates Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/coordinates-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Find TextureCoordinate, Panner, PixelNormalWS and VertexNormalWS. Match coordinate space to the calculation.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Advanced: Gerstner motion",
@@ -980,7 +1596,10 @@
     "notes": "The advanced option changes the wave path, not the value of the art style. The supplied implementation includes analytic normals. It does not include buoyancy, a shoreline system or fluid simulation.",
     "section": "Water",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
-    "sources": [],
+    "sources": [
+      "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models",
+      "https://history.siggraph.org/wp-content/uploads/2022/09/2018-Talks-Ang_The-Technical-Art-of-Sea-of-Thieves.pdf"
+    ],
     "old_numbers": [],
     "anchor": "NEW",
     "appendix": false,
@@ -992,7 +1611,27 @@
     "number": 39,
     "preview": "previews/39.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "gems",
+        "label": "Mark Finch: GPU Gems water",
+        "title": "Mark Finch — Effective Water Simulation from Physical Models, GPU Gems ch. 1",
+        "url": "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models",
+        "focus": "Read 1.2 The Sum of Sines Approximation and the Gerstner Waves subsection, then 1.2.4 Texture Waves for surface detail.",
+        "context": "Historical implementation with useful wave mathematics. The course pool grid is an original teaching study.",
+        "category": "Reference"
+      },
+      {
+        "id": "rare",
+        "label": "Rare: Sea of Thieves",
+        "title": "Ang, Catling, Cifariello Ciardi & Kozin — The Technical Art of Sea of Thieves, SIGGRAPH 2018",
+        "url": "https://history.siggraph.org/wp-content/uploads/2022/09/2018-Talks-Ang_The-Technical-Art-of-Sea-of-Thieves.pdf",
+        "focus": "Read section 1.1 Ocean for the game’s FFT ocean, wave-peak color mask and foam art direction.",
+        "context": "Documented production context. Our Gerstner study does not reproduce Rare’s FFT ocean.",
+        "category": "Production example"
+      }
+    ]
   },
   {
     "title": "Water controls to investigate",
@@ -1001,7 +1640,10 @@
     "notes": "Pick one row and one variable. Your first task is to establish a cause, not to make the most elaborate water. We will use these saved conditions again when discussing evidence and performance.",
     "section": "Water",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
-    "sources": [],
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7",
+      "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models"
+    ],
     "old_numbers": [],
     "anchor": "NEW",
     "appendix": false,
@@ -1036,7 +1678,27 @@
     "number": 40,
     "preview": "previews/40.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "mi",
+        "label": "Epic: Material Instances",
+        "title": "Epic Games — Material Instances",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7",
+        "focus": "Read Material Parameterization and Static Parameters. Ordinary value overrides differ from compile-time switches.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      },
+      {
+        "id": "gems",
+        "label": "Mark Finch: GPU Gems water",
+        "title": "Mark Finch — Effective Water Simulation from Physical Models, GPU Gems ch. 1",
+        "url": "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models",
+        "focus": "Read 1.2 The Sum of Sines Approximation and the Gerstner Waves subsection, then 1.2.4 Texture Waves for surface detail.",
+        "context": "Historical implementation with useful wave mathematics. The course pool grid is an original teaching study.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Lighting and artistic intent",
@@ -1047,14 +1709,37 @@
     "notes": "Light describes form, directs attention, and establishes mood.",
     "section": "Lighting and artistic intent",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
-    "sources": [],
+    "sources": [
+      "https://www.3drender.com/light/3point.html",
+      "https://www.khanacademy.org/computing/pixar/art-of-lighting"
+    ],
     "old_numbers": [],
     "anchor": "NEW",
     "appendix": false,
     "number": 41,
     "preview": "previews/41.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "birn",
+        "label": "Jeremy Birn: three-point light",
+        "title": "Jeremy Birn — Three-Point Lighting for 3D Renderings",
+        "url": "https://www.3drender.com/light/3point.html",
+        "focus": "Follow the key, fill and rim additions. Observe how illumination and separation change before adjusting material color.",
+        "context": "Artistic lighting study; actual scene lights differ from our Unlit view-angle accents.",
+        "category": "Reference"
+      },
+      {
+        "id": "pixar",
+        "label": "Pixar: Art of Lighting",
+        "title": "Pixar in a Box / Khan Academy — Art of Lighting",
+        "url": "https://www.khanacademy.org/computing/pixar/art-of-lighting",
+        "focus": "Explore lighting as a way to direct attention and support a scene’s visual intent.",
+        "context": "Artistic further study, independent of the engine.",
+        "category": "Further study"
+      }
+    ]
   },
   {
     "title": "Value and visual hierarchy",
@@ -1077,7 +1762,18 @@
     "number": 42,
     "preview": "previews/42.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "pixar",
+        "label": "Pixar: Art of Lighting",
+        "title": "Pixar in a Box / Khan Academy — Art of Lighting",
+        "url": "https://www.khanacademy.org/computing/pixar/art-of-lighting",
+        "focus": "Explore lighting as a way to direct attention and support a scene’s visual intent.",
+        "context": "Artistic further study, independent of the engine.",
+        "category": "Further study"
+      }
+    ]
   },
   {
     "title": "Key and fill",
@@ -1086,7 +1782,9 @@
     "notes": "These are real Unreal light actors on a Default Lit surface. Predict which shadow areas will become visible when the fill is added. The fill should support your intended hierarchy; equal light from every direction can erase it.",
     "section": "Lighting and color",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
-    "sources": [],
+    "sources": [
+      "https://www.3drender.com/light/3point.html"
+    ],
     "old_numbers": [],
     "anchor": "NEW",
     "appendix": false,
@@ -1098,7 +1796,18 @@
     "number": 43,
     "preview": "previews/43.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "birn",
+        "label": "Jeremy Birn: three-point light",
+        "title": "Jeremy Birn — Three-Point Lighting for 3D Renderings",
+        "url": "https://www.3drender.com/light/3point.html",
+        "focus": "Follow the key, fill and rim additions. Observe how illumination and separation change before adjusting material color.",
+        "context": "Artistic lighting study; actual scene lights differ from our Unlit view-angle accents.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "A real rim light",
@@ -1107,7 +1816,9 @@
     "notes": "The rim comes from a light placed behind the object. It depends on the light, surface, view and visibility. It is distinct from a material mask based only on the viewing angle.",
     "section": "Lighting and color",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
-    "sources": [],
+    "sources": [
+      "https://www.3drender.com/light/3point.html"
+    ],
     "old_numbers": [],
     "anchor": "NEW",
     "appendix": false,
@@ -1119,7 +1830,18 @@
     "number": 44,
     "preview": "previews/44.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "birn",
+        "label": "Jeremy Birn: three-point light",
+        "title": "Jeremy Birn — Three-Point Lighting for 3D Renderings",
+        "url": "https://www.3drender.com/light/3point.html",
+        "focus": "Follow the key, fill and rim additions. Observe how illumination and separation change before adjusting material color.",
+        "context": "Artistic lighting study; actual scene lights differ from our Unlit view-angle accents.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Lighting choices",
@@ -1166,7 +1888,18 @@
     "number": 45,
     "preview": "previews/45.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "birn",
+        "label": "Jeremy Birn: three-point light",
+        "title": "Jeremy Birn — Three-Point Lighting for 3D Renderings",
+        "url": "https://www.3drender.com/light/3point.html",
+        "focus": "Follow the key, fill and rim additions. Observe how illumination and separation change before adjusting material color.",
+        "context": "Artistic lighting study; actual scene lights differ from our Unlit view-angle accents.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Surface color and the lit result",
@@ -1189,7 +1922,18 @@
     "number": 46,
     "preview": "previews/46.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "pbr",
+        "label": "Epic: PBR inputs",
+        "title": "Epic Games — Physically Based Materials",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/physically-based-materials-in-unreal-engine?application_version=5.7",
+        "focus": "Read Base Color, Roughness, Metallic and Specular. Compare the material input with its lit appearance.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Toon response and palettes",
@@ -1200,14 +1944,37 @@
     "notes": "Use the light response as a signal that chooses colors.",
     "section": "Toon response and palettes",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
-    "sources": [],
+    "sources": [
+      "https://jettelly.com/store/the-unity-shaders-bible",
+      "https://learnopengl.com/Lighting/Basic-Lighting"
+    ],
     "old_numbers": [],
     "anchor": "NEW",
     "appendix": false,
     "number": 47,
     "preview": "previews/47.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "bible",
+        "label": "Jettelly: Unity Shaders Bible",
+        "title": "Fabrizio Espíndola / Jettelly — The Unity Shaders Bible",
+        "url": "https://jettelly.com/store/the-unity-shaders-bible",
+        "focus": "Use Introduction to the Programming Language for HLSL and node concepts; Lighting, Shadows, and Surfaces for deeper lighting study.",
+        "context": "Optional paid book with a publisher-provided sample. Unity HLSL, ShaderLab and Shader Graph require adaptation to Unreal; no purchase is required.",
+        "category": "Further study"
+      },
+      {
+        "id": "diffuse",
+        "label": "LearnOpenGL: diffuse light",
+        "title": "Joey de Vries — LearnOpenGL, Basic Lighting",
+        "url": "https://learnopengl.com/Lighting/Basic-Lighting",
+        "focus": "Read Diffuse lighting for the normal/light dot product. Our toon study adds thresholds and artist-selected colors.",
+        "context": "An OpenGL lighting explanation, not Unreal’s complete Default Lit implementation.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Toon bands in GLSL",
@@ -1220,7 +1987,9 @@
     "notes": "Normalize the surface normal and an artist-controlled direction. Their dot product measures alignment. Clamp it to zero through one, then compare it with Threshold using Step. The result is either zero or one, so the mix selects one of the two colors. The preview rotates the direction so we can see the boundary move.",
     "rationale": "Keep a complete example together: result, calculation, Unreal control, then a prediction.",
     "sources": [
-      "Week08ShaderLab/Workshop/Shaders/toon.glsl"
+      "Week08ShaderLab/Workshop/Shaders/toon.glsl",
+      "https://learnopengl.com/Lighting/Basic-Lighting",
+      "https://thebookofshaders.com/05/"
     ],
     "old_numbers": [
       26
@@ -1234,7 +2003,27 @@
     "previous_number": 26,
     "preview": "previews/48.jpg",
     "lesson": "04_toon",
-    "motion": "media/slide-48.gif"
+    "motion": "media/slide-48.gif",
+    "key_sources": [
+      {
+        "id": "diffuse",
+        "label": "LearnOpenGL: diffuse light",
+        "title": "Joey de Vries — LearnOpenGL, Basic Lighting",
+        "url": "https://learnopengl.com/Lighting/Basic-Lighting",
+        "focus": "Read Diffuse lighting for the normal/light dot product. Our toon study adds thresholds and artist-selected colors.",
+        "context": "An OpenGL lighting explanation, not Unreal’s complete Default Lit implementation.",
+        "category": "Reference"
+      },
+      {
+        "id": "bosshape",
+        "label": "Book of Shaders: functions",
+        "title": "Patricio Gonzalez Vivo & Jen Lowe — The Book of Shaders, Shaping functions",
+        "url": "https://thebookofshaders.com/05/",
+        "focus": "Start with Step and Smoothstep. Change the threshold or transition interval before combining operations.",
+        "context": "Free interactive GLSL exercises; compare the argument order with Unreal nodes.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Toon bands in Unreal HLSL",
@@ -1247,7 +2036,9 @@
     "notes": "HLSL has saturate as a compact way to clamp from zero to one. Unreal’s PixelNormalWS supplies the normal. LightDirection is a vector parameter, so this Unlit example does not read a scene light automatically. The animation here is an automated sweep of that parameter, captured from Unreal. The material itself has no Time input.",
     "rationale": "Keep a complete example together: result, calculation, Unreal control, then a prediction.",
     "sources": [
-      "Week08ShaderLab/Workshop/Shaders/toon.hlsl"
+      "Week08ShaderLab/Workshop/Shaders/toon.hlsl",
+      "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+      "https://learnopengl.com/Lighting/Basic-Lighting"
     ],
     "old_numbers": [
       27
@@ -1260,7 +2051,27 @@
     "previous_number": 27,
     "preview": "previews/49.jpg",
     "lesson": null,
-    "motion": "media/slide-49.gif"
+    "motion": "media/slide-49.gif",
+    "key_sources": [
+      {
+        "id": "hlsl",
+        "label": "Microsoft: HLSL functions",
+        "title": "Microsoft — HLSL Intrinsic Functions",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+        "focus": "Follow the per-function links for lerp, saturate, step, normalize and dot. Check arguments and return values.",
+        "context": "Language reference; Unreal’s Custom node supplies its own input/output wrapper.",
+        "category": "Reference"
+      },
+      {
+        "id": "diffuse",
+        "label": "LearnOpenGL: diffuse light",
+        "title": "Joey de Vries — LearnOpenGL, Basic Lighting",
+        "url": "https://learnopengl.com/Lighting/Basic-Lighting",
+        "focus": "Read Diffuse lighting for the normal/light dot product. Our toon study adds thresholds and artist-selected colors.",
+        "context": "An OpenGL lighting explanation, not Unreal’s complete Default Lit implementation.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Toon bands as material nodes",
@@ -1283,7 +2094,18 @@
     "previous_number": 28,
     "preview": "previews/50.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "math",
+        "label": "Epic: material math",
+        "title": "Epic Games — Math Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Look up Multiply, LinearInterpolate, DotProduct, Step and Sine. Check each input order and Sine Period.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Toon controls in Unreal",
@@ -1296,7 +2118,9 @@
     "section": "Toon",
     "notes": "Change Threshold and watch the light-colored region shrink as the cutoff rises. Restore 0.45. Then change the LightDirection vector, which is interpreted in world space. A color picker is used to edit this vector parameter, but its components represent direction rather than a display color. Restore 0.7, minus 0.45, 0.6.",
     "rationale": "Keep a complete example together: result, calculation, Unreal control, then a prediction.",
-    "sources": [],
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7"
+    ],
     "old_numbers": [
       29
     ],
@@ -1306,7 +2130,18 @@
     "previous_number": 29,
     "preview": "previews/51.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "mi",
+        "label": "Epic: Material Instances",
+        "title": "Epic Games — Material Instances",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7",
+        "focus": "Read Material Parameterization and Static Parameters. Ordinary value overrides differ from compile-time switches.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "What the toon study leaves out",
@@ -1319,7 +2154,9 @@
     "section": "Toon",
     "notes": "This example isolates a band threshold. Scene lights and cast shadows do not drive its Unlit calculation. Outlines, face shading and complete toon rendering remain optional later topics. Week 9 focuses on profiling and production tradeoffs.",
     "rationale": "Keep a complete example together: result, calculation, Unreal control, then a prediction.",
-    "sources": [],
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/physically-based-materials-in-unreal-engine?application_version=5.7"
+    ],
     "old_numbers": [
       30
     ],
@@ -1329,7 +2166,18 @@
     "previous_number": 30,
     "preview": "previews/52.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "pbr",
+        "label": "Epic: PBR inputs",
+        "title": "Epic Games — Physically Based Materials",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/physically-based-materials-in-unreal-engine?application_version=5.7",
+        "focus": "Read Base Color, Roughness, Metallic and Specular. Compare the material input with its lit appearance.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Toon bands → native nodes",
@@ -1339,7 +2187,9 @@
     "section": "Code and nodes",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
     "sources": [
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7"
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://learnopengl.com/Lighting/Basic-Lighting"
     ],
     "old_numbers": [],
     "anchor": "NEW",
@@ -1363,7 +2213,27 @@
     "number": 53,
     "preview": "previews/53.jpg",
     "lesson": "04_toon",
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "math",
+        "label": "Epic: material math",
+        "title": "Epic Games — Math Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Look up Multiply, LinearInterpolate, DotProduct, Step and Sine. Check each input order and Sine Period.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      },
+      {
+        "id": "diffuse",
+        "label": "LearnOpenGL: diffuse light",
+        "title": "Joey de Vries — LearnOpenGL, Basic Lighting",
+        "url": "https://learnopengl.com/Lighting/Basic-Lighting",
+        "focus": "Read Diffuse lighting for the normal/light dot product. Our toon study adds thresholds and artist-selected colors.",
+        "context": "An OpenGL lighting explanation, not Unreal’s complete Default Lit implementation.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Custom palette",
@@ -1372,7 +2242,10 @@
     "notes": "The custom palette deliberately uses teal shadows, coral midtones and a pale highlight. Open its MI. Change one color while holding thresholds fixed, then change a threshold while holding colors fixed.",
     "section": "Lighting and color",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
-    "sources": [],
+    "sources": [
+      "https://iquilezles.org/articles/palettes/",
+      "https://thebookofshaders.com/06/"
+    ],
     "old_numbers": [],
     "anchor": "NEW",
     "appendix": false,
@@ -1384,7 +2257,27 @@
     "number": 54,
     "preview": "previews/54.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "iq",
+        "label": "Iñigo Quílez: Palettes",
+        "title": "Iñigo Quílez — Palettes",
+        "url": "https://iquilezles.org/articles/palettes/",
+        "focus": "Explore procedural palettes as an extension to choosing the colors in our banded study.",
+        "context": "Optional extension. The classroom example uses explicit color parameters, not this article’s palette implementation.",
+        "category": "Further study"
+      },
+      {
+        "id": "boscolor",
+        "label": "Book of Shaders: Color",
+        "title": "Patricio Gonzalez Vivo & Jen Lowe — The Book of Shaders, Colors",
+        "url": "https://thebookofshaders.com/06/",
+        "focus": "Try the Mixing color examples, then compare GLSL mix with HLSL lerp and Unreal Lerp.",
+        "context": "Free interactive GLSL chapter; the engine wrapper differs from the classroom Three.js and Unreal projects.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Band controls in Unreal",
@@ -1397,7 +2290,10 @@
     "notes": "The shadow, two mid colors and BaseColor are independent. Raising a boundary grows the darker region below it. The shader enforces a small gap when thresholds cross. Equal-width Bands remains available with PaletteMix zero.",
     "section": "Toon and palette",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
-    "sources": [],
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7",
+      "https://thebookofshaders.com/05/"
+    ],
     "old_numbers": [],
     "anchor": "NEW",
     "appendix": false,
@@ -1405,7 +2301,27 @@
     "number": 55,
     "preview": "previews/55.jpg",
     "lesson": "06_painted_bands",
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "mi",
+        "label": "Epic: Material Instances",
+        "title": "Epic Games — Material Instances",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7",
+        "focus": "Read Material Parameterization and Static Parameters. Ordinary value overrides differ from compile-time switches.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      },
+      {
+        "id": "bosshape",
+        "label": "Book of Shaders: functions",
+        "title": "Patricio Gonzalez Vivo & Jen Lowe — The Book of Shaders, Shaping functions",
+        "url": "https://thebookofshaders.com/05/",
+        "focus": "Start with Step and Smoothstep. Change the threshold or transition interval before combining operations.",
+        "context": "Free interactive GLSL exercises; compare the argument order with Unreal nodes.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Brush texture in the light response",
@@ -1414,7 +2330,10 @@
     "notes": "This grayscale texture is data, with sRGB disabled. Its neutral midpoint produces no shift. TextureInfluence zero restores the clean boundaries. This modifies a shading signal rather than the mesh or its physical normals.",
     "section": "Lighting and color",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
-    "sources": [],
+    "sources": [
+      "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
+      "https://thebookofshaders.com/05/"
+    ],
     "old_numbers": [],
     "anchor": "NEW",
     "appendix": false,
@@ -1426,7 +2345,27 @@
     "number": 56,
     "preview": "previews/56.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "ben",
+        "label": "Ben Cloward: Shaders 101",
+        "title": "Ben Cloward — Shaders 101, GDC 2016",
+        "url": "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
+        "focus": "Read PDF pages 18–38 for UV scale, scrolling and layered distortion, and pages 54–67 for mask-based blending.",
+        "context": "A historical talk explaining calculations shared by code and node editors; its screenshots are not UE 5.7 UI instructions.",
+        "category": "Reference"
+      },
+      {
+        "id": "bosshape",
+        "label": "Book of Shaders: functions",
+        "title": "Patricio Gonzalez Vivo & Jen Lowe — The Book of Shaders, Shaping functions",
+        "url": "https://thebookofshaders.com/05/",
+        "focus": "Start with Step and Smoothstep. Change the threshold or transition interval before combining operations.",
+        "context": "Free interactive GLSL exercises; compare the argument order with Unreal nodes.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Painted bands → native nodes",
@@ -1436,7 +2375,8 @@
     "section": "Code and nodes",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
     "sources": [
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7"
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7"
     ],
     "old_numbers": [],
     "anchor": "NEW",
@@ -1460,7 +2400,27 @@
     "number": 57,
     "preview": "previews/57.jpg",
     "lesson": "06_painted_bands",
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "math",
+        "label": "Epic: material math",
+        "title": "Epic Games — Math Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Look up Multiply, LinearInterpolate, DotProduct, Step and Sine. Check each input order and Sine Period.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      },
+      {
+        "id": "custom",
+        "label": "Epic: Custom HLSL",
+        "title": "Epic Games — Custom Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Read Using the Custom Material Expression: named inputs, return value, Output Type and the texture sampler example.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Texture scale and shading style",
@@ -1469,7 +2429,10 @@
     "notes": "The brush texture is sampled through UVs. Pixel-grid shading approximates a normal per screen cell. The mesh outline remains smooth. These are separate artistic choices; neither is a full painterly or pixel-art renderer.",
     "section": "Lighting and color",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
-    "sources": [],
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/coordinates-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-asset-editor-in-unreal-engine?application_version=5.7"
+    ],
     "old_numbers": [],
     "anchor": "NEW",
     "appendix": false,
@@ -1481,7 +2444,27 @@
     "number": 58,
     "preview": "previews/58.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "coords",
+        "label": "Epic: UVs and Panner",
+        "title": "Epic Games — Coordinates Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/coordinates-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Find TextureCoordinate, Panner, PixelNormalWS and VertexNormalWS. Match coordinate space to the calculation.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      },
+      {
+        "id": "texture",
+        "label": "Epic: texture data",
+        "title": "Epic Games — Texture Asset Editor",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-asset-editor-in-unreal-engine?application_version=5.7",
+        "focus": "Find sRGB, channel preview, filtering and mip settings. Distinguish color images from numerical data.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Fresnel and edge accents",
@@ -1492,14 +2475,27 @@
     "notes": "A viewing-angle mask can blend toward a bright or dark edge color.",
     "section": "Fresnel and edge accents",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
-    "sources": [],
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/utility-material-expressions-in-unreal-engine?application_version=5.7"
+    ],
     "old_numbers": [],
     "anchor": "NEW",
     "appendix": false,
     "number": 59,
     "preview": "previews/59.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "utility",
+        "label": "Epic: Fresnel / DepthFade",
+        "title": "Epic Games — Utility Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/utility-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Find Fresnel for view-angle controls, or DepthFade for translucent intersections. These perform different jobs.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Bright and dark view edges",
@@ -1508,7 +2504,9 @@
     "notes": "Move the camera and observe the edge. Increase RimPower to narrow it. The current study uses a zero-baseline view mask; Unreal Fresnel also exposes a face-on BaseReflectFraction. A material view mask is distinct from the real rim light shown earlier.",
     "section": "Lighting and color",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
-    "sources": [],
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/utility-material-expressions-in-unreal-engine?application_version=5.7"
+    ],
     "old_numbers": [],
     "anchor": "NEW",
     "appendix": false,
@@ -1520,7 +2518,18 @@
     "number": 60,
     "preview": "previews/60.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "utility",
+        "label": "Epic: Fresnel / DepthFade",
+        "title": "Epic Games — Utility Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/utility-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Find Fresnel for view-angle controls, or DepthFade for translucent intersections. These perform different jobs.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Fresnel-style mask → native nodes",
@@ -1530,7 +2539,9 @@
     "section": "Code and nodes",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
     "sources": [
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7"
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/utility-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions"
     ],
     "old_numbers": [],
     "anchor": "NEW",
@@ -1554,7 +2565,27 @@
     "number": 61,
     "preview": "previews/61.jpg",
     "lesson": "05_fresnel",
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "utility",
+        "label": "Epic: Fresnel / DepthFade",
+        "title": "Epic Games — Utility Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/utility-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Find Fresnel for view-angle controls, or DepthFade for translucent intersections. These perform different jobs.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      },
+      {
+        "id": "hlsl",
+        "label": "Microsoft: HLSL functions",
+        "title": "Microsoft — HLSL Intrinsic Functions",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+        "focus": "Follow the per-function links for lerp, saturate, step, normalize and dot. Check arguments and return values.",
+        "context": "Language reference; Unreal’s Custom node supplies its own input/output wrapper.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "body": [],
@@ -1583,7 +2614,18 @@
     "previous_number": 54,
     "preview": "previews/62.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "utility",
+        "label": "Epic: Fresnel / DepthFade",
+        "title": "Epic Games — Utility Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/utility-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Find Fresnel for view-angle controls, or DepthFade for translucent intersections. These perform different jobs.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Roughness and reflection",
@@ -1592,7 +2634,9 @@
     "notes": "Roughness changes the distribution of reflected light. This affects the size and sharpness of highlights. Do not describe it as a universal brightness slider.",
     "section": "Lighting and color",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
-    "sources": [],
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/physically-based-materials-in-unreal-engine?application_version=5.7"
+    ],
     "old_numbers": [],
     "anchor": "NEW",
     "appendix": false,
@@ -1604,7 +2648,18 @@
     "number": 63,
     "preview": "previews/63.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "pbr",
+        "label": "Epic: PBR inputs",
+        "title": "Epic Games — Physically Based Materials",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/physically-based-materials-in-unreal-engine?application_version=5.7",
+        "focus": "Read Base Color, Roughness, Metallic and Specular. Compare the material input with its lit appearance.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Predict, then inspect",
@@ -1617,14 +2672,27 @@
     "notes": "Point to the input that supports your answer. If a result is surprising, first check the assigned instance, override checkbox, blend mode, coordinate space and texture interpretation.",
     "section": "Discussion",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
-    "sources": [],
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/physically-based-materials-in-unreal-engine?application_version=5.7"
+    ],
     "old_numbers": [],
     "anchor": "NEW",
     "appendix": false,
     "number": 64,
     "preview": "previews/64.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "pbr",
+        "label": "Epic: PBR inputs",
+        "title": "Epic Games — Physically Based Materials",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/physically-based-materials-in-unreal-engine?application_version=5.7",
+        "focus": "Read Base Color, Roughness, Metallic and Specular. Compare the material input with its lit appearance.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Investigate a material",
@@ -1637,14 +2705,27 @@
     "notes": "Use a supplied water material to make two readable conditions.",
     "section": "Lab 1 · Material investigation",
     "rationale": "Introduce the input, connect the operation to Unreal, inspect the visible result, then change one control.",
-    "sources": [],
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7"
+    ],
     "old_numbers": [],
     "anchor": "NEW",
     "appendix": false,
     "number": 65,
     "preview": "previews/65.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "mi",
+        "label": "Epic: Material Instances",
+        "title": "Epic Games — Material Instances",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7",
+        "focus": "Read Material Parameterization and Static Parameters. Ordinary value overrides differ from compile-time switches.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Lab 1: two water conditions",
@@ -1657,7 +2738,9 @@
     "rationale": "Keep a complete example together: result, calculation, Unreal control, then a prediction.",
     "sources": [
       "Labs.html",
-      "Water_References.html"
+      "Water_References.html",
+      "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
+      "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models"
     ],
     "old_numbers": [
       35
@@ -1668,7 +2751,27 @@
     "previous_number": 35,
     "preview": "previews/66.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "ben",
+        "label": "Ben Cloward: Shaders 101",
+        "title": "Ben Cloward — Shaders 101, GDC 2016",
+        "url": "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
+        "focus": "Read PDF pages 18–38 for UV scale, scrolling and layered distortion, and pages 54–67 for mask-based blending.",
+        "context": "A historical talk explaining calculations shared by code and node editors; its screenshots are not UE 5.7 UI instructions.",
+        "category": "Reference"
+      },
+      {
+        "id": "gems",
+        "label": "Mark Finch: GPU Gems water",
+        "title": "Mark Finch — Effective Water Simulation from Physical Models, GPU Gems ch. 1",
+        "url": "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models",
+        "focus": "Read 1.2 The Sum of Sines Approximation and the Gerstner Waves subsection, then 1.2.4 Texture Waves for surface detail.",
+        "context": "Historical implementation with useful wave mathematics. The course pool grid is an original teaching study.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "A controlled test, then two variants",
@@ -1683,7 +2786,8 @@
     "rationale": "Keep a complete example together: result, calculation, Unreal control, then a prediction.",
     "sources": [
       "Labs.html",
-      "Lab1_Investigation.html"
+      "Lab1_Investigation.html",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7"
     ],
     "old_numbers": [
       36
@@ -1695,7 +2799,18 @@
     "previous_number": 36,
     "preview": "previews/67.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "mi",
+        "label": "Epic: Material Instances",
+        "title": "Epic Games — Material Instances",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7",
+        "focus": "Read Material Parameterization and Static Parameters. Ordinary value overrides differ from compile-time switches.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Lab 1: show the difference",
@@ -1710,7 +2825,8 @@
     "rationale": "Keep a complete example together: result, calculation, Unreal control, then a prediction.",
     "sources": [
       "Labs.html",
-      "Water_References.html"
+      "Water_References.html",
+      "https://history.siggraph.org/wp-content/uploads/2022/09/2018-Talks-Ang_The-Technical-Art-of-Sea-of-Thieves.pdf"
     ],
     "old_numbers": [
       37
@@ -1721,7 +2837,18 @@
     "previous_number": 37,
     "preview": "previews/68.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "rare",
+        "label": "Rare: Sea of Thieves",
+        "title": "Ang, Catling, Cifariello Ciardi & Kozin — The Technical Art of Sea of Thieves, SIGGRAPH 2018",
+        "url": "https://history.siggraph.org/wp-content/uploads/2022/09/2018-Talks-Ang_The-Technical-Art-of-Sea-of-Thieves.pdf",
+        "focus": "Read section 1.1 Ocean for the game’s FFT ocean, wave-peak color mask and foam art direction.",
+        "context": "Documented production context. Our Gerstner study does not reproduce Rare’s FFT ocean.",
+        "category": "Production example"
+      }
+    ]
   },
   {
     "title": "Break",
@@ -1742,7 +2869,8 @@
     "previous_number": 38,
     "preview": "previews/69.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": []
   },
   {
     "title": "Lab 2 · Begin your shader",
@@ -1760,7 +2888,8 @@
     "number": 70,
     "preview": "previews/70.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": []
   },
   {
     "title": "Lab 2: start your shader homework",
@@ -1773,7 +2902,10 @@
     "section": "Lab 2",
     "notes": "Use this time to start the homework. Choose one small effect we did not build together. You can adapt a supplied material or research a technique. Keep the scope small enough that you can explain what each important input does. You do not need to finish an elaborate shader in class.",
     "rationale": "Keep a complete example together: result, calculation, Unreal control, then a prediction.",
-    "sources": [],
+    "sources": [
+      "https://www.bencloward.com/resources.shtml",
+      "https://jettelly.com/store/the-unity-shaders-bible"
+    ],
     "old_numbers": [
       39
     ],
@@ -1783,7 +2915,27 @@
     "previous_number": 39,
     "preview": "previews/71.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "benvideos",
+        "label": "Ben Cloward: tutorials",
+        "title": "Ben Cloward — Shader tutorial videos and HLSL resources",
+        "url": "https://www.bencloward.com/resources.shtml",
+        "focus": "Use Shader Tutorial Videos for artist-focused node lessons and HLSL Training Videos for code.",
+        "context": "Author-maintained resource index. Tutorial engine versions vary.",
+        "category": "Further study"
+      },
+      {
+        "id": "bible",
+        "label": "Jettelly: Unity Shaders Bible",
+        "title": "Fabrizio Espíndola / Jettelly — The Unity Shaders Bible",
+        "url": "https://jettelly.com/store/the-unity-shaders-bible",
+        "focus": "Use Introduction to the Programming Language for HLSL and node concepts; Lighting, Shadows, and Surfaces for deeper lighting study.",
+        "context": "Optional paid book with a publisher-provided sample. Unity HLSL, ShaderLab and Shader Graph require adaptation to Unreal; no purchase is required.",
+        "category": "Further study"
+      }
+    ]
   },
   {
     "title": "Choose a small visual goal",
@@ -1796,7 +2948,9 @@
     "section": "Lab 2",
     "notes": "A different color is a useful starting point. Then add a small behavior or combine inputs in a new way. A simple pulsing sign or reveal is enough if you can explain it. If you use a tutorial, keep the link and say what you adapted. An unfinished experiment is still a useful start today.",
     "rationale": "Keep a complete example together: result, calculation, Unreal control, then a prediction.",
-    "sources": [],
+    "sources": [
+      "https://thebookofshaders.com/05/"
+    ],
     "old_numbers": [
       40
     ],
@@ -1806,7 +2960,18 @@
     "previous_number": 40,
     "preview": "previews/72.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "bosshape",
+        "label": "Book of Shaders: functions",
+        "title": "Patricio Gonzalez Vivo & Jen Lowe — The Book of Shaders, Shaping functions",
+        "url": "https://thebookofshaders.com/05/",
+        "focus": "Start with Step and Smoothstep. Change the threshold or transition interval before combining operations.",
+        "context": "Free interactive GLSL exercises; compare the argument order with Unreal nodes.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Explain your shader briefly",
@@ -1819,7 +2984,9 @@
     "section": "Lab 2",
     "notes": "Keep this short. Describe what you wanted, the inputs, the operation you changed, what happened when you adjusted a parameter, and what you would try next. Use three terms accurately by connecting each to your own example. The template is a small document, not a long technical report. The class period is for beginning the homework; submission details follow the course instructions.",
     "rationale": "Keep a complete example together: result, calculation, Unreal control, then a prediction.",
-    "sources": [],
+    "sources": [
+      "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf"
+    ],
     "old_numbers": [
       41
     ],
@@ -1830,7 +2997,18 @@
     "previous_number": 41,
     "preview": "previews/73.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "ben",
+        "label": "Ben Cloward: Shaders 101",
+        "title": "Ben Cloward — Shaders 101, GDC 2016",
+        "url": "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
+        "focus": "Read PDF pages 18–38 for UV scale, scrolling and layered distortion, and pages 54–67 for mask-based blending.",
+        "context": "A historical talk explaining calculations shared by code and node editors; its screenshots are not UE 5.7 UI instructions.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "title": "Save the Week 9 comparison",
@@ -1852,7 +3030,8 @@
     "number": 74,
     "preview": "previews/74.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": []
   },
   {
     "title": "Exit questions",
@@ -1875,7 +3054,8 @@
     "previous_number": 42,
     "preview": "previews/75.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": []
   },
   {
     "title": "Week 9 · Profiling and tradeoffs",
@@ -1898,7 +3078,8 @@
     "previous_number": 43,
     "preview": "previews/76.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": []
   },
   {
     "title": "Optional Unreal setup",
@@ -1911,7 +3092,10 @@
     "section": "Reference",
     "notes": "Both maps are already saved. Open them from Content Browser → Week08 → 00_Maps. Lighting materials are in 06_Lighting; water materials are in 03_Water. Use the named overview cameras. Save personal changes before switching maps.",
     "rationale": "Keep a complete example together: result, calculation, Unreal control, then a prediction.",
-    "sources": [],
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-main-material-node-in-unreal-engine?application_version=5.7",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/content-examples-sample-project-for-unreal-engine"
+    ],
     "old_numbers": [
       44
     ],
@@ -1922,18 +3106,38 @@
     "caption": "Use the World Outliner folders and named cameras to find each bay.",
     "preview": "previews/77.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "main",
+        "label": "Epic: Material Editor",
+        "title": "Epic Games — Using the Main Material Node",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-main-material-node-in-unreal-engine?application_version=5.7",
+        "focus": "Read Material Inputs and Material Properties for enabled pins, defaults and the output node.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      },
+      {
+        "id": "samples",
+        "label": "Epic: Content Examples",
+        "title": "Epic Games — Content Examples",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/content-examples-sample-project-for-unreal-engine",
+        "focus": "Use the Materials and related example maps as a separate guided exploration. Follow the stations named in the course reference room.",
+        "context": "Official sample project. Obtain a version compatible with your Unreal installation.",
+        "category": "Further study"
+      }
+    ]
   },
   {
-    "title": "Sources and further study",
-    "kind": "text",
+    "title": "Key sources by topic",
+    "kind": "sourceguide",
     "body": [
       "Nintendo: Iwata Asks, The Wind Waker HD.",
       "Rare: The Technical Art of Sea of Thieves, SIGGRAPH 2018.",
       "Epic: Content Examples and the material reference room."
     ],
     "section": "Reference",
-    "notes": "The Nintendo interview supports discussion of artistic intent, lighting, and color. Rare’s paper documents the larger ocean implementation. Epic documentation is the reference for the Unreal controls and expressions. The class examples and foam texture source are original teaching materials. Additional game examples should be treated as visual hypotheses until backed by a developer source.",
+    "notes": "Use the reading guide by topic. Epic is the first stop for Unreal settings. Ben Cloward explains the same calculations in artist-friendly node examples. Iñigo Quílez offers further shader experiments. The Unity Shaders Bible is an optional Unity-focused book, so its engine code needs translation. Ned’s original PDF is available for notes, and his closing slide credits LearnOpenGL for diagram inspiration. Mark Finch’s GPU Gems chapter provides the wave-math extension. Each topic in our deck has a short source pointer and a focused reading note.",
     "rationale": "Keep a complete example together: result, calculation, Unreal control, then a prediction.",
     "sources": [
       "https://www.nintendo.com/en-gb/Iwata-Asks/Iwata-Asks-The-Legend-of-Zelda-The-Wind-Waker-HD/The-Legend-of-Zelda-The-Wind-Waker-HD/5-Over-designed/5-Over-designed-807330.html",
@@ -1943,7 +3147,33 @@
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/content-examples-sample-project-for-unreal-engine?application_version=5.7",
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/utility-material-expressions-in-unreal-engine?application_version=5.7",
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/texturing-material-functions-in-unreal-engine?application_version=5.7",
-      "https://dev.epicgames.com/documentation/unreal-engine/single-layer-water-shading-model-in-unreal-engine?application_version=5.7"
+      "https://dev.epicgames.com/documentation/unreal-engine/single-layer-water-shading-model-in-unreal-engine?application_version=5.7",
+      "https://www.bencloward.com/resources.shtml",
+      "https://iquilezles.org/articles/palettes/",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-main-material-node-in-unreal-engine?application_version=5.7",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-asset-editor-in-unreal-engine?application_version=5.7",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/material-blend-modes-in-unreal-engine?application_version=5.7",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-transparency-in-unreal-engine-materials?application_version=5.7",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/coordinates-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/physically-based-materials-in-unreal-engine?application_version=5.7",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/content-examples-sample-project-for-unreal-engine",
+      "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
+      "https://jettelly.com/store/the-unity-shaders-bible",
+      "https://thebookofshaders.com/06/",
+      "https://thebookofshaders.com/05/",
+      "https://learnopengl.com/Getting-started/Shaders",
+      "https://learnopengl.com/Lighting/Basic-Lighting",
+      "https://anthonymonteagudo.github.io/Week08-Shaders/docs/guest/Rasterization.pdf",
+      "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models",
+      "https://www.3drender.com/light/3point.html",
+      "https://www.khanacademy.org/computing/pixar/art-of-lighting",
+      "https://simondev.teachable.com/",
+      "https://simonschreibt.de/gat/tech-art-course/",
+      "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf"
     ],
     "old_numbers": [
       45
@@ -1954,7 +3184,53 @@
     "previous_number": 45,
     "preview": "previews/78.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "benvideos",
+        "label": "Ben Cloward: tutorials",
+        "title": "Ben Cloward — Shader tutorial videos and HLSL resources",
+        "url": "https://www.bencloward.com/resources.shtml",
+        "focus": "Use Shader Tutorial Videos for artist-focused node lessons and HLSL Training Videos for code.",
+        "context": "Author-maintained resource index. Tutorial engine versions vary.",
+        "category": "Further study"
+      },
+      {
+        "id": "iq",
+        "label": "Iñigo Quílez: Palettes",
+        "title": "Iñigo Quílez — Palettes",
+        "url": "https://iquilezles.org/articles/palettes/",
+        "focus": "Explore procedural palettes as an extension to choosing the colors in our banded study.",
+        "context": "Optional extension. The classroom example uses explicit color parameters, not this article’s palette implementation.",
+        "category": "Further study"
+      }
+    ],
+    "reading_groups": [
+      [
+        "Epic Games",
+        "Unreal controls, material inputs and version-specific behavior."
+      ],
+      [
+        "Ben Cloward",
+        "Artist-friendly shader lessons, masks and UV distortion."
+      ],
+      [
+        "Iñigo Quílez",
+        "Procedural color and compact shader experiments."
+      ],
+      [
+        "Fabrizio Espíndola / Jettelly",
+        "The Unity Shaders Bible: optional HLSL and lighting study."
+      ],
+      [
+        "Ned and LearnOpenGL",
+        "Original guest slides; LearnOpenGL is his credited diagram inspiration."
+      ],
+      [
+        "Mark Finch / GPU Gems",
+        "Water-wave mathematics, surface detail and Gerstner motion."
+      ]
+    ]
   },
   {
     "body": [],
@@ -2029,7 +3305,27 @@
     "previous_number": 46,
     "preview": "previews/79.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "math",
+        "label": "Epic: material math",
+        "title": "Epic Games — Math Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Look up Multiply, LinearInterpolate, DotProduct, Step and Sine. Check each input order and Sine Period.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      },
+      {
+        "id": "hlsl",
+        "label": "Microsoft: HLSL functions",
+        "title": "Microsoft — HLSL Intrinsic Functions",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+        "focus": "Follow the per-function links for lerp, saturate, step, normalize and dot. Check arguments and return values.",
+        "context": "Language reference; Unreal’s Custom node supplies its own input/output wrapper.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "body": [],
@@ -2037,7 +3333,8 @@
     "sources": [
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
       "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
-      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf"
+      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf",
+      "https://thebookofshaders.com/05/"
     ],
     "old_numbers": [
       47
@@ -2104,7 +3401,27 @@
     "previous_number": 47,
     "preview": "previews/80.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "bosshape",
+        "label": "Book of Shaders: functions",
+        "title": "Patricio Gonzalez Vivo & Jen Lowe — The Book of Shaders, Shaping functions",
+        "url": "https://thebookofshaders.com/05/",
+        "focus": "Start with Step and Smoothstep. Change the threshold or transition interval before combining operations.",
+        "context": "Free interactive GLSL exercises; compare the argument order with Unreal nodes.",
+        "category": "Reference"
+      },
+      {
+        "id": "hlsl",
+        "label": "Microsoft: HLSL functions",
+        "title": "Microsoft — HLSL Intrinsic Functions",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+        "focus": "Follow the per-function links for lerp, saturate, step, normalize and dot. Check arguments and return values.",
+        "context": "Language reference; Unreal’s Custom node supplies its own input/output wrapper.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "body": [],
@@ -2112,7 +3429,9 @@
     "sources": [
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
       "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
-      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf"
+      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/coordinates-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-asset-editor-in-unreal-engine?application_version=5.7"
     ],
     "old_numbers": [
       48
@@ -2179,7 +3498,27 @@
     "previous_number": 48,
     "preview": "previews/81.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "coords",
+        "label": "Epic: UVs and Panner",
+        "title": "Epic Games — Coordinates Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/coordinates-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Find TextureCoordinate, Panner, PixelNormalWS and VertexNormalWS. Match coordinate space to the calculation.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      },
+      {
+        "id": "texture",
+        "label": "Epic: texture data",
+        "title": "Epic Games — Texture Asset Editor",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-asset-editor-in-unreal-engine?application_version=5.7",
+        "focus": "Find sRGB, channel preview, filtering and mip settings. Distinguish color images from numerical data.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "body": [],
@@ -2187,7 +3526,8 @@
     "sources": [
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
       "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
-      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf"
+      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf",
+      "https://learnopengl.com/Lighting/Basic-Lighting"
     ],
     "old_numbers": [
       49
@@ -2254,7 +3594,27 @@
     "previous_number": 49,
     "preview": "previews/82.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "diffuse",
+        "label": "LearnOpenGL: diffuse light",
+        "title": "Joey de Vries — LearnOpenGL, Basic Lighting",
+        "url": "https://learnopengl.com/Lighting/Basic-Lighting",
+        "focus": "Read Diffuse lighting for the normal/light dot product. Our toon study adds thresholds and artist-selected colors.",
+        "context": "An OpenGL lighting explanation, not Unreal’s complete Default Lit implementation.",
+        "category": "Reference"
+      },
+      {
+        "id": "math",
+        "label": "Epic: material math",
+        "title": "Epic Games — Math Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Look up Multiply, LinearInterpolate, DotProduct, Step and Sine. Check each input order and Sine Period.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "body": [],
@@ -2262,7 +3622,8 @@
     "sources": [
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
       "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
-      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf"
+      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf",
+      "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models"
     ],
     "old_numbers": [
       50
@@ -2329,7 +3690,27 @@
     "previous_number": 50,
     "preview": "previews/83.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "gems",
+        "label": "Mark Finch: GPU Gems water",
+        "title": "Mark Finch — Effective Water Simulation from Physical Models, GPU Gems ch. 1",
+        "url": "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models",
+        "focus": "Read 1.2 The Sum of Sines Approximation and the Gerstner Waves subsection, then 1.2.4 Texture Waves for surface detail.",
+        "context": "Historical implementation with useful wave mathematics. The course pool grid is an original teaching study.",
+        "category": "Reference"
+      },
+      {
+        "id": "math",
+        "label": "Epic: material math",
+        "title": "Epic Games — Math Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Look up Multiply, LinearInterpolate, DotProduct, Step and Sine. Check each input order and Sine Period.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "body": [
@@ -2338,7 +3719,10 @@
       "Copy one calculation, test its inputs, then connect the next piece."
     ],
     "rationale": "Keep inputs, controls, expected result and a prediction together.",
-    "sources": [],
+    "sources": [
+      "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf"
+    ],
     "old_numbers": [
       51
     ],
@@ -2354,7 +3738,27 @@
     "previous_number": 51,
     "preview": "previews/84.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "hlsl",
+        "label": "Microsoft: HLSL functions",
+        "title": "Microsoft — HLSL Intrinsic Functions",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+        "focus": "Follow the per-function links for lerp, saturate, step, normalize and dot. Check arguments and return values.",
+        "context": "Language reference; Unreal’s Custom node supplies its own input/output wrapper.",
+        "category": "Reference"
+      },
+      {
+        "id": "glsl",
+        "label": "Khronos: GLSL reference",
+        "title": "Khronos — GLSL 4.50 Specification",
+        "url": "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf",
+        "focus": "Use the built-in function reference to cross-check the common arithmetic operations in the appendix.",
+        "context": "Desktop GLSL reference. Browser WebGL uses GLSL ES, so version-specific features are not automatically portable.",
+        "category": "Further study"
+      }
+    ]
   },
   {
     "body": [
@@ -2364,7 +3768,8 @@
     "notes": "The first row contains four original materials from Epic Content Examples. We copied their dependency-complete packages without editing them. The later rows are our own small studies using documented Unreal nodes. Pick the comparison that answers your question, rather than treating this as a second lecture.",
     "rationale": "Connect documented engine behavior to a saved, inspectable comparison.",
     "sources": [
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/content-examples-sample-project-for-unreal-engine?application_version=5.7"
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/content-examples-sample-project-for-unreal-engine?application_version=5.7",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/content-examples-sample-project-for-unreal-engine"
     ],
     "old_numbers": [
       52
@@ -2381,7 +3786,18 @@
     "caption": "Optional external project. Epic sample packages are downloaded separately.",
     "preview": "previews/85.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "samples",
+        "label": "Epic: Content Examples",
+        "title": "Epic Games — Content Examples",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/content-examples-sample-project-for-unreal-engine",
+        "focus": "Use the Materials and related example maps as a separate guided exploration. Follow the stations named in the course reference room.",
+        "context": "Official sample project. Obtain a version compatible with your Unreal installation.",
+        "category": "Further study"
+      }
+    ]
   },
   {
     "body": [],
@@ -2389,7 +3805,8 @@
     "rationale": "Connect documented engine behavior to a saved, inspectable comparison.",
     "sources": [
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/content-examples-sample-project-for-unreal-engine?application_version=5.7",
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/stylized-rendering-landscape?application_version=4.27"
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/stylized-rendering-landscape?application_version=4.27",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/content-examples-sample-project-for-unreal-engine"
     ],
     "old_numbers": [
       53
@@ -2432,7 +3849,18 @@
     "previous_number": 53,
     "preview": "previews/86.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "samples",
+        "label": "Epic: Content Examples",
+        "title": "Epic Games — Content Examples",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/content-examples-sample-project-for-unreal-engine",
+        "focus": "Use the Materials and related example maps as a separate guided exploration. Follow the stations named in the course reference room.",
+        "context": "Official sample project. Obtain a version compatible with your Unreal installation.",
+        "category": "Further study"
+      }
+    ]
   },
   {
     "body": [],
@@ -2461,7 +3889,18 @@
     "previous_number": 55,
     "preview": "previews/87.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "utility",
+        "label": "Epic: Fresnel / DepthFade",
+        "title": "Epic Games — Utility Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/utility-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Find Fresnel for view-angle controls, or DepthFade for translucent intersections. These perform different jobs.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "body": [],
@@ -2489,7 +3928,18 @@
     "previous_number": 56,
     "preview": "previews/88.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "texturing",
+        "label": "Epic: world projection",
+        "title": "Epic Games — Texturing Material Functions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/texturing-material-functions-in-unreal-engine?application_version=5.7",
+        "focus": "Read WorldAlignedTexture and WorldAlignedNormal. Check scale, coordinate conventions and the warning about moving objects.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ]
   },
   {
     "body": [],
@@ -2517,6 +3967,17 @@
     "previous_number": 57,
     "preview": "previews/89.jpg",
     "lesson": null,
-    "motion": null
+    "motion": null,
+    "key_sources": [
+      {
+        "id": "water",
+        "label": "Epic: Single Layer Water",
+        "title": "Epic Games — Single Layer Water Shading Model",
+        "url": "https://dev.epicgames.com/documentation/unreal-engine/single-layer-water-shading-model-in-unreal-engine?application_version=5.7",
+        "focus": "Read the implementation and material setup. Its Opaque/Masked blend setting can still produce a transparent-looking water surface.",
+        "context": "Unreal Engine 5.7; this is an optional engine water model, distinct from the classroom water masters.",
+        "category": "Reference"
+      }
+    ]
   }
 ]
