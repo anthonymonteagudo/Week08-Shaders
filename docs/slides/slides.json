@@ -1516,22 +1516,22 @@
   {
     "number": 50,
     "id": "lookdev-production",
-    "title": "Look development: concept and game",
+    "title": "Wind Waker: a stylized shading target",
     "section": "04 · Lighting and stylization",
     "kind": "look-reference",
-    "notes": "Valve connects illustration principles with modeling, textures and shading. Its paper describes cool shadows, controlled detail and rim highlights. The concept and game image show a shared visual intention. Ask which choices need geometry, which belong in textures, and which can respond to light. Our next material is a separate classroom study, not a recreation of Valve’s renderer.",
+    "notes": "Look at Link rather than the whole landscape. The tunic and hair have broad colored regions with distinct boundaries. Those are useful targets for our threshold and palette controls. This is the HD edition, which also shows softer lighting and glow. We are analyzing visible features, not identifying Nintendo’s shader code. Ask students to point to the shadow boundary on the tunic before naming a node.",
     "sources": [
-      "https://cdn.steamstatic.com/apps/valve/2007/NPAR07_IllustrativeRenderingInTeamFortress2.pdf"
+      "https://www.nintendo.com/en-gb/Games/Wii-U-games/The-Legend-of-Zelda-The-Wind-Waker-HD-765386.html"
     ],
     "key_sources": [
       {
-        "id": "valve-tf2",
-        "category": "Production paper",
-        "title": "Mitchell, Francke & Eng — Illustrative Rendering in Team Fortress 2",
-        "label": "Valve: illustrative rendering",
-        "url": "https://cdn.steamstatic.com/apps/valve/2007/NPAR07_IllustrativeRenderingInTeamFortress2.pdf",
-        "focus": "Figure 1 and sections 3–5 connect illustration choices to art assets and shading.",
-        "context": "Production reference. The classroom band shader is a separate simplified study, not Valve’s implementation."
+        "id": "nintendo-windwaker",
+        "category": "Visual reference",
+        "title": "Nintendo: The Legend of Zelda: The Wind Waker HD",
+        "label": "Nintendo: Wind Waker HD",
+        "url": "https://www.nintendo.com/en-gb/Games/Wii-U-games/The-Legend-of-Zelda-The-Wind-Waker-HD-765386.html",
+        "focus": "Official screenshot 01: compare the light and shadow regions on Link’s tunic and hair.",
+        "context": "Visual analysis of the HD edition. The proposed band and rim calculations are classroom approximations, not verified Nintendo implementation details."
       }
     ],
     "appendix": false,
@@ -1543,12 +1543,24 @@
   {
     "number": 51,
     "id": "lookdev-target",
-    "title": "Our target: painted color regions",
+    "title": "Break down the tunic shading",
     "section": "04 · Lighting and stylization",
-    "kind": "look-target",
-    "notes": "First describe the image without naming nodes. The large regions carry the form. Color differences reinforce their separation. Small irregularities give the boundaries a painted character. The sphere silhouette stays smooth: this effect changes shading, not mesh geometry. We will isolate these choices before combining them. The browser uses three colors and the UE study uses four, so compare the mechanism rather than expecting pixel-identical results.",
-    "sources": [],
-    "key_sources": [],
+    "kind": "zelda-breakdown",
+    "notes": "This is a crop of the same screenshot. Point to the left side of the tunic, then the bright green region on the right. We can approximate this relationship with a normalized normal and light direction, a dot product, a threshold and a blend between two colors. Moving the threshold changes the size of the regions. Changing the palette changes the mood without changing the boundary. A screen image does not prove how Nintendo implemented the effect. A light-driven boundary should move when the light direction changes; a painted texture alone would remain attached to the surface.",
+    "sources": [
+      "https://www.nintendo.com/en-gb/Games/Wii-U-games/The-Legend-of-Zelda-The-Wind-Waker-HD-765386.html"
+    ],
+    "key_sources": [
+      {
+        "id": "nintendo-windwaker",
+        "category": "Visual reference",
+        "title": "Nintendo: The Legend of Zelda: The Wind Waker HD",
+        "label": "Nintendo: Wind Waker HD",
+        "url": "https://www.nintendo.com/en-gb/Games/Wii-U-games/The-Legend-of-Zelda-The-Wind-Waker-HD-765386.html",
+        "focus": "Official screenshot 01: compare the light and shadow regions on Link’s tunic and hair.",
+        "context": "Visual analysis of the HD edition. The proposed band and rim calculations are classroom approximations, not verified Nintendo implementation details."
+      }
+    ],
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
@@ -1558,10 +1570,10 @@
   {
     "number": 52,
     "id": "lookdev-recipe",
-    "title": "Art decisions become shader controls",
+    "title": "Build the bands, then test an edge accent",
     "section": "04 · Lighting and stylization",
     "kind": "look-recipe",
-    "notes": "Treat each artistic choice as a separate control. Thresholds determine where one region ends. Palette values determine the colors on either side. A sampled brush mask slightly changes the signal before thresholding, so its pattern changes boundary shapes. It does not add a physical normal or cast shadow. Begin with TextureInfluence at zero, then increase it just enough to see the edge treatment while preserving the large regions.",
+    "notes": "These are our existing Unreal materials, not game screenshots. First reproduce the broad light and dark relationship using lesson 04. Choose green palette colors if you want to pursue the Wind Waker reference. Then compare an optional view-angle edge accent using lesson 05. Our example exaggerates the accent so it is easy to identify. A Fresnel-style mask follows the view angle; it is not a real light behind the object, and this screenshot does not establish that Nintendo uses it. Rotate the camera and compare the result with moving a real rim light. The later brush-textured lesson is a separate painterly variation, not a requirement for this target.",
     "sources": [],
     "key_sources": [],
     "appendix": false,

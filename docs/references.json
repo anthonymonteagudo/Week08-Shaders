@@ -270,12 +270,12 @@
     "category": "Further study"
   },
   {
-    "id": "valve-tf2",
-    "category": "Production paper",
-    "title": "Mitchell, Francke & Eng — Illustrative Rendering in Team Fortress 2",
-    "label": "Valve: illustrative rendering",
-    "url": "https://cdn.steamstatic.com/apps/valve/2007/NPAR07_IllustrativeRenderingInTeamFortress2.pdf",
-    "focus": "Figure 1 and sections 3–5 connect illustration choices to art assets and shading.",
-    "context": "Production reference. The classroom band shader is a separate simplified study, not Valve’s implementation."
+    "id": "nintendo-windwaker",
+    "category": "Visual reference",
+    "title": "Nintendo: The Legend of Zelda: The Wind Waker HD",
+    "label": "Nintendo: Wind Waker HD",
+    "url": "https://www.nintendo.com/en-gb/Games/Wii-U-games/The-Legend-of-Zelda-The-Wind-Waker-HD-765386.html",
+    "focus": "Official screenshot 01: compare the light and shadow regions on Link’s tunic and hair.",
+    "context": "Visual analysis of the HD edition. The proposed band and rim calculations are classroom approximations, not verified Nintendo implementation details."
   }
 ]
