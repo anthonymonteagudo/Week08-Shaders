@@ -43,3 +43,7 @@ See `SOURCES.md` and `THIRD_PARTY_NOTICES.md`. This repository contains original
 ## Match the lecture to your shader
 
 [Code-to-slide index](docs/lesson-map.html) pairs every lesson with its lecture slides and exact GLSL/HLSL source. [Look-development walkthrough](docs/look-development.html) starts with visual goals and a controlled painted-band experiment.
+
+## Review for class
+
+[Comprehensive class guide](docs/class-guide.html) covers rendering vocabulary, tint, masks, water, lighting and stylization, with retrieval questions. [Activities](docs/activities.html) has the 20-minute water investigation and 25-minute original-shader workshop, including a browser fallback.

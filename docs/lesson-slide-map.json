@@ -76,7 +76,7 @@
       {
         "number": 62,
         "id": "w08-061",
-        "title": "Fresnel-style mask → native nodes"
+        "title": "View-angle mask in code and nodes"
       }
     ],
     "glsl": "float edge = pow(1.0 - clamp(dot(normalize(N), normalize(V)), 0.0, 1.0), RimPower);\nvec3 color = mix(Tint, EdgeColor, edge * EdgeStrength);",

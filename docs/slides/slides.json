@@ -6,7 +6,7 @@
     "section": "Opening",
     "subsection": null,
     "kind": "cover",
-    "notes": "These are actual materials in our Unreal project: a smooth response, brush-shaped bands, and a chosen palette. We will build from small calculations to these artistic choices. The appearance changes even when the underlying mesh stays a sphere.",
+    "notes": "Today you will connect a visible material change to its inputs and calculation. We will translate one tint across browser GLSL, Unreal HLSL and nodes, distinguish texture motion from mesh motion, and use a light signal to choose colors. Ned joins at five to explain the rendering foundation. You will investigate water, then begin a small shader idea of your own. Which of these appearances can change without changing the sphere itself?",
     "sources": [],
     "key_sources": [],
     "appendix": false,
@@ -22,7 +22,7 @@
     "section": "Opening",
     "subsection": null,
     "kind": "timed-agenda",
-    "notes": "We start with a small shader example before Ned joins at five. His thirty-minute block includes questions. Water then leads directly into a twenty-minute investigation. After a five-minute break, we explore lighting and stylization, then protect twenty-five minutes for starting your own shader. We will save work and finish at seven.",
+    "notes": "We begin with the goals and a short orientation to rendering. One texture-tint example will connect the different shader representations, and a mask will prepare us for water. At ten to five we will introduce Ned and prepare questions. The final six minutes are for audio and screen-sharing setup while you write. Ned has five to five-thirty, including questions. After that we compare water motion, investigate a material, take a break, and study lighting before you begin your own shader. We finish at seven.",
     "sources": [
       "https://simondev.teachable.com/",
       "https://simonschreibt.de/gat/tech-art-course/"
@@ -37,14 +37,16 @@
   {
     "number": 3,
     "id": "w08-006",
-    "title": "01 · SHADERS\nGLSL, HLSL & UE Materials",
+    "title": "01 · SHADERS\nRendering and material inputs",
     "section": "01 · SHADERS: GLSL, HLSL & UE",
     "subsection": null,
-    "kind": "section",
-    "notes": "A material supplies values and behavior. A material instance exposes choices.",
+    "kind": "prelude",
+    "notes": "A renderer uses the scene, camera, geometry, materials and lights to produce an image. A shader is a program involved in that work. For a simple rasterized scene, transformed triangles determine covered samples, and interpolated values such as UVs reach fragment shading. Visibility and later display processing also affect the image. That is an orientation, not a fixed hardware execution order. Ned will unpack rasterization, depth and interpolation. Our job afterward is to connect those ideas to Unreal controls. A material graph can supply surface color and also vertex displacement. A material instance inherits the parent graph and overrides exposed parameters. Which changes could alter the image without changing the mesh? What part of that distinction would you like clarified?",
     "sources": [
       "https://www.bencloward.com/resources.shtml",
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-main-material-node-in-unreal-engine?application_version=5.7"
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-main-material-node-in-unreal-engine?application_version=5.7",
+      "https://learnopengl.com/Getting-started/Hello-Triangle",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/essential-unreal-engine-material-concepts?application_version=5.7"
     ],
     "key_sources": [
       {
@@ -75,11 +77,11 @@
   {
     "number": 4,
     "id": "w08-008",
-    "title": "Open the classroom workspace",
+    "title": "Classroom workspace",
     "section": "01 · SHADERS: GLSL, HLSL & UE",
     "subsection": null,
     "kind": "workspace",
-    "notes": "The project bundles Three.js and runs with Node.js. There is no npm install step. VS Code Simple Browser can show http://localhost:5173. First run the unchanged example, then edit one line. The classroom page remains a fallback when local setup is unavailable.",
+    "notes": "The browser classroom is enough to follow today. It runs GLSL calculations with a prepared host. The HLSL tab is a matching Unreal reference, not a second running language. If you already have the local workspace, run npm start, open the numbered lesson, and use Reload files after saving. There is no npm install step. If setup is unfinished, use the hosted example or work with a partner so you can still predict and compare.",
     "sources": [
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7"
     ],
@@ -209,7 +211,7 @@
     "section": "01 · SHADERS: GLSL, HLSL & UE",
     "subsection": "GLSL",
     "kind": "tint-code",
-    "notes": "This exact code is lesson 01_color/fragment.glsl in the student workspace. UV is a float2 lookup address supplied by the host. texture returns four channels; .rgb selects three. Multiplication is component-wise. Set the Tint color picker to white to see the baseline, then lower red. The shader returns color through the small browser wrapper.\n\nStudent files: lessons/01_color/fragment.glsl and unreal-custom.hlsl. The host supplies declared inputs and the output wrapper. Read the matching file while this slide is visible.",
+    "notes": "This exact code is lesson 01_color/fragment.glsl in the student workspace. UV is a vec2 lookup address supplied by the browser host (float2 in HLSL). texture returns four channels; .rgb selects three. Multiplication is component-wise. Set the Tint color picker to white to see the baseline, then lower red. The shader returns color through the small browser wrapper.\n\nStudent files: lessons/01_color/fragment.glsl and unreal-custom.hlsl. The host supplies declared inputs and the output wrapper. Read the matching file while this slide is visible.",
     "sources": [
       "Week08ShaderLab/Workshop/Shaders/tint.glsl",
       "https://thebookofshaders.com/06/",
@@ -325,7 +327,7 @@
     "section": "01 · SHADERS: GLSL, HLSL & UE",
     "subsection": null,
     "kind": "ui-guide",
-    "notes": "The material instance inherits its graph and defaults from the parent. Tick the box beside Tint before editing the color. If nothing changes, check the material assigned to the mesh and the override checkbox. For the starting state, restore Tint to 0.20, 0.80, 0.45. Ordinary scalar and vector parameters change values. Static switches are a separate type of control that select compiled variants. Scalar and vector overrides change values within the parent material. Static switches select compiled variants, so toggling them can trigger compilation.",
+    "notes": "The material instance inherits its graph and defaults from the parent. Enable the Tint override before editing. With white, the source is preserved. Lower red and predict which patches change most. If nothing changes, check the assigned instance and its override checkbox. Restore Tint to 0.20, 0.80, 0.45. Ordinary scalar/vector overrides change values. Static switches select compiled variants and can trigger compilation. Texture RGB used as color is decoded from sRGB before the calculation; numerical mask data uses a different interpretation. The detailed texture-settings comparison is slide 16. What is still unclear about the input, the multiplication, or the instance?",
     "sources": [
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7"
     ],
@@ -353,7 +355,7 @@
     "section": "01 · SHADERS: GLSL, HLSL & UE",
     "subsection": null,
     "kind": "mask-meaning",
-    "notes": "Show ShadowColor at the left, Tint at the right, and the continuous blend between. A mask is data, not automatically transparency. The same numeric signal can drive a color blend, an opacity mask, or another material input, with different consequences.",
+    "notes": "Show ShadowColor at the left, Tint at the right, and the continuous blend between. A mask is data, not automatically transparency. The same numeric signal can drive a color blend, an opacity mask, or another material input, with different consequences. At mask 0.5, which two values are being blended? The halfway value is halfway in the calculation space, which need not look perceptually halfway on screen.",
     "sources": [],
     "key_sources": [
       {
@@ -388,7 +390,7 @@
     "section": "01 · SHADERS: GLSL, HLSL & UE",
     "subsection": null,
     "kind": "bridge",
-    "notes": "The previous slide established both colors and the visible transition. Here UV.x drives smoothstep. Its result is a numeric mask. GLSL mix and HLSL lerp perform the same interpolation. In the Unreal graph use TexCoord R as the smoothstep value, Min .25, Max .75, then feed the result into Lerp Alpha.\n\nStudent files: lessons/02_uv_mask/fragment.glsl and unreal-custom.hlsl. The host supplies declared inputs and the output wrapper. Read the matching file while this slide is visible.",
+    "notes": "The previous slide established both colors and the visible transition. Here UV.x drives smoothstep. Its result is a numeric mask. GLSL mix and HLSL lerp perform the same interpolation. The diagram shows the equivalent SmoothStep operation with TexCoord R, Min .25 and Max .75, feeding Lerp Alpha. The supplied native material expands that operation into Subtract, Multiply, Saturate and the cubic t*t*(3-2*t), so its literal graph has more nodes. Both compute the same mask.\n\nStudent files: lessons/02_uv_mask/fragment.glsl and unreal-custom.hlsl. The host supplies declared inputs and the output wrapper. Read the matching file while this slide is visible.",
     "sources": [
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
       "https://thebookofshaders.com/05/",
@@ -579,7 +581,7 @@
     "section": "01 · SHADERS: GLSL, HLSL & UE",
     "subsection": null,
     "kind": "engine",
-    "notes": "Watch the right-hand material fade while the opaque and cutout examples stay fixed. Change the Opacity parameter, not the texture RGB. An opacity of one can look solid, but the asset is still configured as Translucent. We are applying the rendering behavior Ned described through a specific Unreal control.",
+    "notes": "Watch the right-hand material fade while the opaque and cutout examples stay fixed. Change the Opacity parameter, not the texture RGB. An opacity of one can look solid, but the asset is still configured as Translucent. This connects coverage and blending to a specific Unreal control. Revisit it after Ned when that connection is useful.",
     "sources": [
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-transparency-in-unreal-engine-materials?application_version=5.7"
     ],
@@ -641,7 +643,7 @@
     "section": "02 · RENDERING WITH NED",
     "subsection": null,
     "kind": "guestintro",
-    "notes": "Introduce Ned using the confirmed role and channel. He will share his screen on Zoom. Ask students to note one observation and one question. His original Rasterization.pdf is linked separately and is unchanged. Do not present or duplicate his pages in this deck.",
+    "notes": "Ned is my coworker at GOLF+, where he works as a rendering engineer. He also creates NedMakesGames. He will share his screen and explain how rasterization, depth and interpolated values contribute to an image. Open the original PDF if you want to annotate it. Write one thing you want to understand and leave space for an example that changes your thinking. While I check the connection, compare your question with a neighbor. After the talk, we will connect his explanation to UVs, masks and moving water.",
     "sources": [
       "Guest biography supplied directly by Prof. Monteagudo, 21 October 2026.",
       "https://anthonymonteagudo.github.io/Week08-Shaders/docs/guest/Rasterization.pdf"
@@ -938,7 +940,7 @@
     "section": "03 · WATER SHADERS",
     "subsection": null,
     "kind": "ui-guide",
-    "notes": "Open the water instance and expand Workshop. Start with Speed 0.125 and Tiling 2. Change only one control, predict the result, and restore it before the next experiment. FreezeTime is a capture convenience: zero uses live Time and one uses the Seconds parameter. If the water has unexpectedly stopped, inspect that value before changing the shader. Keep the common surface finish while comparing wave motion. SingleLayerWater is a separate optional shading-model study in the appendix.",
+    "notes": "Open MI_03_texture_flow_Graph and expand 01 Lab controls. Enable Speed and compare 0, 0.12 and -0.12. Keep Tiling at 2 and keep both colors fixed. Zero stops the animated UV offset; a negative value reverses it. The plane stays flat. Restore Speed to 0.12. If the image does not change, check the assigned instance, the override checkbox and whether time is paused in the browser. This small student lesson uses Speed; the separate water gallery uses FlowSpeed. The gallery water FreezeTime control does not belong to this lesson.",
     "sources": [
       "https://dev.epicgames.com/documentation/unreal-engine/single-layer-water-shading-model-in-unreal-engine?application_version=5.7",
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7"
@@ -1096,7 +1098,7 @@
     "section": "03 · WATER SHADERS",
     "subsection": null,
     "kind": "pair",
-    "notes": "A normal change alters light response, not geometry. Vertex displacement changes the surface and can change the silhouette. It requires sufficient geometry, but dense geometry alone does not fix texture sampling.",
+    "notes": "A normal change alters light response, not geometry. Vertex displacement changes the surface and can change the silhouette. It requires sufficient geometry, but dense geometry alone does not fix texture sampling. In this project, World Position Offset is a world-space offset and ordinary distances use centimeters. More vertices allow finer deformation, but vertex offset does not automatically change collision. For today, observe the supplied comparison rather than rebuilding it.",
     "sources": [
       "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models",
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/coordinates-material-expressions-in-unreal-engine?application_version=5.7"
@@ -1210,7 +1212,7 @@
     "section": "04 · LAB 1: WATER",
     "subsection": null,
     "kind": "section",
-    "notes": "Expected distinction: panning and distortion alter lookup coordinates. Height amplitude and Gerstner displacement change vertex positions. Normals affect light response, and matching normals matter for the displaced surface. Hold the finish, mesh, camera and lighting fixed while testing one motion parameter.",
+    "notes": "Before you start, which controls move the texture lookup? Which controls change the mesh silhouette? What will you hold fixed so your comparison is fair? Choose one row whose motion fits the condition you want to show.",
     "sources": [],
     "key_sources": [
       {
@@ -1315,7 +1317,7 @@
     "section": "04 · LAB 1: WATER",
     "subsection": null,
     "kind": "text",
-    "notes": "Show both versions before revealing their names. Ask your partner which reads as sheltered and which as exposed. Explain one controlled test using the actual values, then point to the affected graph input or code line. Connect the visual choice to your reference and name one missing system, such as shoreline interaction or buoyancy. For the toon alternative, identify the broad and narrow lit treatments instead.",
+    "notes": "Show both versions before revealing their names. Ask your partner which reads as sheltered and which as exposed. Explain one controlled test using the actual values, then point to the affected graph input or code line. What question would help you separate two possible causes? If you used a production reference, name one feature your study leaves out. In the browser route, describe the observed texture motion and the fixed silhouette.",
     "sources": [
       "Labs.html",
       "Water_References.html",
@@ -1621,11 +1623,11 @@
   {
     "number": 52,
     "id": "lookdev-recipe",
-    "title": "Build the bands, then test an edge accent",
+    "title": "Two bands with a view-angle accent",
     "section": "05 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "look-recipe",
-    "notes": "These are our existing Unreal materials, not game screenshots. First reproduce the broad light and dark relationship using lesson 04. Choose green palette colors if you want to pursue the Wind Waker reference. Then compare an optional view-angle edge accent using lesson 05. Our example exaggerates the accent so it is easy to identify. A Fresnel-style mask follows the view angle; it is not a real light behind the object, and this screenshot does not establish that Nintendo uses it. Rotate the camera and compare the result with moving a real rim light. The later brush-textured lesson is a separate painterly variation, not a requirement for this target.",
+    "notes": "The capture provenance records two bands on the left and two bands plus a rim on the right, with Bands 2 and RimStrength 0.65 in the earlier lighting manifest. The broad view-angle blend introduces gradients inside the underlying band regions; it should not be described as a separate smooth-base shader. First understand the band boundary, then decide whether this much edge influence supports the intended look. Lesson 04 isolates the threshold and palette; lesson 05 isolates the view-angle mask. Our exaggerated accent is a teaching choice, not a claim about Nintendo’s shader. A restrained version using the same green palette would make a useful future comparison.",
     "sources": [],
     "key_sources": [],
     "appendix": false,
@@ -1669,7 +1671,7 @@
     "section": "05 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "image",
-    "notes": "Connect this back to Week 5 dot products. Here dot is a practical signal about alignment. Clamp negative values to zero; Step converts the continuous signal to a binary mask; Lerp chooses the palette. Establish this chain before the code. The demo is deliberately not a production cel-shading renderer.",
+    "notes": "Connect this back to Week 5 dot products. Here dot is a practical signal about alignment. Clamp negative values to zero; Step converts the continuous signal to a binary mask; Lerp chooses the palette. Establish this chain before the code. The demo is deliberately not a production cel-shading renderer. What would you like clarified before we read the code?",
     "sources": [
       "https://jettelly.com/store/the-unity-shaders-bible",
       "https://learnopengl.com/Lighting/Basic-Lighting"
@@ -1707,7 +1709,7 @@
     "section": "05 · LIGHTING & STYLIZATION",
     "subsection": "GLSL",
     "kind": "demo",
-    "notes": "Normalize the surface normal and an artist-controlled direction. Their dot product measures alignment. Clamp it to zero through one, then compare it with Threshold using Step. The result is either zero or one, so the mix selects one of the two colors. The preview rotates the direction so we can see the boundary move.\n\nStudent files: lessons/04_toon/fragment.glsl and unreal-custom.hlsl. The host supplies declared inputs and the output wrapper. Read the matching file while this slide is visible.",
+    "notes": "Normalize the surface normal and an artist-controlled direction. Their dot product measures alignment. Clamp it to zero through one, then compare it with Threshold using Step. The result is either zero or one, so the mix selects one of the two colors. The browser supplies a fixed direction. Change Threshold to move the boundary; in Unreal you can separately vary L while holding Threshold fixed.\n\nStudent files: lessons/04_toon/fragment.glsl and unreal-custom.hlsl. The host supplies declared inputs and the output wrapper. Read the matching file while this slide is visible.",
     "sources": [
       "Week08ShaderLab/Workshop/Shaders/toon.glsl",
       "https://learnopengl.com/Lighting/Basic-Lighting",
@@ -1814,7 +1816,7 @@
     "section": "05 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "ui-guide",
-    "notes": "Change Threshold and watch the light-colored region shrink as the cutoff rises. Restore 0.45. Then change the LightDirection vector, which is interpreted in world space. A color picker is used to edit this vector parameter, but its components represent direction rather than a display color. Restore 0.7, minus 0.45, 0.6.",
+    "notes": "Change Threshold and watch the light-colored region shrink as the cutoff rises. Restore 0.45. Then change the vector parameter named L, which is interpreted in world space. A color picker is used to edit this vector parameter, but its components represent direction rather than a display color. Restore 0.7, minus 0.45, 0.6. The separate lighting playground uses LightDirection; this numbered student lesson uses L.",
     "sources": [
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7"
     ],
@@ -1922,7 +1924,7 @@
   {
     "number": 62,
     "id": "w08-061",
-    "title": "Fresnel-style mask → native nodes",
+    "title": "View-angle mask in code and nodes",
     "section": "05 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "bridge",
@@ -1994,7 +1996,7 @@
     "section": "05 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "bullets",
-    "notes": "This is a short exploratory walkthrough, not another formal lab. Ask a student to predict before touching the parameter. Keep one variable fixed that could otherwise confuse the comparison: light direction for a threshold test, thresholds for a palette test, or view for a roughness test.",
+    "notes": "Predict one change before touching the parameter. Keep the light direction fixed for a threshold test, or keep the threshold fixed for a palette test. Explain which signal changed and which visual choice it supports. What would you like clarified before you begin your own shader? Texture-influenced bands are a separate optional extension in slides 72–78.",
     "sources": [
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/physically-based-materials-in-unreal-engine?application_version=5.7"
     ],
@@ -2022,7 +2024,7 @@
     "section": "06 · LAB 2: ORIGINAL SHADER",
     "subsection": null,
     "kind": "section",
-    "notes": "One small original operation or behavior, with a short explanation.",
+    "notes": "Use the next work block to begin one small original shader idea. Keep a starting copy and a working copy. You should be able to explain the operation you changed and what you observed, even if the experiment is unfinished.",
     "sources": [],
     "key_sources": [],
     "appendix": false,
@@ -2531,7 +2533,7 @@
     "section": "Appendix",
     "subsection": null,
     "kind": "text",
-    "notes": "Both maps are already saved. Open them from Content Browser → Week08 → 00_Maps. Lighting materials are in 06_Lighting; water materials are in 03_Water. Use the named overview cameras. Save personal changes before switching maps.",
+    "notes": "Open the public project in UE 5.7. Use Content Browser, Week08, 00_Maps and select W08_Student_Gallery. Start with its six numbered bays. If an asset is not visible in your edition, use the gallery guide and matching browser lesson. Save your own work before switching maps. Epic Content Examples is a separate download.",
     "sources": [
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-main-material-node-in-unreal-engine?application_version=5.7",
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/content-examples-sample-project-for-unreal-engine"
