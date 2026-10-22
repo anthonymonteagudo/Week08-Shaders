@@ -1,0 +1,299 @@
+{
+  "map": "/Game/Week08/00_Maps/W08_Student_Gallery",
+  "exhibits": [
+    {
+      "bay": "01 Code to material",
+      "title": "01 color | Graph",
+      "asset": "/Game/Week08/08_StudentLessons/Instances/MI_01_color_Graph",
+      "actor": "01 color | Graph",
+      "hint": "Match numbered web lesson"
+    },
+    {
+      "bay": "01 Code to material",
+      "title": "01 color | HLSL",
+      "asset": "/Game/Week08/08_StudentLessons/Instances/MI_01_color_HLSL",
+      "actor": "01 color | HLSL",
+      "hint": "Match numbered web lesson"
+    },
+    {
+      "bay": "01 Code to material",
+      "title": "02 uv mask | Graph",
+      "asset": "/Game/Week08/08_StudentLessons/Instances/MI_02_uv_mask_Graph",
+      "actor": "02 uv mask | Graph",
+      "hint": "Match numbered web lesson"
+    },
+    {
+      "bay": "01 Code to material",
+      "title": "02 uv mask | HLSL",
+      "asset": "/Game/Week08/08_StudentLessons/Instances/MI_02_uv_mask_HLSL",
+      "actor": "02 uv mask | HLSL",
+      "hint": "Match numbered web lesson"
+    },
+    {
+      "bay": "01 Code to material",
+      "title": "03 texture flow | Graph",
+      "asset": "/Game/Week08/08_StudentLessons/Instances/MI_03_texture_flow_Graph",
+      "actor": "03 texture flow | Graph",
+      "hint": "Match numbered web lesson"
+    },
+    {
+      "bay": "01 Code to material",
+      "title": "03 texture flow | HLSL",
+      "asset": "/Game/Week08/08_StudentLessons/Instances/MI_03_texture_flow_HLSL",
+      "actor": "03 texture flow | HLSL",
+      "hint": "Match numbered web lesson"
+    },
+    {
+      "bay": "01 Code to material",
+      "title": "04 toon | Graph",
+      "asset": "/Game/Week08/08_StudentLessons/Instances/MI_04_toon_Graph",
+      "actor": "04 toon | Graph",
+      "hint": "Match numbered web lesson"
+    },
+    {
+      "bay": "01 Code to material",
+      "title": "04 toon | HLSL",
+      "asset": "/Game/Week08/08_StudentLessons/Instances/MI_04_toon_HLSL",
+      "actor": "04 toon | HLSL",
+      "hint": "Match numbered web lesson"
+    },
+    {
+      "bay": "01 Code to material",
+      "title": "05 fresnel | Graph",
+      "asset": "/Game/Week08/08_StudentLessons/Instances/MI_05_fresnel_Graph",
+      "actor": "05 fresnel | Graph",
+      "hint": "Match numbered web lesson"
+    },
+    {
+      "bay": "01 Code to material",
+      "title": "05 fresnel | HLSL",
+      "asset": "/Game/Week08/08_StudentLessons/Instances/MI_05_fresnel_HLSL",
+      "actor": "05 fresnel | HLSL",
+      "hint": "Match numbered web lesson"
+    },
+    {
+      "bay": "01 Code to material",
+      "title": "06 painted bands | Graph",
+      "asset": "/Game/Week08/08_StudentLessons/Instances/MI_06_painted_bands_Graph",
+      "actor": "06 painted bands | Graph",
+      "hint": "Match numbered web lesson"
+    },
+    {
+      "bay": "01 Code to material",
+      "title": "06 painted bands | HLSL",
+      "asset": "/Game/Week08/08_StudentLessons/Instances/MI_06_painted_bands_HLSL",
+      "actor": "06 painted bands | HLSL",
+      "hint": "Match numbered web lesson"
+    },
+    {
+      "bay": "02 Opacity and coverage",
+      "title": "01 Opaque reference",
+      "asset": "/Game/Week08/01_Tint/MI_Tint_Graph",
+      "actor": "01 Opaque reference",
+      "hint": "Check parent Blend Mode"
+    },
+    {
+      "bay": "02 Opacity and coverage",
+      "title": "02 Translucent fade",
+      "asset": "/Game/Week08/02_Transparency/MI_Translucent",
+      "actor": "02 Translucent fade",
+      "hint": "Check parent Blend Mode"
+    },
+    {
+      "bay": "02 Opacity and coverage",
+      "title": "03 Masked cutout",
+      "asset": "/Game/Week08/02_Transparency/MI_Masked",
+      "actor": "03 Masked cutout",
+      "hint": "Check parent Blend Mode"
+    },
+    {
+      "bay": "03 Water motion",
+      "title": "Simple 1 | 01  Still mask",
+      "asset": "/Game/Week08/03_Water/Simple/Steps/MI_Water_Simple_01_Still",
+      "actor": "Simple 1 | 01  Still mask",
+      "hint": "Duplicate final MI for Lab 1"
+    },
+    {
+      "bay": "03 Water motion",
+      "title": "Simple 2 | 02 Add panning",
+      "asset": "/Game/Week08/03_Water/Simple/Steps/MI_Water_Simple_02_Pan",
+      "actor": "Simple 2 | 02 Add panning",
+      "hint": "Duplicate final MI for Lab 1"
+    },
+    {
+      "bay": "03 Water motion",
+      "title": "Simple 3 | 03  Add cross-pan",
+      "asset": "/Game/Week08/03_Water/Simple/Steps/MI_Water_Simple_03_CrossPan",
+      "actor": "Simple 3 | 03  Add cross-pan",
+      "hint": "Duplicate final MI for Lab 1"
+    },
+    {
+      "bay": "03 Water motion",
+      "title": "Simple 4 | 04  Add distortion",
+      "asset": "/Game/Week08/03_Water/Simple/Steps/MI_Water_Simple_04_Distortion",
+      "actor": "Simple 4 | 04  Add distortion",
+      "hint": "Duplicate final MI for Lab 1"
+    },
+    {
+      "bay": "03 Water motion",
+      "title": "Intermediate 1 | 01  Shared flat finish",
+      "asset": "/Game/Week08/03_Water/Lab/Steps/MI_Water_01_Flat",
+      "actor": "Intermediate 1 | 01  Shared flat finish",
+      "hint": "Duplicate final MI for Lab 1"
+    },
+    {
+      "bay": "03 Water motion",
+      "title": "Intermediate 2 | 02  Low height",
+      "asset": "/Game/Week08/03_Water/Lab/Steps/MI_Water_02_LowHeight",
+      "actor": "Intermediate 2 | 02  Low height",
+      "hint": "Duplicate final MI for Lab 1"
+    },
+    {
+      "bay": "03 Water motion",
+      "title": "Intermediate 3 | 03  Taller height",
+      "asset": "/Game/Week08/03_Water/Lab/Steps/MI_Water_03_TallHeight",
+      "actor": "Intermediate 3 | 03  Taller height",
+      "hint": "Duplicate final MI for Lab 1"
+    },
+    {
+      "bay": "03 Water motion",
+      "title": "Intermediate 4 | 04  Crossing height",
+      "asset": "/Game/Week08/03_Water/Lab/Steps/MI_Water_04_CrossingHeight",
+      "actor": "Intermediate 4 | 04  Crossing height",
+      "hint": "Duplicate final MI for Lab 1"
+    },
+    {
+      "bay": "03 Water motion",
+      "title": "Advanced 1 | 01  Flat reference",
+      "asset": "/Game/Week08/03_Water/Advanced_Gerstner/MI_Gerstner_01_Flat",
+      "actor": "Advanced 1 | 01  Flat reference",
+      "hint": "Duplicate final MI for Lab 1"
+    },
+    {
+      "bay": "03 Water motion",
+      "title": "Advanced 2 | 02  Vertical sine",
+      "asset": "/Game/Week08/03_Water/Advanced_Gerstner/MI_Gerstner_02_VerticalSine",
+      "actor": "Advanced 2 | 02  Vertical sine",
+      "hint": "Duplicate final MI for Lab 1"
+    },
+    {
+      "bay": "03 Water motion",
+      "title": "Advanced 3 | 03  Sideways motion",
+      "asset": "/Game/Week08/03_Water/Advanced_Gerstner/MI_Gerstner_03_Gerstner",
+      "actor": "Advanced 3 | 03  Sideways motion",
+      "hint": "Duplicate final MI for Lab 1"
+    },
+    {
+      "bay": "03 Water motion",
+      "title": "Advanced 4 | 04  Crossing waves",
+      "asset": "/Game/Week08/03_Water/Advanced_Gerstner/MI_Gerstner_04_Crossing",
+      "actor": "Advanced 4 | 04  Crossing waves",
+      "hint": "Duplicate final MI for Lab 1"
+    },
+    {
+      "bay": "04 Palette and shading",
+      "title": "Flat color",
+      "asset": "/Game/Week08/06_Lighting/Instances/MI_Lighting_01_Flat",
+      "actor": "Flat color",
+      "hint": "Bands / BandMix"
+    },
+    {
+      "bay": "04 Palette and shading",
+      "title": "Smooth diffuse",
+      "asset": "/Game/Week08/06_Lighting/Instances/MI_Lighting_02_Smooth",
+      "actor": "Smooth diffuse",
+      "hint": "Bands / BandMix"
+    },
+    {
+      "bay": "04 Palette and shading",
+      "title": "Two bands",
+      "asset": "/Game/Week08/06_Lighting/Instances/MI_Lighting_03_TwoBands",
+      "actor": "Two bands",
+      "hint": "Bands / BandMix"
+    },
+    {
+      "bay": "04 Palette and shading",
+      "title": "Four bands",
+      "asset": "/Game/Week08/06_Lighting/Instances/MI_Lighting_04_FourBands",
+      "actor": "Four bands",
+      "hint": "Bands / BandMix"
+    },
+    {
+      "bay": "04 Palette and shading",
+      "title": "Custom palette",
+      "asset": "/Game/Week08/06_Lighting/Instances/MI_Lighting_05_CustomPalette",
+      "actor": "Custom palette",
+      "hint": "PaletteMix / thresholds / brush"
+    },
+    {
+      "bay": "04 Palette and shading",
+      "title": "Brush-textured bands",
+      "asset": "/Game/Week08/06_Lighting/Instances/MI_Lighting_06_PaintedBands",
+      "actor": "Brush-textured bands",
+      "hint": "PaletteMix / thresholds / brush"
+    },
+    {
+      "bay": "04 Palette and shading",
+      "title": "Brush-textured smooth",
+      "asset": "/Game/Week08/06_Lighting/Instances/MI_Lighting_07_PaintedSmooth",
+      "actor": "Brush-textured smooth",
+      "hint": "PaletteMix / thresholds / brush"
+    },
+    {
+      "bay": "04 Palette and shading",
+      "title": "Pixel-grid shading",
+      "asset": "/Game/Week08/06_Lighting/Instances/MI_Lighting_08_Pixel",
+      "actor": "Pixel-grid shading",
+      "hint": "PaletteMix / thresholds / brush"
+    },
+    {
+      "bay": "05 Fresnel and view angle",
+      "title": "No view mask",
+      "asset": "/Game/Week08/06_Lighting/Instances/MI_Lighting_13_EdgeOff",
+      "actor": "No view mask",
+      "hint": "RimPower / RimStrength / RimColor"
+    },
+    {
+      "bay": "05 Fresnel and view angle",
+      "title": "Pale view edge",
+      "asset": "/Game/Week08/06_Lighting/Instances/MI_Lighting_14_EdgeBright",
+      "actor": "Pale view edge",
+      "hint": "RimPower / RimStrength / RimColor"
+    },
+    {
+      "bay": "05 Fresnel and view angle",
+      "title": "Dark purple edge",
+      "asset": "/Game/Week08/06_Lighting/Instances/MI_Lighting_15_EdgeDark",
+      "actor": "Dark purple edge",
+      "hint": "RimPower / RimStrength / RimColor"
+    },
+    {
+      "bay": "05 Fresnel and view angle",
+      "title": "Pixel + purple edge",
+      "asset": "/Game/Week08/06_Lighting/Instances/MI_Lighting_16_EdgePixel",
+      "actor": "Pixel + purple edge",
+      "hint": "RimPower / RimStrength / RimColor"
+    },
+    {
+      "bay": "06 Lighting and surface",
+      "title": "01 Key only",
+      "asset": "/Game/Week08/06_Lighting/Instances/MI_Lighting_10_Satin",
+      "actor": "01 Key only",
+      "hint": "Actual light actors in this bay"
+    },
+    {
+      "bay": "06 Lighting and surface",
+      "title": "02 Key and fill",
+      "asset": "/Game/Week08/06_Lighting/Instances/MI_Lighting_10_Satin",
+      "actor": "02 Key and fill",
+      "hint": "Actual light actors in this bay"
+    },
+    {
+      "bay": "06 Lighting and surface",
+      "title": "03 Key fill and rim",
+      "asset": "/Game/Week08/06_Lighting/Instances/MI_Lighting_10_Satin",
+      "actor": "03 Key fill and rim",
+      "hint": "Actual light actors in this bay"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "lesson": "01_color",
+    "implementation": "Graph",
+    "material": "/Game/Week08/08_StudentLessons/M_01_color_Graph",
+    "instance": "/Game/Week08/08_StudentLessons/Instances/MI_01_color_Graph"
+  },
+  {
+    "lesson": "01_color",
+    "implementation": "HLSL",
+    "material": "/Game/Week08/08_StudentLessons/M_01_color_HLSL",
+    "instance": "/Game/Week08/08_StudentLessons/Instances/MI_01_color_HLSL"
+  },
+  {
+    "lesson": "02_uv_mask",
+    "implementation": "Graph",
+    "material": "/Game/Week08/08_StudentLessons/M_02_uv_mask_Graph",
+    "instance": "/Game/Week08/08_StudentLessons/Instances/MI_02_uv_mask_Graph"
+  },
+  {
+    "lesson": "02_uv_mask",
+    "implementation": "HLSL",
+    "material": "/Game/Week08/08_StudentLessons/M_02_uv_mask_HLSL",
+    "instance": "/Game/Week08/08_StudentLessons/Instances/MI_02_uv_mask_HLSL"
+  },
+  {
+    "lesson": "03_texture_flow",
+    "implementation": "Graph",
+    "material": "/Game/Week08/08_StudentLessons/M_03_texture_flow_Graph",
+    "instance": "/Game/Week08/08_StudentLessons/Instances/MI_03_texture_flow_Graph"
+  },
+  {
+    "lesson": "03_texture_flow",
+    "implementation": "HLSL",
+    "material": "/Game/Week08/08_StudentLessons/M_03_texture_flow_HLSL",
+    "instance": "/Game/Week08/08_StudentLessons/Instances/MI_03_texture_flow_HLSL"
+  },
+  {
+    "lesson": "04_toon",
+    "implementation": "Graph",
+    "material": "/Game/Week08/08_StudentLessons/M_04_toon_Graph",
+    "instance": "/Game/Week08/08_StudentLessons/Instances/MI_04_toon_Graph"
+  },
+  {
+    "lesson": "04_toon",
+    "implementation": "HLSL",
+    "material": "/Game/Week08/08_StudentLessons/M_04_toon_HLSL",
+    "instance": "/Game/Week08/08_StudentLessons/Instances/MI_04_toon_HLSL"
+  },
+  {
+    "lesson": "05_fresnel",
+    "implementation": "Graph",
+    "material": "/Game/Week08/08_StudentLessons/M_05_fresnel_Graph",
+    "instance": "/Game/Week08/08_StudentLessons/Instances/MI_05_fresnel_Graph"
+  },
+  {
+    "lesson": "05_fresnel",
+    "implementation": "HLSL",
+    "material": "/Game/Week08/08_StudentLessons/M_05_fresnel_HLSL",
+    "instance": "/Game/Week08/08_StudentLessons/Instances/MI_05_fresnel_HLSL"
+  },
+  {
+    "lesson": "06_painted_bands",
+    "implementation": "Graph",
+    "material": "/Game/Week08/08_StudentLessons/M_06_painted_bands_Graph",
+    "instance": "/Game/Week08/08_StudentLessons/Instances/MI_06_painted_bands_Graph"
+  },
+  {
+    "lesson": "06_painted_bands",
+    "implementation": "HLSL",
+    "material": "/Game/Week08/08_StudentLessons/M_06_painted_bands_HLSL",
+    "instance": "/Game/Week08/08_StudentLessons/Instances/MI_06_painted_bands_HLSL"
+  }
+]

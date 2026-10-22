@@ -1,0 +1,9 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Light response and bands</title><style>body{font:18px/1.6 Arial;background:#edf3f4;color:#123e4d;max-width:1100px;margin:auto;padding:28px}a{color:#087b77}pre{background:white;padding:24px;white-space:pre-wrap;overflow-wrap:anywhere;font:16px/1.6 Consolas}h1{line-height:1.2}</style><a href="../../index.html?lesson=04_toon">Open live lesson</a><h1>Light response and bands</h1><p>Raise Threshold. Which region grows? Keep N and L in the same coordinate space.</p><h2>Native graph</h2><p>PixelNormalWS and LightDirection → Normalize → DotProduct → Saturate → Step (X = light, Y = Threshold) → Lerp Alpha. Unlit output uses a direction parameter, not scene lights.</p><h2>Named inputs</h2><ul><li>N (float3, world)</li><li>L (float3, world, toward light)</li><li>Threshold (float)</li><li>Tint (float3)</li><li>ShadowColor (float3)</li></ul><h2>GLSL calculation</h2><pre>// Original classroom calculation. Host supplies inputs; GLSL runs in the browser.
+float light = clamp(dot(normalize(N), normalize(L)), 0.0, 1.0);
+float mask = step(Threshold, light);
+vec3 color = mix(ShadowColor, Tint, mask);
+</pre><a href="fragment.glsl">Open source file</a><h2>Unreal Custom-node HLSL</h2><pre>// UE Custom node body. Output Type: Float3. See README for inputs.
+float light = saturate(dot(normalize(N), normalize(L)));
+float mask = step(Threshold, light);
+return lerp(ShadowColor, Tint, mask);
+</pre><a href="unreal-custom.hlsl">Open source file</a><p>UE setup: Surface / Opaque / Unlit. Custom node output Float3. Connect the result to Emissive Color. Find the matching Graph and HLSL instances in gallery bay 01 under <code>08_StudentLessons/Instances</code>.</p></html>

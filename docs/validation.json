@@ -1,0 +1,10 @@
+{
+  "engine": "5.7.4",
+  "galleryExhibits": 42,
+  "exportedPackages": 79,
+  "lessonPairs": 6,
+  "slides": 89,
+  "mainSlides": 76,
+  "animatedSlides": 5,
+  "scope": "Original classroom content; Three.js MIT runtime; Engine built-ins referenced from installed Unreal."
+}

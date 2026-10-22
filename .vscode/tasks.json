@@ -12,9 +12,9 @@
       "problemMatcher": {
         "pattern": [
           {
-            "regexp": ".*",
+            "regexp": "^(.*):(\\d+):(.*)$",
             "file": 1,
-            "location": 2,
+            "line": 2,
             "message": 3
           }
         ],

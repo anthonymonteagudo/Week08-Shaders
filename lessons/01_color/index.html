@@ -1,0 +1,6 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Color and tint</title><style>body{font:18px/1.6 Arial;background:#edf3f4;color:#123e4d;max-width:1100px;margin:auto;padding:28px}a{color:#087b77}pre{background:white;padding:24px;white-space:pre-wrap;overflow-wrap:anywhere;font:16px/1.6 Consolas}h1{line-height:1.2}</style><a href="../../index.html?lesson=01_color">Open live lesson</a><h1>Color and tint</h1><p>Change the RGB channels independently. Which channel changes the result?</p><h2>Native graph</h2><p>Vector Parameter Tint → Emissive Color. Use Surface / Opaque / Unlit.</p><h2>Named inputs</h2><ul><li>Tint (float3)</li></ul><h2>GLSL calculation</h2><pre>// Original classroom calculation. Host supplies inputs; GLSL runs in the browser.
+vec3 color = Tint;
+</pre><a href="fragment.glsl">Open source file</a><h2>Unreal Custom-node HLSL</h2><pre>// UE Custom node body. Output Type: Float3. See README for inputs.
+float3 color = Tint;
+return color;
+</pre><a href="unreal-custom.hlsl">Open source file</a><p>UE setup: Surface / Opaque / Unlit. Custom node output Float3. Connect the result to Emissive Color. Find the matching Graph and HLSL instances in gallery bay 01 under <code>08_StudentLessons/Instances</code>.</p></html>

@@ -1,0 +1,332 @@
+[
+  {
+    "id": "multiply",
+    "name": "Multiply / Add",
+    "use": "Tint a sampled color; scale or offset a value.",
+    "glsl": "vec3 color = tex.rgb * tint;\nfloat y = x * scale + bias;",
+    "hlsl": "float3 color = tex.rgb * Tint;\nfloat y = x * Scale + Bias;",
+    "nodes": "Multiply: A \u00d7 B\nAdd: A + B",
+    "check": "Multiplication is component-wise. A scalar scales every component. Multiplying by white preserves RGB; by black removes it.",
+    "tryit": "Set tint to (1, 0.5, 0.5). Which channels remain unchanged?",
+    "group": "Color and values",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf"
+    ]
+  },
+  {
+    "id": "lerp",
+    "name": "Mix / Lerp",
+    "use": "Use a mask to blend between two colors.",
+    "glsl": "vec3 c = mix(a, b, mask);",
+    "hlsl": "float3 c = lerp(A, B, Mask);",
+    "nodes": "LinearInterpolate (Lerp)\nA, B, Alpha = mask",
+    "check": "Alpha 0 returns A; 1 returns B. Values outside 0..1 extrapolate. A color Alpha blends channels independently.",
+    "tryit": "Set Alpha to 0, .5 and 1 before connecting a texture.",
+    "group": "Color and values",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf"
+    ]
+  },
+  {
+    "id": "clamp",
+    "name": "Clamp / Saturate",
+    "use": "Keep a response within an intended range.",
+    "glsl": "float y = clamp(x, 0.0, 1.0);",
+    "hlsl": "float y = saturate(X);",
+    "nodes": "Saturate: clamp to 0..1\nClamp: explicit Min / Max",
+    "check": "Clamping is not normalization or remapping: values outside the range collapse to the endpoints.",
+    "tryit": "Preview -0.5, 0.4 and 1.5 through Saturate.",
+    "group": "Color and values",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf"
+    ]
+  },
+  {
+    "id": "remap",
+    "name": "Remap a signed field",
+    "use": "Convert a stored 0..1 channel into a signed UV offset.",
+    "glsl": "vec2 flow = data.gb * 2.0 - 1.0;",
+    "hlsl": "float2 flow = Data.gb * 2.0 - 1.0;",
+    "nodes": "ComponentMask GB \u2192 Multiply 2\n\u2192 Subtract 1",
+    "check": "A sampled .5 becomes zero offset. Import data textures with sRGB OFF.",
+    "tryit": "Connect signed flow to UVs with a small strength such as .02.",
+    "group": "Coordinates and textures",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf"
+    ]
+  },
+  {
+    "id": "step",
+    "name": "Step",
+    "use": "Build a sharp binary mask or lighting threshold.",
+    "glsl": "float mask = step(edge, x);",
+    "hlsl": "float mask = step(Edge, X);",
+    "nodes": "Step: X = value\nY = edge",
+    "check": "Result is 0 when x < edge and 1 otherwise. UE Step uses X for the value and Y for the edge; the code arguments put the edge first.",
+    "tryit": "Raise the edge and watch the bright region shrink.",
+    "group": "Masks and bands",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf"
+    ]
+  },
+  {
+    "id": "smoothstep",
+    "name": "Smoothstep",
+    "use": "Turn a hard edge into a smooth transition.",
+    "glsl": "float mask = smoothstep(lo, hi, x);",
+    "hlsl": "float mask = smoothstep(Lo, Hi, X);",
+    "nodes": "SmoothStep: Min, Max, Value",
+    "check": "Keep Min < Max. This softens a value transition; it does not blur a texture or guarantee anti-aliasing.",
+    "tryit": "Increase Max \u2212 Min while keeping their midpoint fixed.",
+    "group": "Masks and bands",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf"
+    ]
+  },
+  {
+    "id": "frac",
+    "name": "Fract / Frac",
+    "use": "Repeat a ramp or make repeating procedural UV patterns.",
+    "glsl": "float ramp = fract(x);",
+    "hlsl": "float ramp = frac(X);",
+    "nodes": "Frac",
+    "check": "Result is x \u2212 floor(x), also for negative x. Explicit Frac creates derivative discontinuities; texture wrapping usually handles repeating UVs better.",
+    "tryit": "Compare fract(-.2) with fract(.8). Both are .8.",
+    "group": "Coordinates and textures",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf"
+    ]
+  },
+  {
+    "id": "pan",
+    "name": "Time + UV offset",
+    "use": "Scroll texture coordinates without moving geometry.",
+    "glsl": "vec2 uv2 = uv * tiles + seconds * speed;",
+    "hlsl": "float2 uv2 = UV * Tiles + Seconds * Speed;",
+    "nodes": "TextureCoordinate \u00d7 Tiles\n\u2192 Add(Time \u00d7 speed), or Panner",
+    "check": "UV speed is repeats per second. Use a float2/vector with two meaningful channels. Mesh positions do not change.",
+    "tryit": "Reverse only speed.x. Predict the motion direction.",
+    "group": "Coordinates and textures",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf"
+    ]
+  },
+  {
+    "id": "sample",
+    "name": "Sample a texture",
+    "use": "Read color or packed numeric channels at a UV.",
+    "glsl": "vec4 data = texture(tex, uv);",
+    "hlsl": "float4 data = Texture2DSample(Tex, TexSampler, UV);",
+    "nodes": "Texture Sample: UVs input\nRGB / R / G / B / A outputs",
+    "check": "The HLSL example is UE Custom-node syntax with a TextureObject input named Tex. Raw HLSL instead uses Texture2D.Sample with a SamplerState. GLSL syntax shown is GLSL ES 3.00 / modern GLSL; older WebGL 1 uses texture2D. Color data and numeric masks need different sRGB import choices.",
+    "tryit": "Preview R, G, B and A individually before using a packed texture.",
+    "group": "Coordinates and textures",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf"
+    ]
+  },
+  {
+    "id": "components",
+    "name": "Components / Append",
+    "use": "Extract channels or assemble a vector.",
+    "glsl": "vec2 flow = data.gb;\nvec3 n = vec3(slope, 1.0);",
+    "hlsl": "float2 flow = Data.gb;\nfloat3 n = float3(Slope, 1.0);",
+    "nodes": "ComponentMask G+B\nAppendVector: float2 + scalar",
+    "check": "RGBA and XYZW name the same component positions. Appending does not normalize a direction.",
+    "tryit": "Preview only the green channel; then append two scalar controls.",
+    "group": "Coordinates and textures",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf"
+    ]
+  },
+  {
+    "id": "dot",
+    "name": "Normalize + Dot",
+    "use": "Measure alignment between directions for diffuse light or masks.",
+    "glsl": "float light = clamp(dot(normalize(N), normalize(L)), 0.0, 1.0);",
+    "hlsl": "float light = saturate(dot(normalize(N), normalize(L)));",
+    "nodes": "Normalize N + Normalize L\n\u2192 DotProduct \u2192 Saturate",
+    "check": "Use nonzero vectors in the same space. L points toward the light. Dot of unit vectors ranges from -1 to 1 before clamping.",
+    "tryit": "Rotate L while holding N fixed. When does the response become zero?",
+    "group": "Light response",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf"
+    ]
+  },
+  {
+    "id": "rim",
+    "name": "Power + view rim",
+    "use": "Make a controllable highlight near grazing view angles.",
+    "glsl": "float rim = pow(1.0-clamp(dot(N,V),0.0,1.0), power);",
+    "hlsl": "float rim = pow(1.0-saturate(dot(N,V)), Power);",
+    "nodes": "Dot(N,V) \u2192 Saturate \u2192 OneMinus\n\u2192 Power (Base, Exp)",
+    "check": "Normalize N and V first. Higher positive power narrows the rim. This artistic mask alone is not a complete Fresnel reflectance model. UE Fresnel adds its own BaseReflectFractionIn parameter and expects a world-space normal.",
+    "tryit": "Compare Power 1, 3 and 6 using the same camera.",
+    "group": "Light response",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf"
+    ]
+  },
+  {
+    "id": "bands",
+    "name": "Floor + bands",
+    "use": "Reduce a smooth light value to a chosen number of levels.",
+    "glsl": "float q = min(floor(x*n),n-1.0)/(n-1.0);",
+    "hlsl": "float q = min(floor(X*N),N-1.0)/(N-1.0);",
+    "nodes": "Multiply \u2192 Floor \u2192 Min(n\u22121)\n\u2192 Divide(n\u22121)",
+    "check": "x is clamped 0..1 and n is an integer \u22652. The Min keeps x=1 at the final level rather than making an extra band.",
+    "tryit": "Compare 2, 4 and 6 levels; keep the light still.",
+    "group": "Masks and bands",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf"
+    ]
+  },
+  {
+    "id": "sine",
+    "name": "Sine / Cosine",
+    "use": "Create periodic motion for pulses or waves.",
+    "glsl": "float y = sin(phaseRadians);",
+    "hlsl": "float y = sin(PhaseRadians);",
+    "nodes": "Sine: set Period to 6.283185\nfor a radian input",
+    "check": "Code sin/cos use radians. UE Sine/Cosine default Period is 1: an input of 1 completes a cycle. Alternatively divide radians by 2\u03c0 and keep Period 1.",
+    "tryit": "For 1 cycle per second, use sin(seconds \u00d7 2\u03c0) in code, or Time \u2192 Sine with Period 1 in UE.",
+    "group": "Motion and geometry",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf"
+    ]
+  },
+  {
+    "id": "distance",
+    "name": "Length / Distance",
+    "use": "Build radial masks or control distance-based effects.",
+    "glsl": "float d = length(uv - center);",
+    "hlsl": "float d = length(UV - Center);",
+    "nodes": "Subtract \u2192 Length\n(or Distance between two vectors)",
+    "check": "UV distance is not world distance. On a stretched surface a UV circle may appear stretched.",
+    "tryit": "Use 1 \u2212 smoothstep(radius\u2212softness, radius, d) for a soft disk.",
+    "group": "Masks and bands",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf"
+    ]
+  },
+  {
+    "id": "wpo",
+    "name": "Vertex displacement",
+    "use": "Change the visible surface shape, such as wave height.",
+    "glsl": "position.z += height; // vertex stage",
+    "hlsl": "return float3(0,0,HeightCm); // WPO input",
+    "nodes": "World Position Offset\nexpects a world-space offset",
+    "check": "The GLSL example assumes a local +Z plane. UE WPO uses world units (normally cm), needs enough vertices, and does not automatically update collision. Vertex displacement also needs matching shading normals.",
+    "tryit": "Set height to 0, then 6 cm. Inspect the silhouette, not just highlights.",
+    "group": "Motion and geometry",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf"
+    ]
+  },
+  {
+    "id": "derivatives",
+    "name": "DDX / DDY / Fwidth",
+    "use": "Estimate how a pixel-stage value changes across nearby fragments.",
+    "glsl": "float width = fwidth(x);\nvec3 nx = dFdx(N);",
+    "hlsl": "float width = fwidth(X);\nfloat3 nx = ddx(N);",
+    "nodes": "DDX / DDY\nAbs(DDX) + Abs(DDY) for fwidth",
+    "check": "These are screen derivatives, not an analytic object-space slope. Use in the pixel stage. Discontinuous control flow or values can make them unreliable.",
+    "tryit": "Optional: use fwidth to scale a procedural edge transition as the camera moves.",
+    "group": "Advanced reference",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf"
+    ]
+  },
+  {
+    "id": "normal",
+    "name": "Normal-space transform",
+    "use": "Compare directions in the same space.",
+    "glsl": "vec3 Nworld = normalize(TBN * Ntangent);",
+    "hlsl": "float3 Nworld = normalize(mul(TBN, Ntangent));",
+    "nodes": "TransformVector: Tangent \u2192 World\nthen Normalize",
+    "check": "The matrix examples define TBN with tangent, bitangent and normal as columns. UE handles the mesh basis through TransformVector. Packed slopes are not a ready-to-use normal-map texture; build and normalize the vector first.",
+    "tryit": "Toggle a world-normal debug color. A rotating object should rotate its world normal.",
+    "group": "Advanced reference",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+      "https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.50.pdf"
+    ]
+  },
+  {
+    "id": "ue-fresnel",
+    "name": "Unreal Fresnel mask",
+    "use": "Blend colors with a view-angle falloff and a face-on value.",
+    "glsl": "float edge = pow(1.0-clamp(dot(N,V),0.0,1.0), exponent);\nfloat mask = mix(base, 1.0, edge);",
+    "hlsl": "float edge = pow(1.0-saturate(dot(N,V)), Exponent);\nfloat mask = lerp(Base, 1.0, edge);",
+    "nodes": "Utility Fresnel\nExponentIn, BaseReflectFractionIn\nNormal: world-space",
+    "check": "Calculation excerpt assumes unit N and V in world space. This mask alone does not implement a full physical BRDF.",
+    "tryit": "Open MI_06_FresnelTight in the Epic reference room. Compare Exponent 1 and 5.",
+    "group": "Epic node comparisons",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-fresnel-in-your-unreal-engine-materials"
+    ]
+  },
+  {
+    "id": "depth-fade",
+    "name": "DepthFade concept",
+    "use": "Soften the intersection of a translucent surface and opaque geometry.",
+    "glsl": "// Conceptual: both depths must be linear\nfloat fade = clamp((sceneDepth-pixelDepth)/distance,0.0,1.0);\nfloat alpha = opacity * fade;",
+    "hlsl": "// Conceptual: engine depth input required\nfloat fade = saturate((SceneDepth-PixelDepth)/Distance);\nfloat alpha = Opacity * fade;",
+    "nodes": "DepthFade: Opacity, FadeDistance\nOutput to material Opacity\nBlend Mode: Translucent",
+    "check": "These are conceptual excerpts, not ready-to-paste depth-buffer reads. Keep distance positive and depth units consistent. Use the engine node for the actual study.",
+    "tryit": "Compare FadeMix 0 and 1 around the opaque rock. The plane geometry should stay fixed.",
+    "group": "Epic node comparisons",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/utility-material-expressions-in-unreal-engine?application_version=5.7"
+    ]
+  },
+  {
+    "id": "world-projection",
+    "name": "World-space texture projection",
+    "use": "Choose repeat size in world units instead of mesh UV scale.",
+    "glsl": "// One XY projection only\nvec2 uv = worldPos.xy / size.xy;\nvec3 c = texture(tex, uv).rgb;",
+    "hlsl": "// One XY projection only\nfloat2 uv = WorldPos.xy / Size.xy;\nfloat3 c = Texture2DSample(Tex, TexSampler, uv).rgb;",
+    "nodes": "WorldAlignedTexture function\nTextureObject + TextureSize\nXYZ Texture blends three projections",
+    "check": "The code shows one projection, not Epic's complete triplanar implementation. Use nonzero Size. World coordinates remain fixed as a mesh moves.",
+    "tryit": "Move the World coordinates cube, then Undo. Double-click WorldAlignedTexture to inspect the complete function.",
+    "group": "Epic node comparisons",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/texturing-material-functions-in-unreal-engine?application_version=5.7"
+    ]
+  }
+]
