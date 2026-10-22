@@ -3,12 +3,12 @@
     "lesson": "01_color",
     "slides": [
       {
-        "number": 11,
+        "number": 9,
         "id": "w08-014",
         "title": "Tint in GLSL"
       },
       {
-        "number": 12,
+        "number": 10,
         "id": "w08-015",
         "title": "The same tint in Unreal HLSL"
       }
@@ -22,7 +22,7 @@
     "lesson": "02_uv_mask",
     "slides": [
       {
-        "number": 16,
+        "number": 14,
         "id": "w08-018",
         "title": "Blend two colors with a mask"
       }
@@ -74,9 +74,9 @@
     "lesson": "05_fresnel",
     "slides": [
       {
-        "number": 69,
+        "number": 62,
         "id": "w08-061",
-        "title": "Fresnel-style mask \u2192 native nodes"
+        "title": "Fresnel-style mask → native nodes"
       }
     ],
     "glsl": "float edge = pow(1.0 - clamp(dot(normalize(N), normalize(V)), 0.0, 1.0), RimPower);\nvec3 color = mix(Tint, EdgeColor, edge * EdgeStrength);",
@@ -88,12 +88,12 @@
     "lesson": "06_painted_bands",
     "slides": [
       {
-        "number": 64,
+        "number": 76,
         "id": "w08-057",
         "title": "Brush texture perturbs the light signal"
       },
       {
-        "number": 65,
+        "number": 77,
         "id": "lookdev-student-code",
         "title": "The complete painted-band study"
       }
