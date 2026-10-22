@@ -1,15 +1,15 @@
 [
   {
     "path": "Unreal/Content/Week08/00_Maps/W08_Student_Gallery.umap",
-    "sha256": "282075a600b9257a9ba71370686bcb5fc3500159d1aaf7e1120488219a36e658"
+    "sha256": "19136be3ea204343d60b38322b379e9eb7712ecd1dcd7e0f78070871740d97f8"
   },
   {
     "path": "Unreal/Content/Week08/01_Tint/M_Tint_Graph.uasset",
-    "sha256": "f84efad0cb6b4043dd706c841d940bbd11cfc4c9c14417514e2f5dc0c3984368"
+    "sha256": "59a683556d82d3ade18b12ab55d96f71fa6a5ab46dbeb2414d36514a2156dda0"
   },
   {
     "path": "Unreal/Content/Week08/01_Tint/M_Tint_HLSL.uasset",
-    "sha256": "43b87644dc9e4904c16081e2803a89e2a0b60963c6bfb89ec692f39af0363770"
+    "sha256": "c0ef669b91c939131da08fb444f8f3870a7a957c4fefd2a0dc2760b6efe0a07f"
   },
   {
     "path": "Unreal/Content/Week08/01_Tint/MI_Source.uasset",
@@ -25,11 +25,11 @@
   },
   {
     "path": "Unreal/Content/Week08/02_Transparency/M_Masked.uasset",
-    "sha256": "c9106cf426a8af65768801a8d4061b0212e7ff29c192b9a2294d249e17abf408"
+    "sha256": "7d99c6527a5a3fa3064f5d7b90c59cb7175da9a444dd0e1bca3ed56facdc13c7"
   },
   {
     "path": "Unreal/Content/Week08/02_Transparency/M_Translucent.uasset",
-    "sha256": "85a4f0fca29da89f1167c0ad0e465b6ba14071baf811a2ba88d61ba31011b541"
+    "sha256": "7c2895f4ae15bc0e5a4f6fd2b8681ab0a06cdb7f1b66f03597a95f32dde34ca6"
   },
   {
     "path": "Unreal/Content/Week08/02_Transparency/MI_Masked.uasset",
@@ -65,11 +65,11 @@
   },
   {
     "path": "Unreal/Content/Week08/03_Water/Lab/M_Water_Lab_Graph.uasset",
-    "sha256": "58d7205f6fa8f7fa1cd1a9a5f8d8eff7c917275cfa51886bbd7026a1f5c8353a"
+    "sha256": "0307672f542f0b67e98cd9d5fe06c5c0fe19441c6b498f77fc32ab8460925e72"
   },
   {
     "path": "Unreal/Content/Week08/03_Water/Lab/M_Water_Lab_HLSL.uasset",
-    "sha256": "7bb83a2fc9407c65e11030940266b9a43aa48f2bc7ee6233a50ac51d36f263dd"
+    "sha256": "d1ffbc7bfe3d95c5addab33e5686e8ffcf9567b5ec3bbd2f7b6fd1089eef350a"
   },
   {
     "path": "Unreal/Content/Week08/03_Water/Lab/MI_Water_Lab_HLSL.uasset",
@@ -93,7 +93,7 @@
   },
   {
     "path": "Unreal/Content/Week08/03_Water/Shared/MF_Water_Surface.uasset",
-    "sha256": "eb3df8f6a2321d22dbcdae2112f2f8b129fcc924cdc548b96bab090214e0c3a3"
+    "sha256": "981a77584fc971cc721507eeda9d7cb4b9acb730e598d14334246b6a6cde73ff"
   },
   {
     "path": "Unreal/Content/Week08/03_Water/Simple/M_Water_Simple_Graph.uasset",
@@ -181,11 +181,11 @@
   },
   {
     "path": "Unreal/Content/Week08/06_Lighting/M_Lighting_Graph.uasset",
-    "sha256": "2ae6c5353274ef0b93ee3468747d836deee4c8802e1f39f8d48557d4b6380474"
+    "sha256": "0553b9a72b35ea54862016e0fdebc2f2f203cd73708483fa69904ca3922c40c5"
   },
   {
     "path": "Unreal/Content/Week08/06_Lighting/M_Lighting_HLSL.uasset",
-    "sha256": "daff5344b8711c0478ced19171f34d38d27c69bbf4a14356353eea0072dfa365"
+    "sha256": "516680b8002db23b99a434507165ee48eb40015dd002fe128661ec5e00e5073f"
   },
   {
     "path": "Unreal/Content/Week08/06_Lighting/Textures/T_BrushMask.uasset",
@@ -241,51 +241,51 @@
   },
   {
     "path": "Unreal/Content/Week08/08_StudentLessons/M_01_color_Graph.uasset",
-    "sha256": "0ddbd19172836630f4992944c78e7123795e5312d73ad25473695afe7926d83e"
+    "sha256": "8ed12a479d559484b9cf1ea5153f3a363b44bd0744035a64c221173ebabe416d"
   },
   {
     "path": "Unreal/Content/Week08/08_StudentLessons/M_01_color_HLSL.uasset",
-    "sha256": "aa56dfb587e43adb088aa22c3887aec0274644b9497544eb6902ffa422a5bb50"
+    "sha256": "c411af355390046bb3fe92987c17bbe07508f2899b153b5e933d0f61679292fd"
   },
   {
     "path": "Unreal/Content/Week08/08_StudentLessons/M_02_uv_mask_Graph.uasset",
-    "sha256": "625944aa78d4db3a76501aafde54fcc0af2bec1b00881a334ea111b0e4c9e56c"
+    "sha256": "a5d45058f544457814f82e01af6f3ee073847b913b907ac275a43a21ead54564"
   },
   {
     "path": "Unreal/Content/Week08/08_StudentLessons/M_02_uv_mask_HLSL.uasset",
-    "sha256": "69766c5776eb741ab063d32c88c5fef17936f267cbb76f9684cc345f8303c8a5"
+    "sha256": "144e00d9dbcca3b153f9c284d0eaa27b1c75ca4f3492a0e2b32db053f6dc0fc3"
   },
   {
     "path": "Unreal/Content/Week08/08_StudentLessons/M_03_texture_flow_Graph.uasset",
-    "sha256": "5360149facb54a69d90c401bf231a9997088a031c1e2b3bc8144acbc00572a24"
+    "sha256": "48a370c78c24d8c63b078e9b1d865c4ff65b017d9df5196d9661056140c406a2"
   },
   {
     "path": "Unreal/Content/Week08/08_StudentLessons/M_03_texture_flow_HLSL.uasset",
-    "sha256": "002439a4faa01a12bae4f590958d7a1d70e466799c361c97990eacab866c1944"
+    "sha256": "b4c5b9b928ee9d22100f6a93f8f7265a4826b7801c72b6ce08138bd8147ccdd4"
   },
   {
     "path": "Unreal/Content/Week08/08_StudentLessons/M_04_toon_Graph.uasset",
-    "sha256": "06c93978da443fa5473c939c41e75cc653e5e1cd275349ef57dc43e963be67dc"
+    "sha256": "a89a59a37b023c3748e5e09020a6b1be8297911e231159c2af34547387d2767d"
   },
   {
     "path": "Unreal/Content/Week08/08_StudentLessons/M_04_toon_HLSL.uasset",
-    "sha256": "385f053f823c72c75e6938581ee1b8124e810038359aea6d338c01ed66faabe5"
+    "sha256": "6d5aec58c94fc8c5f29c7e59c2fb53f2f7a17dbdaf370bdaa10bdeb2f4b1a081"
   },
   {
     "path": "Unreal/Content/Week08/08_StudentLessons/M_05_fresnel_Graph.uasset",
-    "sha256": "421134d300795a3bf2983c6dc6430508fb41ef822e01e853672abe5fab1f5fdc"
+    "sha256": "14b624931a06f32fa4097a4db6001f857b7b0d8e47fd9790041828036e7a42b5"
   },
   {
     "path": "Unreal/Content/Week08/08_StudentLessons/M_05_fresnel_HLSL.uasset",
-    "sha256": "4a503067e2d668a2156bfe23ca7b15386dc140d94a842e5dc9606ea81e0ff969"
+    "sha256": "a112ff38bd67a1b6a1af892374ad8635ecd2fbfb7410d46a6903c76c65a12317"
   },
   {
     "path": "Unreal/Content/Week08/08_StudentLessons/M_06_painted_bands_Graph.uasset",
-    "sha256": "bca59460d0c1262303c44bcc0c30315ecc481cecb674ba4d80088979ec569fc1"
+    "sha256": "ab6ea97b25dc8dfd3f3bcc136bd8290fe217c49b149b2f3b18c8ac3712a06c55"
   },
   {
     "path": "Unreal/Content/Week08/08_StudentLessons/M_06_painted_bands_HLSL.uasset",
-    "sha256": "cebc242cc16bf5b80b2b72729311bb0f53dce4081548fda7e3adb5b200375c12"
+    "sha256": "50a4c1c9440fdca53fa67ca050e304eaeaf5b818be146b144f0c519e7d23e258"
   },
   {
     "path": "Unreal/Content/Week08/80_Shared/Display/M_DisplayFloor.uasset",
