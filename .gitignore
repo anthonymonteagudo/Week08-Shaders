@@ -1,0 +1,9 @@
+node_modules/
+**/Saved/
+**/Intermediate/
+**/DerivedDataCache/
+**/Binaries/
+**/.vs/
+**/__pycache__/
+.DS_Store
+*.log

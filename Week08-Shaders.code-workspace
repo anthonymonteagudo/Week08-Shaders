@@ -1,0 +1,26 @@
+{
+  "folders": [
+    {
+      "name": "Week 8 \u2022 start in lessons",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/Saved": true,
+      "**/Intermediate": true,
+      "**/DerivedDataCache": true
+    },
+    "files.associations": {
+      "*.glsl": "glsl",
+      "*.hlsl": "hlsl"
+    },
+    "editor.tabSize": 2
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-vscode.live-server",
+      "slevesque.shader"
+    ]
+  }
+}
