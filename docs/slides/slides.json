@@ -2,11 +2,11 @@
   {
     "number": 1,
     "id": "w08-001",
-    "title": "Materials & shading",
+    "title": "Shaders & Rendering",
     "section": "Opening",
     "subsection": null,
     "kind": "cover",
-    "notes": "Today you will connect a visible material change to its inputs and calculation. We will translate one tint across browser GLSL, Unreal HLSL and nodes, distinguish texture motion from mesh motion, and use a light signal to choose colors. Ned joins at five to explain the rendering foundation. You will investigate water, then begin a small shader idea of your own. Which of these appearances can change without changing the sphere itself?",
+    "notes": "What work must happen before an asset becomes visible pixels? That is our central rendering question. Ned will explain how triangle data becomes a rendered image. Our Unreal examples let us trace specific parts of that process: texture sampling and color, vertex motion in water, and lighting or stylized shading. For each example, identify the input, the operation, and where it belongs in the pipeline. Today we explain behavior and form testable cost predictions; next week we measure them.",
     "sources": [],
     "key_sources": [],
     "appendix": false,
@@ -23,7 +23,7 @@
     "section": "Opening",
     "subsection": null,
     "kind": "timed-agenda",
-    "notes": "We begin with a short rendering prelude: vocabulary, pipeline, coordinates and directions. Then we compare a tint and a color blend in GLSL, HLSL and Unreal nodes. At 4:50 we introduce Ned and prepare questions; 4:54 to five is protected setup time. Ned speaks from five to five-thirty including questions. Water, the first lab, a break, lighting and your independent shader follow. We finish at seven.",
+    "notes": "We begin with a short rendering prelude: vocabulary, pipeline, coordinates and directions. Then we compare a tint and a color blend in GLSL, HLSL and Unreal nodes. At 4:50 we introduce Ned and prepare questions; 4:54 to five is protected setup time. Ned speaks from five to five-thirty including questions. Water, the first lab, a break, lighting and your independent shader follow. We finish at seven. The common thread is asset data becoming pixels: Ned explains the route, and our examples locate artist-controlled operations within it.",
     "sources": [
       "https://simondev.teachable.com/",
       "https://simonschreibt.de/gat/tech-art-course/"
@@ -43,7 +43,7 @@
     "section": "01 · RENDERING PRELUDE",
     "subsection": null,
     "kind": "section",
-    "notes": "Before Ned joins, let us connect the renderer to the material controls we will use. We will recall four terms, place materials in a simple rendering path, and review coordinates and directions. Keep one question for Ned about how those values reach a pixel.",
+    "notes": "Before Ned joins, let us connect asset data to a frame. The CPU prepares rendering work; the GPU processes geometry and shaded samples, using stored mesh and texture data. A shader is one part of this renderer. We will locate our material examples in that larger process, then return to the same question after the guest talk. The goal is to explain where a visible change happens and what work it might affect.",
     "sources": [
       "https://www.bencloward.com/resources.shtml",
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-main-material-node-in-unreal-engine?application_version=5.7",
@@ -100,13 +100,14 @@
   {
     "number": 5,
     "id": "render-pipeline",
-    "title": "Where the material enters a rendered image",
+    "title": "Real-time rendering: scene data to pixels",
     "section": "01 · RENDERING PRELUDE",
     "subsection": null,
     "kind": "pipeline-orientation",
-    "notes": "The pre-assessment asked for the logical order: scene submission, vertex processing, rasterization, pixel or fragment processing, then final pixels. Rasterization connects triangles to covered samples. Attributes such as UVs and normals are interpolated for shading. This is an orientation: depth tests, passes, lighting and post processing make a real renderer more involved. In Unreal, World Position Offset changes vertex positions; a material’s Base Color participates in later surface shading. Ned will explain coverage, depth and interpolation. Ask him where the values for a point inside a triangle come from.",
+    "notes": "Use this as our map for the rest of class. CPU-side scene logic and draw preparation submit work using mesh, material and texture data. Vertex processing transforms positions and supplies attributes. Primitive assembly and clipping prepare triangles for rasterization. Rasterization determines covered samples; attributes such as UVs and normals are interpolated for shading. Fragment or pixel shading uses those inputs and texture samples. Depth/stencil tests and blending govern contributions to render targets; lighting and post-processing can involve additional passes before presentation. Depth tests can happen early, so this is a logical orientation rather than a rigid timing diagram. In our Unreal examples, World Position Offset affects vertex positions. Texture flow changes sampling coordinates, and Base Color is an input to surface shading, not the final screen color. More objects, vertices, shaded samples or memory traffic are possible sources of work, not proof of the measured bottleneck.",
     "sources": [
-      "https://learnopengl.com/Getting-started/Hello-Triangle"
+      "https://learnopengl.com/Getting-started/Hello-Triangle",
+      "https://learn.microsoft.com/en-us/windows/win32/direct3d11/overviews-direct3d-11-graphics-pipeline"
     ],
     "key_sources": [
       {
@@ -116,6 +117,15 @@
         "url": "https://learnopengl.com/Getting-started/Hello-Triangle",
         "focus": "Logical graphics pipeline and programmable stages.",
         "context": "General rasterization orientation; Unreal uses multiple rendering passes.",
+        "category": "Reference"
+      },
+      {
+        "id": "microsoft-pipeline",
+        "label": "Microsoft: pipeline stages",
+        "title": "Microsoft — Graphics pipeline",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/direct3d11/overviews-direct3d-11-graphics-pipeline",
+        "focus": "Trace vertex, rasterizer, pixel and output-merger responsibilities.",
+        "context": "Direct3D 11 conceptual reference; the slide is a simplified rasterization model, not a complete description of Unreal’s renderer.",
         "category": "Reference"
       }
     ],
@@ -188,15 +198,25 @@
   {
     "number": 8,
     "id": "render-budget",
-    "title": "A frame budget is a measured time budget",
+    "title": "Rendering work and frame budgets",
     "section": "01 · RENDERING PRELUDE",
     "subsection": null,
-    "kind": "text",
-    "notes": "In the pre-assessment example, the GPU takes 24 milliseconds and the CPU takes nine. Their work can overlap, so do not simply add them as a general frame-time rule. At a 60 FPS target the GPU exceeds the 16.7 millisecond budget. If translucency is measured at eleven milliseconds, investigate that pass and compare a controlled change. A debug color has meaning only within its named visualization mode; red is not a universal measurement of cost. We will do the detailed profiling work in Week 9.",
+    "kind": "table",
+    "notes": "These are categories for a hypothesis, not a ranking of our materials. Many objects and draws can increase CPU submission work. Mesh density and deformation affect vertex work. Screen coverage, repeated shading and texture samples can affect pixel work. Meshes, textures and render targets occupy memory; accessing or moving their data creates traffic. Capacity is how much can be stored, latency is how long an access takes, and bandwidth is the rate at which data can be transferred. These distinctions replace no hardware experiment today; the optional table is a map for later investigation. In the pre-assessment example, CPU time is nine milliseconds and GPU time is twenty-four. Their work can overlap, so do not simply add them. At 60 FPS, the frame budget is about 16.7 milliseconds and the GPU exceeds it. Use pass timings to select a controlled test; node count or a changed parameter value alone does not establish frame cost.",
     "sources": [
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/introduction-to-performance-profiling-and-configuration-in-unreal-engine"
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/performance-and-profiling-overview?application_version=4.27"
     ],
-    "key_sources": [],
+    "key_sources": [
+      {
+        "id": "epic-profile",
+        "label": "Epic: performance overview",
+        "title": "Epic Games — Performance and Profiling Overview",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/performance-and-profiling-overview?application_version=4.27",
+        "focus": "Separate CPU/GPU limits and use measurements to guide a controlled change.",
+        "context": "Historical UE 4.27 reference for general measurement principles. Use current project/version tools in Week 9; no legacy benchmark or setting is assigned here.",
+        "category": "Reference"
+      }
+    ],
     "appendix": true,
     "guest": null,
     "motion_bounds": null,
@@ -550,7 +570,7 @@
     "section": "02 · SHADERS: GLSL, HLSL & UE",
     "subsection": "UE MATERIAL GRAPH",
     "kind": "tintflow",
-    "notes": "Follow the texture’s RGB output into Multiply A. Tint enters Multiply B. The result connects to Emissive Color. The texture sample uses the mesh UVs. The graph and code express the same operation. Ordinary nodes are the first choice for this example. A Custom expression is useful here for seeing the translation, not because a tint needs custom code. The screenshot is the course material’s actual Multiply and output region. The Texture Sample and Tint nodes sit off this crop; the labels identify their connected inputs. The complete simplified wiring remains available as an optional diagram.",
+    "notes": "This optional diagram shows the full tint signal path. Mesh UVs address the texture sample. Texture RGB and Tint enter Multiply; its result goes to Emissive Color in the Unlit study. The schematic complements the actual output-region screenshot on slide 17. It is not a full native-editor screenshot.",
     "sources": [
       "Week08ShaderLab/MaterialBasics/material-graphs.json",
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
@@ -1064,7 +1084,7 @@
     "section": "04 · WATER SHADERS",
     "subsection": null,
     "kind": "section",
-    "notes": "Separate the surface finish from the motion that produces the wave form.",
+    "notes": "Ned has explained how triangle data becomes shaded pixels. Our water comparison now separates two places an effect can happen. Moving the texture lookup changes the sampled surface detail while the mesh stays fixed. Height and Gerstner displacement change vertex positions and can change the silhouette. Keep those mechanisms distinct even when both suggest waves. In the lab, name which mechanism your control changes before judging its appearance.",
     "sources": [
       "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
       "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models"
@@ -1824,7 +1844,7 @@
     "section": "06 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "section",
-    "notes": "Light describes form, directs attention, and establishes mood.",
+    "notes": "We are now examining how surface inputs contribute to a rendered image. Actual lights, material properties, view and exposure affect a Default Lit result. Our Unlit toon study isolates a small shader calculation using a supplied light direction; it does not query the scene’s light actors. Compare the physical lighting role first, then the controllable shading signals. Both are rendering questions, at different levels of the system.",
     "sources": [
       "https://www.3drender.com/light/3point.html",
       "https://www.khanacademy.org/computing/pixar/art-of-lighting"
@@ -2823,7 +2843,7 @@
     "section": "06 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "bullets",
-    "notes": "Predict one change before touching the parameter. Keep the light direction fixed for a threshold test, or keep the threshold fixed for a palette test. Explain which signal changed and which visual choice it supports. What would you like clarified before you begin your own shader? Texture-influenced bands are a separate optional extension in slides 72–78.",
+    "notes": "Predict one change before touching the parameter. Keep the light direction fixed for a threshold test, or keep the threshold fixed for a palette test. Explain which signal changed and which visual choice it supports. What would you like clarified before you begin your own shader? Texture-influenced bands are a separate optional extension in slides 76–82.",
     "sources": [
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/physically-based-materials-in-unreal-engine?application_version=5.7"
     ],
@@ -3141,7 +3161,7 @@
     "section": "07 · LAB 2: ORIGINAL SHADER",
     "subsection": null,
     "kind": "bullets",
-    "notes": "Save a reproducible baseline and modified version for next week. Do not ask students to optimize now. Week 9 will introduce evidence, profiling, budgets, controlled measurements, and production tradeoffs. The guest discussion will cover careers, SOD3 responsibilities, unique shader challenges, and questions.",
+    "notes": "Keep the same baseline and modified result you are already saving. Name the operation you changed and locate it in vertex processing, sampling/shading, or material visibility and blending. Then form one hypothesis about work or data access. Changing a tint value alone may leave the work unchanged; adding another texture sample is a different hypothesis. We are not assigning a new performance report or claiming an optimization today. Week 9 will use repeatable conditions and measurements to test these predictions.",
     "sources": [
       "Instructor-supplied Week 9 outline, October 22, 2026"
     ],
@@ -3160,7 +3180,7 @@
     "section": "Wrap-up",
     "subsection": null,
     "kind": "text",
-    "notes": "Name one operation or control you can now explain. Tell us how a material value differs from a material setting. Finally, state the next small change you plan to try in your shader experiment.",
+    "notes": "Choose one example you used today. Locate its change in the rendering path, identify the relevant input and operation, and describe the visible result. A UV pan changes lookup coordinates; vertex displacement can change shape; blend mode changes visibility/compositing behavior. Offer a cost hypothesis and name a measurement that could test it. It is valid to predict no meaningful cost change when only a numerical value changes. These questions close the same input–operation–result investigation; they add no new submission requirement.",
     "sources": [],
     "key_sources": [],
     "appendix": false,

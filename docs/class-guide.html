@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:,"><title>Week 8 · Quick guide</title><link rel="stylesheet" href="../web/guide.css"></head>
 <body><header><nav aria-label="Course"><a href="../index.html">Shader classroom</a><a href="slides/index.html">Slides</a><a href="class-guide.html">Guide</a><a href="activities.html">Activities</a><a href="dig-deeper.html">References</a></nav></header>
 <main><h1>Week 8 · Quick guide</h1>
-<p>Trace each visible change through its inputs, calculation, and output. <a href="activities.html">Do the activities</a>; use the slides for the full explanation.</p>
+<p>Study real-time rendering through the parts technical artists control. Ned explains the rendering foundation; our Unreal examples connect texture sampling, vertex motion and shading to that pipeline. Trace each visible change through its inputs, calculation and output. <a href="activities.html">Do the activities</a>; use the slides for the full explanation.</p>
 <h2 id="unreal">Unreal gallery</h2>
 <p>Open <code>Unreal/Week08Student.uproject</code> in UE 5.7. The startup map is <code>W08_Student_Gallery</code>. Wait for shaders to compile; explore in the editor. Right mouse + WASD moves; F frames a selection. Pilot a named CameraActor for a repeatable view.</p>
 <p>Select a display, open its MI in Details → Materials, duplicate it into your own folder, and assign your copy to the display. Enable a parameter's override checkbox before editing. Open the parent to trace the calculation.</p>
@@ -11,7 +11,7 @@
 <p>A renderer forms an image from a scene and camera. The basic rasterization route is vertices → triangle coverage → fragment shading → image; engines use multiple passes. A material defines surface behavior; an instance overrides exposed parent parameters.</p>
 <p>UVs address textures. Local coordinates belong to an object; world coordinates share a frame. Normalize nonzero directions and put both vectors in the same space before a dot product. For unit vectors, dot is 1 when aligned, 0 perpendicular, −1 opposite. Reversing cross-product order reverses its nonzero result.</p>
 <p><a href="slides/index.html#4">Rendering slides</a> · <a href="guest/Rasterization.pdf">Ned’s PDF for annotation</a></p>
-<h2 id="lessons">Shader examples</h2>
+<p><b>Locate the work:</b> the CPU prepares scene and draw work; the GPU processes geometry and shaded samples. Meshes, textures and render targets use memory. Moving UVs changes texture lookup; World Position Offset changes vertex positions; material blend mode affects visibility/compositing. A changed value can alter appearance without increasing the amount of work. <a href="slides/index.html#8">Optional work/resource map</a>.</p><h2 id="lessons">Shader examples</h2>
 <p>Open a lesson to see its GLSL, Unreal HLSL, native-node recipe, exact Unreal instance paths, and lecture links. Only GLSL runs in the browser.</p>
 <table><thead><tr><th>Lesson</th><th>Change and check</th></tr></thead><tbody>
 <tr><td><a href="../index.html?lesson=01_color">01 · Tint</a></td><td>White Tint preserves the texture. Reduce one channel and explain component-wise multiplication.</td></tr>
