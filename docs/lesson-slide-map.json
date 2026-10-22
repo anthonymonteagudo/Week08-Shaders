@@ -3,14 +3,19 @@
     "lesson": "01_color",
     "slides": [
       {
-        "number": 9,
+        "number": 15,
         "id": "w08-014",
         "title": "Tint in GLSL"
       },
       {
-        "number": 10,
+        "number": 16,
         "id": "w08-015",
         "title": "The same tint in Unreal HLSL"
+      },
+      {
+        "number": 17,
+        "id": "w08-016",
+        "title": "Tint in the Unreal Material Graph"
       }
     ],
     "glsl": "vec3 base = texture(BaseTexture, UV).rgb;\nvec3 color = base * Tint;",
@@ -22,9 +27,19 @@
     "lesson": "02_uv_mask",
     "slides": [
       {
-        "number": 14,
+        "number": 23,
         "id": "w08-018",
-        "title": "Blend two colors with a mask"
+        "title": "Mask blend in GLSL"
+      },
+      {
+        "number": 24,
+        "id": "mask-hlsl",
+        "title": "The same mask blend in Unreal HLSL"
+      },
+      {
+        "number": 25,
+        "id": "mask-native",
+        "title": "The same blend in Unreal nodes"
       }
     ],
     "glsl": "float mask = smoothstep(0.25, 0.75, UV.x);\nvec3 color = mix(ShadowColor, Tint, mask);",
@@ -36,12 +51,12 @@
     "lesson": "03_texture_flow",
     "slides": [
       {
-        "number": 27,
+        "number": 38,
         "id": "w08-030",
         "title": "Texture motion in GLSL"
       },
       {
-        "number": 28,
+        "number": 39,
         "id": "w08-031",
         "title": "Texture motion in Unreal HLSL"
       }
@@ -55,12 +70,12 @@
     "lesson": "04_toon",
     "slides": [
       {
-        "number": 55,
+        "number": 69,
         "id": "w08-048",
         "title": "Toon bands in GLSL"
       },
       {
-        "number": 56,
+        "number": 70,
         "id": "w08-049",
         "title": "Toon bands in Unreal HLSL"
       }
@@ -74,7 +89,7 @@
     "lesson": "05_fresnel",
     "slides": [
       {
-        "number": 62,
+        "number": 83,
         "id": "w08-061",
         "title": "View-angle mask in code and nodes"
       }
@@ -88,12 +103,12 @@
     "lesson": "06_painted_bands",
     "slides": [
       {
-        "number": 76,
+        "number": 78,
         "id": "w08-057",
         "title": "Brush texture perturbs the light signal"
       },
       {
-        "number": 77,
+        "number": 79,
         "id": "lookdev-student-code",
         "title": "The complete painted-band study"
       }

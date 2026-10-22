@@ -118,11 +118,11 @@
   },
   {
     "id": "ben",
-    "label": "Ben Cloward: Shaders 101",
+    "label": "Ben Cloward: resources",
     "title": "Ben Cloward — Shaders 101, GDC 2016",
-    "url": "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
-    "focus": "Read PDF pages 18–38 for UV scale, scrolling and layered distortion, and pages 54–67 for mask-based blending.",
-    "context": "A historical talk explaining calculations shared by code and node editors; its screenshots are not UE 5.7 UI instructions.",
+    "url": "https://www.bencloward.com/resources.shtml",
+    "focus": "Optional artist-focused shader tutorials. Full Shader 101 slides and transcripts have not been reviewed in this revision.",
+    "context": "Historical talk and author-maintained tutorial index; use current Epic documentation for UE controls.",
     "category": "Reference"
   },
   {

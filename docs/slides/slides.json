@@ -12,6 +12,7 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
+    "section_color": "#254D6D",
     "preview": "previews/01.jpg",
     "lesson": null
   },
@@ -22,7 +23,7 @@
     "section": "Opening",
     "subsection": null,
     "kind": "timed-agenda",
-    "notes": "We begin with the goals and a short orientation to rendering. One texture-tint example will connect the different shader representations, and a mask will prepare us for water. At ten to five we will introduce Ned and prepare questions. The final six minutes are for audio and screen-sharing setup while you write. Ned has five to five-thirty, including questions. After that we compare water motion, investigate a material, take a break, and study lighting before you begin your own shader. We finish at seven.",
+    "notes": "We begin with a short rendering prelude: vocabulary, pipeline, coordinates and directions. Then we compare a tint and a color blend in GLSL, HLSL and Unreal nodes. At 4:50 we introduce Ned and prepare questions; 4:54 to five is protected setup time. Ned speaks from five to five-thirty including questions. Water, the first lab, a break, lighting and your independent shader follow. We finish at seven.",
     "sources": [
       "https://simondev.teachable.com/",
       "https://simonschreibt.de/gat/tech-art-course/"
@@ -31,17 +32,18 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
+    "section_color": "#254D6D",
     "preview": "previews/02.jpg",
     "lesson": null
   },
   {
     "number": 3,
     "id": "w08-006",
-    "title": "01 · SHADERS\nRendering and material inputs",
-    "section": "01 · SHADERS: GLSL, HLSL & UE",
+    "title": "01 · RENDERING PRELUDE",
+    "section": "01 · RENDERING PRELUDE",
     "subsection": null,
-    "kind": "prelude",
-    "notes": "A renderer uses the scene, camera, geometry, materials and lights to produce an image. A shader is a program involved in that work. For a simple rasterized scene, transformed triangles determine covered samples, and interpolated values such as UVs reach fragment shading. Visibility and later display processing also affect the image. That is an orientation, not a fixed hardware execution order. Ned will unpack rasterization, depth and interpolation. Our job afterward is to connect those ideas to Unreal controls. A material graph can supply surface color and also vertex displacement. A material instance inherits the parent graph and overrides exposed parameters. Which changes could alter the image without changing the mesh? What part of that distinction would you like clarified?",
+    "kind": "section",
+    "notes": "Before Ned joins, let us connect the renderer to the material controls we will use. We will recall four terms, place materials in a simple rendering path, and review coordinates and directions. Keep one question for Ned about how those values reach a pixel.",
     "sources": [
       "https://www.bencloward.com/resources.shtml",
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-main-material-node-in-unreal-engine?application_version=5.7",
@@ -49,15 +51,6 @@
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/essential-unreal-engine-material-concepts?application_version=5.7"
     ],
     "key_sources": [
-      {
-        "id": "benvideos",
-        "label": "Ben Cloward: tutorials",
-        "title": "Ben Cloward — Shader tutorial videos and HLSL resources",
-        "url": "https://www.bencloward.com/resources.shtml",
-        "focus": "Use Shader Tutorial Videos for artist-focused node lessons and HLSL Training Videos for code.",
-        "context": "Author-maintained resource index. Tutorial engine versions vary.",
-        "category": "Further study"
-      },
       {
         "id": "main",
         "label": "Epic: Material Editor",
@@ -71,14 +64,207 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
+    "section_color": "#254D6D",
     "preview": "previews/03.jpg",
     "lesson": null
   },
   {
     "number": 4,
+    "id": "render-definitions",
+    "title": "Renderer, shader, material, instance",
+    "section": "01 · RENDERING PRELUDE",
+    "subsection": null,
+    "kind": "definitions",
+    "notes": "A texture stores sampled data. A material describes how to use that data. A shader is the executable calculation; the renderer coordinates the whole image. Unreal compiles material expressions into shader code for the relevant passes. A material instance inherits a parent and overrides exposed values. Ordinary scalar and vector overrides differ from static switches, which can require a shader variant. If I change Tint in an instance, which definition describes the thing I edited?",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-main-material-node-in-unreal-engine?application_version=5.7"
+    ],
+    "key_sources": [
+      {
+        "id": "main",
+        "label": "Epic: Material Editor",
+        "title": "Epic Games — Using the Main Material Node",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-main-material-node-in-unreal-engine?application_version=5.7",
+        "focus": "Read Material Inputs and Material Properties for enabled pins, defaults and the output node.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ],
+    "appendix": false,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#254D6D",
+    "preview": "previews/04.jpg",
+    "lesson": null
+  },
+  {
+    "number": 5,
+    "id": "render-pipeline",
+    "title": "Where the material enters a rendered image",
+    "section": "01 · RENDERING PRELUDE",
+    "subsection": null,
+    "kind": "pipeline-orientation",
+    "notes": "The pre-assessment asked for the logical order: scene submission, vertex processing, rasterization, pixel or fragment processing, then final pixels. Rasterization connects triangles to covered samples. Attributes such as UVs and normals are interpolated for shading. This is an orientation: depth tests, passes, lighting and post processing make a real renderer more involved. In Unreal, World Position Offset changes vertex positions; a material’s Base Color participates in later surface shading. Ned will explain coverage, depth and interpolation. Ask him where the values for a point inside a triangle come from.",
+    "sources": [
+      "https://learnopengl.com/Getting-started/Hello-Triangle"
+    ],
+    "key_sources": [
+      {
+        "id": "pipeline",
+        "label": "LearnOpenGL: pipeline",
+        "title": "LearnOpenGL — Hello Triangle",
+        "url": "https://learnopengl.com/Getting-started/Hello-Triangle",
+        "focus": "Logical graphics pipeline and programmable stages.",
+        "context": "General rasterization orientation; Unreal uses multiple rendering passes.",
+        "category": "Reference"
+      }
+    ],
+    "appendix": false,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#254D6D",
+    "preview": "previews/05.jpg",
+    "lesson": null
+  },
+  {
+    "number": 6,
+    "id": "render-coordinates",
+    "title": "Coordinates tell the shader where to look",
+    "section": "01 · RENDERING PRELUDE",
+    "subsection": null,
+    "kind": "definitions",
+    "notes": "If a checker texture becomes stretched on part of a mesh, inspect the UV mapping before blaming texture resolution. UVs are sampling addresses; local and world positions are different coordinate frames. A direction is not a position: translation affects points, not direction vectors. Unreal distinguishes Transform from TransformPosition. Compare vectors in the same space. For this class the texture-flow lesson changes UVs, while World Position Offset changes geometry. Those are different mechanisms even when both suggest moving water.",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/vector-operation-material-expressions-in-unreal-engine"
+    ],
+    "key_sources": [
+      {
+        "id": "main",
+        "label": "Epic: Material Editor",
+        "title": "Epic Games — Using the Main Material Node",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-main-material-node-in-unreal-engine?application_version=5.7",
+        "focus": "Read Material Inputs and Material Properties for enabled pins, defaults and the output node.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ],
+    "appendix": false,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#254D6D",
+    "preview": "previews/06.jpg",
+    "lesson": null
+  },
+  {
+    "number": 7,
+    "id": "render-vectors",
+    "title": "Normals and dot products: predict the signal",
+    "section": "01 · RENDERING PRELUDE",
+    "subsection": null,
+    "kind": "vector-recall",
+    "notes": "A normal describes surface orientation; normalizing is an operation that makes a nonzero vector length one. These are different ideas. For unit vectors the dot product is the cosine of their angle: one for matching directions, zero at a right angle, and minus one for opposite directions. Unreal world Up is positive Z. A sideways-facing normal has zero dot with Up. This same reasoning will drive our light bands and view-angle edges. Normalize both inputs and put them in the same coordinate space. Reversing a cross product reverses its direction, which matters when constructing normals from triangle edges. Do not normalize a zero vector as a direction. Which faces would a positive world-Up mask select?",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7"
+    ],
+    "key_sources": [
+      {
+        "id": "math",
+        "label": "Epic: material math",
+        "title": "Epic Games — Math Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Look up Multiply, LinearInterpolate, DotProduct, Step and Sine. Check each input order and Sine Period.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ],
+    "appendix": false,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#254D6D",
+    "preview": "previews/07.jpg",
+    "lesson": null
+  },
+  {
+    "number": 8,
+    "id": "render-budget",
+    "title": "A frame budget is a measured time budget",
+    "section": "01 · RENDERING PRELUDE",
+    "subsection": null,
+    "kind": "text",
+    "notes": "In the pre-assessment example, the GPU takes 24 milliseconds and the CPU takes nine. Their work can overlap, so do not simply add them as a general frame-time rule. At a 60 FPS target the GPU exceeds the 16.7 millisecond budget. If translucency is measured at eleven milliseconds, investigate that pass and compare a controlled change. A debug color has meaning only within its named visualization mode; red is not a universal measurement of cost. We will do the detailed profiling work in Week 9.",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/introduction-to-performance-profiling-and-configuration-in-unreal-engine"
+    ],
+    "key_sources": [],
+    "appendix": true,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#254D6D",
+    "preview": "previews/08.jpg",
+    "lesson": null
+  },
+  {
+    "number": 9,
+    "id": "shader-divider",
+    "title": "02 · SHADERS: CODE & NODES",
+    "section": "02 · SHADERS: GLSL, HLSL & UE",
+    "subsection": null,
+    "kind": "section",
+    "notes": "We will now follow one tint in GLSL, HLSL, and the Unreal Material Graph. First see the operation, then compare how each environment expresses it.",
+    "sources": [],
+    "key_sources": [],
+    "appendix": false,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#086D65",
+    "preview": "previews/09.jpg",
+    "lesson": null
+  },
+  {
+    "number": 10,
+    "id": "w08-077",
+    "title": "Optional Unreal setup",
+    "section": "02 · SHADERS: GLSL, HLSL & UE",
+    "subsection": null,
+    "kind": "text",
+    "notes": "Open the public project in UE 5.7. Use Content Browser, Week08, 00_Maps and select W08_Student_Gallery. Start with its six numbered bays. If an asset is not visible in your edition, use the gallery guide and matching browser lesson. Save your own work before switching maps. Epic Content Examples is a separate download.",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-main-material-node-in-unreal-engine?application_version=5.7",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/content-examples-sample-project-for-unreal-engine"
+    ],
+    "key_sources": [
+      {
+        "id": "main",
+        "label": "Epic: Material Editor",
+        "title": "Epic Games — Using the Main Material Node",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-main-material-node-in-unreal-engine?application_version=5.7",
+        "focus": "Read Material Inputs and Material Properties for enabled pins, defaults and the output node.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      },
+      {
+        "id": "samples",
+        "label": "Epic: Content Examples",
+        "title": "Epic Games — Content Examples",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/content-examples-sample-project-for-unreal-engine",
+        "focus": "Use the Materials and related example maps as a separate guided exploration. Follow the stations named in the course reference room.",
+        "context": "Official sample project. Obtain a version compatible with your Unreal installation.",
+        "category": "Further study"
+      }
+    ],
+    "appendix": true,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#086D65",
+    "preview": "previews/10.jpg",
+    "lesson": null
+  },
+  {
+    "number": 11,
     "id": "w08-008",
     "title": "Classroom workspace",
-    "section": "01 · SHADERS: GLSL, HLSL & UE",
+    "section": "02 · SHADERS: GLSL, HLSL & UE",
     "subsection": null,
     "kind": "workspace",
     "notes": "The browser classroom is enough to follow today. It runs GLSL calculations with a prepared host. The HLSL tab is a matching Unreal reference, not a second running language. If you already have the local workspace, run npm start, open the numbered lesson, and use Reload files after saving. There is no npm install step. If setup is unfinished, use the hosted example or work with a partner so you can still predict and compare.",
@@ -86,17 +272,18 @@
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7"
     ],
     "key_sources": [],
-    "appendix": false,
+    "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/04.jpg",
+    "section_color": "#086D65",
+    "preview": "previews/11.jpg",
     "lesson": null
   },
   {
-    "number": 5,
+    "number": 12,
     "id": "w08-009",
     "title": "The Unreal gallery",
-    "section": "01 · SHADERS: GLSL, HLSL & UE",
+    "section": "02 · SHADERS: GLSL, HLSL & UE",
     "subsection": null,
     "kind": "gallery",
     "notes": "Open W08_Student_Gallery. Follow the six numbered bays. Bay 01 pairs the small native Graph and HLSL studies. Bay 03 contains the water grid. Bay 06 contains actual key, fill and rim lights. Select an exhibit, open its instance, then its Parent. Duplicate the instance before editing. Epic Content Examples is a separate optional download, not a bay in this public gallery.",
@@ -104,17 +291,57 @@
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/content-examples-sample-project-for-unreal-engine"
     ],
     "key_sources": [],
-    "appendix": false,
+    "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/05.jpg",
+    "section_color": "#086D65",
+    "preview": "previews/12.jpg",
     "lesson": null
   },
   {
-    "number": 6,
+    "number": 13,
+    "id": "w08-011",
+    "title": "One operation, three representations",
+    "section": "02 · SHADERS: GLSL, HLSL & UE",
+    "subsection": null,
+    "kind": "journey",
+    "notes": "We will keep the texture-tint example constant through all three representations. GLSL is the browser language. HLSL here is the body of a UE Custom expression, not a complete renderer or standalone pixel shader. Native material expressions provide the same operation and compile into engine shader code.",
+    "sources": [
+      "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
+      "https://jettelly.com/store/the-unity-shaders-bible"
+    ],
+    "key_sources": [
+      {
+        "id": "ben",
+        "label": "Ben Cloward: resources",
+        "title": "Ben Cloward — Shaders 101, GDC 2016",
+        "url": "https://www.bencloward.com/resources.shtml",
+        "focus": "Optional artist-focused shader tutorials. Full Shader 101 slides and transcripts have not been reviewed in this revision.",
+        "context": "Historical talk and author-maintained tutorial index; use current Epic documentation for UE controls.",
+        "category": "Reference"
+      },
+      {
+        "id": "bible",
+        "label": "Jettelly: Unity Shaders Bible",
+        "title": "Fabrizio Espíndola / Jettelly — The Unity Shaders Bible",
+        "url": "https://jettelly.com/store/the-unity-shaders-bible",
+        "focus": "Use Introduction to the Programming Language for HLSL and node concepts; Lighting, Shadows, and Surfaces for deeper lighting study.",
+        "context": "Optional paid book with a publisher-provided sample. Unity HLSL, ShaderLab and Shader Graph require adaptation to Unreal; no purchase is required.",
+        "category": "Further study"
+      }
+    ],
+    "appendix": false,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#086D65",
+    "preview": "previews/13.jpg",
+    "lesson": null
+  },
+  {
+    "number": 14,
     "id": "w08-010",
     "title": "Tint: original × multiplier = result",
-    "section": "01 · SHADERS: GLSL, HLSL & UE",
+    "section": "02 · SHADERS: GLSL, HLSL & UE",
     "subsection": null,
     "kind": "tint-example",
     "notes": "Start on the left. The white, light blue, gold, and blue squares are the original texture RGB. The middle swatch is a three-component multiplier. The right image is the same texture after multiplication. Point to one white square and then the same square in the result. No texture is being replaced. The shader works on linear RGB; these images are display encoded. Ignore the alpha channel in this Opaque example.",
@@ -135,80 +362,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/06.jpg",
+    "section_color": "#086D65",
+    "preview": "previews/14.jpg",
     "lesson": null
   },
   {
-    "number": 7,
-    "id": "w08-011",
-    "title": "One operation, three representations",
-    "section": "01 · SHADERS: GLSL, HLSL & UE",
-    "subsection": null,
-    "kind": "journey",
-    "notes": "We will keep the texture-tint example constant through all three representations. GLSL is the browser language. HLSL here is the body of a UE Custom expression, not a complete renderer or standalone pixel shader. Native material expressions provide the same operation and compile into engine shader code.",
-    "sources": [
-      "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
-      "https://jettelly.com/store/the-unity-shaders-bible"
-    ],
-    "key_sources": [
-      {
-        "id": "ben",
-        "label": "Ben Cloward: Shaders 101",
-        "title": "Ben Cloward — Shaders 101, GDC 2016",
-        "url": "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
-        "focus": "Read PDF pages 18–38 for UV scale, scrolling and layered distortion, and pages 54–67 for mask-based blending.",
-        "context": "A historical talk explaining calculations shared by code and node editors; its screenshots are not UE 5.7 UI instructions.",
-        "category": "Reference"
-      },
-      {
-        "id": "bible",
-        "label": "Jettelly: Unity Shaders Bible",
-        "title": "Fabrizio Espíndola / Jettelly — The Unity Shaders Bible",
-        "url": "https://jettelly.com/store/the-unity-shaders-bible",
-        "focus": "Use Introduction to the Programming Language for HLSL and node concepts; Lighting, Shadows, and Surfaces for deeper lighting study.",
-        "context": "Optional paid book with a publisher-provided sample. Unity HLSL, ShaderLab and Shader Graph require adaptation to Unreal; no purchase is required.",
-        "category": "Further study"
-      }
-    ],
-    "appendix": false,
-    "guest": null,
-    "motion_bounds": null,
-    "preview": "previews/07.jpg",
-    "lesson": null
-  },
-  {
-    "number": 8,
-    "id": "w08-007",
-    "title": "The Unreal Material Editor",
-    "section": "01 · SHADERS: GLSL, HLSL & UE",
-    "subsection": null,
-    "kind": "ui-guide",
-    "notes": "Select the main material output node to see the material settings. For these small comparisons, choose Surface, Opaque, and Unlit. Emissive Color is the enabled color input. Base Color belongs to a lit material. These are the classic material inputs in our UE 5.7.4 project, which has Substrate disabled.",
-    "sources": [
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-main-material-node-in-unreal-engine?application_version=5.7"
-    ],
-    "key_sources": [
-      {
-        "id": "main",
-        "label": "Epic: Material Editor",
-        "title": "Epic Games — Using the Main Material Node",
-        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-main-material-node-in-unreal-engine?application_version=5.7",
-        "focus": "Read Material Inputs and Material Properties for enabled pins, defaults and the output node.",
-        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
-        "category": "Reference"
-      }
-    ],
-    "appendix": false,
-    "guest": null,
-    "motion_bounds": null,
-    "preview": "previews/08.jpg",
-    "lesson": null
-  },
-  {
-    "number": 9,
+    "number": 15,
     "id": "w08-014",
     "title": "Tint in GLSL",
-    "section": "01 · SHADERS: GLSL, HLSL & UE",
+    "section": "02 · SHADERS: GLSL, HLSL & UE",
     "subsection": "GLSL",
     "kind": "tint-code",
     "notes": "This exact code is lesson 01_color/fragment.glsl in the student workspace. UV is a vec2 lookup address supplied by the browser host (float2 in HLSL). texture returns four channels; .rgb selects three. Multiplication is component-wise. Set the Tint color picker to white to see the baseline, then lower red. The shader returns color through the small browser wrapper.\n\nStudent files: lessons/01_color/fragment.glsl and unreal-custom.hlsl. The host supplies declared inputs and the output wrapper. Read the matching file while this slide is visible.",
@@ -240,14 +402,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/09.jpg",
+    "section_color": "#086D65",
+    "preview": "previews/15.jpg",
     "lesson": "01_color"
   },
   {
-    "number": 10,
+    "number": 16,
     "id": "w08-015",
     "title": "The same tint in Unreal HLSL",
-    "section": "01 · SHADERS: GLSL, HLSL & UE",
+    "section": "02 · SHADERS: GLSL, HLSL & UE",
     "subsection": "HLSL / UNREAL CUSTOM NODE",
     "kind": "tint-code",
     "notes": "Open M_Tint_HLSL. The sampler name is generated from the texture input name: BaseTextureSampler. This is the Custom-node body. Unreal supplies surrounding shader code, material settings, and geometry. The image represents the same calculation; engine tone mapping and exposure can change the displayed appearance. For the comparison, use the unlit study and keep viewing conditions fixed.\n\nStudent files: lessons/01_color/fragment.glsl and unreal-custom.hlsl. The host supplies declared inputs and the output wrapper. Read the matching file while this slide is visible.",
@@ -278,17 +441,18 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/10.jpg",
+    "section_color": "#086D65",
+    "preview": "previews/16.jpg",
     "lesson": "01_color"
   },
   {
-    "number": 11,
+    "number": 17,
     "id": "w08-016",
-    "title": "Tint as material nodes",
-    "section": "01 · SHADERS: GLSL, HLSL & UE",
+    "title": "Tint in the Unreal Material Graph",
+    "section": "02 · SHADERS: GLSL, HLSL & UE",
     "subsection": "UE MATERIAL GRAPH",
-    "kind": "tintflow",
-    "notes": "Follow the texture’s RGB output into Multiply A. Tint enters Multiply B. The result connects to Emissive Color. The texture sample uses the mesh UVs. The graph and code express the same operation. Ordinary nodes are the first choice for this example. A Custom expression is useful here for seeing the translation, not because a tint needs custom code.",
+    "kind": "graph-evidence",
+    "notes": "Follow the texture’s RGB output into Multiply A. Tint enters Multiply B. The result connects to Emissive Color. The texture sample uses the mesh UVs. The graph and code express the same operation. Ordinary nodes are the first choice for this example. A Custom expression is useful here for seeing the translation, not because a tint needs custom code. The screenshot is the course material’s actual Multiply and output region. The Texture Sample and Tint nodes sit off this crop; the labels identify their connected inputs. The complete simplified wiring remains available as an optional diagram.",
     "sources": [
       "Week08ShaderLab/MaterialBasics/material-graphs.json",
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
@@ -306,28 +470,58 @@
       },
       {
         "id": "ben",
-        "label": "Ben Cloward: Shaders 101",
+        "label": "Ben Cloward: resources",
         "title": "Ben Cloward — Shaders 101, GDC 2016",
-        "url": "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
-        "focus": "Read PDF pages 18–38 for UV scale, scrolling and layered distortion, and pages 54–67 for mask-based blending.",
-        "context": "A historical talk explaining calculations shared by code and node editors; its screenshots are not UE 5.7 UI instructions.",
+        "url": "https://www.bencloward.com/resources.shtml",
+        "focus": "Optional artist-focused shader tutorials. Full Shader 101 slides and transcripts have not been reviewed in this revision.",
+        "context": "Historical talk and author-maintained tutorial index; use current Epic documentation for UE controls.",
         "category": "Reference"
       }
     ],
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/11.jpg",
+    "section_color": "#086D65",
+    "preview": "previews/17.jpg",
+    "lesson": "01_color"
+  },
+  {
+    "number": 18,
+    "id": "w08-007",
+    "title": "The Unreal Material Editor",
+    "section": "02 · SHADERS: GLSL, HLSL & UE",
+    "subsection": null,
+    "kind": "ui-guide",
+    "notes": "Select the main material output node to see the material settings. For these small comparisons, choose Surface, Opaque, and Unlit. Emissive Color is the enabled color input. Base Color belongs to a lit material. These are the classic material inputs in our UE 5.7.4 project, which has Substrate disabled.",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-main-material-node-in-unreal-engine?application_version=5.7"
+    ],
+    "key_sources": [
+      {
+        "id": "main",
+        "label": "Epic: Material Editor",
+        "title": "Epic Games — Using the Main Material Node",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-main-material-node-in-unreal-engine?application_version=5.7",
+        "focus": "Read Material Inputs and Material Properties for enabled pins, defaults and the output node.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ],
+    "appendix": false,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#086D65",
+    "preview": "previews/18.jpg",
     "lesson": null
   },
   {
-    "number": 12,
+    "number": 19,
     "id": "w08-017",
     "title": "Change a material instance",
-    "section": "01 · SHADERS: GLSL, HLSL & UE",
+    "section": "02 · SHADERS: GLSL, HLSL & UE",
     "subsection": null,
     "kind": "ui-guide",
-    "notes": "The material instance inherits its graph and defaults from the parent. Enable the Tint override before editing. With white, the source is preserved. Lower red and predict which patches change most. If nothing changes, check the assigned instance and its override checkbox. Restore Tint to 0.20, 0.80, 0.45. Ordinary scalar/vector overrides change values. Static switches select compiled variants and can trigger compilation. Texture RGB used as color is decoded from sRGB before the calculation; numerical mask data uses a different interpretation. The detailed texture-settings comparison is slide 16. What is still unclear about the input, the multiplication, or the instance?",
+    "notes": "The material instance inherits its graph and defaults from the parent. Enable the Tint override before editing. With white, the source is preserved. Lower red and predict which patches change most. If nothing changes, check the assigned instance and its override checkbox. Restore Tint to 0.20, 0.80, 0.45. Ordinary scalar/vector overrides change values. Static switches select compiled variants and can trigger compilation. Texture RGB used as color is decoded from sRGB before the calculation; numerical mask data uses a different interpretation. The detailed texture-settings comparison is slide 27. What is still unclear about the input, the multiplication, or the instance?",
     "sources": [
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7"
     ],
@@ -345,14 +539,94 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/12.jpg",
+    "section_color": "#086D65",
+    "preview": "previews/19.jpg",
     "lesson": null
   },
   {
-    "number": 13,
+    "number": 20,
+    "id": "tint-wiring-reference",
+    "title": "Tint: full signal path",
+    "section": "02 · SHADERS: GLSL, HLSL & UE",
+    "subsection": "UE MATERIAL GRAPH",
+    "kind": "tintflow",
+    "notes": "Follow the texture’s RGB output into Multiply A. Tint enters Multiply B. The result connects to Emissive Color. The texture sample uses the mesh UVs. The graph and code express the same operation. Ordinary nodes are the first choice for this example. A Custom expression is useful here for seeing the translation, not because a tint needs custom code. The screenshot is the course material’s actual Multiply and output region. The Texture Sample and Tint nodes sit off this crop; the labels identify their connected inputs. The complete simplified wiring remains available as an optional diagram.",
+    "sources": [
+      "Week08ShaderLab/MaterialBasics/material-graphs.json",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf"
+    ],
+    "key_sources": [
+      {
+        "id": "math",
+        "label": "Epic: material math",
+        "title": "Epic Games — Math Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Look up Multiply, LinearInterpolate, DotProduct, Step and Sine. Check each input order and Sine Period.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      },
+      {
+        "id": "ben",
+        "label": "Ben Cloward: resources",
+        "title": "Ben Cloward — Shaders 101, GDC 2016",
+        "url": "https://www.bencloward.com/resources.shtml",
+        "focus": "Optional artist-focused shader tutorials. Full Shader 101 slides and transcripts have not been reviewed in this revision.",
+        "context": "Historical talk and author-maintained tutorial index; use current Epic documentation for UE controls.",
+        "category": "Reference"
+      }
+    ],
+    "appendix": true,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#086D65",
+    "preview": "previews/20.jpg",
+    "lesson": null
+  },
+  {
+    "number": 21,
+    "id": "w08-013",
+    "title": "Translation checks",
+    "section": "02 · SHADERS: GLSL, HLSL & UE",
+    "subsection": null,
+    "kind": "table",
+    "notes": "A shader host also defines how values arrive and where they go. Our snippets are expressions inside that host. A whole GLSL program cannot be pasted into a Custom node unchanged. The native graph is our main authoring surface.",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions"
+    ],
+    "key_sources": [
+      {
+        "id": "custom",
+        "label": "Epic: Custom HLSL",
+        "title": "Epic Games — Custom Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Read Using the Custom Material Expression: named inputs, return value, Output Type and the texture sampler example.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      },
+      {
+        "id": "hlsl",
+        "label": "Microsoft: HLSL functions",
+        "title": "Microsoft — HLSL Intrinsic Functions",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
+        "focus": "Follow the per-function links for lerp, saturate, step, normalize and dot. Check arguments and return values.",
+        "context": "Language reference; Unreal’s Custom node supplies its own input/output wrapper.",
+        "category": "Reference"
+      }
+    ],
+    "appendix": true,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#086D65",
+    "preview": "previews/21.jpg",
+    "lesson": null
+  },
+  {
+    "number": 22,
     "id": "mask-inputs",
     "title": "A mask is a value that selects a result",
-    "section": "01 · SHADERS: GLSL, HLSL & UE",
+    "section": "02 · SHADERS: GLSL, HLSL & UE",
     "subsection": null,
     "kind": "mask-meaning",
     "notes": "Show ShadowColor at the left, Tint at the right, and the continuous blend between. A mask is data, not automatically transparency. The same numeric signal can drive a color blend, an opacity mask, or another material input, with different consequences. At mask 0.5, which two values are being blended? The halfway value is halfway in the calculation space, which need not look perceptually halfway on screen.",
@@ -380,17 +654,18 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/13.jpg",
+    "section_color": "#086D65",
+    "preview": "previews/22.jpg",
     "lesson": null
   },
   {
-    "number": 14,
+    "number": 23,
     "id": "w08-018",
-    "title": "Blend two colors with a mask",
-    "section": "01 · SHADERS: GLSL, HLSL & UE",
-    "subsection": null,
-    "kind": "bridge",
-    "notes": "The previous slide established both colors and the visible transition. Here UV.x drives smoothstep. Its result is a numeric mask. GLSL mix and HLSL lerp perform the same interpolation. The diagram shows the equivalent SmoothStep operation with TexCoord R, Min .25 and Max .75, feeding Lerp Alpha. The supplied native material expands that operation into Subtract, Multiply, Saturate and the cubic t*t*(3-2*t), so its literal graph has more nodes. Both compute the same mask.\n\nStudent files: lessons/02_uv_mask/fragment.glsl and unreal-custom.hlsl. The host supplies declared inputs and the output wrapper. Read the matching file while this slide is visible.",
+    "title": "Mask blend in GLSL",
+    "section": "02 · SHADERS: GLSL, HLSL & UE",
+    "subsection": "GLSL",
+    "kind": "example-code",
+    "notes": "Start with the same two colors and the same left-to-right UV coordinate. Smoothstep maps .25 to zero and .75 to one with a smooth transition. GLSL mix uses that mask to choose or blend the colors. At mask zero we see ShadowColor; at one we see Tint. The browser executes this calculation.",
     "sources": [
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
       "https://thebookofshaders.com/05/",
@@ -419,17 +694,87 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/14.jpg",
+    "section_color": "#086D65",
+    "preview": "previews/23.jpg",
     "lesson": "02_uv_mask"
   },
   {
-    "number": 15,
+    "number": 24,
+    "id": "mask-hlsl",
+    "title": "The same mask blend in Unreal HLSL",
+    "section": "02 · SHADERS: GLSL, HLSL & UE",
+    "subsection": "HLSL / UNREAL CUSTOM NODE",
+    "kind": "example-code",
+    "notes": "The calculation is unchanged. In Unreal this is a Custom-node body with UV, ShadowColor and Tint inputs, a float3 output and a return value. The host supplies those inputs; this is not a complete standalone HLSL application.",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://thebookofshaders.com/05/",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7"
+    ],
+    "key_sources": [
+      {
+        "id": "bosshape",
+        "label": "Book of Shaders: functions",
+        "title": "Patricio Gonzalez Vivo & Jen Lowe — The Book of Shaders, Shaping functions",
+        "url": "https://thebookofshaders.com/05/",
+        "focus": "Start with Step and Smoothstep. Change the threshold or transition interval before combining operations.",
+        "context": "Free interactive GLSL exercises; compare the argument order with Unreal nodes.",
+        "category": "Reference"
+      },
+      {
+        "id": "math",
+        "label": "Epic: material math",
+        "title": "Epic Games — Math Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Look up Multiply, LinearInterpolate, DotProduct, Step and Sine. Check each input order and Sine Period.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ],
+    "appendix": false,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#086D65",
+    "preview": "previews/24.jpg",
+    "lesson": "02_uv_mask"
+  },
+  {
+    "number": 25,
+    "id": "mask-native",
+    "title": "The same blend in Unreal nodes",
+    "section": "02 · SHADERS: GLSL, HLSL & UE",
+    "subsection": "UE MATERIAL GRAPH",
+    "kind": "graph-evidence",
+    "notes": "The previous slide established both colors and the visible transition. Here UV.x drives smoothstep. Its result is a numeric mask. GLSL mix and HLSL lerp perform the same interpolation. The diagram shows the equivalent SmoothStep operation with TexCoord R, Min .25 and Max .75, feeding Lerp Alpha. The supplied native material expands that operation into Subtract, Multiply, Saturate and the cubic t*t*(3-2*t), so its literal graph has more nodes. Both compute the same mask.\n\nStudent files: lessons/02_uv_mask/fragment.glsl and unreal-custom.hlsl. The host supplies declared inputs and the output wrapper. Read the matching file while this slide is visible. The node detail comes from Epic documentation; it is a recognition reference, not a capture of our complete mask material. The course parent expands smoothstep into clamped cubic arithmetic. Map its final scalar to Alpha and both colors to A/B.",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7"
+    ],
+    "key_sources": [
+      {
+        "id": "math",
+        "label": "Epic: material math",
+        "title": "Epic Games — Math Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Look up Multiply, LinearInterpolate, DotProduct, Step and Sine. Check each input order and Sine Period.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ],
+    "appendix": false,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#086D65",
+    "preview": "previews/25.jpg",
+    "lesson": "02_uv_mask"
+  },
+  {
+    "number": 26,
     "id": "w08-019",
     "title": "Color operations",
-    "section": "01 · SHADERS: GLSL, HLSL & UE",
+    "section": "02 · SHADERS: GLSL, HLSL & UE",
     "subsection": null,
-    "kind": "table",
-    "notes": "These are familiar image-editing operations expressed as material math. Multiplication is component-wise. Lerp blends toward a chosen value; adding a positive color cannot darken the input. Values used for lighting and emissive effects may exceed one, so clamping every result is not a general rule.",
+    "kind": "node-table",
+    "notes": "These are familiar image-editing operations expressed as material math. Multiplication is component-wise. Lerp blends toward a chosen value; adding a positive color cannot darken the input. Values used for lighting and emissive effects may exceed one, so clamping every result is not a general rule. Actual native node crops from Epic documentation are included for recognition; capture version is not specified. See the full original graphs in the review evidence page.",
     "sources": [
       "https://thebookofshaders.com/06/",
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7"
@@ -454,17 +799,18 @@
         "category": "Reference"
       }
     ],
-    "appendix": false,
+    "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/15.jpg",
+    "section_color": "#086D65",
+    "preview": "previews/26.jpg",
     "lesson": null
   },
   {
-    "number": 16,
+    "number": 27,
     "id": "w08-020",
     "title": "Color textures and numerical masks",
-    "section": "01 · SHADERS: GLSL, HLSL & UE",
+    "section": "02 · SHADERS: GLSL, HLSL & UE",
     "subsection": null,
     "kind": "ui-guide",
     "notes": "The fresh capture shows our actual color texture with sRGB enabled. A numerical mask should not have a display transfer curve applied to its RGB values. Alpha is not sRGB-decoded. Use the texture asset’s intended compression/sampler type too; do not treat a normal map as a color texture.",
@@ -482,17 +828,18 @@
         "category": "Reference"
       }
     ],
-    "appendix": false,
+    "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/16.jpg",
+    "section_color": "#086D65",
+    "preview": "previews/27.jpg",
     "lesson": null
   },
   {
-    "number": 17,
+    "number": 28,
     "id": "w08-022",
     "title": "Opacity: choose the material behavior",
-    "section": "01 · SHADERS: GLSL, HLSL & UE",
+    "section": "02 · SHADERS: GLSL, HLSL & UE",
     "subsection": null,
     "kind": "compare",
     "notes": "A numeric value and a material setting do different jobs.",
@@ -510,17 +857,18 @@
         "category": "Reference"
       }
     ],
-    "appendix": false,
+    "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/17.jpg",
+    "section_color": "#086D65",
+    "preview": "previews/28.jpg",
     "lesson": null
   },
   {
-    "number": 18,
+    "number": 29,
     "id": "w08-023",
     "title": "Make a material translucent",
-    "section": "01 · SHADERS: GLSL, HLSL & UE",
+    "section": "02 · SHADERS: GLSL, HLSL & UE",
     "subsection": null,
     "kind": "ui-guide",
     "notes": "Select the material output node and change Blend Mode to Translucent. Keep the Shading Model Unlit so we isolate the fade. Connect an Opacity scalar and apply the material. Two Sided controls whether back faces are rendered. It does not turn transparency on. The Opacity pin becomes available because of the material settings. Our Unlit choice isolates opacity. Unreal also supports lit translucent surfaces through its translucency lighting modes. The optional reference room shows DepthFade at an opaque intersection.",
@@ -540,17 +888,18 @@
         "category": "Reference"
       }
     ],
-    "appendix": false,
+    "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/18.jpg",
+    "section_color": "#086D65",
+    "preview": "previews/29.jpg",
     "lesson": null
   },
   {
-    "number": 19,
+    "number": 30,
     "id": "w08-025",
     "title": "Make a cutout",
-    "section": "01 · SHADERS: GLSL, HLSL & UE",
+    "section": "02 · SHADERS: GLSL, HLSL & UE",
     "subsection": null,
     "kind": "ui-guide",
     "notes": "Use the same mask as the translucent example, then compare the edge. The visible screenshot highlights Masked. Opacity Mask Clip Value is in the material settings; search that property in Details if it is not expanded. A threshold is a choice about which samples survive, not a color palette setting.",
@@ -568,17 +917,18 @@
         "category": "Reference"
       }
     ],
-    "appendix": false,
+    "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/19.jpg",
+    "section_color": "#086D65",
+    "preview": "previews/30.jpg",
     "lesson": null
   },
   {
-    "number": 20,
+    "number": 31,
     "id": "w08-024",
     "title": "Opacity in motion",
-    "section": "01 · SHADERS: GLSL, HLSL & UE",
+    "section": "02 · SHADERS: GLSL, HLSL & UE",
     "subsection": null,
     "kind": "engine",
     "notes": "Watch the right-hand material fade while the opaque and cutout examples stay fixed. Change the Opacity parameter, not the texture RGB. An opacity of one can look solid, but the asset is still configured as Translucent. This connects coverage and blending to a specific Unreal control. Revisit it after Ned when that connection is useful.",
@@ -596,7 +946,7 @@
         "category": "Reference"
       }
     ],
-    "appendix": false,
+    "appendix": true,
     "guest": null,
     "motion_bounds": [
       152,
@@ -604,15 +954,16 @@
       976,
       432
     ],
-    "preview": "previews/20.jpg",
+    "section_color": "#086D65",
+    "preview": "previews/31.jpg",
     "lesson": null,
-    "motion": "media/rebuild-20.gif"
+    "motion": "media/rebuild-31.gif"
   },
   {
-    "number": 21,
+    "number": 32,
     "id": "w08-027",
     "title": "Opaque, masked, translucent",
-    "section": "01 · SHADERS: GLSL, HLSL & UE",
+    "section": "02 · SHADERS: GLSL, HLSL & UE",
     "subsection": null,
     "kind": "table",
     "notes": "A gray mask does not automatically make a material transparent. The parent Blend Mode decides how that data is used. You will evaluate tradeoffs next week using a fixed scene and measurements.",
@@ -630,17 +981,18 @@
         "category": "Reference"
       }
     ],
-    "appendix": false,
+    "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/21.jpg",
+    "section_color": "#086D65",
+    "preview": "previews/32.jpg",
     "lesson": null
   },
   {
-    "number": 22,
+    "number": 33,
     "id": "w08-004",
     "title": "Ned",
-    "section": "02 · RENDERING WITH NED",
+    "section": "03 · RENDERING WITH NED",
     "subsection": null,
     "kind": "guestintro",
     "notes": "Ned is my coworker at GOLF+, where he works as a rendering engineer. He also creates NedMakesGames. He will share his screen and explain how rasterization, depth and interpolated values contribute to an image. Open the original PDF if you want to annotate it. Write one thing you want to understand and leave space for an example that changes your thinking. While I check the connection, compare your question with a neighbor. After the talk, we will connect his explanation to UVs, masks and moving water.",
@@ -662,14 +1014,15 @@
     "appendix": false,
     "guest": true,
     "motion_bounds": null,
-    "preview": "previews/22.jpg",
+    "section_color": "#60467D",
+    "preview": "previews/33.jpg",
     "lesson": null
   },
   {
-    "number": 23,
+    "number": 34,
     "id": "w08-005",
     "title": "Questions for Ned",
-    "section": "02 · RENDERING WITH NED",
+    "section": "03 · RENDERING WITH NED",
     "subsection": null,
     "kind": "text",
     "notes": "What questions do you have for Ned? Point to an example or a step that raised the question. If you are still thinking, I would like to ask how he separates a material issue from a renderer issue, and what evidence is most useful when artists and rendering engineers work together. Thank you, Ned. We will now try a few of those artist-facing choices in Unreal.",
@@ -700,14 +1053,15 @@
     "appendix": false,
     "guest": true,
     "motion_bounds": null,
-    "preview": "previews/23.jpg",
+    "section_color": "#60467D",
+    "preview": "previews/34.jpg",
     "lesson": null
   },
   {
-    "number": 24,
+    "number": 35,
     "id": "w08-028",
-    "title": "03 · WATER SHADERS",
-    "section": "03 · WATER SHADERS",
+    "title": "04 · WATER SHADERS",
+    "section": "04 · WATER SHADERS",
     "subsection": null,
     "kind": "section",
     "notes": "Separate the surface finish from the motion that produces the wave form.",
@@ -718,11 +1072,11 @@
     "key_sources": [
       {
         "id": "ben",
-        "label": "Ben Cloward: Shaders 101",
+        "label": "Ben Cloward: resources",
         "title": "Ben Cloward — Shaders 101, GDC 2016",
-        "url": "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
-        "focus": "Read PDF pages 18–38 for UV scale, scrolling and layered distortion, and pages 54–67 for mask-based blending.",
-        "context": "A historical talk explaining calculations shared by code and node editors; its screenshots are not UE 5.7 UI instructions.",
+        "url": "https://www.bencloward.com/resources.shtml",
+        "focus": "Optional artist-focused shader tutorials. Full Shader 101 slides and transcripts have not been reviewed in this revision.",
+        "context": "Historical talk and author-maintained tutorial index; use current Epic documentation for UE controls.",
         "category": "Reference"
       },
       {
@@ -738,14 +1092,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/24.jpg",
+    "section_color": "#176580",
+    "preview": "previews/35.jpg",
     "lesson": null
   },
   {
-    "number": 25,
+    "number": 36,
     "id": "flow-input",
     "title": "The input to our moving sample",
-    "section": "03 · WATER SHADERS",
+    "section": "04 · WATER SHADERS",
     "subsection": null,
     "kind": "pair",
     "notes": "This separates source data from the result before introducing motion. The input contains no teal or purple color. Those colors are parameters, selected by the sampled grayscale value. The texture is data, so sRGB is off.",
@@ -762,25 +1117,26 @@
       },
       {
         "id": "ben",
-        "label": "Ben Cloward: Shaders 101",
+        "label": "Ben Cloward: resources",
         "title": "Ben Cloward — Shaders 101, GDC 2016",
-        "url": "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
-        "focus": "Read PDF pages 18–38 for UV scale, scrolling and layered distortion, and pages 54–67 for mask-based blending.",
-        "context": "A historical talk explaining calculations shared by code and node editors; its screenshots are not UE 5.7 UI instructions.",
+        "url": "https://www.bencloward.com/resources.shtml",
+        "focus": "Optional artist-focused shader tutorials. Full Shader 101 slides and transcripts have not been reviewed in this revision.",
+        "context": "Historical talk and author-maintained tutorial index; use current Epic documentation for UE controls.",
         "category": "Reference"
       }
     ],
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/25.jpg",
+    "section_color": "#176580",
+    "preview": "previews/36.jpg",
     "lesson": null
   },
   {
-    "number": 26,
+    "number": 37,
     "id": "w08-035",
     "title": "Move the lookup address",
-    "section": "03 · WATER SHADERS",
+    "section": "04 · WATER SHADERS",
     "subsection": null,
     "kind": "uv-explain",
     "notes": "Use a still frame first. Mark a sample point in UV space and add a horizontal offset. Sampling at UV + offset makes a feature appear to travel in the opposite screen direction on this plane. Speed zero freezes the offset. The next code slide uses a two-component offset with zero vertical speed.",
@@ -801,25 +1157,26 @@
       },
       {
         "id": "ben",
-        "label": "Ben Cloward: Shaders 101",
+        "label": "Ben Cloward: resources",
         "title": "Ben Cloward — Shaders 101, GDC 2016",
-        "url": "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
-        "focus": "Read PDF pages 18–38 for UV scale, scrolling and layered distortion, and pages 54–67 for mask-based blending.",
-        "context": "A historical talk explaining calculations shared by code and node editors; its screenshots are not UE 5.7 UI instructions.",
+        "url": "https://www.bencloward.com/resources.shtml",
+        "focus": "Optional artist-focused shader tutorials. Full Shader 101 slides and transcripts have not been reviewed in this revision.",
+        "context": "Historical talk and author-maintained tutorial index; use current Epic documentation for UE controls.",
         "category": "Reference"
       }
     ],
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/26.jpg",
+    "section_color": "#176580",
+    "preview": "previews/37.jpg",
     "lesson": "03_texture_flow"
   },
   {
-    "number": 27,
+    "number": 38,
     "id": "w08-030",
     "title": "Texture motion in GLSL",
-    "section": "03 · WATER SHADERS",
+    "section": "04 · WATER SHADERS",
     "subsection": "GLSL",
     "kind": "demo",
     "notes": "This exact example is lesson 03_texture_flow. It uses the provided brush mask so its role is easy to inspect. The water gallery later applies the same coordinate idea to water-shaped detail. Set Speed to zero; only the lookup animation stops. Tiling changes repetition, not geometric density.\n\nStudent files: lessons/03_texture_flow/fragment.glsl and unreal-custom.hlsl. The host supplies declared inputs and the output wrapper. Read the matching file while this slide is visible.",
@@ -841,25 +1198,26 @@
       },
       {
         "id": "ben",
-        "label": "Ben Cloward: Shaders 101",
+        "label": "Ben Cloward: resources",
         "title": "Ben Cloward — Shaders 101, GDC 2016",
-        "url": "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
-        "focus": "Read PDF pages 18–38 for UV scale, scrolling and layered distortion, and pages 54–67 for mask-based blending.",
-        "context": "A historical talk explaining calculations shared by code and node editors; its screenshots are not UE 5.7 UI instructions.",
+        "url": "https://www.bencloward.com/resources.shtml",
+        "focus": "Optional artist-focused shader tutorials. Full Shader 101 slides and transcripts have not been reviewed in this revision.",
+        "context": "Historical talk and author-maintained tutorial index; use current Epic documentation for UE controls.",
         "category": "Reference"
       }
     ],
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/27.jpg",
+    "section_color": "#176580",
+    "preview": "previews/38.jpg",
     "lesson": "03_texture_flow"
   },
   {
-    "number": 28,
+    "number": 39,
     "id": "w08-031",
     "title": "Texture motion in Unreal HLSL",
-    "section": "03 · WATER SHADERS",
+    "section": "04 · WATER SHADERS",
     "subsection": "HLSL / UNREAL CUSTOM NODE",
     "kind": "dualcode",
     "notes": "Open M_03_texture_flow_HLSL. Inputs are UV, Seconds, Tiling, Speed, BrushTexture, ShadowColor, and Tint. Time supplies Seconds. The two implementations apply the same formula. The next slide names the equivalent native nodes.\n\nStudent files: lessons/03_texture_flow/fragment.glsl and unreal-custom.hlsl. The host supplies declared inputs and the output wrapper. Read the matching file while this slide is visible.",
@@ -880,25 +1238,26 @@
       },
       {
         "id": "ben",
-        "label": "Ben Cloward: Shaders 101",
+        "label": "Ben Cloward: resources",
         "title": "Ben Cloward — Shaders 101, GDC 2016",
-        "url": "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
-        "focus": "Read PDF pages 18–38 for UV scale, scrolling and layered distortion, and pages 54–67 for mask-based blending.",
-        "context": "A historical talk explaining calculations shared by code and node editors; its screenshots are not UE 5.7 UI instructions.",
+        "url": "https://www.bencloward.com/resources.shtml",
+        "focus": "Optional artist-focused shader tutorials. Full Shader 101 slides and transcripts have not been reviewed in this revision.",
+        "context": "Historical talk and author-maintained tutorial index; use current Epic documentation for UE controls.",
         "category": "Reference"
       }
     ],
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/28.jpg",
+    "section_color": "#176580",
+    "preview": "previews/39.jpg",
     "lesson": "03_texture_flow"
   },
   {
-    "number": 29,
+    "number": 40,
     "id": "w08-032",
     "title": "Texture motion as material nodes",
-    "section": "03 · WATER SHADERS",
+    "section": "04 · WATER SHADERS",
     "subsection": "UE MATERIAL GRAPH",
     "kind": "texture-flow",
     "notes": "Read the graph left to right. There are two inputs to Add: scaled UVs and the animated float2 offset. Time and speed are scalars, so AppendVector adds a zero V component. The sampled R value drives Lerp Alpha. Native material expressions provide the same computation as the code.",
@@ -919,25 +1278,26 @@
       },
       {
         "id": "ben",
-        "label": "Ben Cloward: Shaders 101",
+        "label": "Ben Cloward: resources",
         "title": "Ben Cloward — Shaders 101, GDC 2016",
-        "url": "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
-        "focus": "Read PDF pages 18–38 for UV scale, scrolling and layered distortion, and pages 54–67 for mask-based blending.",
-        "context": "A historical talk explaining calculations shared by code and node editors; its screenshots are not UE 5.7 UI instructions.",
+        "url": "https://www.bencloward.com/resources.shtml",
+        "focus": "Optional artist-focused shader tutorials. Full Shader 101 slides and transcripts have not been reviewed in this revision.",
+        "context": "Historical talk and author-maintained tutorial index; use current Epic documentation for UE controls.",
         "category": "Reference"
       }
     ],
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/29.jpg",
+    "section_color": "#176580",
+    "preview": "previews/40.jpg",
     "lesson": null
   },
   {
-    "number": 30,
+    "number": 41,
     "id": "w08-033",
     "title": "Texture-flow controls in Unreal",
-    "section": "03 · WATER SHADERS",
+    "section": "04 · WATER SHADERS",
     "subsection": null,
     "kind": "ui-guide",
     "notes": "Open MI_03_texture_flow_Graph and expand 01 Lab controls. Enable Speed and compare 0, 0.12 and -0.12. Keep Tiling at 2 and keep both colors fixed. Zero stops the animated UV offset; a negative value reverses it. The plane stays flat. Restore Speed to 0.12. If the image does not change, check the assigned instance, the override checkbox and whether time is paused in the browser. This small student lesson uses Speed; the separate water gallery uses FlowSpeed. The gallery water FreezeTime control does not belong to this lesson.",
@@ -959,14 +1319,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/30.jpg",
+    "section_color": "#176580",
+    "preview": "previews/41.jpg",
     "lesson": null
   },
   {
-    "number": 31,
+    "number": 42,
     "id": "w08-034",
     "title": "From texture motion to water",
-    "section": "03 · WATER SHADERS",
+    "section": "04 · WATER SHADERS",
     "subsection": null,
     "kind": "image",
     "notes": "Make the bridge explicit: our brush-flow calculation is a controlled starting point, not the full water material. The simple water combines cross-panning and distortion. The subsequent rows add geometry movement. Surface detail is kept subtle and shared so motion remains the main comparison.",
@@ -987,14 +1348,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/31.jpg",
+    "section_color": "#176580",
+    "preview": "previews/42.jpg",
     "lesson": null
   },
   {
-    "number": 32,
+    "number": 43,
     "id": "w08-029",
     "title": "Water in games: shape and surface detail",
-    "section": "03 · WATER SHADERS",
+    "section": "04 · WATER SHADERS",
     "subsection": null,
     "kind": "image",
     "notes": "The historical image is Uru: Ages Beyond Myst, reproduced from Mark Finch’s GPU Gems chapter, figure 1-1. Finch describes separate geometric waves and fine normal-map detail. Rare’s 2018 paper describes a different production system based on FFT waves, with color and foam art direction. These are references for asking what a water system must communicate. The classroom materials are original studies and do not reproduce either renderer.",
@@ -1026,14 +1388,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/32.jpg",
+    "section_color": "#176580",
+    "preview": "previews/43.jpg",
     "lesson": null
   },
   {
-    "number": 33,
+    "number": 44,
     "id": "w08-036",
     "title": "Three motion models, one shared finish",
-    "section": "03 · WATER SHADERS",
+    "section": "04 · WATER SHADERS",
     "subsection": null,
     "kind": "engine",
     "notes": "Point to the simple row first: fixed geometry, animated lookup. Intermediate: scalar height displaces vertices and the normal follows the shape. Advanced: Gerstner adds horizontal movement as well as height. Complexity is about implementation and the visual requirement, not artistic quality. Shared finish makes the shape comparison fair.",
@@ -1059,15 +1422,16 @@
       976,
       432
     ],
-    "preview": "previews/33.jpg",
+    "section_color": "#176580",
+    "preview": "previews/44.jpg",
     "lesson": null,
-    "motion": "media/rebuild-33.gif"
+    "motion": "media/rebuild-44.gif"
   },
   {
-    "number": 34,
+    "number": 45,
     "id": "w08-037",
     "title": "Simple: cross-panning and distortion",
-    "section": "03 · WATER SHADERS",
+    "section": "04 · WATER SHADERS",
     "subsection": null,
     "kind": "pair",
     "notes": "Trace coordinates to samples to the final color. First set speed to zero, then restore it. Cross-panning combines motion directions; distortion offsets the lookup before sampling.",
@@ -1077,25 +1441,26 @@
     "key_sources": [
       {
         "id": "ben",
-        "label": "Ben Cloward: Shaders 101",
+        "label": "Ben Cloward: resources",
         "title": "Ben Cloward — Shaders 101, GDC 2016",
-        "url": "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
-        "focus": "Read PDF pages 18–38 for UV scale, scrolling and layered distortion, and pages 54–67 for mask-based blending.",
-        "context": "A historical talk explaining calculations shared by code and node editors; its screenshots are not UE 5.7 UI instructions.",
+        "url": "https://www.bencloward.com/resources.shtml",
+        "focus": "Optional artist-focused shader tutorials. Full Shader 101 slides and transcripts have not been reviewed in this revision.",
+        "context": "Historical talk and author-maintained tutorial index; use current Epic documentation for UE controls.",
         "category": "Reference"
       }
     ],
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/34.jpg",
+    "section_color": "#176580",
+    "preview": "previews/45.jpg",
     "lesson": null
   },
   {
-    "number": 35,
+    "number": 46,
     "id": "w08-038",
     "title": "Intermediate: height and normals",
-    "section": "03 · WATER SHADERS",
+    "section": "04 · WATER SHADERS",
     "subsection": null,
     "kind": "pair",
     "notes": "A normal change alters light response, not geometry. Vertex displacement changes the surface and can change the silhouette. It requires sufficient geometry, but dense geometry alone does not fix texture sampling. In this project, World Position Offset is a world-space offset and ordinary distances use centimeters. More vertices allow finer deformation, but vertex offset does not automatically change collision. For today, observe the supplied comparison rather than rebuilding it.",
@@ -1126,14 +1491,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/35.jpg",
+    "section_color": "#176580",
+    "preview": "previews/46.jpg",
     "lesson": null
   },
   {
-    "number": 36,
+    "number": 47,
     "id": "w08-039",
     "title": "Advanced: Gerstner motion",
-    "section": "03 · WATER SHADERS",
+    "section": "04 · WATER SHADERS",
     "subsection": null,
     "kind": "pair",
     "notes": "Gerstner is an optional advanced extension. It is useful when crest shape and silhouette matter. Several waves can be combined with different directions, wavelengths, amplitudes, and phases. Keep steepness within a valid range to avoid loops; normals must agree with the displaced surface, and mesh density must support the shortest wave. The GPU Gems chapter explains these equations. Sea of Thieves uses a broader production ocean approach; its paper is not the source code for this Gerstner study.",
@@ -1164,14 +1530,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/36.jpg",
+    "section_color": "#176580",
+    "preview": "previews/47.jpg",
     "lesson": null
   },
   {
-    "number": 37,
+    "number": 48,
     "id": "w08-040",
     "title": "Water controls to investigate",
-    "section": "03 · WATER SHADERS",
+    "section": "04 · WATER SHADERS",
     "subsection": null,
     "kind": "table",
     "notes": "Pick one row and one variable. Your first task is to establish a cause, not to make the most elaborate water. We will use these saved conditions again when discussing evidence and performance.",
@@ -1202,14 +1569,103 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/37.jpg",
+    "section_color": "#176580",
+    "preview": "previews/48.jpg",
     "lesson": null
   },
   {
-    "number": 38,
+    "number": 49,
+    "id": "w08-088",
+    "title": "Mesh UVs and world projection",
+    "section": "04 · WATER SHADERS",
+    "subsection": null,
+    "kind": "pair",
+    "notes": "Both cubes use the same Epic brick texture. Their initial repeat sizes differ. The left samples mesh UVs. The right calls Epic’s WorldAlignedTexture function and sets repeat size in world units. Move the right cube to see the surface slide through the stationary pattern. That behavior is useful on static surfaces and can be distracting on moving objects.",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/texturing-material-functions-in-unreal-engine?application_version=5.7"
+    ],
+    "key_sources": [
+      {
+        "id": "texturing",
+        "label": "Epic: world projection",
+        "title": "Epic Games — Texturing Material Functions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/texturing-material-functions-in-unreal-engine?application_version=5.7",
+        "focus": "Read WorldAlignedTexture and WorldAlignedNormal. Check scale, coordinate conventions and the warning about moving objects.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ],
+    "appendix": true,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#176580",
+    "preview": "previews/49.jpg",
+    "lesson": null
+  },
+  {
+    "number": 50,
+    "id": "w08-087",
+    "title": "DepthFade at an intersection",
+    "section": "04 · WATER SHADERS",
+    "subsection": null,
+    "kind": "pair",
+    "notes": "DepthFade softens the intersection between this translucent plane and the opaque rock. The FadeDistance input uses world units. The Opacity input stays at 0.75, and FadeMix selects the faded result. This is an opacity treatment; it does not make waves or generate foam.",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/utility-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/lit-translucency-in-unreal-engine?application_version=5.7"
+    ],
+    "key_sources": [
+      {
+        "id": "utility",
+        "label": "Epic: Fresnel / DepthFade",
+        "title": "Epic Games — Utility Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/utility-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Find Fresnel for view-angle controls, or DepthFade for translucent intersections. These perform different jobs.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ],
+    "appendix": true,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#176580",
+    "preview": "previews/50.jpg",
+    "lesson": null
+  },
+  {
+    "number": 51,
+    "id": "w08-089",
+    "title": "Single Layer Water",
+    "section": "04 · WATER SHADERS",
+    "subsection": null,
+    "kind": "pair",
+    "notes": "Unreal’s SingleLayerWater shading model uses a dedicated pass to show water transmission and scattering while the material uses Opaque or Masked blending. The separate water output supplies volume properties. Here only absorption scale changes. Look at the submerged rock. These settings describe shading, not wave generation.",
+    "sources": [
+      "https://dev.epicgames.com/documentation/unreal-engine/single-layer-water-shading-model-in-unreal-engine?application_version=5.7"
+    ],
+    "key_sources": [
+      {
+        "id": "water",
+        "label": "Epic: Single Layer Water",
+        "title": "Epic Games — Single Layer Water Shading Model",
+        "url": "https://dev.epicgames.com/documentation/unreal-engine/single-layer-water-shading-model-in-unreal-engine?application_version=5.7",
+        "focus": "Read the implementation and material setup. Its Opaque/Masked blend setting can still produce a transparent-looking water surface.",
+        "context": "Unreal Engine 5.7; this is an optional engine water model, distinct from the classroom water masters.",
+        "category": "Reference"
+      }
+    ],
+    "appendix": true,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#176580",
+    "preview": "previews/51.jpg",
+    "lesson": null
+  },
+  {
+    "number": 52,
     "id": "water-check",
-    "title": "04 · LAB 1: WATER",
-    "section": "04 · LAB 1: WATER",
+    "title": "05 · LAB 1: WATER",
+    "section": "05 · LAB 1: WATER",
     "subsection": null,
     "kind": "section",
     "notes": "Before you start, which controls move the texture lookup? Which controls change the mesh silhouette? What will you hold fixed so your comparison is fair? Choose one row whose motion fits the condition you want to show.",
@@ -1237,17 +1693,18 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/38.jpg",
+    "section_color": "#546B2A",
+    "preview": "previews/52.jpg",
     "lesson": null
   },
   {
-    "number": 39,
+    "number": 53,
     "id": "w08-066",
-    "title": "Lab 1 · Sheltered and wind-exposed",
-    "section": "04 · LAB 1: WATER",
+    "title": "Lab 1 · Calm cove and exposed water",
+    "section": "05 · LAB 1: WATER",
     "subsection": null,
-    "kind": "section",
-    "notes": "Work from a duplicate material instance, not the shared parent. Choose the simplest row that supports the desired movement. There is no reward for choosing the most complex implementation. A successful investigation connects a parameter to an observable change.",
+    "kind": "compare",
+    "notes": "Sheltered means protected from wind: imagine a small cove behind a breakwater. Exposed means open to wind beyond that barrier. Make two readable visual conditions using the same material. Use one motion control first. In the browser, compare lower and higher positive Speed; negative Speed reverses direction rather than making water calmer. In Unreal, available amplitude controls affect height only in the height or Gerstner rows. Keep the camera, mesh, colors and surface finish fixed so the motion change is clear. These are artistic targets, not a calibrated wind simulation.",
     "sources": [
       "Labs.html",
       "Water_References.html",
@@ -1257,11 +1714,11 @@
     "key_sources": [
       {
         "id": "ben",
-        "label": "Ben Cloward: Shaders 101",
+        "label": "Ben Cloward: resources",
         "title": "Ben Cloward — Shaders 101, GDC 2016",
-        "url": "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
-        "focus": "Read PDF pages 18–38 for UV scale, scrolling and layered distortion, and pages 54–67 for mask-based blending.",
-        "context": "A historical talk explaining calculations shared by code and node editors; its screenshots are not UE 5.7 UI instructions.",
+        "url": "https://www.bencloward.com/resources.shtml",
+        "focus": "Optional artist-focused shader tutorials. Full Shader 101 slides and transcripts have not been reviewed in this revision.",
+        "context": "Historical talk and author-maintained tutorial index; use current Epic documentation for UE controls.",
         "category": "Reference"
       },
       {
@@ -1277,17 +1734,18 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/39.jpg",
+    "section_color": "#546B2A",
+    "preview": "previews/53.jpg",
     "lesson": null
   },
   {
-    "number": 40,
+    "number": 54,
     "id": "w08-067",
     "title": "Lab 1 · Test, compare, explain",
-    "section": "04 · LAB 1: WATER",
+    "section": "05 · LAB 1: WATER",
     "subsection": null,
     "kind": "lab",
-    "notes": "Sentence 1: name the parameter and values you tested. Sentence 2: describe what changed in the lookup, surface height, or crest motion. Sentence 3: explain which setting fits each condition and why. Compare identical cameras, mesh and surface finish. Optional: cite one game-water reference and identify a feature this study does not model. Use the worksheet, which is linked from this slide.",
+    "notes": "Sentence 1: name the parameter and values you tested. Sentence 2: describe what changed in the lookup, surface height, or crest motion. Sentence 3: explain which setting fits each condition and why. Compare identical cameras, mesh and surface finish. Optional: cite one game-water reference and identify a feature this study does not model. Use the worksheet, which is linked from this slide. Sheltered means protected from wind, like a cove behind a breakwater; exposed means open to wind. Use low versus higher positive motion settings for the visual contrast. Negative Speed tests direction, not wind strength.",
     "sources": [
       "Labs.html",
       "Lab1_Investigation.html",
@@ -1307,14 +1765,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/40.jpg",
+    "section_color": "#546B2A",
+    "preview": "previews/54.jpg",
     "lesson": null
   },
   {
-    "number": 41,
+    "number": 55,
     "id": "w08-068",
     "title": "Lab 1: show the difference",
-    "section": "04 · LAB 1: WATER",
+    "section": "05 · LAB 1: WATER",
     "subsection": null,
     "kind": "text",
     "notes": "Show both versions before revealing their names. Ask your partner which reads as sheltered and which as exposed. Explain one controlled test using the actual values, then point to the affected graph input or code line. What question would help you separate two possible causes? If you used a production reference, name one feature your study leaves out. In the browser route, describe the observed texture motion and the fixed silhouette.",
@@ -1337,11 +1796,12 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/41.jpg",
+    "section_color": "#546B2A",
+    "preview": "previews/55.jpg",
     "lesson": null
   },
   {
-    "number": 42,
+    "number": 56,
     "id": "w08-069",
     "title": "Break",
     "section": "Break",
@@ -1353,14 +1813,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/42.jpg",
+    "section_color": "#546B2A",
+    "preview": "previews/56.jpg",
     "lesson": null
   },
   {
-    "number": 43,
+    "number": 57,
     "id": "w08-041",
-    "title": "05 · LIGHTING\n& STYLIZATION",
-    "section": "05 · LIGHTING & STYLIZATION",
+    "title": "06 · LIGHTING\n& STYLIZATION",
+    "section": "06 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "section",
     "notes": "Light describes form, directs attention, and establishes mood.",
@@ -1391,14 +1852,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/43.jpg",
+    "section_color": "#95601B",
+    "preview": "previews/57.jpg",
     "lesson": null
   },
   {
-    "number": 44,
+    "number": 58,
     "id": "w08-043",
     "title": "Key and fill",
-    "section": "05 · LIGHTING & STYLIZATION",
+    "section": "06 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "pair",
     "notes": "These are real Unreal light actors on a Default Lit surface. Predict which shadow areas will become visible when the fill is added. The fill should support your intended hierarchy; equal light from every direction can erase it.",
@@ -1419,14 +1881,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/44.jpg",
+    "section_color": "#95601B",
+    "preview": "previews/58.jpg",
     "lesson": null
   },
   {
-    "number": 45,
+    "number": 59,
     "id": "w08-044",
     "title": "A real rim light",
-    "section": "05 · LIGHTING & STYLIZATION",
+    "section": "06 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "pair",
     "notes": "The rim comes from a light placed behind the object. It depends on the light, surface, view and visibility. It is distinct from a material mask based only on the viewing angle.",
@@ -1447,14 +1910,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/45.jpg",
+    "section_color": "#95601B",
+    "preview": "previews/59.jpg",
     "lesson": null
   },
   {
-    "number": 46,
+    "number": 60,
     "id": "w08-045",
     "title": "Lighting choices",
-    "section": "05 · LIGHTING & STYLIZATION",
+    "section": "06 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "table",
     "notes": "Start from what the image should communicate. A warm light and cool fill are an option, not a law. Environment lighting and indirect light also contribute; an added constant in a toy shader is only an approximation.",
@@ -1476,14 +1940,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/46.jpg",
+    "section_color": "#95601B",
+    "preview": "previews/60.jpg",
     "lesson": null
   },
   {
-    "number": 47,
+    "number": 61,
     "id": "w08-046",
     "title": "Surface color and the lit result",
-    "section": "05 · LIGHTING & STYLIZATION",
+    "section": "06 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "pair",
     "notes": "Base Color is an input to the surface model. It is not the final screen color. Keep exposure fixed when comparing lighting or palette choices. Change one component of the setup before judging the result.",
@@ -1504,14 +1969,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/47.jpg",
+    "section_color": "#95601B",
+    "preview": "previews/61.jpg",
     "lesson": null
   },
   {
-    "number": 48,
+    "number": 62,
     "id": "w08-021",
     "title": "Where the tint goes in a lit material",
-    "section": "05 · LIGHTING & STYLIZATION",
+    "section": "06 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "engine",
     "notes": "Return to the familiar tint operation. The arithmetic did not change. The output connection and shading model did: Base Color feeds the engine lighting model. This is why an unlit color demonstration and a lit material may look different even with the same numeric RGB. Keep exposure fixed before comparing.",
@@ -1533,14 +1999,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/48.jpg",
+    "section_color": "#95601B",
+    "preview": "previews/62.jpg",
     "lesson": null
   },
   {
-    "number": 49,
+    "number": 63,
     "id": "w08-063",
     "title": "Roughness and reflection",
-    "section": "05 · LIGHTING & STYLIZATION",
+    "section": "06 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "pair",
     "notes": "Roughness changes the distribution of reflected light. This affects the size and sharpness of highlights. Do not describe it as a universal brightness slider.",
@@ -1561,14 +2028,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/49.jpg",
+    "section_color": "#95601B",
+    "preview": "previews/63.jpg",
     "lesson": null
   },
   {
-    "number": 50,
+    "number": 64,
     "id": "lookdev-production",
     "title": "Wind Waker: a stylized shading target",
-    "section": "05 · LIGHTING & STYLIZATION",
+    "section": "06 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "look-reference",
     "notes": "Look at Link rather than the whole landscape. The tunic and hair have broad colored regions with distinct boundaries. Those are useful targets for our threshold and palette controls. This is the HD edition, which also shows softer lighting and glow. We are analyzing visible features, not identifying Nintendo’s shader code. Ask students to point to the shadow boundary on the tunic before naming a node.",
@@ -1589,14 +2057,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/50.jpg",
+    "section_color": "#95601B",
+    "preview": "previews/64.jpg",
     "lesson": null
   },
   {
-    "number": 51,
+    "number": 65,
     "id": "lookdev-target",
     "title": "Break down the tunic shading",
-    "section": "05 · LIGHTING & STYLIZATION",
+    "section": "06 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "zelda-breakdown",
     "notes": "This is a crop of the same screenshot. Point to the left side of the tunic, then the bright green region on the right. We can approximate this relationship with a normalized normal and light direction, a dot product, a threshold and a blend between two colors. Moving the threshold changes the size of the regions. Changing the palette changes the mood without changing the boundary. A screen image does not prove how Nintendo implemented the effect. A light-driven boundary should move when the light direction changes; a painted texture alone would remain attached to the surface.",
@@ -1617,14 +2086,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/51.jpg",
+    "section_color": "#95601B",
+    "preview": "previews/65.jpg",
     "lesson": null
   },
   {
-    "number": 52,
+    "number": 66,
     "id": "lookdev-recipe",
     "title": "Two bands with a view-angle accent",
-    "section": "05 · LIGHTING & STYLIZATION",
+    "section": "06 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "look-recipe",
     "notes": "The capture provenance records two bands on the left and two bands plus a rim on the right, with Bands 2 and RimStrength 0.65 in the earlier lighting manifest. The broad view-angle blend introduces gradients inside the underlying band regions; it should not be described as a separate smooth-base shader. First understand the band boundary, then decide whether this much edge influence supports the intended look. Lesson 04 isolates the threshold and palette; lesson 05 isolates the view-angle mask. Our exaggerated accent is a teaching choice, not a claim about Nintendo’s shader. A restrained version using the same green palette would make a useful future comparison.",
@@ -1633,14 +2103,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/52.jpg",
+    "section_color": "#95601B",
+    "preview": "previews/66.jpg",
     "lesson": null
   },
   {
-    "number": 53,
+    "number": 67,
     "id": "w08-042",
     "title": "Value and visual hierarchy",
-    "section": "05 · LIGHTING & STYLIZATION",
+    "section": "06 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "pair",
     "notes": "The light and camera stay fixed here. A smooth response describes curvature through a gradient; grouped values create a stronger graphic division. Which treatment makes the subject easier to read at a small size? There is no universal best style.",
@@ -1661,14 +2132,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/53.jpg",
+    "section_color": "#95601B",
+    "preview": "previews/67.jpg",
     "lesson": null
   },
   {
-    "number": 54,
+    "number": 68,
     "id": "w08-047",
     "title": "Turn a light response into bands",
-    "section": "05 · LIGHTING & STYLIZATION",
+    "section": "06 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "image",
     "notes": "Connect this back to Week 5 dot products. Here dot is a practical signal about alignment. Clamp negative values to zero; Step converts the continuous signal to a binary mask; Lerp chooses the palette. Establish this chain before the code. The demo is deliberately not a production cel-shading renderer. What would you like clarified before we read the code?",
@@ -1699,14 +2171,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/54.jpg",
+    "section_color": "#95601B",
+    "preview": "previews/68.jpg",
     "lesson": null
   },
   {
-    "number": 55,
+    "number": 69,
     "id": "w08-048",
     "title": "Toon bands in GLSL",
-    "section": "05 · LIGHTING & STYLIZATION",
+    "section": "06 · LIGHTING & STYLIZATION",
     "subsection": "GLSL",
     "kind": "demo",
     "notes": "Normalize the surface normal and an artist-controlled direction. Their dot product measures alignment. Clamp it to zero through one, then compare it with Threshold using Step. The result is either zero or one, so the mix selects one of the two colors. The browser supplies a fixed direction. Change Threshold to move the boundary; in Unreal you can separately vary L while holding Threshold fixed.\n\nStudent files: lessons/04_toon/fragment.glsl and unreal-custom.hlsl. The host supplies declared inputs and the output wrapper. Read the matching file while this slide is visible.",
@@ -1738,14 +2211,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/55.jpg",
+    "section_color": "#95601B",
+    "preview": "previews/69.jpg",
     "lesson": "04_toon"
   },
   {
-    "number": 56,
+    "number": 70,
     "id": "w08-049",
     "title": "Toon bands in Unreal HLSL",
-    "section": "05 · LIGHTING & STYLIZATION",
+    "section": "06 · LIGHTING & STYLIZATION",
     "subsection": "HLSL / UNREAL CUSTOM NODE",
     "kind": "dualcode",
     "notes": "PixelNormalWS supplies N. The vector parameter L supplies the artist-selected direction. Normalize both. This exact code is lesson 04_toon. The browser wrapper also normalizes its input normal; keeping normalization here makes the calculation safe to reuse with other hosts.\n\nStudent files: lessons/04_toon/fragment.glsl and unreal-custom.hlsl. The host supplies declared inputs and the output wrapper. Read the matching file while this slide is visible.",
@@ -1777,14 +2251,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/56.jpg",
+    "section_color": "#95601B",
+    "preview": "previews/70.jpg",
     "lesson": "04_toon"
   },
   {
-    "number": 57,
+    "number": 71,
     "id": "w08-050",
     "title": "Toon bands as material nodes",
-    "section": "05 · LIGHTING & STYLIZATION",
+    "section": "06 · LIGHTING & STYLIZATION",
     "subsection": "UE MATERIAL GRAPH",
     "kind": "flow-steps",
     "notes": "Follow Normalize into DotProduct, then Saturate and Step. The Step node uses X for the value being tested and Y for the threshold. Lerp uses that zero or one value as Alpha. Connect the output to Emissive Color. This naming is worth checking carefully when translating code to the node graph.",
@@ -1806,14 +2281,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/57.jpg",
+    "section_color": "#95601B",
+    "preview": "previews/71.jpg",
     "lesson": null
   },
   {
-    "number": 58,
+    "number": 72,
     "id": "w08-051",
     "title": "Toon controls in Unreal",
-    "section": "05 · LIGHTING & STYLIZATION",
+    "section": "06 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "ui-guide",
     "notes": "Change Threshold and watch the light-colored region shrink as the cutoff rises. Restore 0.45. Then change the vector parameter named L, which is interpreted in world space. A color picker is used to edit this vector parameter, but its components represent direction rather than a display color. Restore 0.7, minus 0.45, 0.6. The separate lighting playground uses LightDirection; this numbered student lesson uses L.",
@@ -1834,14 +2310,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/58.jpg",
+    "section_color": "#95601B",
+    "preview": "previews/72.jpg",
     "lesson": null
   },
   {
-    "number": 59,
+    "number": 73,
     "id": "w08-052",
     "title": "What this toon study leaves out",
-    "section": "05 · LIGHTING & STYLIZATION",
+    "section": "06 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "image",
     "notes": "A stylized game look is not just a Step node. Character art, palette design, shadow logic, outlines, post effects and scene lighting can all contribute. Our small model is useful precisely because it isolates one decision. Do not claim it reproduces a named game’s implementation.",
@@ -1862,14 +2339,263 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/59.jpg",
+    "section_color": "#95601B",
+    "preview": "previews/73.jpg",
     "lesson": null
   },
   {
-    "number": 60,
+    "number": 74,
+    "id": "w08-054",
+    "title": "Custom palette",
+    "section": "06 · LIGHTING & STYLIZATION",
+    "subsection": null,
+    "kind": "pair",
+    "notes": "The custom palette deliberately uses teal shadows, coral midtones and a pale highlight. Open its MI. Change one color while holding thresholds fixed, then change a threshold while holding colors fixed.",
+    "sources": [
+      "https://iquilezles.org/articles/palettes/",
+      "https://thebookofshaders.com/06/"
+    ],
+    "key_sources": [
+      {
+        "id": "iq",
+        "label": "Iñigo Quílez: Palettes",
+        "title": "Iñigo Quílez — Palettes",
+        "url": "https://iquilezles.org/articles/palettes/",
+        "focus": "Explore procedural palettes as an extension to choosing the colors in our banded study.",
+        "context": "Optional extension. The classroom example uses explicit color parameters, not this article’s palette implementation.",
+        "category": "Further study"
+      },
+      {
+        "id": "boscolor",
+        "label": "Book of Shaders: Color",
+        "title": "Patricio Gonzalez Vivo & Jen Lowe — The Book of Shaders, Colors",
+        "url": "https://thebookofshaders.com/06/",
+        "focus": "Try the Mixing color examples, then compare GLSL mix with HLSL lerp and Unreal Lerp.",
+        "context": "Free interactive GLSL chapter; the engine wrapper differs from the classroom Three.js and Unreal projects.",
+        "category": "Reference"
+      }
+    ],
+    "appendix": true,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#95601B",
+    "preview": "previews/74.jpg",
+    "lesson": null
+  },
+  {
+    "number": 75,
+    "id": "w08-055",
+    "title": "Choose the palette colors",
+    "section": "06 · LIGHTING & STYLIZATION",
+    "subsection": null,
+    "kind": "ui-guide",
+    "notes": "The color names are actual parameters in the lighting playground. BaseColor names the lightest palette entry here; this Unlit graph sends the resulting palette to Emissive. LightDirection is a vector, not one of the four palette colors. Threshold1 < Threshold2 < Threshold3 controls the boundaries separately. Keep TextureInfluence at zero to isolate the palette.",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7",
+      "https://thebookofshaders.com/05/"
+    ],
+    "key_sources": [
+      {
+        "id": "mi",
+        "label": "Epic: Material Instances",
+        "title": "Epic Games — Material Instances",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7",
+        "focus": "Read Material Parameterization and Static Parameters. Ordinary value overrides differ from compile-time switches.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      },
+      {
+        "id": "bosshape",
+        "label": "Book of Shaders: functions",
+        "title": "Patricio Gonzalez Vivo & Jen Lowe — The Book of Shaders, Shaping functions",
+        "url": "https://thebookofshaders.com/05/",
+        "focus": "Start with Step and Smoothstep. Change the threshold or transition interval before combining operations.",
+        "context": "Free interactive GLSL exercises; compare the argument order with Unreal nodes.",
+        "category": "Reference"
+      }
+    ],
+    "appendix": true,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#95601B",
+    "preview": "previews/75.jpg",
+    "lesson": "06_painted_bands"
+  },
+  {
+    "number": 76,
+    "id": "palette-thresholds",
+    "title": "Place the palette boundaries",
+    "section": "06 · LIGHTING & STYLIZATION",
+    "subsection": null,
+    "kind": "ui-guide",
+    "notes": "The defaults are .25, .5 and .75. Test one threshold at a time and observe which two adjacent bands trade space. Do not change colors during this test. The browser lesson fixes two thresholds; this larger Unreal playground exposes three.",
+    "sources": [],
+    "key_sources": [
+      {
+        "id": "mi",
+        "label": "Epic: Material Instances",
+        "title": "Epic Games — Material Instances",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7",
+        "focus": "Read Material Parameterization and Static Parameters. Ordinary value overrides differ from compile-time switches.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      },
+      {
+        "id": "bosshape",
+        "label": "Book of Shaders: functions",
+        "title": "Patricio Gonzalez Vivo & Jen Lowe — The Book of Shaders, Shaping functions",
+        "url": "https://thebookofshaders.com/05/",
+        "focus": "Start with Step and Smoothstep. Change the threshold or transition interval before combining operations.",
+        "context": "Free interactive GLSL exercises; compare the argument order with Unreal nodes.",
+        "category": "Reference"
+      }
+    ],
+    "appendix": true,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#95601B",
+    "preview": "previews/76.jpg",
+    "lesson": null
+  },
+  {
+    "number": 77,
+    "id": "w08-056",
+    "title": "Brush texture in the light response",
+    "section": "06 · LIGHTING & STYLIZATION",
+    "subsection": null,
+    "kind": "pair",
+    "notes": "This grayscale texture is data, with sRGB disabled. Its neutral midpoint produces no shift. TextureInfluence zero restores the clean boundaries. This modifies a shading signal rather than the mesh or its physical normals.",
+    "sources": [
+      "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
+      "https://thebookofshaders.com/05/"
+    ],
+    "key_sources": [
+      {
+        "id": "ben",
+        "label": "Ben Cloward: resources",
+        "title": "Ben Cloward — Shaders 101, GDC 2016",
+        "url": "https://www.bencloward.com/resources.shtml",
+        "focus": "Optional artist-focused shader tutorials. Full Shader 101 slides and transcripts have not been reviewed in this revision.",
+        "context": "Historical talk and author-maintained tutorial index; use current Epic documentation for UE controls.",
+        "category": "Reference"
+      },
+      {
+        "id": "bosshape",
+        "label": "Book of Shaders: functions",
+        "title": "Patricio Gonzalez Vivo & Jen Lowe — The Book of Shaders, Shaping functions",
+        "url": "https://thebookofshaders.com/05/",
+        "focus": "Start with Step and Smoothstep. Change the threshold or transition interval before combining operations.",
+        "context": "Free interactive GLSL exercises; compare the argument order with Unreal nodes.",
+        "category": "Reference"
+      }
+    ],
+    "appendix": true,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#95601B",
+    "preview": "previews/77.jpg",
+    "lesson": null
+  },
+  {
+    "number": 78,
+    "id": "w08-057",
+    "title": "Brush texture perturbs the light signal",
+    "section": "06 · LIGHTING & STYLIZATION",
+    "subsection": null,
+    "kind": "bridge",
+    "notes": "This is an excerpt, not a complete shader. R starts in 0–1, multiply by 2 and subtract 1 to make −1 to 1. TextureInfluence scales the perturbation. Add it to the light signal before selecting bands. The full lesson uses thresholds .35 and .7 with ShadowColor, MidColor, and Tint. The Unreal playground extends this to four palette entries.\n\nStudent files: lessons/06_painted_bands/fragment.glsl and unreal-custom.hlsl. The host supplies declared inputs and the output wrapper. Read the matching file while this slide is visible.",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7"
+    ],
+    "key_sources": [
+      {
+        "id": "math",
+        "label": "Epic: material math",
+        "title": "Epic Games — Math Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Look up Multiply, LinearInterpolate, DotProduct, Step and Sine. Check each input order and Sine Period.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      },
+      {
+        "id": "custom",
+        "label": "Epic: Custom HLSL",
+        "title": "Epic Games — Custom Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Read Using the Custom Material Expression: named inputs, return value, Output Type and the texture sampler example.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ],
+    "appendix": true,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#95601B",
+    "preview": "previews/78.jpg",
+    "lesson": "06_painted_bands"
+  },
+  {
+    "number": 79,
+    "id": "lookdev-student-code",
+    "title": "The complete painted-band study",
+    "section": "06 · LIGHTING & STYLIZATION",
+    "subsection": "GLSL + HLSL",
+    "kind": "student-code",
+    "notes": "This is the complete calculation from the student lesson, with line wrapping only. First normalize the directions and build a light-response value. Sample the brush mask, center it around zero, and scale its influence. Apply thresholds at 0.35 and 0.7 to choose three colors. In the native graph, follow Normalize, Dot, Saturate, Texture Sample R, Multiply and Subtract, Add, then two Step and Lerp stages. N and L must share the same coordinate space. This Unlit example has a parameterized light direction, not scene-light integration.",
+    "sources": [],
+    "key_sources": [],
+    "appendix": true,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#95601B",
+    "preview": "previews/79.jpg",
+    "lesson": "06_painted_bands"
+  },
+  {
+    "number": 80,
+    "id": "w08-058",
+    "title": "Texture scale and shading style",
+    "section": "06 · LIGHTING & STYLIZATION",
+    "subsection": null,
+    "kind": "pair",
+    "notes": "The brush texture is sampled through UVs. Pixel-grid shading approximates a normal per screen cell. The mesh outline remains smooth. These are separate artistic choices; neither is a full painterly or pixel-art renderer.",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/coordinates-material-expressions-in-unreal-engine?application_version=5.7",
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-asset-editor-in-unreal-engine?application_version=5.7"
+    ],
+    "key_sources": [
+      {
+        "id": "coords",
+        "label": "Epic: UVs and Panner",
+        "title": "Epic Games — Coordinates Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/coordinates-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Find TextureCoordinate, Panner, PixelNormalWS and VertexNormalWS. Match coordinate space to the calculation.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      },
+      {
+        "id": "texture",
+        "label": "Epic: texture data",
+        "title": "Epic Games — Texture Asset Editor",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-asset-editor-in-unreal-engine?application_version=5.7",
+        "focus": "Find sRGB, channel preview, filtering and mip settings. Distinguish color images from numerical data.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ],
+    "appendix": true,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#95601B",
+    "preview": "previews/80.jpg",
+    "lesson": null
+  },
+  {
+    "number": 81,
     "id": "w08-059",
     "title": "View angle can control an edge accent",
-    "section": "05 · LIGHTING & STYLIZATION",
+    "section": "06 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "compare",
     "notes": "Return to the earlier real rim-light image. A Fresnel-style mask is view dependent and can appear around the silhouette even without a scene light there. Do not call it a replacement for actual lighting. Physical Fresnel concerns reflectance at grazing angles; our artistic mask borrows a similar shape.",
@@ -1890,14 +2616,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/60.jpg",
+    "section_color": "#95601B",
+    "preview": "previews/81.jpg",
     "lesson": null
   },
   {
-    "number": 61,
+    "number": 82,
     "id": "w08-060",
     "title": "Bright and dark view edges",
-    "section": "05 · LIGHTING & STYLIZATION",
+    "section": "06 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "pair",
     "notes": "Move the camera and observe the edge. Increase RimPower to narrow it. The current study uses a zero-baseline view mask; Unreal Fresnel also exposes a face-on BaseReflectFraction. A material view mask is distinct from the real rim light shown earlier.",
@@ -1918,14 +2645,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/61.jpg",
+    "section_color": "#95601B",
+    "preview": "previews/82.jpg",
     "lesson": null
   },
   {
-    "number": 62,
+    "number": 83,
     "id": "w08-061",
     "title": "View-angle mask in code and nodes",
-    "section": "05 · LIGHTING & STYLIZATION",
+    "section": "06 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "bridge",
     "notes": "N and V must use the same space and both be normalized. Dot close to 1 means front-facing; OneMinus makes that region low. Power shapes the edge width. EdgeStrength scales the mask before Lerp. This is the exact small lesson; Unreal’s native Fresnel expression is shown next as a related tool.\n\nStudent files: lessons/05_fresnel/fragment.glsl and unreal-custom.hlsl. The host supplies declared inputs and the output wrapper. Read the matching file while this slide is visible.",
@@ -1957,14 +2685,44 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/62.jpg",
+    "section_color": "#95601B",
+    "preview": "previews/83.jpg",
     "lesson": "05_fresnel"
   },
   {
-    "number": 63,
+    "number": 84,
+    "id": "native-edge-reference",
+    "title": "A view-angle mask in an actual material graph",
+    "section": "06 · LIGHTING & STYLIZATION",
+    "subsection": null,
+    "kind": "native-wide",
+    "notes": "Trace the actual connected nodes from left to right. The two inputs are a world-space normal and camera direction. Clamping removes negative values. OneMinus emphasizes glancing views, and Power controls the edge width. Epic’s example displays the mask itself with Emissive Color. Our lesson uses a normalized normal and view direction, adjustable RimPower and EdgeStrength, then a Lerp between two colors. This screenshot supports the common mask mechanism; it does not show our complete parent material.",
+    "sources": [
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7"
+    ],
+    "key_sources": [
+      {
+        "id": "math",
+        "label": "Epic: material math",
+        "title": "Epic Games — Math Material Expressions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
+        "focus": "Look up Multiply, LinearInterpolate, DotProduct, Step and Sine. Check each input order and Sine Period.",
+        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
+        "category": "Reference"
+      }
+    ],
+    "appendix": true,
+    "guest": null,
+    "motion_bounds": null,
+    "section_color": "#95601B",
+    "preview": "previews/84.jpg",
+    "lesson": null
+  },
+  {
+    "number": 85,
     "id": "w08-062",
     "title": "Unreal Fresnel controls",
-    "section": "05 · LIGHTING & STYLIZATION",
+    "section": "06 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "pair",
     "notes": "This is the Utility Fresnel expression. It gives us a view-angle mask with a face-on value. We use that mask to blend two colors. Open M_Doc_Fresnel to compare the built-in node with the dot-product rim from our lighting example. A normal connected here must be in world space.",
@@ -1986,14 +2744,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/63.jpg",
+    "section_color": "#95601B",
+    "preview": "previews/85.jpg",
     "lesson": null
   },
   {
-    "number": 64,
+    "number": 86,
     "id": "w08-064",
     "title": "Lighting playground · one intentional change",
-    "section": "05 · LIGHTING & STYLIZATION",
+    "section": "06 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "bullets",
     "notes": "Predict one change before touching the parameter. Keep the light direction fixed for a threshold test, or keep the threshold fixed for a palette test. Explain which signal changed and which visual choice it supports. What would you like clarified before you begin your own shader? Texture-influenced bands are a separate optional extension in slides 72–78.",
@@ -2014,14 +2773,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/64.jpg",
+    "section_color": "#95601B",
+    "preview": "previews/86.jpg",
     "lesson": null
   },
   {
-    "number": 65,
+    "number": 87,
     "id": "w08-070",
-    "title": "06 · LAB 2\nORIGINAL SHADER",
-    "section": "06 · LAB 2: ORIGINAL SHADER",
+    "title": "07 · LAB 2\nORIGINAL SHADER",
+    "section": "07 · LAB 2: ORIGINAL SHADER",
     "subsection": null,
     "kind": "section",
     "notes": "Use the next work block to begin one small original shader idea. Keep a starting copy and a working copy. You should be able to explain the operation you changed and what you observed, even if the experiment is unfinished.",
@@ -2030,14 +2790,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/65.jpg",
+    "section_color": "#874462",
+    "preview": "previews/87.jpg",
     "lesson": null
   },
   {
-    "number": 66,
+    "number": 88,
     "id": "w08-071",
     "title": "Lab 2: start your shader homework",
-    "section": "06 · LAB 2: ORIGINAL SHADER",
+    "section": "07 · LAB 2: ORIGINAL SHADER",
     "subsection": null,
     "kind": "text",
     "notes": "Use this time to start the homework. Choose one small effect we did not build together. You can adapt a supplied material or research a technique. Keep the scope small enough that you can explain what each important input does. You do not need to finish an elaborate shader in class.",
@@ -2068,14 +2829,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/66.jpg",
+    "section_color": "#874462",
+    "preview": "previews/88.jpg",
     "lesson": null
   },
   {
-    "number": 67,
+    "number": 89,
     "id": "w08-072",
     "title": "Choose a small visual goal",
-    "section": "06 · LAB 2: ORIGINAL SHADER",
+    "section": "07 · LAB 2: ORIGINAL SHADER",
     "subsection": null,
     "kind": "text",
     "notes": "A different color is a useful starting point. Then add a small behavior or combine inputs in a new way. A simple pulsing sign or reveal is enough if you can explain it. If you use a tutorial, keep the link and say what you adapted. An unfinished experiment is still a useful start today.",
@@ -2096,14 +2858,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/67.jpg",
+    "section_color": "#874462",
+    "preview": "previews/89.jpg",
     "lesson": null
   },
   {
-    "number": 68,
+    "number": 90,
     "id": "w08-073",
     "title": "Explain your shader briefly",
-    "section": "06 · LAB 2: ORIGINAL SHADER",
+    "section": "07 · LAB 2: ORIGINAL SHADER",
     "subsection": null,
     "kind": "text",
     "notes": "Keep this short. Describe what you wanted, the inputs, the operation you changed, what happened when you adjusted a parameter, and what you would try next. Use three terms accurately by connecting each to your own example. The template is a small document, not a long technical report. The class period is for beginning the homework; submission details follow the course instructions.",
@@ -2113,25 +2876,26 @@
     "key_sources": [
       {
         "id": "ben",
-        "label": "Ben Cloward: Shaders 101",
+        "label": "Ben Cloward: resources",
         "title": "Ben Cloward — Shaders 101, GDC 2016",
-        "url": "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
-        "focus": "Read PDF pages 18–38 for UV scale, scrolling and layered distortion, and pages 54–67 for mask-based blending.",
-        "context": "A historical talk explaining calculations shared by code and node editors; its screenshots are not UE 5.7 UI instructions.",
+        "url": "https://www.bencloward.com/resources.shtml",
+        "focus": "Optional artist-focused shader tutorials. Full Shader 101 slides and transcripts have not been reviewed in this revision.",
+        "context": "Historical talk and author-maintained tutorial index; use current Epic documentation for UE controls.",
         "category": "Reference"
       }
     ],
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/68.jpg",
+    "section_color": "#874462",
+    "preview": "previews/90.jpg",
     "lesson": null
   },
   {
-    "number": 69,
+    "number": 91,
     "id": "w08-074",
     "title": "Save the Week 9 comparison",
-    "section": "06 · LAB 2: ORIGINAL SHADER",
+    "section": "07 · LAB 2: ORIGINAL SHADER",
     "subsection": null,
     "kind": "bullets",
     "notes": "Save a reproducible baseline and modified version for next week. Do not ask students to optimize now. Week 9 will introduce evidence, profiling, budgets, controlled measurements, and production tradeoffs. The guest discussion will cover careers, SOD3 responsibilities, unique shader challenges, and questions.",
@@ -2142,14 +2906,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/69.jpg",
+    "section_color": "#874462",
+    "preview": "previews/91.jpg",
     "lesson": null
   },
   {
-    "number": 70,
+    "number": 92,
     "id": "w08-075",
     "title": "Exit questions",
-    "section": "WRAP-UP · 6:55–7:00",
+    "section": "Wrap-up",
     "subsection": null,
     "kind": "text",
     "notes": "Name one operation or control you can now explain. Tell us how a material value differs from a material setting. Finally, state the next small change you plan to try in your shader experiment.",
@@ -2158,14 +2923,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/70.jpg",
+    "section_color": "#874462",
+    "preview": "previews/92.jpg",
     "lesson": null
   },
   {
-    "number": 71,
+    "number": 93,
     "id": "w08-076",
     "title": "Next week · Evidence and production tradeoffs",
-    "section": "WRAP-UP · 6:55–7:00",
+    "section": "Wrap-up",
     "subsection": null,
     "kind": "text",
     "notes": "Leave performance investigations, GPU capture tooling, instruction-count conclusions, and platform budgets for Week 9. This week establishes what the operations do visually. Next week tests their cost and constraints. The guest plans a 30–60 minute discussion of introductions/careers, SOD3 roles and responsibilities, unique shader challenges and class questions.",
@@ -2174,255 +2940,15 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/71.jpg",
+    "section_color": "#874462",
+    "preview": "previews/93.jpg",
     "lesson": null
   },
   {
-    "number": 72,
-    "id": "w08-054",
-    "title": "Custom palette",
-    "section": "Appendix · Palette and painted bands",
-    "subsection": null,
-    "kind": "pair",
-    "notes": "The custom palette deliberately uses teal shadows, coral midtones and a pale highlight. Open its MI. Change one color while holding thresholds fixed, then change a threshold while holding colors fixed.",
-    "sources": [
-      "https://iquilezles.org/articles/palettes/",
-      "https://thebookofshaders.com/06/"
-    ],
-    "key_sources": [
-      {
-        "id": "iq",
-        "label": "Iñigo Quílez: Palettes",
-        "title": "Iñigo Quílez — Palettes",
-        "url": "https://iquilezles.org/articles/palettes/",
-        "focus": "Explore procedural palettes as an extension to choosing the colors in our banded study.",
-        "context": "Optional extension. The classroom example uses explicit color parameters, not this article’s palette implementation.",
-        "category": "Further study"
-      },
-      {
-        "id": "boscolor",
-        "label": "Book of Shaders: Color",
-        "title": "Patricio Gonzalez Vivo & Jen Lowe — The Book of Shaders, Colors",
-        "url": "https://thebookofshaders.com/06/",
-        "focus": "Try the Mixing color examples, then compare GLSL mix with HLSL lerp and Unreal Lerp.",
-        "context": "Free interactive GLSL chapter; the engine wrapper differs from the classroom Three.js and Unreal projects.",
-        "category": "Reference"
-      }
-    ],
-    "appendix": true,
-    "guest": null,
-    "motion_bounds": null,
-    "preview": "previews/72.jpg",
-    "lesson": null
-  },
-  {
-    "number": 73,
-    "id": "w08-055",
-    "title": "Choose the palette colors",
-    "section": "Appendix · Palette and painted bands",
-    "subsection": null,
-    "kind": "ui-guide",
-    "notes": "The color names are actual parameters in the lighting playground. BaseColor names the lightest palette entry here; this Unlit graph sends the resulting palette to Emissive. LightDirection is a vector, not one of the four palette colors. Threshold1 < Threshold2 < Threshold3 controls the boundaries separately. Keep TextureInfluence at zero to isolate the palette.",
-    "sources": [
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7",
-      "https://thebookofshaders.com/05/"
-    ],
-    "key_sources": [
-      {
-        "id": "mi",
-        "label": "Epic: Material Instances",
-        "title": "Epic Games — Material Instances",
-        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7",
-        "focus": "Read Material Parameterization and Static Parameters. Ordinary value overrides differ from compile-time switches.",
-        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
-        "category": "Reference"
-      },
-      {
-        "id": "bosshape",
-        "label": "Book of Shaders: functions",
-        "title": "Patricio Gonzalez Vivo & Jen Lowe — The Book of Shaders, Shaping functions",
-        "url": "https://thebookofshaders.com/05/",
-        "focus": "Start with Step and Smoothstep. Change the threshold or transition interval before combining operations.",
-        "context": "Free interactive GLSL exercises; compare the argument order with Unreal nodes.",
-        "category": "Reference"
-      }
-    ],
-    "appendix": true,
-    "guest": null,
-    "motion_bounds": null,
-    "preview": "previews/73.jpg",
-    "lesson": "06_painted_bands"
-  },
-  {
-    "number": 74,
-    "id": "palette-thresholds",
-    "title": "Place the palette boundaries",
-    "section": "Appendix · Palette and painted bands",
-    "subsection": null,
-    "kind": "ui-guide",
-    "notes": "The defaults are .25, .5 and .75. Test one threshold at a time and observe which two adjacent bands trade space. Do not change colors during this test. The browser lesson fixes two thresholds; this larger Unreal playground exposes three.",
-    "sources": [],
-    "key_sources": [
-      {
-        "id": "mi",
-        "label": "Epic: Material Instances",
-        "title": "Epic Games — Material Instances",
-        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/instanced-materials-in-unreal-engine?application_version=5.7",
-        "focus": "Read Material Parameterization and Static Parameters. Ordinary value overrides differ from compile-time switches.",
-        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
-        "category": "Reference"
-      },
-      {
-        "id": "bosshape",
-        "label": "Book of Shaders: functions",
-        "title": "Patricio Gonzalez Vivo & Jen Lowe — The Book of Shaders, Shaping functions",
-        "url": "https://thebookofshaders.com/05/",
-        "focus": "Start with Step and Smoothstep. Change the threshold or transition interval before combining operations.",
-        "context": "Free interactive GLSL exercises; compare the argument order with Unreal nodes.",
-        "category": "Reference"
-      }
-    ],
-    "appendix": true,
-    "guest": null,
-    "motion_bounds": null,
-    "preview": "previews/74.jpg",
-    "lesson": null
-  },
-  {
-    "number": 75,
-    "id": "w08-056",
-    "title": "Brush texture in the light response",
-    "section": "Appendix · Palette and painted bands",
-    "subsection": null,
-    "kind": "pair",
-    "notes": "This grayscale texture is data, with sRGB disabled. Its neutral midpoint produces no shift. TextureInfluence zero restores the clean boundaries. This modifies a shading signal rather than the mesh or its physical normals.",
-    "sources": [
-      "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
-      "https://thebookofshaders.com/05/"
-    ],
-    "key_sources": [
-      {
-        "id": "ben",
-        "label": "Ben Cloward: Shaders 101",
-        "title": "Ben Cloward — Shaders 101, GDC 2016",
-        "url": "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
-        "focus": "Read PDF pages 18–38 for UV scale, scrolling and layered distortion, and pages 54–67 for mask-based blending.",
-        "context": "A historical talk explaining calculations shared by code and node editors; its screenshots are not UE 5.7 UI instructions.",
-        "category": "Reference"
-      },
-      {
-        "id": "bosshape",
-        "label": "Book of Shaders: functions",
-        "title": "Patricio Gonzalez Vivo & Jen Lowe — The Book of Shaders, Shaping functions",
-        "url": "https://thebookofshaders.com/05/",
-        "focus": "Start with Step and Smoothstep. Change the threshold or transition interval before combining operations.",
-        "context": "Free interactive GLSL exercises; compare the argument order with Unreal nodes.",
-        "category": "Reference"
-      }
-    ],
-    "appendix": true,
-    "guest": null,
-    "motion_bounds": null,
-    "preview": "previews/75.jpg",
-    "lesson": null
-  },
-  {
-    "number": 76,
-    "id": "w08-057",
-    "title": "Brush texture perturbs the light signal",
-    "section": "Appendix · Palette and painted bands",
-    "subsection": null,
-    "kind": "bridge",
-    "notes": "This is an excerpt, not a complete shader. R starts in 0–1, multiply by 2 and subtract 1 to make −1 to 1. TextureInfluence scales the perturbation. Add it to the light signal before selecting bands. The full lesson uses thresholds .35 and .7 with ShadowColor, MidColor, and Tint. The Unreal playground extends this to four palette entries.\n\nStudent files: lessons/06_painted_bands/fragment.glsl and unreal-custom.hlsl. The host supplies declared inputs and the output wrapper. Read the matching file while this slide is visible.",
-    "sources": [
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7"
-    ],
-    "key_sources": [
-      {
-        "id": "math",
-        "label": "Epic: material math",
-        "title": "Epic Games — Math Material Expressions",
-        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
-        "focus": "Look up Multiply, LinearInterpolate, DotProduct, Step and Sine. Check each input order and Sine Period.",
-        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
-        "category": "Reference"
-      },
-      {
-        "id": "custom",
-        "label": "Epic: Custom HLSL",
-        "title": "Epic Games — Custom Material Expressions",
-        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
-        "focus": "Read Using the Custom Material Expression: named inputs, return value, Output Type and the texture sampler example.",
-        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
-        "category": "Reference"
-      }
-    ],
-    "appendix": true,
-    "guest": null,
-    "motion_bounds": null,
-    "preview": "previews/76.jpg",
-    "lesson": "06_painted_bands"
-  },
-  {
-    "number": 77,
-    "id": "lookdev-student-code",
-    "title": "The complete painted-band study",
-    "section": "Appendix · Palette and painted bands",
-    "subsection": "GLSL + HLSL",
-    "kind": "student-code",
-    "notes": "This is the complete calculation from the student lesson, with line wrapping only. First normalize the directions and build a light-response value. Sample the brush mask, center it around zero, and scale its influence. Apply thresholds at 0.35 and 0.7 to choose three colors. In the native graph, follow Normalize, Dot, Saturate, Texture Sample R, Multiply and Subtract, Add, then two Step and Lerp stages. N and L must share the same coordinate space. This Unlit example has a parameterized light direction, not scene-light integration.",
-    "sources": [],
-    "key_sources": [],
-    "appendix": true,
-    "guest": null,
-    "motion_bounds": null,
-    "preview": "previews/77.jpg",
-    "lesson": "06_painted_bands"
-  },
-  {
-    "number": 78,
-    "id": "w08-058",
-    "title": "Texture scale and shading style",
-    "section": "Appendix · Palette and painted bands",
-    "subsection": null,
-    "kind": "pair",
-    "notes": "The brush texture is sampled through UVs. Pixel-grid shading approximates a normal per screen cell. The mesh outline remains smooth. These are separate artistic choices; neither is a full painterly or pixel-art renderer.",
-    "sources": [
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/coordinates-material-expressions-in-unreal-engine?application_version=5.7",
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-asset-editor-in-unreal-engine?application_version=5.7"
-    ],
-    "key_sources": [
-      {
-        "id": "coords",
-        "label": "Epic: UVs and Panner",
-        "title": "Epic Games — Coordinates Material Expressions",
-        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/coordinates-material-expressions-in-unreal-engine?application_version=5.7",
-        "focus": "Find TextureCoordinate, Panner, PixelNormalWS and VertexNormalWS. Match coordinate space to the calculation.",
-        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
-        "category": "Reference"
-      },
-      {
-        "id": "texture",
-        "label": "Epic: texture data",
-        "title": "Epic Games — Texture Asset Editor",
-        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-asset-editor-in-unreal-engine?application_version=5.7",
-        "focus": "Find sRGB, channel preview, filtering and mip settings. Distinguish color images from numerical data.",
-        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
-        "category": "Reference"
-      }
-    ],
-    "appendix": true,
-    "guest": null,
-    "motion_bounds": null,
-    "preview": "previews/78.jpg",
-    "lesson": null
-  },
-  {
-    "number": 79,
+    "number": 94,
     "id": "w08-078",
     "title": "Key sources by topic",
-    "section": "Appendix",
+    "section": "REFERENCE LIBRARY",
     "subsection": null,
     "kind": "sourceguide",
     "notes": "Use the reading guide by topic. Epic is the first stop for Unreal settings. Ben Cloward explains the same calculations in artist-friendly node examples. Iñigo Quílez offers further shader experiments. The Unity Shaders Bible is an optional Unity-focused book, so its engine code needs translation. Ned’s original PDF is available for notes, and his closing slide credits LearnOpenGL for diagram inspiration. Mark Finch’s GPU Gems chapter provides the wave-math extension. Each topic in our deck has a short source pointer and a focused reading note.",
@@ -2485,90 +3011,15 @@
     "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/79.jpg",
+    "section_color": "#435663",
+    "preview": "previews/94.jpg",
     "lesson": null
   },
   {
-    "number": 80,
-    "id": "w08-013",
-    "title": "Translation checks",
-    "section": "Appendix",
-    "subsection": null,
-    "kind": "table",
-    "notes": "A shader host also defines how values arrive and where they go. Our snippets are expressions inside that host. A whole GLSL program cannot be pasted into a Custom node unchanged. The native graph is our main authoring surface.",
-    "sources": [
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
-      "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions"
-    ],
-    "key_sources": [
-      {
-        "id": "custom",
-        "label": "Epic: Custom HLSL",
-        "title": "Epic Games — Custom Material Expressions",
-        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
-        "focus": "Read Using the Custom Material Expression: named inputs, return value, Output Type and the texture sampler example.",
-        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
-        "category": "Reference"
-      },
-      {
-        "id": "hlsl",
-        "label": "Microsoft: HLSL functions",
-        "title": "Microsoft — HLSL Intrinsic Functions",
-        "url": "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
-        "focus": "Follow the per-function links for lerp, saturate, step, normalize and dot. Check arguments and return values.",
-        "context": "Language reference; Unreal’s Custom node supplies its own input/output wrapper.",
-        "category": "Reference"
-      }
-    ],
-    "appendix": true,
-    "guest": null,
-    "motion_bounds": null,
-    "preview": "previews/80.jpg",
-    "lesson": null
-  },
-  {
-    "number": 81,
-    "id": "w08-077",
-    "title": "Optional Unreal setup",
-    "section": "Appendix",
-    "subsection": null,
-    "kind": "text",
-    "notes": "Open the public project in UE 5.7. Use Content Browser, Week08, 00_Maps and select W08_Student_Gallery. Start with its six numbered bays. If an asset is not visible in your edition, use the gallery guide and matching browser lesson. Save your own work before switching maps. Epic Content Examples is a separate download.",
-    "sources": [
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-main-material-node-in-unreal-engine?application_version=5.7",
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/content-examples-sample-project-for-unreal-engine"
-    ],
-    "key_sources": [
-      {
-        "id": "main",
-        "label": "Epic: Material Editor",
-        "title": "Epic Games — Using the Main Material Node",
-        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-main-material-node-in-unreal-engine?application_version=5.7",
-        "focus": "Read Material Inputs and Material Properties for enabled pins, defaults and the output node.",
-        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
-        "category": "Reference"
-      },
-      {
-        "id": "samples",
-        "label": "Epic: Content Examples",
-        "title": "Epic Games — Content Examples",
-        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/content-examples-sample-project-for-unreal-engine",
-        "focus": "Use the Materials and related example maps as a separate guided exploration. Follow the stations named in the course reference room.",
-        "context": "Official sample project. Obtain a version compatible with your Unreal installation.",
-        "category": "Further study"
-      }
-    ],
-    "appendix": true,
-    "guest": null,
-    "motion_bounds": null,
-    "preview": "previews/81.jpg",
-    "lesson": null
-  },
-  {
-    "number": 82,
+    "number": 95,
     "id": "w08-079",
     "title": "Color building blocks",
-    "section": "Appendix",
+    "section": "REFERENCE LIBRARY",
     "subsection": null,
     "kind": "functionref",
     "notes": "Reference page; no need to teach every row during the lecture. Multiply / Add: Multiplication is component-wise. A scalar scales every component. Multiplying by white preserves RGB; by black removes it. Mix / Lerp: Alpha 0 returns A; 1 returns B. Values outside 0..1 extrapolate. A color Alpha blends channels independently. Clamp / Saturate: Clamping is not normalization or remapping: values outside the range collapse to the endpoints.",
@@ -2600,14 +3051,15 @@
     "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/82.jpg",
+    "section_color": "#435663",
+    "preview": "previews/95.jpg",
     "lesson": null
   },
   {
-    "number": 83,
+    "number": 96,
     "id": "w08-080",
     "title": "Masks and repeating values",
-    "section": "Appendix",
+    "section": "REFERENCE LIBRARY",
     "subsection": null,
     "kind": "functionref",
     "notes": "Reference page; no need to teach every row during the lecture. Step: Result is 0 when x < edge and 1 otherwise. UE Step uses X for the value and Y for the edge; the code arguments put the edge first. Smoothstep: Keep Min < Max. This softens a value transition; it does not blur a texture or guarantee anti-aliasing. Fract / Frac: Result is x − floor(x), also for negative x. Explicit Frac creates derivative discontinuities; texture wrapping usually handles repeating UVs better.",
@@ -2640,14 +3092,15 @@
     "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/83.jpg",
+    "section_color": "#435663",
+    "preview": "previews/96.jpg",
     "lesson": null
   },
   {
-    "number": 84,
+    "number": 97,
     "id": "w08-081",
     "title": "Coordinates and texture data",
-    "section": "Appendix",
+    "section": "REFERENCE LIBRARY",
     "subsection": null,
     "kind": "functionref",
     "notes": "Reference page; no need to teach every row during the lecture. Time + UV offset: UV speed is repeats per second. Use a float2/vector with two meaningful channels. Mesh positions do not change. Remap a signed field: A sampled .5 becomes zero offset. Import data textures with sRGB OFF. Components / Append: RGBA and XYZW name the same component positions. Appending does not normalize a direction.",
@@ -2681,14 +3134,15 @@
     "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/84.jpg",
+    "section_color": "#435663",
+    "preview": "previews/97.jpg",
     "lesson": null
   },
   {
-    "number": 85,
+    "number": 98,
     "id": "w08-082",
     "title": "Lighting building blocks",
-    "section": "Appendix",
+    "section": "REFERENCE LIBRARY",
     "subsection": null,
     "kind": "functionref",
     "notes": "Reference page; no need to teach every row during the lecture. Normalize + Dot: Use nonzero vectors in the same space. L points toward the light. Dot of unit vectors ranges from -1 to 1 before clamping. Power + view rim: Normalize N and V first. Higher positive power narrows the rim. This artistic mask alone is not a complete Fresnel reflectance model. UE Fresnel adds its own BaseReflectFractionIn parameter and expects a world-space normal. Floor + bands: x is clamped 0..1 and n is an integer ≥2. The Min keeps x=1 at the final level rather than making an extra band.",
@@ -2721,14 +3175,15 @@
     "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/85.jpg",
+    "section_color": "#435663",
+    "preview": "previews/98.jpg",
     "lesson": null
   },
   {
-    "number": 86,
+    "number": 99,
     "id": "w08-083",
     "title": "Motion and shader stages",
-    "section": "Appendix",
+    "section": "REFERENCE LIBRARY",
     "subsection": null,
     "kind": "functionref",
     "notes": "Reference page; no need to teach every row during the lecture. Sine / Cosine: Code sin/cos use radians. UE Sine/Cosine default Period is 1: an input of 1 completes a cycle. Alternatively divide radians by 2π and keep Period 1. Vertex displacement: The GLSL example assumes a local +Z plane. UE WPO uses world units (normally cm), needs enough vertices, and does not automatically update collision. Vertex displacement also needs matching shading normals. DDX / DDY / Fwidth: These are screen derivatives, not an analytic object-space slope. Use in the pixel stage. Discontinuous control flow or values can make them unreliable.",
@@ -2761,14 +3216,15 @@
     "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/86.jpg",
+    "section_color": "#435663",
+    "preview": "previews/99.jpg",
     "lesson": null
   },
   {
-    "number": 87,
+    "number": 100,
     "id": "w08-084",
     "title": "Use the function library",
-    "section": "Appendix",
+    "section": "REFERENCE LIBRARY",
     "subsection": null,
     "kind": "text",
     "notes": "The linked library has twenty-one entries with original code excerpts, Unreal node names, common mistakes and short experiments. Texture sampling includes the difference between modern GLSL, older WebGL syntax, raw HLSL and the UE Custom-node helper. This is a reusable reference for later weeks.",
@@ -2799,14 +3255,15 @@
     "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/87.jpg",
+    "section_color": "#435663",
+    "preview": "previews/100.jpg",
     "lesson": null
   },
   {
-    "number": 88,
+    "number": 101,
     "id": "w08-085",
     "title": "Explore Epic Content Examples",
-    "section": "Appendix",
+    "section": "REFERENCE LIBRARY",
     "subsection": null,
     "kind": "image",
     "notes": "This image is the instructor reference room, containing selected Epic sample materials and original documentation studies. The public student project does not redistribute Epic Content Examples. Download that official sample separately and use the study route on the next slide.",
@@ -2828,14 +3285,15 @@
     "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/88.jpg",
+    "section_color": "#435663",
+    "preview": "previews/101.jpg",
     "lesson": null
   },
   {
-    "number": 89,
+    "number": 102,
     "id": "w08-086",
     "title": "Content Examples study route",
-    "section": "Appendix",
+    "section": "REFERENCE LIBRARY",
     "subsection": null,
     "kind": "table",
     "notes": "These map names were checked in the installed UE 5.7 Content Examples sample. They belong to the external Epic project, not W08_Student_Gallery. Follow one question in one map, then compare it with your classroom study.",
@@ -2858,92 +3316,8 @@
     "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/89.jpg",
-    "lesson": null
-  },
-  {
-    "number": 90,
-    "id": "w08-087",
-    "title": "DepthFade at an intersection",
-    "section": "Appendix",
-    "subsection": null,
-    "kind": "pair",
-    "notes": "DepthFade softens the intersection between this translucent plane and the opaque rock. The FadeDistance input uses world units. The Opacity input stays at 0.75, and FadeMix selects the faded result. This is an opacity treatment; it does not make waves or generate foam.",
-    "sources": [
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/utility-material-expressions-in-unreal-engine?application_version=5.7",
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/lit-translucency-in-unreal-engine?application_version=5.7"
-    ],
-    "key_sources": [
-      {
-        "id": "utility",
-        "label": "Epic: Fresnel / DepthFade",
-        "title": "Epic Games — Utility Material Expressions",
-        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/utility-material-expressions-in-unreal-engine?application_version=5.7",
-        "focus": "Find Fresnel for view-angle controls, or DepthFade for translucent intersections. These perform different jobs.",
-        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
-        "category": "Reference"
-      }
-    ],
-    "appendix": true,
-    "guest": null,
-    "motion_bounds": null,
-    "preview": "previews/90.jpg",
-    "lesson": null
-  },
-  {
-    "number": 91,
-    "id": "w08-088",
-    "title": "Mesh UVs and world projection",
-    "section": "Appendix",
-    "subsection": null,
-    "kind": "pair",
-    "notes": "Both cubes use the same Epic brick texture. Their initial repeat sizes differ. The left samples mesh UVs. The right calls Epic’s WorldAlignedTexture function and sets repeat size in world units. Move the right cube to see the surface slide through the stationary pattern. That behavior is useful on static surfaces and can be distracting on moving objects.",
-    "sources": [
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/texturing-material-functions-in-unreal-engine?application_version=5.7"
-    ],
-    "key_sources": [
-      {
-        "id": "texturing",
-        "label": "Epic: world projection",
-        "title": "Epic Games — Texturing Material Functions",
-        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/texturing-material-functions-in-unreal-engine?application_version=5.7",
-        "focus": "Read WorldAlignedTexture and WorldAlignedNormal. Check scale, coordinate conventions and the warning about moving objects.",
-        "context": "Unreal Engine 5.7 documentation; classroom project authored in 5.7.4.",
-        "category": "Reference"
-      }
-    ],
-    "appendix": true,
-    "guest": null,
-    "motion_bounds": null,
-    "preview": "previews/91.jpg",
-    "lesson": null
-  },
-  {
-    "number": 92,
-    "id": "w08-089",
-    "title": "Single Layer Water",
-    "section": "Appendix",
-    "subsection": null,
-    "kind": "pair",
-    "notes": "Unreal’s SingleLayerWater shading model uses a dedicated pass to show water transmission and scattering while the material uses Opaque or Masked blending. The separate water output supplies volume properties. Here only absorption scale changes. Look at the submerged rock. These settings describe shading, not wave generation.",
-    "sources": [
-      "https://dev.epicgames.com/documentation/unreal-engine/single-layer-water-shading-model-in-unreal-engine?application_version=5.7"
-    ],
-    "key_sources": [
-      {
-        "id": "water",
-        "label": "Epic: Single Layer Water",
-        "title": "Epic Games — Single Layer Water Shading Model",
-        "url": "https://dev.epicgames.com/documentation/unreal-engine/single-layer-water-shading-model-in-unreal-engine?application_version=5.7",
-        "focus": "Read the implementation and material setup. Its Opaque/Masked blend setting can still produce a transparent-looking water surface.",
-        "context": "Unreal Engine 5.7; this is an optional engine water model, distinct from the classroom water masters.",
-        "category": "Reference"
-      }
-    ],
-    "appendix": true,
-    "guest": null,
-    "motion_bounds": null,
-    "preview": "previews/92.jpg",
+    "section_color": "#435663",
+    "preview": "previews/102.jpg",
     "lesson": null
   }
 ]
