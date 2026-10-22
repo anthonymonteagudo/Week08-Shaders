@@ -265,7 +265,7 @@
     "title": "Tint in GLSL",
     "section": "02 · Materials and shader translation",
     "kind": "tint-code",
-    "notes": "This exact code is lesson 01_color/fragment.glsl in the student workspace. UV is a float2 lookup address supplied by the host. texture returns four channels; .rgb selects three. Multiplication is component-wise. Set the Tint color picker to white to see the baseline, then lower red. The shader returns color through the small browser wrapper.",
+    "notes": "This exact code is lesson 01_color/fragment.glsl in the student workspace. UV is a float2 lookup address supplied by the host. texture returns four channels; .rgb selects three. Multiplication is component-wise. Set the Tint color picker to white to see the baseline, then lower red. The shader returns color through the small browser wrapper.\n\nStudent files: lessons/01_color/fragment.glsl and unreal-custom.hlsl. The host supplies declared inputs and the output wrapper. Read the matching file while this slide is visible.",
     "sources": [
       "Week08ShaderLab/Workshop/Shaders/tint.glsl",
       "https://thebookofshaders.com/06/",
@@ -303,7 +303,7 @@
     "title": "The same tint in Unreal HLSL",
     "section": "02 · Materials and shader translation",
     "kind": "tint-code",
-    "notes": "Open M_Tint_HLSL. The sampler name is generated from the texture input name: BaseTextureSampler. This is the Custom-node body. Unreal supplies surrounding shader code, material settings, and geometry. The image represents the same calculation; engine tone mapping and exposure can change the displayed appearance. For the comparison, use the unlit study and keep viewing conditions fixed.",
+    "notes": "Open M_Tint_HLSL. The sampler name is generated from the texture input name: BaseTextureSampler. This is the Custom-node body. Unreal supplies surrounding shader code, material settings, and geometry. The image represents the same calculation; engine tone mapping and exposure can change the displayed appearance. For the comparison, use the unlit study and keep viewing conditions fixed.\n\nStudent files: lessons/01_color/fragment.glsl and unreal-custom.hlsl. The host supplies declared inputs and the output wrapper. Read the matching file while this slide is visible.",
     "sources": [
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
       "https://jettelly.com/store/the-unity-shaders-bible"
@@ -332,7 +332,7 @@
     "guest": null,
     "motion_bounds": null,
     "preview": "previews/12.jpg",
-    "lesson": null
+    "lesson": "01_color"
   },
   {
     "number": 13,
@@ -439,7 +439,7 @@
     "title": "Blend two colors with a mask",
     "section": "02 · Materials and shader translation",
     "kind": "bridge",
-    "notes": "The previous slide established both colors and the visible transition. Here UV.x drives smoothstep. Its result is a numeric mask. GLSL mix and HLSL lerp perform the same interpolation. In the Unreal graph use TexCoord R as the smoothstep value, Min .25, Max .75, then feed the result into Lerp Alpha.",
+    "notes": "The previous slide established both colors and the visible transition. Here UV.x drives smoothstep. Its result is a numeric mask. GLSL mix and HLSL lerp perform the same interpolation. In the Unreal graph use TexCoord R as the smoothstep value, Min .25, Max .75, then feed the result into Lerp Alpha.\n\nStudent files: lessons/02_uv_mask/fragment.glsl and unreal-custom.hlsl. The host supplies declared inputs and the output wrapper. Read the matching file while this slide is visible.",
     "sources": [
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
       "https://thebookofshaders.com/05/",
@@ -793,7 +793,7 @@
     "title": "Texture motion in GLSL",
     "section": "03 · UV motion and water",
     "kind": "demo",
-    "notes": "This exact example is lesson 03_texture_flow. It uses the provided brush mask so its role is easy to inspect. The water gallery later applies the same coordinate idea to water-shaped detail. Set Speed to zero; only the lookup animation stops. Tiling changes repetition, not geometric density.",
+    "notes": "This exact example is lesson 03_texture_flow. It uses the provided brush mask so its role is easy to inspect. The water gallery later applies the same coordinate idea to water-shaped detail. Set Speed to zero; only the lookup animation stops. Tiling changes repetition, not geometric density.\n\nStudent files: lessons/03_texture_flow/fragment.glsl and unreal-custom.hlsl. The host supplies declared inputs and the output wrapper. Read the matching file while this slide is visible.",
     "sources": [
       "Week08ShaderLab/Workshop/Shaders/water.glsl",
       "Week08ShaderLab/Workshop/Shaders/foam-texture.glsl",
@@ -832,7 +832,7 @@
     "title": "Texture motion in Unreal HLSL",
     "section": "03 · UV motion and water",
     "kind": "dualcode",
-    "notes": "Open M_03_texture_flow_HLSL. Inputs are UV, Seconds, Tiling, Speed, BrushTexture, ShadowColor, and Tint. Time supplies Seconds. The two implementations apply the same formula. The next slide names the equivalent native nodes.",
+    "notes": "Open M_03_texture_flow_HLSL. Inputs are UV, Seconds, Tiling, Speed, BrushTexture, ShadowColor, and Tint. Time supplies Seconds. The two implementations apply the same formula. The next slide names the equivalent native nodes.\n\nStudent files: lessons/03_texture_flow/fragment.glsl and unreal-custom.hlsl. The host supplies declared inputs and the output wrapper. Read the matching file while this slide is visible.",
     "sources": [
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
       "Week08ShaderLab/Workshop/material-graphs.json",
@@ -862,7 +862,7 @@
     "guest": null,
     "motion_bounds": null,
     "preview": "previews/28.jpg",
-    "lesson": null
+    "lesson": "03_texture_flow"
   },
   {
     "number": 29,
@@ -1515,6 +1515,63 @@
   },
   {
     "number": 50,
+    "id": "lookdev-production",
+    "title": "Look development: concept and game",
+    "section": "04 · Lighting and stylization",
+    "kind": "look-reference",
+    "notes": "Valve connects illustration principles with modeling, textures and shading. Its paper describes cool shadows, controlled detail and rim highlights. The concept and game image show a shared visual intention. Ask which choices need geometry, which belong in textures, and which can respond to light. Our next material is a separate classroom study, not a recreation of Valve’s renderer.",
+    "sources": [
+      "https://cdn.steamstatic.com/apps/valve/2007/NPAR07_IllustrativeRenderingInTeamFortress2.pdf"
+    ],
+    "key_sources": [
+      {
+        "id": "valve-tf2",
+        "category": "Production paper",
+        "title": "Mitchell, Francke & Eng — Illustrative Rendering in Team Fortress 2",
+        "label": "Valve: illustrative rendering",
+        "url": "https://cdn.steamstatic.com/apps/valve/2007/NPAR07_IllustrativeRenderingInTeamFortress2.pdf",
+        "focus": "Figure 1 and sections 3–5 connect illustration choices to art assets and shading.",
+        "context": "Production reference. The classroom band shader is a separate simplified study, not Valve’s implementation."
+      }
+    ],
+    "appendix": false,
+    "guest": null,
+    "motion_bounds": null,
+    "preview": "previews/50.jpg",
+    "lesson": null
+  },
+  {
+    "number": 51,
+    "id": "lookdev-target",
+    "title": "Our target: painted color regions",
+    "section": "04 · Lighting and stylization",
+    "kind": "look-target",
+    "notes": "First describe the image without naming nodes. The large regions carry the form. Color differences reinforce their separation. Small irregularities give the boundaries a painted character. The sphere silhouette stays smooth: this effect changes shading, not mesh geometry. We will isolate these choices before combining them. The browser uses three colors and the UE study uses four, so compare the mechanism rather than expecting pixel-identical results.",
+    "sources": [],
+    "key_sources": [],
+    "appendix": false,
+    "guest": null,
+    "motion_bounds": null,
+    "preview": "previews/51.jpg",
+    "lesson": null
+  },
+  {
+    "number": 52,
+    "id": "lookdev-recipe",
+    "title": "Art decisions become shader controls",
+    "section": "04 · Lighting and stylization",
+    "kind": "look-recipe",
+    "notes": "Treat each artistic choice as a separate control. Thresholds determine where one region ends. Palette values determine the colors on either side. A sampled brush mask slightly changes the signal before thresholding, so its pattern changes boundary shapes. It does not add a physical normal or cast shadow. Begin with TextureInfluence at zero, then increase it just enough to see the edge treatment while preserving the large regions.",
+    "sources": [],
+    "key_sources": [],
+    "appendix": false,
+    "guest": null,
+    "motion_bounds": null,
+    "preview": "previews/52.jpg",
+    "lesson": null
+  },
+  {
+    "number": 53,
     "id": "w08-042",
     "title": "Value and visual hierarchy",
     "section": "04 · Lighting and stylization",
@@ -1537,11 +1594,11 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/50.jpg",
+    "preview": "previews/53.jpg",
     "lesson": null
   },
   {
-    "number": 51,
+    "number": 54,
     "id": "w08-047",
     "title": "Turn a light response into bands",
     "section": "04 · Lighting and stylization",
@@ -1574,16 +1631,16 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/51.jpg",
+    "preview": "previews/54.jpg",
     "lesson": null
   },
   {
-    "number": 52,
+    "number": 55,
     "id": "w08-048",
     "title": "Toon bands in GLSL",
     "section": "04 · Lighting and stylization",
     "kind": "demo",
-    "notes": "Normalize the surface normal and an artist-controlled direction. Their dot product measures alignment. Clamp it to zero through one, then compare it with Threshold using Step. The result is either zero or one, so the mix selects one of the two colors. The preview rotates the direction so we can see the boundary move.",
+    "notes": "Normalize the surface normal and an artist-controlled direction. Their dot product measures alignment. Clamp it to zero through one, then compare it with Threshold using Step. The result is either zero or one, so the mix selects one of the two colors. The preview rotates the direction so we can see the boundary move.\n\nStudent files: lessons/04_toon/fragment.glsl and unreal-custom.hlsl. The host supplies declared inputs and the output wrapper. Read the matching file while this slide is visible.",
     "sources": [
       "Week08ShaderLab/Workshop/Shaders/toon.glsl",
       "https://learnopengl.com/Lighting/Basic-Lighting",
@@ -1612,16 +1669,16 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/52.jpg",
+    "preview": "previews/55.jpg",
     "lesson": "04_toon"
   },
   {
-    "number": 53,
+    "number": 56,
     "id": "w08-049",
     "title": "Toon bands in Unreal HLSL",
     "section": "04 · Lighting and stylization",
     "kind": "dualcode",
-    "notes": "PixelNormalWS supplies N. The vector parameter L supplies the artist-selected direction. Normalize both. This exact code is lesson 04_toon. The browser wrapper also normalizes its input normal; keeping normalization here makes the calculation safe to reuse with other hosts.",
+    "notes": "PixelNormalWS supplies N. The vector parameter L supplies the artist-selected direction. Normalize both. This exact code is lesson 04_toon. The browser wrapper also normalizes its input normal; keeping normalization here makes the calculation safe to reuse with other hosts.\n\nStudent files: lessons/04_toon/fragment.glsl and unreal-custom.hlsl. The host supplies declared inputs and the output wrapper. Read the matching file while this slide is visible.",
     "sources": [
       "Week08ShaderLab/Workshop/Shaders/toon.hlsl",
       "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions",
@@ -1650,11 +1707,11 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/53.jpg",
-    "lesson": null
+    "preview": "previews/56.jpg",
+    "lesson": "04_toon"
   },
   {
-    "number": 54,
+    "number": 57,
     "id": "w08-050",
     "title": "Toon bands as material nodes",
     "section": "04 · Lighting and stylization",
@@ -1678,11 +1735,11 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/54.jpg",
+    "preview": "previews/57.jpg",
     "lesson": null
   },
   {
-    "number": 55,
+    "number": 58,
     "id": "w08-051",
     "title": "Toon controls in Unreal",
     "section": "04 · Lighting and stylization",
@@ -1705,11 +1762,11 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/55.jpg",
+    "preview": "previews/58.jpg",
     "lesson": null
   },
   {
-    "number": 56,
+    "number": 59,
     "id": "w08-052",
     "title": "What this toon study leaves out",
     "section": "04 · Lighting and stylization",
@@ -1732,11 +1789,11 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/56.jpg",
+    "preview": "previews/59.jpg",
     "lesson": null
   },
   {
-    "number": 57,
+    "number": 60,
     "id": "w08-054",
     "title": "Custom palette",
     "section": "04 · Lighting and stylization",
@@ -1769,11 +1826,11 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/57.jpg",
+    "preview": "previews/60.jpg",
     "lesson": null
   },
   {
-    "number": 58,
+    "number": 61,
     "id": "w08-055",
     "title": "Choose the palette colors",
     "section": "04 · Lighting and stylization",
@@ -1806,11 +1863,11 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/58.jpg",
+    "preview": "previews/61.jpg",
     "lesson": "06_painted_bands"
   },
   {
-    "number": 59,
+    "number": 62,
     "id": "palette-thresholds",
     "title": "Place the palette boundaries",
     "section": "04 · Lighting and stylization",
@@ -1840,11 +1897,11 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/59.jpg",
+    "preview": "previews/62.jpg",
     "lesson": null
   },
   {
-    "number": 60,
+    "number": 63,
     "id": "w08-056",
     "title": "Brush texture in the light response",
     "section": "04 · Lighting and stylization",
@@ -1877,16 +1934,16 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/60.jpg",
+    "preview": "previews/63.jpg",
     "lesson": null
   },
   {
-    "number": 61,
+    "number": 64,
     "id": "w08-057",
     "title": "Brush texture perturbs the light signal",
     "section": "04 · Lighting and stylization",
     "kind": "bridge",
-    "notes": "This is an excerpt, not a complete shader. R starts in 0–1, multiply by 2 and subtract 1 to make −1 to 1. TextureInfluence scales the perturbation. Add it to the light signal before selecting bands. The full lesson uses thresholds .35 and .7 with ShadowColor, MidColor, and Tint. The Unreal playground extends this to four palette entries.",
+    "notes": "This is an excerpt, not a complete shader. R starts in 0–1, multiply by 2 and subtract 1 to make −1 to 1. TextureInfluence scales the perturbation. Add it to the light signal before selecting bands. The full lesson uses thresholds .35 and .7 with ShadowColor, MidColor, and Tint. The Unreal playground extends this to four palette entries.\n\nStudent files: lessons/06_painted_bands/fragment.glsl and unreal-custom.hlsl. The host supplies declared inputs and the output wrapper. Read the matching file while this slide is visible.",
     "sources": [
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7"
@@ -1914,11 +1971,26 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/61.jpg",
+    "preview": "previews/64.jpg",
     "lesson": "06_painted_bands"
   },
   {
-    "number": 62,
+    "number": 65,
+    "id": "lookdev-student-code",
+    "title": "The complete painted-band study",
+    "section": "04 · Lighting and stylization",
+    "kind": "student-code",
+    "notes": "This is the complete calculation from the student lesson, with line wrapping only. First normalize the directions and build a light-response value. Sample the brush mask, center it around zero, and scale its influence. Apply thresholds at 0.35 and 0.7 to choose three colors. In the native graph, follow Normalize, Dot, Saturate, Texture Sample R, Multiply and Subtract, Add, then two Step and Lerp stages. N and L must share the same coordinate space. This Unlit example has a parameterized light direction, not scene-light integration.",
+    "sources": [],
+    "key_sources": [],
+    "appendix": false,
+    "guest": null,
+    "motion_bounds": null,
+    "preview": "previews/65.jpg",
+    "lesson": "06_painted_bands"
+  },
+  {
+    "number": 66,
     "id": "w08-058",
     "title": "Texture scale and shading style",
     "section": "04 · Lighting and stylization",
@@ -1951,11 +2023,11 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/62.jpg",
+    "preview": "previews/66.jpg",
     "lesson": null
   },
   {
-    "number": 63,
+    "number": 67,
     "id": "w08-059",
     "title": "View angle can control an edge accent",
     "section": "04 · Lighting and stylization",
@@ -1978,11 +2050,11 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/63.jpg",
+    "preview": "previews/67.jpg",
     "lesson": null
   },
   {
-    "number": 64,
+    "number": 68,
     "id": "w08-060",
     "title": "Bright and dark view edges",
     "section": "04 · Lighting and stylization",
@@ -2005,16 +2077,16 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/64.jpg",
+    "preview": "previews/68.jpg",
     "lesson": null
   },
   {
-    "number": 65,
+    "number": 69,
     "id": "w08-061",
     "title": "Fresnel-style mask → native nodes",
     "section": "04 · Lighting and stylization",
     "kind": "bridge",
-    "notes": "N and V must use the same space and both be normalized. Dot close to 1 means front-facing; OneMinus makes that region low. Power shapes the edge width. EdgeStrength scales the mask before Lerp. This is the exact small lesson; Unreal’s native Fresnel expression is shown next as a related tool.",
+    "notes": "N and V must use the same space and both be normalized. Dot close to 1 means front-facing; OneMinus makes that region low. Power shapes the edge width. EdgeStrength scales the mask before Lerp. This is the exact small lesson; Unreal’s native Fresnel expression is shown next as a related tool.\n\nStudent files: lessons/05_fresnel/fragment.glsl and unreal-custom.hlsl. The host supplies declared inputs and the output wrapper. Read the matching file while this slide is visible.",
     "sources": [
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/utility-material-expressions-in-unreal-engine?application_version=5.7",
@@ -2043,11 +2115,11 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/65.jpg",
+    "preview": "previews/69.jpg",
     "lesson": "05_fresnel"
   },
   {
-    "number": 66,
+    "number": 70,
     "id": "w08-062",
     "title": "Unreal Fresnel controls",
     "section": "04 · Lighting and stylization",
@@ -2071,11 +2143,11 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/66.jpg",
+    "preview": "previews/70.jpg",
     "lesson": null
   },
   {
-    "number": 67,
+    "number": 71,
     "id": "w08-064",
     "title": "Lighting playground · one intentional change",
     "section": "04 · Lighting and stylization",
@@ -2098,11 +2170,11 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/67.jpg",
+    "preview": "previews/71.jpg",
     "lesson": null
   },
   {
-    "number": 68,
+    "number": 72,
     "id": "w08-070",
     "title": "05 · Original shader workshop",
     "section": "05 · Original shader workshop",
@@ -2113,11 +2185,11 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/68.jpg",
+    "preview": "previews/72.jpg",
     "lesson": null
   },
   {
-    "number": 69,
+    "number": 73,
     "id": "w08-071",
     "title": "Lab 2: start your shader homework",
     "section": "05 · Original shader workshop",
@@ -2150,11 +2222,11 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/69.jpg",
+    "preview": "previews/73.jpg",
     "lesson": null
   },
   {
-    "number": 70,
+    "number": 74,
     "id": "w08-072",
     "title": "Choose a small visual goal",
     "section": "05 · Original shader workshop",
@@ -2177,11 +2249,11 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/70.jpg",
+    "preview": "previews/74.jpg",
     "lesson": null
   },
   {
-    "number": 71,
+    "number": 75,
     "id": "w08-073",
     "title": "Explain your shader briefly",
     "section": "05 · Original shader workshop",
@@ -2204,11 +2276,11 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/71.jpg",
+    "preview": "previews/75.jpg",
     "lesson": null
   },
   {
-    "number": 72,
+    "number": 76,
     "id": "w08-074",
     "title": "Save the Week 9 comparison",
     "section": "05 · Original shader workshop",
@@ -2221,11 +2293,11 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/72.jpg",
+    "preview": "previews/76.jpg",
     "lesson": null
   },
   {
-    "number": 73,
+    "number": 77,
     "id": "w08-075",
     "title": "Exit questions",
     "section": "05 · Original shader workshop",
@@ -2236,11 +2308,11 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/73.jpg",
+    "preview": "previews/77.jpg",
     "lesson": null
   },
   {
-    "number": 74,
+    "number": 78,
     "id": "w08-076",
     "title": "Next week · Evidence and production tradeoffs",
     "section": "05 · Original shader workshop",
@@ -2251,11 +2323,11 @@
     "appendix": false,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/74.jpg",
+    "preview": "previews/78.jpg",
     "lesson": null
   },
   {
-    "number": 75,
+    "number": 79,
     "id": "w08-078",
     "title": "Key sources by topic",
     "section": "Appendix",
@@ -2320,11 +2392,11 @@
     "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/75.jpg",
+    "preview": "previews/79.jpg",
     "lesson": null
   },
   {
-    "number": 76,
+    "number": 80,
     "id": "w08-013",
     "title": "Translation checks",
     "section": "Appendix",
@@ -2357,11 +2429,11 @@
     "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/76.jpg",
+    "preview": "previews/80.jpg",
     "lesson": null
   },
   {
-    "number": 77,
+    "number": 81,
     "id": "w08-077",
     "title": "Optional Unreal setup",
     "section": "Appendix",
@@ -2394,11 +2466,11 @@
     "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/77.jpg",
+    "preview": "previews/81.jpg",
     "lesson": null
   },
   {
-    "number": 78,
+    "number": 82,
     "id": "w08-079",
     "title": "Color building blocks",
     "section": "Appendix",
@@ -2432,11 +2504,11 @@
     "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/78.jpg",
+    "preview": "previews/82.jpg",
     "lesson": null
   },
   {
-    "number": 79,
+    "number": 83,
     "id": "w08-080",
     "title": "Masks and repeating values",
     "section": "Appendix",
@@ -2471,11 +2543,11 @@
     "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/79.jpg",
+    "preview": "previews/83.jpg",
     "lesson": null
   },
   {
-    "number": 80,
+    "number": 84,
     "id": "w08-081",
     "title": "Coordinates and texture data",
     "section": "Appendix",
@@ -2511,11 +2583,11 @@
     "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/80.jpg",
+    "preview": "previews/84.jpg",
     "lesson": null
   },
   {
-    "number": 81,
+    "number": 85,
     "id": "w08-082",
     "title": "Lighting building blocks",
     "section": "Appendix",
@@ -2550,11 +2622,11 @@
     "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/81.jpg",
+    "preview": "previews/85.jpg",
     "lesson": null
   },
   {
-    "number": 82,
+    "number": 86,
     "id": "w08-083",
     "title": "Motion and shader stages",
     "section": "Appendix",
@@ -2589,11 +2661,11 @@
     "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/82.jpg",
+    "preview": "previews/86.jpg",
     "lesson": null
   },
   {
-    "number": 83,
+    "number": 87,
     "id": "w08-084",
     "title": "Use the function library",
     "section": "Appendix",
@@ -2626,11 +2698,11 @@
     "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/83.jpg",
+    "preview": "previews/87.jpg",
     "lesson": null
   },
   {
-    "number": 84,
+    "number": 88,
     "id": "w08-085",
     "title": "Explore Epic Content Examples",
     "section": "Appendix",
@@ -2654,11 +2726,11 @@
     "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/84.jpg",
+    "preview": "previews/88.jpg",
     "lesson": null
   },
   {
-    "number": 85,
+    "number": 89,
     "id": "w08-086",
     "title": "Content Examples study route",
     "section": "Appendix",
@@ -2683,11 +2755,11 @@
     "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/85.jpg",
+    "preview": "previews/89.jpg",
     "lesson": null
   },
   {
-    "number": 86,
+    "number": 90,
     "id": "w08-087",
     "title": "DepthFade at an intersection",
     "section": "Appendix",
@@ -2711,11 +2783,11 @@
     "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/86.jpg",
+    "preview": "previews/90.jpg",
     "lesson": null
   },
   {
-    "number": 87,
+    "number": 91,
     "id": "w08-088",
     "title": "Mesh UVs and world projection",
     "section": "Appendix",
@@ -2738,11 +2810,11 @@
     "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/87.jpg",
+    "preview": "previews/91.jpg",
     "lesson": null
   },
   {
-    "number": 88,
+    "number": 92,
     "id": "w08-089",
     "title": "Single Layer Water",
     "section": "Appendix",
@@ -2765,7 +2837,7 @@
     "appendix": true,
     "guest": null,
     "motion_bounds": null,
-    "preview": "previews/88.jpg",
+    "preview": "previews/92.jpg",
     "lesson": null
   }
 ]

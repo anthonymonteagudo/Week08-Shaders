@@ -1,0 +1,106 @@
+[
+  {
+    "lesson": "01_color",
+    "slides": [
+      {
+        "number": 11,
+        "id": "w08-014",
+        "title": "Tint in GLSL"
+      },
+      {
+        "number": 12,
+        "id": "w08-015",
+        "title": "The same tint in Unreal HLSL"
+      }
+    ],
+    "glsl": "vec3 base = texture(BaseTexture, UV).rgb;\nvec3 color = base * Tint;",
+    "hlsl": "float3 base = Texture2DSample(BaseTexture, BaseTextureSampler, UV).rgb;\nfloat3 color = base * Tint;\nreturn color;",
+    "glslSha256": "7d2dab8de88b500a35285b54f3e69c71d16440490671bed46ecb9f54825328a9",
+    "hlslSha256": "57ca2dc2536f9201a44716b8256ba174e6435320f6862121042ed0cf3f73c1c0"
+  },
+  {
+    "lesson": "02_uv_mask",
+    "slides": [
+      {
+        "number": 16,
+        "id": "w08-018",
+        "title": "Blend two colors with a mask"
+      }
+    ],
+    "glsl": "float mask = smoothstep(0.25, 0.75, UV.x);\nvec3 color = mix(ShadowColor, Tint, mask);",
+    "hlsl": "float mask = smoothstep(0.25, 0.75, UV.x);\nreturn lerp(ShadowColor, Tint, mask);",
+    "glslSha256": "e8b068460f50eb4509dade8c9f9243d8b6d8efd304b884132d26157d0cb76b89",
+    "hlslSha256": "b34f9222f2d84b4e19a2a21a6691da4ed89ec46fd5f82e537f377fdd0f9ce738"
+  },
+  {
+    "lesson": "03_texture_flow",
+    "slides": [
+      {
+        "number": 27,
+        "id": "w08-030",
+        "title": "Texture motion in GLSL"
+      },
+      {
+        "number": 28,
+        "id": "w08-031",
+        "title": "Texture motion in Unreal HLSL"
+      }
+    ],
+    "glsl": "vec2 flowUV = UV * Tiling + vec2(Seconds * Speed, 0.0);\nfloat mask = texture(BrushTexture, flowUV).r;\nvec3 color = mix(ShadowColor, Tint, mask);",
+    "hlsl": "float2 flowUV = UV * Tiling + float2(Seconds * Speed, 0.0);\nfloat mask = Texture2DSample(BrushTexture, BrushTextureSampler, flowUV).r;\nreturn lerp(ShadowColor, Tint, mask);",
+    "glslSha256": "9c354c02b1556294df3fc11336a04ee221a224484ec8bf15aeab93629c3b8d71",
+    "hlslSha256": "ee69a90efe48bbff1c37e635e35aaf7f456a267022e69e2392b1e3ea6c168f65"
+  },
+  {
+    "lesson": "04_toon",
+    "slides": [
+      {
+        "number": 55,
+        "id": "w08-048",
+        "title": "Toon bands in GLSL"
+      },
+      {
+        "number": 56,
+        "id": "w08-049",
+        "title": "Toon bands in Unreal HLSL"
+      }
+    ],
+    "glsl": "float light = clamp(dot(normalize(N), normalize(L)), 0.0, 1.0);\nfloat mask = step(Threshold, light);\nvec3 color = mix(ShadowColor, Tint, mask);",
+    "hlsl": "float light = saturate(dot(normalize(N), normalize(L)));\nfloat mask = step(Threshold, light);\nreturn lerp(ShadowColor, Tint, mask);",
+    "glslSha256": "42446e9754d3da03947628e6c93dcd20630526546d7d79be848519b4436d5f35",
+    "hlslSha256": "3d04255c0ad0e176f27efa3030028f3f2d8bb4b26ef0d746e928221018dca357"
+  },
+  {
+    "lesson": "05_fresnel",
+    "slides": [
+      {
+        "number": 69,
+        "id": "w08-061",
+        "title": "Fresnel-style mask \u2192 native nodes"
+      }
+    ],
+    "glsl": "float edge = pow(1.0 - clamp(dot(normalize(N), normalize(V)), 0.0, 1.0), RimPower);\nvec3 color = mix(Tint, EdgeColor, edge * EdgeStrength);",
+    "hlsl": "float edge = pow(1.0 - saturate(dot(normalize(N), normalize(V))), RimPower);\nreturn lerp(Tint, EdgeColor, edge * EdgeStrength);",
+    "glslSha256": "3111304fe9b72c7d162cf02cedf3202be8b2381f50216c4e806bccf15ac45b1c",
+    "hlslSha256": "975ffb16e6d086fa72a69404f16b4f2f9df95293504612b4ce4bb512cf82a54d"
+  },
+  {
+    "lesson": "06_painted_bands",
+    "slides": [
+      {
+        "number": 64,
+        "id": "w08-057",
+        "title": "Brush texture perturbs the light signal"
+      },
+      {
+        "number": 65,
+        "id": "lookdev-student-code",
+        "title": "The complete painted-band study"
+      }
+    ],
+    "glsl": "float light = clamp(dot(normalize(N), normalize(L)), 0.0, 1.0);\nfloat brush = texture(BrushTexture, UV * Tiling).r;\nlight = clamp(light + (brush * 2.0 - 1.0) * TextureInfluence, 0.0, 1.0);\nvec3 color = mix(ShadowColor, MidColor, step(0.35, light));\ncolor = mix(color, Tint, step(0.7, light));",
+    "hlsl": "float light = saturate(dot(normalize(N), normalize(L)));\nfloat brush = Texture2DSample(BrushTexture, BrushTextureSampler, UV * Tiling).r;\nlight = saturate(light + (brush * 2.0 - 1.0) * TextureInfluence);\nfloat3 color = lerp(ShadowColor, MidColor, step(0.35, light));\nreturn lerp(color, Tint, step(0.7, light));",
+    "glslSha256": "066a6281b813f056a3e4b59ea35f2ffc53f491304432c280bb77ce7c1ebe4f54",
+    "hlslSha256": "21c94c20f5d61736cb3d9cb32aece48148af7f27adb34b7295e05250a81d5c95"
+  }
+]

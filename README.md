@@ -39,3 +39,7 @@ The slides link directly to topic-specific references. Open [the reading guide](
 ## Sources and permissions
 
 See `SOURCES.md` and `THIRD_PARTY_NOTICES.md`. This repository contains original classroom code/assets and the MIT-licensed Three.js runtime. Ned’s original guest PDF is also included for note-taking. External course files, Epic sample packages and meeting links are not included. Attributed third-party imagery in the lecture slides is listed in THIRD_PARTY_NOTICES.md. Unreal Engine itself is obtained separately from Epic under its terms. No license grant is implied for linked external resources.
+
+## Match the lecture to your shader
+
+[Code-to-slide index](docs/lesson-map.html) pairs every lesson with its lecture slides and exact GLSL/HLSL source. [Look-development walkthrough](docs/look-development.html) starts with visual goals and a controlled painted-band experiment.

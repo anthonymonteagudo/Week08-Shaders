@@ -268,5 +268,14 @@
     "focus": "Use the built-in function reference to cross-check the common arithmetic operations in the appendix.",
     "context": "Desktop GLSL reference. Browser WebGL uses GLSL ES, so version-specific features are not automatically portable.",
     "category": "Further study"
+  },
+  {
+    "id": "valve-tf2",
+    "category": "Production paper",
+    "title": "Mitchell, Francke & Eng — Illustrative Rendering in Team Fortress 2",
+    "label": "Valve: illustrative rendering",
+    "url": "https://cdn.steamstatic.com/apps/valve/2007/NPAR07_IllustrativeRenderingInTeamFortress2.pdf",
+    "focus": "Figure 1 and sections 3–5 connect illustration choices to art assets and shading.",
+    "context": "Production reference. The classroom band shader is a separate simplified study, not Valve’s implementation."
   }
 ]
