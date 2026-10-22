@@ -74,8 +74,8 @@
     "title": "Renderer, shader, material, instance",
     "section": "01 · RENDERING PRELUDE",
     "subsection": null,
-    "kind": "definitions",
-    "notes": "A texture stores sampled data. A material describes how to use that data. A shader is the executable calculation; the renderer coordinates the whole image. Unreal compiles material expressions into shader code for the relevant passes. A material instance inherits a parent and overrides exposed values. Ordinary scalar and vector overrides differ from static switches, which can require a shader variant. If I change Tint in an instance, which definition describes the thing I edited?",
+    "kind": "prelude-terms",
+    "notes": "A texture stores sampled data. A material describes how to use that data. A shader is the executable calculation; the renderer coordinates the whole image. Unreal compiles material expressions into shader code for the relevant passes. A material instance inherits a parent and overrides exposed values. Ordinary scalar and vector overrides differ from static switches, which can require a shader variant. If I change Tint in an instance, which definition describes the thing I edited? The graph crop shows a Multiply calculation connected to Emissive Color. A material is compiled into shader programs; the material instance exposes the inherited Tint value. Point to the enabled override and then the result. This Unlit example isolates the calculation from scene lighting. The graph crop omits upstream inputs; we inspect the complete translation later.",
     "sources": [
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-main-material-node-in-unreal-engine?application_version=5.7"
     ],
@@ -103,8 +103,8 @@
     "title": "Real-time rendering: scene data to pixels",
     "section": "01 · RENDERING PRELUDE",
     "subsection": null,
-    "kind": "pipeline-orientation",
-    "notes": "Use this as our map for the rest of class. CPU-side scene logic and draw preparation submit work using mesh, material and texture data. Vertex processing transforms positions and supplies attributes. Primitive assembly and clipping prepare triangles for rasterization. Rasterization determines covered samples; attributes such as UVs and normals are interpolated for shading. Fragment or pixel shading uses those inputs and texture samples. Depth/stencil tests and blending govern contributions to render targets; lighting and post-processing can involve additional passes before presentation. Depth tests can happen early, so this is a logical orientation rather than a rigid timing diagram. In our Unreal examples, World Position Offset affects vertex positions. Texture flow changes sampling coordinates, and Base Color is an input to surface shading, not the final screen color. More objects, vertices, shaded samples or memory traffic are possible sources of work, not proof of the measured bottleneck.",
+    "kind": "prelude-pipeline",
+    "notes": "Use this as our map for the rest of class. CPU-side scene logic and draw preparation submit work using mesh, material and texture data. Vertex processing transforms positions and supplies attributes. Primitive assembly and clipping prepare triangles for rasterization. Rasterization determines covered samples; attributes such as UVs and normals are interpolated for shading. Fragment or pixel shading uses those inputs and texture samples. Depth/stencil tests and blending govern contributions to render targets; lighting and post-processing can involve additional passes before presentation. Depth tests can happen early, so this is a logical orientation rather than a rigid timing diagram. In our Unreal examples, World Position Offset affects vertex positions. Texture flow changes sampling coordinates, and Base Color is an input to surface shading, not the final screen color. More objects, vertices, shaded samples or memory traffic are possible sources of work, not proof of the measured bottleneck. In the picture, the triangle overlaps a grid of sample locations. Ask which dots lie inside it. Rasterization determines coverage and interpolates inputs; a covered sample can lead to fragment shading, and visibility tests can reject work. This is a schematic with one sample per cell, not a screenshot or a claim that each triangle covers an entire pixel. Use it as the visual anchor for Ned’s explanation.",
     "sources": [
       "https://learnopengl.com/Getting-started/Hello-Triangle",
       "https://learn.microsoft.com/en-us/windows/win32/direct3d11/overviews-direct3d-11-graphics-pipeline"
@@ -142,11 +142,12 @@
     "title": "Coordinates tell the shader where to look",
     "section": "01 · RENDERING PRELUDE",
     "subsection": null,
-    "kind": "definitions",
-    "notes": "If a checker texture becomes stretched on part of a mesh, inspect the UV mapping before blaming texture resolution. UVs are sampling addresses; local and world positions are different coordinate frames. A direction is not a position: translation affects points, not direction vectors. Unreal distinguishes Transform from TransformPosition. Compare vectors in the same space. For this class the texture-flow lesson changes UVs, while World Position Offset changes geometry. Those are different mechanisms even when both suggest moving water.",
+    "kind": "prelude-coordinates",
+    "notes": "If a checker texture becomes stretched on part of a mesh, inspect the UV mapping before blaming texture resolution. UVs are sampling addresses; local and world positions are different coordinate frames. A direction is not a position: translation affects points, not direction vectors. Unreal distinguishes Transform from TransformPosition. Compare vectors in the same space. For this class the texture-flow lesson changes UVs, while World Position Offset changes geometry. Those are different mechanisms even when both suggest moving water. The left image shows UV islands for a headphone mesh over a checker; the right is a separate brick cube using world projection. They are different examples, not a matched before/after. UVs provide a texture address independent of the object’s current world position. Object-local and world coordinates are 3D reference frames, not synonyms for UVs. A still image identifies the mapping example; movement is demonstrated later in the optional comparison.",
     "sources": [
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7",
-      "https://dev.epicgames.com/documentation/en-us/unreal-engine/vector-operation-material-expressions-in-unreal-engine"
+      "https://dev.epicgames.com/documentation/en-us/unreal-engine/vector-operation-material-expressions-in-unreal-engine",
+      "https://www.artstation.com/ib_art"
     ],
     "key_sources": [
       {
@@ -172,8 +173,8 @@
     "title": "Normals and dot products: predict the signal",
     "section": "01 · RENDERING PRELUDE",
     "subsection": null,
-    "kind": "vector-recall",
-    "notes": "A normal describes surface orientation; normalizing is an operation that makes a nonzero vector length one. These are different ideas. For unit vectors the dot product is the cosine of their angle: one for matching directions, zero at a right angle, and minus one for opposite directions. Unreal world Up is positive Z. A sideways-facing normal has zero dot with Up. This same reasoning will drive our light bands and view-angle edges. Normalize both inputs and put them in the same coordinate space. Reversing a cross product reverses its direction, which matters when constructing normals from triangle edges. Do not normalize a zero vector as a direction. Which faces would a positive world-Up mask select?",
+    "kind": "prelude-normals",
+    "notes": "A normal describes surface orientation; normalizing is an operation that makes a nonzero vector length one. These are different ideas. For unit vectors the dot product is the cosine of their angle: one for matching directions, zero at a right angle, and minus one for opposite directions. Unreal world Up is positive Z. A sideways-facing normal has zero dot with Up. This same reasoning will drive our light bands and view-angle edges. Normalize both inputs and put them in the same coordinate space. Reversing a cross product reverses its direction, which matters when constructing normals from triangle edges. Do not normalize a zero vector as a direction. Which faces would a positive world-Up mask select? The sphere is a Week 5 Babylon Node Material preview of max(dot(N, L), 0), using unit vectors. Bright regions face the supplied reference direction; dark regions include zero and negative raw dot values after clamping. This is an Unlit numerical mask, not evidence of a scene light. Its original reference is +Y in that preview; Unreal world Up is +Z. Use the three arrow pairs to predict the raw dot first, then explain why the displayed mask cannot distinguish 0 from −1.",
     "sources": [
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/math-material-expressions-in-unreal-engine?application_version=5.7"
     ],
