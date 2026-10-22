@@ -3,7 +3,7 @@
     "id": "01_color",
     "title": "Color and tint",
     "shape": "plane",
-    "nodes": "TextureCoordinate \u2192 Texture Sample UVs. Texture Sample RGB \u00d7 Vector Parameter Tint \u2192 Emissive Color. Surface / Opaque / Unlit. Tint (1,1,1) preserves the source RGB.",
+    "nodes": "TextureCoordinate → Texture Sample UVs. Texture Sample RGB × Vector Parameter Tint → Emissive Color. Surface / Opaque / Unlit. Tint (1,1,1) preserves the source RGB.",
     "task": "First set Tint to white: the untinted texture. Then reduce the red channel. Which source colors change, and why?",
     "inputs": [
       "UV (float2)",
@@ -15,8 +15,8 @@
     "id": "02_uv_mask",
     "title": "UVs and masks",
     "shape": "plane",
-    "nodes": "TextureCoordinate \u2192 ComponentMask R \u2192 SmoothStep (Min .25, Max .75) \u2192 Lerp Alpha. ShadowColor \u2192 A; Tint \u2192 B; result \u2192 Emissive Color.",
-    "task": "Move the transition edges. Explain why this is a mask rather than a color texture.",
+    "nodes": "TextureCoordinate R → subtract 0.25 → multiply 2 → Saturate (t). Compute t*t*(3-2*t) → Lerp Alpha. ShadowColor → A; Tint → B; result → Emissive Color. This is smoothstep(0.25, 0.75, UV.x).",
+    "task": "Edit the 0.25 and 0.75 transition limits in the GLSL source, then Apply edit. These limits are constants, not MI sliders. Why does a color mask leave the plane opaque?",
     "inputs": [
       "UV (float2)",
       "Tint (float3)",
@@ -27,7 +27,7 @@
     "id": "03_texture_flow",
     "title": "Texture and motion",
     "shape": "plane",
-    "nodes": "TexCoord \u00d7 Tiling \u2192 Add time offset \u2192 Texture Sample UVs. Use R \u2192 Lerp Alpha. In a Custom node use a TextureObject named BrushTexture; UE supplies BrushTextureSampler.",
+    "nodes": "TexCoord × Tiling → Add time offset → Texture Sample UVs. Use R → Lerp Alpha. In a Custom node use a TextureObject named BrushTexture; UE supplies BrushTextureSampler.",
     "task": "Set Speed to zero. Then double Tiling. Does the mesh move?",
     "inputs": [
       "UV (float2)",
@@ -43,7 +43,7 @@
     "id": "04_toon",
     "title": "Light response and bands",
     "shape": "sphere",
-    "nodes": "PixelNormalWS and LightDirection \u2192 Normalize \u2192 DotProduct \u2192 Saturate \u2192 Step (X = light, Y = Threshold) \u2192 Lerp Alpha. Unlit output uses a direction parameter, not scene lights.",
+    "nodes": "PixelNormalWS and L → Normalize → DotProduct → Saturate → Step (X = light, Y = Threshold) → Lerp Alpha. Unlit output uses a direction parameter, not scene lights.",
     "task": "Raise Threshold. Which region grows? Keep N and L in the same coordinate space.",
     "inputs": [
       "N (float3, world)",
@@ -57,7 +57,7 @@
     "id": "05_fresnel",
     "title": "View mask and dark edge",
     "shape": "sphere",
-    "nodes": "PixelNormalWS \u00b7 CameraVectorWS \u2192 Saturate \u2192 OneMinus \u2192 Power \u2192 Multiply EdgeStrength \u2192 Lerp Alpha. UE Fresnel with BaseReflectFraction 0 is a related native shortcut.",
+    "nodes": "PixelNormalWS · CameraVectorWS → Saturate → OneMinus → Power → Multiply EdgeStrength → Lerp Alpha. UE Fresnel with BaseReflectFraction 0 is a related native shortcut.",
     "task": "Try a pale edge, then dark purple. Why can a Lerp darken the edge while adding a positive color cannot?",
     "inputs": [
       "N (float3, world)",
@@ -70,9 +70,9 @@
   },
   {
     "id": "06_painted_bands",
-    "title": "Palette and brush texture",
+    "title": "Palette and brush texture (optional)",
     "shape": "sphere",
-    "nodes": "Brush sample R \u00d7 2 \u2212 1 \u2192 Multiply influence \u2192 Add to light response \u2192 Saturate. Two Step nodes select three colors through two Lerps. The full UE playground adds a fourth color and editable thresholds.",
+    "nodes": "Brush sample R × 2 − 1 → Multiply influence → Add to light response → Saturate. Two Step nodes select three colors through two Lerps. The full UE playground adds a fourth color and editable thresholds.",
     "task": "Set TextureInfluence to zero, then .18. Change the palette without changing the band boundaries.",
     "inputs": [
       "N (float3, world)",

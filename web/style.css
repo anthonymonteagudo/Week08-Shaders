@@ -2,3 +2,4 @@
 
 body.capture header,body.capture main>h1,body.capture main>p,body.capture main>label,body.capture .source,body.capture .tools,body.capture .sliders,body.capture #status,body.capture #task,body.capture main>section{display:none}body.capture main{padding:0;max-width:none}body.capture .workspace{display:block}body.capture .display{padding:0}body.capture #canvas{width:100vw;height:100vh;border:0}
 body.capture{overflow:hidden}body.capture .workspace{margin:0;gap:0}body.capture .display{position:static;top:auto}body.capture #canvas{border-radius:0;aspect-ratio:auto}
+#lesson-links code{overflow-wrap:anywhere}#lesson-links a{display:block}

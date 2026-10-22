@@ -1,49 +1,26 @@
 # Week 8 — Materials and shading
 
-Original student examples connecting GLSL calculations, Unreal HLSL and Material Graph nodes.
+[Open the classroom](https://anthonymonteagudo.github.io/Week08-Shaders/) · [Slides](https://anthonymonteagudo.github.io/Week08-Shaders/docs/slides/) · [Activities](docs/activities.html)
 
-## Start here
+## Edit a shader
 
-Open the hosted classroom at https://anthonymonteagudo.github.io/Week08-Shaders/ — no installation is needed to explore the web examples.
+1. Download and extract [the current ZIP](https://github.com/anthonymonteagudo/Week08-Shaders/archive/refs/heads/main.zip), or clone this repository.
+2. Open `Week08-Shaders.code-workspace` in VS Code. Run `npm start` with Node.js 18+; no `npm install` is needed. Windows: `START-WINDOWS.cmd`. Python alternative: `python -m http.server 5173 --bind 127.0.0.1`.
+3. Open <http://127.0.0.1:5173>. Edit a lesson's `fragment.glsl`, save, and click **Reload files**. Open through the server, not by double-clicking HTML.
 
-To edit locally: download the repository ZIP and extract it, or clone it. Open `Week08-Shaders.code-workspace` in VS Code. Install Node.js 18+ (LTS recommended) or Python 3 if neither is installed.
+Lessons: **01 Tint → 02 Mask → 03 Texture motion → 04 Toon → 05 View edge**; **06 Painted bands** is optional. The browser runs GLSL. Each lesson also shows matching Unreal HLSL, node instructions, and its lecture links.
 
-1. Run `npm start` from the repository root. No `npm install` is required.
-2. Open http://127.0.0.1:5173 in a browser, or VS Code Command Palette → **Simple Browser: Show** → paste that address. If its webview disables WebGL, use your external browser.
-3. Open a numbered lesson's `fragment.glsl`, change it and save. Click **Reload files** in the display. Shader errors appear there; your previous working material stays visible.
+## Open Unreal
 
-Windows shortcut: double-click `START-WINDOWS.cmd`. Python alternative: `python -m http.server 5173 --bind 127.0.0.1`. Do not double-click index.html: browsers block required fetches on file URLs.
+Open `Unreal/Week08Student.uproject` in **UE 5.7** (authored in 5.7.4). Wait for initial shader compilation. The startup map is **W08_Student_Gallery**; explore in the editor. No C++ build or course plugin is needed.
 
-## Learning route
+Right mouse + WASD moves; F frames a selection. Select a display, open its material instance in **Details → Materials**, duplicate the instance into your own folder, and assign your copy to the display. Enable the parameter's override checkbox before editing. Keep the Content folder structure intact.
 
-01 Color → 02 UVs and masks → 03 Texture motion → 04 Toon response → 05 View mask → 06 Painted bands.
+## Class materials
 
-Each lesson contains editable GLSL, a matching UE Custom-node HLSL body, named inputs and a native-node recipe. Only GLSL executes in the browser; test HLSL in Unreal. The project is inspired by the progression and separate shader-file structure of SimonDev's course. Its paid source files are not redistributed.
+- [Guide](docs/class-guide.html): gallery route and essential concepts.
+- [Activities](docs/activities.html): water investigation and original shader.
+- [References](docs/dig-deeper.html): three starting routes and the function lookup.
+- [Ned's slides](docs/guest/Rasterization.pdf): download to annotate.
 
-## Unreal
-
-Open `Unreal/Week08Student.uproject` in Unreal Engine 5.7. The startup map is **W08_Student_Gallery**. No MCP plugin or C++ build is required. See `Unreal/README.md` for navigation and station controls. Keep the downloaded reference assets unchanged and duplicate MIs for experiments.
-
-## Guest presentation
-
-[Ned’s original Rasterization slides (PDF)](docs/guest/Rasterization.pdf) are included unchanged for class note-taking. Download a copy to annotate while he presents. Ned is a rendering engineer at GOLF+ and creates NedMakesGames.
-
-## Class activities
-
-Open `docs/activities.html`. Lab 1 investigates a supplied water material; Lab 2 begins a small original shader. Save baseline A and modified B for Week 9. A visual change is not evidence of a speed improvement.
-
-## Key sources
-
-The slides link directly to topic-specific references. Open [the reading guide](docs/references.html) for Epic documentation, Ben Cloward, Iñigo Quílez, The Unity Shaders Bible, LearnOpenGL, GPU Gems and other sources, with starting sections and engine context.
-
-## Sources and permissions
-
-See `SOURCES.md` and `THIRD_PARTY_NOTICES.md`. This repository contains original classroom code/assets and the MIT-licensed Three.js runtime. Ned’s original guest PDF is also included for note-taking. External course files, Epic sample packages and meeting links are not included. Attributed third-party imagery in the lecture slides is listed in THIRD_PARTY_NOTICES.md. Unreal Engine itself is obtained separately from Epic under its terms. No license grant is implied for linked external resources.
-
-## Match the lecture to your shader
-
-[Code-to-slide index](docs/lesson-map.html) pairs every lesson with its lecture slides and exact GLSL/HLSL source. [Look-development walkthrough](docs/look-development.html) starts with visual goals and a controlled painted-band experiment.
-
-## Review for class
-
-[Comprehensive class guide](docs/class-guide.html) covers rendering vocabulary, tint, masks, water, lighting and stylization, with retrieval questions. [Activities](docs/activities.html) has the 20-minute water investigation and 25-minute original-shader workshop, including a browser fallback.
+Use Canvas for deadlines and submission requirements. Save baseline A and changed B for Week 9; appearance alone does not establish performance. See [permissions and credits](THIRD_PARTY_NOTICES.md).
