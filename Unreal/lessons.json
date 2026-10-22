@@ -2,14 +2,14 @@
   {
     "lesson": "01_color",
     "implementation": "Graph",
-    "material": "/Game/Week08/08_StudentLessons/M_01_color_Graph",
-    "instance": "/Game/Week08/08_StudentLessons/Instances/MI_01_color_Graph"
+    "material": "/Game/Week08/01_Tint/M_Tint_Graph",
+    "instance": "/Game/Week08/01_Tint/MI_Tint_Graph"
   },
   {
     "lesson": "01_color",
     "implementation": "HLSL",
-    "material": "/Game/Week08/08_StudentLessons/M_01_color_HLSL",
-    "instance": "/Game/Week08/08_StudentLessons/Instances/MI_01_color_HLSL"
+    "material": "/Game/Week08/01_Tint/M_Tint_HLSL",
+    "instance": "/Game/Week08/01_Tint/MI_Tint_HLSL"
   },
   {
     "lesson": "02_uv_mask",

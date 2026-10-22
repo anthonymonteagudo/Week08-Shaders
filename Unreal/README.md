@@ -15,7 +15,7 @@ Select a display. In Details > Materials open its MI. Duplicate that MI into you
 
 Material Instance controls differ by parent. Some feature controls are static switches and can compile a different shader; a zero scalar may only hide a visible contribution. Do not infer GPU time from these switches or from node counts. Save A/B conditions for Week 9.
 
-The native beginner graph examples are under `08_StudentLessons`. Their matching Custom-node material has the same lesson ID. The pixel-normal approximation uses a small HLSL Custom expression even in the larger native lighting graph. Water and lighting are teaching studies, not complete production rendering systems.
+Lesson 01 uses `01_Tint/M_Tint_Graph` and `01_Tint/M_Tint_HLSL`, with `MI_Source` providing the untinted baseline. Lessons 02–06 use the matching Graph and Custom-node materials under `08_StudentLessons`; exact paths are in `lessons.json`. The pixel-normal approximation uses a small HLSL Custom expression even in the larger native lighting graph. Water and lighting are teaching studies, not complete production rendering systems.
 
 If assets appear gray, wait for shader compilation and check the Output Log. Keep the whole Content folder structure. This project references Epic's built-in BasicShapes and engine material functions; Unreal supplies those. Epic Content Examples is an optional separate download and is not redistributed here.
 

@@ -4,14 +4,14 @@
     {
       "bay": "01 Code to material",
       "title": "01 color | Graph",
-      "asset": "/Game/Week08/08_StudentLessons/Instances/MI_01_color_Graph",
+      "asset": "/Game/Week08/01_Tint/MI_Tint_Graph",
       "actor": "01 color | Graph",
       "hint": "Match numbered web lesson"
     },
     {
       "bay": "01 Code to material",
       "title": "01 color | HLSL",
-      "asset": "/Game/Week08/08_StudentLessons/Instances/MI_01_color_HLSL",
+      "asset": "/Game/Week08/01_Tint/MI_Tint_HLSL",
       "actor": "01 color | HLSL",
       "hint": "Match numbered web lesson"
     },

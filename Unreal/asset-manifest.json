@@ -1,15 +1,35 @@
 [
   {
     "path": "Unreal/Content/Week08/00_Maps/W08_Student_Gallery.umap",
-    "sha256": "c9e0cba2c2421384c7e7d7aed7db64e2d4745f796b7393447828cbebd1325b18"
+    "sha256": "282075a600b9257a9ba71370686bcb5fc3500159d1aaf7e1120488219a36e658"
+  },
+  {
+    "path": "Unreal/Content/Week08/01_Tint/M_Tint_Graph.uasset",
+    "sha256": "f84efad0cb6b4043dd706c841d940bbd11cfc4c9c14417514e2f5dc0c3984368"
+  },
+  {
+    "path": "Unreal/Content/Week08/01_Tint/M_Tint_HLSL.uasset",
+    "sha256": "43b87644dc9e4904c16081e2803a89e2a0b60963c6bfb89ec692f39af0363770"
+  },
+  {
+    "path": "Unreal/Content/Week08/01_Tint/MI_Source.uasset",
+    "sha256": "4ab0d9996f1759d99422bb393f9f561bd47ee6be6de6e91c89ad522c2e480ea2"
   },
   {
     "path": "Unreal/Content/Week08/01_Tint/MI_Tint_Graph.uasset",
     "sha256": "d0d0e418180e708e34ebe22ef20cfe719961071cc8991c5bfe127bf9e24299fe"
   },
   {
-    "path": "Unreal/Content/Week08/01_Tint/M_Tint_Graph.uasset",
-    "sha256": "f84efad0cb6b4043dd706c841d940bbd11cfc4c9c14417514e2f5dc0c3984368"
+    "path": "Unreal/Content/Week08/01_Tint/MI_Tint_HLSL.uasset",
+    "sha256": "52933d5164e4f2ccea591ccdd8ea3cd8b4094e57876806d96647eb2fa4b52c5c"
+  },
+  {
+    "path": "Unreal/Content/Week08/02_Transparency/M_Masked.uasset",
+    "sha256": "c9106cf426a8af65768801a8d4061b0212e7ff29c192b9a2294d249e17abf408"
+  },
+  {
+    "path": "Unreal/Content/Week08/02_Transparency/M_Translucent.uasset",
+    "sha256": "85a4f0fca29da89f1167c0ad0e465b6ba14071baf811a2ba88d61ba31011b541"
   },
   {
     "path": "Unreal/Content/Week08/02_Transparency/MI_Masked.uasset",
@@ -20,12 +40,8 @@
     "sha256": "210467982e6c4b190d140971d17d4350dab0602824abbf13c7095fe4cc77cf4e"
   },
   {
-    "path": "Unreal/Content/Week08/02_Transparency/M_Masked.uasset",
-    "sha256": "c9106cf426a8af65768801a8d4061b0212e7ff29c192b9a2294d249e17abf408"
-  },
-  {
-    "path": "Unreal/Content/Week08/02_Transparency/M_Translucent.uasset",
-    "sha256": "85a4f0fca29da89f1167c0ad0e465b6ba14071baf811a2ba88d61ba31011b541"
+    "path": "Unreal/Content/Week08/03_Water/Advanced_Gerstner/M_Gerstner_Study.uasset",
+    "sha256": "82abcf2d030ae18f7f08a632e40b2f1b659c6e4f7c912a50935ae5514052c912"
   },
   {
     "path": "Unreal/Content/Week08/03_Water/Advanced_Gerstner/MI_Gerstner_01_Flat.uasset",
@@ -44,16 +60,8 @@
     "sha256": "68d99d9e3066e3734e3d5ff6ad1e398fe82a20277db97ed2d2b52e34006ea8e1"
   },
   {
-    "path": "Unreal/Content/Week08/03_Water/Advanced_Gerstner/M_Gerstner_Study.uasset",
-    "sha256": "82abcf2d030ae18f7f08a632e40b2f1b659c6e4f7c912a50935ae5514052c912"
-  },
-  {
     "path": "Unreal/Content/Week08/03_Water/Baseline/M_Water_Graph.uasset",
     "sha256": "ca95a411aa9425413e029d414cb2b8e316afc6fd930f26f2fa70521b26eec8c4"
-  },
-  {
-    "path": "Unreal/Content/Week08/03_Water/Lab/MI_Water_Lab_HLSL.uasset",
-    "sha256": "452e23d083865c9fe65ff8d7bc28444141fd78af926bcd070e7863a70844fef5"
   },
   {
     "path": "Unreal/Content/Week08/03_Water/Lab/M_Water_Lab_Graph.uasset",
@@ -62,6 +70,10 @@
   {
     "path": "Unreal/Content/Week08/03_Water/Lab/M_Water_Lab_HLSL.uasset",
     "sha256": "7bb83a2fc9407c65e11030940266b9a43aa48f2bc7ee6233a50ac51d36f263dd"
+  },
+  {
+    "path": "Unreal/Content/Week08/03_Water/Lab/MI_Water_Lab_HLSL.uasset",
+    "sha256": "452e23d083865c9fe65ff8d7bc28444141fd78af926bcd070e7863a70844fef5"
   },
   {
     "path": "Unreal/Content/Week08/03_Water/Lab/Steps/MI_Water_01_Flat.uasset",
@@ -84,16 +96,16 @@
     "sha256": "eb3df8f6a2321d22dbcdae2112f2f8b129fcc924cdc548b96bab090214e0c3a3"
   },
   {
-    "path": "Unreal/Content/Week08/03_Water/Simple/MI_Water_Simple_HLSL.uasset",
-    "sha256": "dcef1092e4056795ff6a0834cb8e9961cc1305154ffea86643e978f75be239a3"
-  },
-  {
     "path": "Unreal/Content/Week08/03_Water/Simple/M_Water_Simple_Graph.uasset",
     "sha256": "7ab357c10863cd531586c56bfbde53f47574f12a173c17d36e4e3c8fe88b4a5c"
   },
   {
     "path": "Unreal/Content/Week08/03_Water/Simple/M_Water_Simple_HLSL.uasset",
     "sha256": "1d664b5fd5008913ea3a548696d0d4b07c090a98060ad9213d9b4b6fd8a6b74c"
+  },
+  {
+    "path": "Unreal/Content/Week08/03_Water/Simple/MI_Water_Simple_HLSL.uasset",
+    "sha256": "dcef1092e4056795ff6a0834cb8e9961cc1305154ffea86643e978f75be239a3"
   },
   {
     "path": "Unreal/Content/Week08/03_Water/Simple/Steps/MI_Water_Simple_01_Still.uasset",

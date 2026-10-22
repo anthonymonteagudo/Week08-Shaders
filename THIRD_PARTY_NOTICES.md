@@ -7,3 +7,5 @@
 All lesson snippets, the brush mask, teaching captures, and original project material assets were authored for this classroom. The folder progression is informed by SimonDev's course, but its source code and course assets are excluded. Epic Content Examples remain linked external study resources rather than redistributed packages. Engine package references resolve from the student's own Unreal installation.
 
 No blanket open-source license is applied to the instructor's original course materials. Students may use and modify the supplied original classroom examples for coursework and learning. Third-party terms continue to apply to their respective files.
+
+The lecture slide titled “Water in games: shape and surface detail” includes figure 1-1 from Mark Finch, GPU Gems chapter 1 (Cyan Worlds / Uru: Ages Beyond Myst), sourced from https://developer.download.nvidia.com/books/gpugems/fig01-01.jpg. It is an attributed historical game image for teaching, not a supplied game asset or an original classroom render. Rights remain with their holders.
