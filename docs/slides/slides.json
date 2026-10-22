@@ -1160,11 +1160,13 @@
     "section": "04 · WATER SHADERS",
     "subsection": null,
     "kind": "uv-explain",
-    "notes": "Use a still frame first. Mark a sample point in UV space and add a horizontal offset. Sampling at UV + offset makes a feature appear to travel in the opposite screen direction on this plane. Speed zero freezes the offset. The next code slide uses a two-component offset with zero vertical speed.",
+    "notes": "Use a still frame first. Mark a sample point in UV space and add a horizontal offset. Sampling at UV + offset makes a feature appear to travel in the opposite screen direction on this plane. Speed zero freezes the offset. The next code slide uses a two-component offset with zero vertical speed. With Repeat addressing, UV × (3, 2) gives three repeats across U and two across V on a 0–1 UV domain. Multiplication alone does not choose Repeat: Clamp and Mirrored Repeat behave differently beyond 0–1. Add changes the lookup address; time changes that offset continuously. This sequence is also explained in Ben Cloward’s Shaders 101 PDF, pages 20–35.",
     "sources": [
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7",
       "https://dev.epicgames.com/documentation/en-us/unreal-engine/coordinates-material-expressions-in-unreal-engine?application_version=5.7",
-      "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf"
+      "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
+      "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf",
+      "https://catlikecoding.com/unity/tutorials/flow/texture-distortion/"
     ],
     "key_sources": [
       {
@@ -2941,7 +2943,7 @@
     "section": "06 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "shader-trick",
-    "notes": "Wikipedia shows smoothstep as a clamped cubic Hermite interpolation. First map the interval from a to b into zero to one, then apply the polynomial. At zero the result is zero; at one it is one; the slope is zero at both ends. Step is a hard threshold. Smoothstep is a smooth transition. Its softness is a chosen width, not an automatic guarantee of screen-space antialiasing. For later study, choose one of Iñigo Quílez’s shaping functions and compare its graph.",
+    "notes": "Wikipedia shows smoothstep as a clamped cubic Hermite interpolation. First map the interval from a to b into zero to one, then apply the polynomial. At zero the result is zero; at one it is one; the slope is zero at both ends. Step is a hard threshold. Smoothstep is a smooth transition. Its softness is a chosen width, not an automatic guarantee of screen-space antialiasing. For later study, choose one of Iñigo Quílez’s shaping functions and compare its graph. Compare the same input t three ways: step selects a side abruptly, mix uses t as a blend weight, and smoothstep reshapes t before it drives a blend. Keeping the endpoints and input fixed makes the mathematical difference visible.",
     "sources": [
       "https://en.wikipedia.org/wiki/Smoothstep",
       "https://iquilezles.org/articles/functions/"
@@ -3009,7 +3011,7 @@
     "section": "06 · LIGHTING & STYLIZATION",
     "subsection": null,
     "kind": "shader-trick",
-    "notes": "Shader development often combines a handful of operations and inspects intermediate results. This example moves the lookup address, samples one channel, and uses that channel as a blend factor. It reuses the moving-texture lesson. In HLSL, use float2 and lerp with the host’s texture sampler. In Unreal, use TextureCoordinate, Multiply, Time, Add, TextureSample and Lerp. Repeat addressing is a sampler setting. Explicit fract or frac can repeat coordinates, but introduces discontinuities that can affect texture derivatives. Start with the texture’s intended addressing mode before adding manual wrapping.",
+    "notes": "Shader development often combines a handful of operations and inspects intermediate results. This example moves the lookup address, samples one channel, and uses that channel as a blend factor. It reuses the moving-texture lesson. In HLSL, use float2 and lerp with the host’s texture sampler. In Unreal, use TextureCoordinate, Multiply, Time, Add, TextureSample and Lerp. Repeat addressing is a sampler setting. Explicit fract or frac can repeat coordinates, but introduces discontinuities that can affect texture derivatives. Start with the texture’s intended addressing mode before adding manual wrapping. A useful coordinate diagnostic is red = U and green = V. Values above one may look clipped when displayed as color even though the coordinate values remain available to the calculation. Inspect the numerical range separately from the displayed color. To study repetition, compare UV scale with the sampler addressing mode before introducing a procedural grid.",
     "sources": [
       "https://thebookofshaders.com/05/",
       "https://iquilezles.org/articles/functions/"
@@ -3198,7 +3200,7 @@
     "section": "Wrap-up",
     "subsection": null,
     "kind": "text",
-    "notes": "Leave performance investigations, GPU capture tooling, instruction-count conclusions, and platform budgets for Week 9. This week establishes what the operations do visually. Next week tests their cost and constraints. The guest plans a 30–60 minute discussion of introductions/careers, SOD3 roles and responsibilities, unique shader challenges and class questions.",
+    "notes": "Leave performance investigations, GPU capture tooling, instruction-count conclusions, and platform budgets for Week 9. This week establishes what the operations do visually. Next week tests their cost and constraints. The guest plans a 30–60 minute discussion of introductions/careers, SOD3 roles and responsibilities, unique shader challenges and class questions. For an optional next experiment, Shadertoy lets you inspect GLSL source beside its image; the source section now includes a short starting route.",
     "sources": [],
     "key_sources": [],
     "appendix": false,
@@ -3215,10 +3217,12 @@
     "section": "REFERENCE LIBRARY",
     "subsection": null,
     "kind": "study-path",
-    "notes": "Use this path if you want more practice. Start with the Book of Shaders page and edit one curve. Then choose one Ben Cloward material lesson that answers your next question. You do not need to complete a whole channel. Keep the source URL with your experiment and write what you changed. Recreate the small idea in your own material before adding complexity.",
+    "notes": "Use this path if you want more practice. Start with the Book of Shaders page and edit one curve. Then choose one Ben Cloward material lesson that answers your next question. You do not need to complete a whole channel. Keep the source URL with your experiment and write what you changed. Recreate the small idea in your own material before adding complexity. The 2016 Shaders 101 talk has a particularly useful progression: UV scaling, offsets, time, then noise-driven distortion (PDF pages 20–38). Its environment blend uses a normal-derived mask (pages 61–67). Read the coordinate convention: the example uses Y; Unreal world Up is Z. Its broad statement about shaders controlling pixels is introductory shorthand; our prelude also includes vertex work.",
     "sources": [
       "https://thebookofshaders.com/05/",
-      "https://www.bencloward.com/resources.shtml"
+      "https://www.bencloward.com/resources.shtml",
+      "https://www.youtube.com/watch?v=SD5-cytmPfw",
+      "https://media.gdcvault.com/gdc2016/Presentations/Cloward_Ben_TABC_Shaders_101.pdf"
     ],
     "key_sources": [
       {
@@ -3231,13 +3235,13 @@
         "category": "Further study"
       },
       {
-        "id": "ben",
-        "label": "Ben Cloward: resources",
+        "id": "cloward101",
+        "label": "Ben Cloward: Shaders 101",
         "title": "Ben Cloward — Shaders 101, GDC 2016",
-        "url": "https://www.bencloward.com/resources.shtml",
-        "focus": "Optional artist-focused shader tutorials. Full Shader 101 slides and transcripts have not been reviewed in this revision.",
-        "context": "Historical talk and author-maintained tutorial index; use current Epic documentation for UE controls.",
-        "category": "Reference"
+        "url": "https://www.youtube.com/watch?v=SD5-cytmPfw",
+        "focus": "Use PDF pages 20–38 for UV scale, offset, time and distortion; pages 61–67 for a normal-derived blend.",
+        "context": "Historical UE/ShaderFX examples; adapt coordinate conventions and current engine controls.",
+        "category": "Further study"
       }
     ],
     "appendix": true,
@@ -3326,7 +3330,48 @@
     "lesson": null
   },
   {
+    "subsection": null,
+    "guest": null,
+    "motion_bounds": null,
+    "lesson": null,
     "number": 104,
+    "id": "study-shadertoy",
+    "title": "Explore further 4 · Shadertoy",
+    "section": "REFERENCE LIBRARY",
+    "kind": "study-path",
+    "notes": "Shadertoy is a browser-based place to explore shader experiments and read their GLSL source. Begin with a small image shader instead of a large raymarched scene. Its mainImage function receives fragment coordinates and writes a color; iResolution and iTime are inputs supplied by the host, not built-in GLSL variables. Choose one constant, predict the change, then compare. Iñigo Quílez posts as iq. When transferring an idea to Unreal, identify its coordinate domain, texture inputs and output first, then translate the arithmetic and host setup. Keep the author and source link with your study and check the example’s reuse terms. A striking demo does not establish that it is inexpensive or ready for a production material.",
+    "sources": [
+      "https://www.shadertoy.com/",
+      "https://www.shadertoy.com/user/iq",
+      "https://www.shadertoy.com/howto",
+      "https://threejs.org/manual/pages/shadertoy.html"
+    ],
+    "key_sources": [
+      {
+        "id": "shadertoy",
+        "label": "Shadertoy: explore shaders",
+        "title": "Shadertoy",
+        "url": "https://www.shadertoy.com/",
+        "focus": "Explore the image and source together; begin with a small gradient, mask or palette.",
+        "context": "Browser GLSL experiments. Each example has its own dependencies and reuse terms.",
+        "category": "Further study"
+      },
+      {
+        "id": "iq-shadertoy",
+        "label": "Iñigo Quílez: iq on Shadertoy",
+        "title": "Iñigo Quílez — iq on Shadertoy",
+        "url": "https://www.shadertoy.com/user/iq",
+        "focus": "Choose one small technique and explain its inputs and result.",
+        "context": "Author profile; larger experiments can be advanced.",
+        "category": "Further study"
+      }
+    ],
+    "appendix": true,
+    "section_color": "#435663",
+    "preview": "previews/104.jpg"
+  },
+  {
+    "number": 105,
     "id": "w08-079",
     "title": "Color building blocks",
     "section": "REFERENCE LIBRARY",
@@ -3362,11 +3407,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#435663",
-    "preview": "previews/104.jpg",
+    "preview": "previews/105.jpg",
     "lesson": null
   },
   {
-    "number": 105,
+    "number": 106,
     "id": "w08-080",
     "title": "Masks and repeating values",
     "section": "REFERENCE LIBRARY",
@@ -3403,11 +3448,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#435663",
-    "preview": "previews/105.jpg",
+    "preview": "previews/106.jpg",
     "lesson": null
   },
   {
-    "number": 106,
+    "number": 107,
     "id": "w08-081",
     "title": "Coordinates and texture data",
     "section": "REFERENCE LIBRARY",
@@ -3445,11 +3490,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#435663",
-    "preview": "previews/106.jpg",
+    "preview": "previews/107.jpg",
     "lesson": null
   },
   {
-    "number": 107,
+    "number": 108,
     "id": "w08-082",
     "title": "Lighting building blocks",
     "section": "REFERENCE LIBRARY",
@@ -3486,11 +3531,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#435663",
-    "preview": "previews/107.jpg",
+    "preview": "previews/108.jpg",
     "lesson": null
   },
   {
-    "number": 108,
+    "number": 109,
     "id": "w08-083",
     "title": "Motion and shader stages",
     "section": "REFERENCE LIBRARY",
@@ -3527,11 +3572,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#435663",
-    "preview": "previews/108.jpg",
+    "preview": "previews/109.jpg",
     "lesson": null
   },
   {
-    "number": 109,
+    "number": 110,
     "id": "w08-084",
     "title": "Use the function library",
     "section": "REFERENCE LIBRARY",
@@ -3566,11 +3611,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#435663",
-    "preview": "previews/109.jpg",
+    "preview": "previews/110.jpg",
     "lesson": null
   },
   {
-    "number": 110,
+    "number": 111,
     "id": "w08-085",
     "title": "Explore Epic Content Examples",
     "section": "REFERENCE LIBRARY",
@@ -3596,11 +3641,11 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#435663",
-    "preview": "previews/110.jpg",
+    "preview": "previews/111.jpg",
     "lesson": null
   },
   {
-    "number": 111,
+    "number": 112,
     "id": "w08-086",
     "title": "Content Examples study route",
     "section": "REFERENCE LIBRARY",
@@ -3627,7 +3672,7 @@
     "guest": null,
     "motion_bounds": null,
     "section_color": "#435663",
-    "preview": "previews/111.jpg",
+    "preview": "previews/112.jpg",
     "lesson": null
   }
 ]
