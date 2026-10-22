@@ -79,7 +79,8 @@
     "notes": "Ned is my coworker at GOLF+ and a rendering engineer whose work I really respect. He also makes videos as NedMakesGames. He will walk us through the rendering foundation, including some of the math. Follow one example closely and keep a question or a step you want clarified. We will join Zoom now, and Ned will share his screen.",
     "rationale": "Replace four guest preparation/handoff slides with one concise introduction. No guest slide, screenshot, or diagram is embedded.",
     "sources": [
-      "Guest biography supplied directly by Prof. Monteagudo, 21 October 2026."
+      "Guest biography supplied directly by Prof. Monteagudo, 21 October 2026.",
+      "https://anthonymonteagudo.github.io/Week08-Shaders/docs/guest/Rasterization.pdf"
     ],
     "old_numbers": [
       4
@@ -103,7 +104,9 @@
     "section": "Guest",
     "notes": "What questions do you have for Ned? Point to an example or a step that raised the question. If you are still thinking, I would like to ask how he separates a material issue from a renderer issue, and what evidence is most useful when artists and rendering engineers work together. Thank you, Ned. We will now try a few of those artist-facing choices in Unreal.",
     "rationale": "Keep a complete example together: result, calculation, Unreal control, then a prediction.",
-    "sources": [],
+    "sources": [
+      "https://anthonymonteagudo.github.io/Week08-Shaders/docs/guest/Rasterization.pdf"
+    ],
     "old_numbers": [
       5
     ],

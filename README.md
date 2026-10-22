@@ -24,10 +24,14 @@ Each lesson contains editable GLSL, a matching UE Custom-node HLSL body, named i
 
 Open `Unreal/Week08Student.uproject` in Unreal Engine 5.7. The startup map is **W08_Student_Gallery**. No MCP plugin or C++ build is required. See `Unreal/README.md` for navigation and station controls. Keep the downloaded reference assets unchanged and duplicate MIs for experiments.
 
+## Guest presentation
+
+[Ned’s original Rasterization slides (PDF)](docs/guest/Rasterization.pdf) are included unchanged for class note-taking. Download a copy to annotate while he presents. Ned is a rendering engineer at GOLF+ and creates NedMakesGames.
+
 ## Class activities
 
 Open `docs/activities.html`. Lab 1 investigates a supplied water material; Lab 2 begins a small original shader. Save baseline A and modified B for Week 9. A visual change is not evidence of a speed improvement.
 
 ## Sources and permissions
 
-See `SOURCES.md` and `THIRD_PARTY_NOTICES.md`. This repository contains original classroom code/assets and the MIT-licensed Three.js runtime. External courses, game images, guest slides, Epic sample packages and meeting links are not included. Unreal Engine itself is obtained separately from Epic under its terms. No license grant is implied for linked external resources.
+See `SOURCES.md` and `THIRD_PARTY_NOTICES.md`. This repository contains original classroom code/assets and the MIT-licensed Three.js runtime. Ned’s original guest PDF is also included for note-taking. External courses, game images, Epic sample packages and meeting links are not included. Unreal Engine itself is obtained separately from Epic under its terms. No license grant is implied for linked external resources.

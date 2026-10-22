@@ -1,5 +1,7 @@
 # Learning references
 
+- [Ned’s original Rasterization presentation](docs/guest/Rasterization.pdf): supplied guest PDF, reproduced byte-for-byte for class note-taking. Attribution: Ned / NedMakesGames, rendering engineer at GOLF+. File integrity recorded in `docs/guest/provenance.json`.
+
 - SimonDev: https://simondev.teachable.com/ — sequencing inspiration; no paid course code included.
 - Epic Material Expressions: https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-material-expressions-reference
 - Epic Custom Expressions: https://dev.epicgames.com/documentation/en-us/unreal-engine/custom-material-expressions-in-unreal-engine?application_version=5.7
