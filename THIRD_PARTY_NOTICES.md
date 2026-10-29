@@ -18,3 +18,9 @@ Native node recognition crops and view-angle graph: Epic Games, Math Material Ex
 Lighting portrait: copyright David Tejada, published by Nikon, Simple Two-Flash Set-up. Used as an attributed teaching reference; not covered by the classroom code license. https://www.nikonusa.com/learn-and-explore/c/tips-and-techniques/simple-two-flash-set-up . Standard mathematical equations are typeset with links to Wikipedia; explanatory teaching prose and code examples are original.
 
 Rendering prelude (slides 4–7): the headphone UV-layout image is retained from the existing Week 2 teaching reference, credited there to https://www.artstation.com/ib_art. The original work URL and license are unconfirmed; no new license is claimed. The brick cube is an original Unreal teaching capture using an Epic Content Examples texture and WorldAlignedTexture. These are separate examples, not a matched before/after. The coverage schematic is an original course diagram; the dot-product sphere is the existing Week 5 Babylon Node Material preview, not an Unreal scene-light capture.
+
+## Week 9 references
+
+`week09/reference/StarNest.hlsl` adapts Star Nest by Pablo Roman Andrioli (Kali), 2013, under MIT. The full notice is included beside the source in `LICENSE.txt`. Original: https://www.shadertoy.com/view/XlfGRj .
+
+Week 9 gallery images are rendered teaching comparisons. Acquired third-party editable source assets are excluded from the public repository and packet. Outside snow, foliage and shader-inspiration examples remain linked from their slides; images and demonstrations retain their original owners’ rights and are not supplied as reusable source assets. The deck’s guest-introduction imagery is presentation context, not the guest speakers’ slide decks.
