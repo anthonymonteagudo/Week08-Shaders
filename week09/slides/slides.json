@@ -1,7 +1,7 @@
 [
   {
     "title": "Advanced Shaders & Material Systems",
-    "image": "images/01.png",
+    "image": "images/01.jpg",
     "number": 1,
     "text": [
       "WEEK 9",
@@ -14,7 +14,7 @@
   },
   {
     "title": "Agenda",
-    "image": "images/02.png",
+    "image": "images/02.jpg",
     "number": 2,
     "text": [
       "WELCOME • 4:30–4:45",
@@ -58,7 +58,7 @@
   },
   {
     "title": "Guest Speakers: Luke & Laura",
-    "image": "images/03.png",
+    "image": "images/03.jpg",
     "number": 3,
     "text": [
       "4:45–6:00",
@@ -72,7 +72,7 @@
   },
   {
     "title": "Break",
-    "image": "images/04.png",
+    "image": "images/04.jpg",
     "number": 4,
     "text": [
       "6:00–6:15",
@@ -87,7 +87,7 @@
   },
   {
     "title": "Get ready to work on your shaders!",
-    "image": "images/05.png",
+    "image": "images/05.jpg",
     "number": 5,
     "text": [
       "TECH SETUP",
@@ -106,7 +106,7 @@
   },
   {
     "title": "Vertex colors and painted weights",
-    "image": "images/06.png",
+    "image": "images/06.jpg",
     "number": 6,
     "text": [
       "PAINTED BLENDING",
@@ -144,7 +144,7 @@
   },
   {
     "title": "Height-based blending",
-    "image": "images/07.png",
+    "image": "images/07.jpg",
     "number": 7,
     "text": [
       "LAB ROUTE B",
@@ -164,7 +164,7 @@
   },
   {
     "title": "Parameter scope",
-    "image": "images/08.png",
+    "image": "images/08.jpg",
     "number": 8,
     "text": [
       "PARAMETER SCOPE",
@@ -178,7 +178,7 @@
   },
   {
     "title": "Shared and per-component controls",
-    "image": "images/09.png",
+    "image": "images/09.jpg",
     "number": 9,
     "text": [
       "LAB ROUTE C",
@@ -198,7 +198,7 @@
   },
   {
     "title": "Runtime values and static switches",
-    "image": "images/10.png",
+    "image": "images/10.jpg",
     "number": 10,
     "text": [
       "PARAMETER BEHAVIOR",
@@ -241,7 +241,7 @@
   },
   {
     "title": "Directional coverage and decals",
-    "image": "images/11.png",
+    "image": "images/11.jpg",
     "number": 11,
     "text": [
       "REFERENCE STATIONS",
@@ -259,7 +259,7 @@
   },
   {
     "title": "Directional coverage",
-    "image": "images/12.png",
+    "image": "images/12.jpg",
     "number": 12,
     "text": [
       "DIRECTIONAL SNOW AND MOSS",
@@ -273,7 +273,7 @@
   },
   {
     "title": "UV space and world projection",
-    "image": "images/13.png",
+    "image": "images/13.jpg",
     "number": 13,
     "text": [
       "COORDINATES AND MOTION",
@@ -293,7 +293,7 @@
   },
   {
     "title": "Decal projection and receivers",
-    "image": "images/14.png",
+    "image": "images/14.jpg",
     "number": 14,
     "text": [
       "LAB ROUTE D",
@@ -313,7 +313,7 @@
   },
   {
     "title": "Material layers and blends",
-    "image": "images/15.png",
+    "image": "images/15.jpg",
     "number": 15,
     "text": [
       "REUSABLE LAYERS",
@@ -333,7 +333,7 @@
   },
   {
     "title": "Gather reference with a purpose",
-    "image": "images/16.png",
+    "image": "images/16.jpg",
     "number": 16,
     "text": [
       "ART DIRECTION",
@@ -353,7 +353,7 @@
   },
   {
     "title": "Turn the effect into a shader plan",
-    "image": "images/17.png",
+    "image": "images/17.jpg",
     "number": 17,
     "text": [
       "FROM OBSERVATION TO IMPLEMENTATION",
@@ -372,7 +372,7 @@
   },
   {
     "title": "Build the smallest convincing version",
-    "image": "images/18.png",
+    "image": "images/18.jpg",
     "number": 18,
     "text": [
       "ITERATION AND ART JUDGMENT",
@@ -391,7 +391,7 @@
   },
   {
     "title": "LAB: finish your original shader",
-    "image": "images/19.png",
+    "image": "images/19.jpg",
     "number": 19,
     "text": [
       "LAB HANDOFF",
@@ -410,7 +410,7 @@
   },
   {
     "title": "Your shader: result and explanation",
-    "image": "images/20.png",
+    "image": "images/20.jpg",
     "number": 20,
     "text": [
       "LAB • 6:25–6:50",
@@ -451,7 +451,7 @@
   },
   {
     "title": "Final project: exploratory technical art",
-    "image": "images/21.png",
+    "image": "images/21.jpg",
     "number": 21,
     "text": [
       "FINAL ASSIGNMENT · ROUGH OUTLINE · 6:50–6:55",
@@ -473,7 +473,7 @@
   },
   {
     "title": "Your project starting point",
-    "image": "images/22.png",
+    "image": "images/22.jpg",
     "number": 22,
     "text": [
       "PROJECT DISCUSSION · 6:55–7:00",
@@ -493,7 +493,7 @@
   },
   {
     "title": "Parameter troubleshooting",
-    "image": "images/23.png",
+    "image": "images/23.jpg",
     "number": 23,
     "text": [
       "REFERENCE • EXPLORE AFTER THE LIVE WALKTHROUGH",
@@ -513,7 +513,7 @@
   },
   {
     "title": "Parallax: height changes the texture lookup",
-    "image": "images/24.png",
+    "image": "images/24.jpg",
     "number": 24,
     "text": [
       "OPTIONAL STATION 07 EXTENSION",
@@ -527,7 +527,7 @@
   },
   {
     "title": "Parallax: test depth, then test quality",
-    "image": "images/25.png",
+    "image": "images/25.jpg",
     "number": 25,
     "text": [
       "OPTIONAL STATION 07 EXTENSION",
@@ -547,7 +547,7 @@
   },
   {
     "title": "Lab review: finish your shader",
-    "image": "images/26.png",
+    "image": "images/26.jpg",
     "number": 26,
     "text": [
       "OPTIONAL LAB COMPANION",
@@ -567,7 +567,7 @@
   },
   {
     "title": "B · Painted height transition",
-    "image": "images/27.png",
+    "image": "images/27.jpg",
     "number": 27,
     "text": [
       "OPTIONAL LAB COMPANION",
@@ -587,7 +587,7 @@
   },
   {
     "title": "C · Shared and per-object controls",
-    "image": "images/28.png",
+    "image": "images/28.jpg",
     "number": 28,
     "text": [
       "OPTIONAL LAB COMPANION",
@@ -607,7 +607,7 @@
   },
   {
     "title": "D · Decal surface response",
-    "image": "images/29.png",
+    "image": "images/29.jpg",
     "number": 29,
     "text": [
       "OPTIONAL LAB COMPANION",
@@ -627,7 +627,7 @@
   },
   {
     "title": "Optional · Parallax depth",
-    "image": "images/30.png",
+    "image": "images/30.jpg",
     "number": 30,
     "text": [
       "OPTIONAL LAB COMPANION",
@@ -647,7 +647,7 @@
   },
   {
     "title": "Lab review: explain your result",
-    "image": "images/31.png",
+    "image": "images/31.jpg",
     "number": 31,
     "text": [
       "OPTIONAL LAB COMPANION",
@@ -667,7 +667,7 @@
   },
   {
     "title": "Channel packing, atlases and arrays",
-    "image": "images/32.png",
+    "image": "images/32.jpg",
     "number": 32,
     "text": [
       "OPTIONAL · TEXTURE ORGANIZATION",
@@ -681,7 +681,7 @@
   },
   {
     "title": "Flow mask and flow direction",
-    "image": "images/33.png",
+    "image": "images/33.jpg",
     "number": 33,
     "text": [
       "OPTIONAL · WATER SHADER REFERENCE",
@@ -695,7 +695,7 @@
   },
   {
     "title": "Custom decal response",
-    "image": "images/34.png",
+    "image": "images/34.jpg",
     "number": 34,
     "text": [
       "OPTIONAL · DECAL RECEIVERS",
@@ -715,7 +715,7 @@
   },
   {
     "title": "Snow that remembers contact",
-    "image": "images/35.png",
+    "image": "images/35.jpg",
     "number": 35,
     "text": [
       "OPTIONAL · OUTSIDE EXAMPLE",
@@ -739,7 +739,7 @@
   },
   {
     "title": "Grass that bends with the world",
-    "image": "images/36.png",
+    "image": "images/36.jpg",
     "number": 36,
     "text": [
       "OPTIONAL · OUTSIDE EXAMPLE",
@@ -763,7 +763,7 @@
   },
   {
     "title": "Interior depth and glass response",
-    "image": "images/37.png",
+    "image": "images/37.jpg",
     "number": 37,
     "text": [
       "OPTIONAL REFERENCE",
@@ -777,7 +777,7 @@
   },
   {
     "title": "A portable ShaderToy example",
-    "image": "images/38.png",
+    "image": "images/38.jpg",
     "number": 38,
     "text": [
       "OPTIONAL REFERENCE",
@@ -794,7 +794,7 @@
   },
   {
     "title": "GLSL → HLSL → Unreal Material",
-    "image": "images/39.png",
+    "image": "images/39.jpg",
     "number": 39,
     "text": [
       "OPTIONAL REFERENCE",
@@ -813,7 +813,7 @@
   },
   {
     "title": "Shader ideas to build on",
-    "image": "images/40.png",
+    "image": "images/40.jpg",
     "number": 40,
     "text": [
       "OPTIONAL REFERENCE",
