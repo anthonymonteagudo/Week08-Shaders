@@ -1,6 +1,10 @@
-# Week 8 — Materials and shading
+# Weeks 8–9 — Materials and shading
 
 [Open the classroom](https://anthonymonteagudo.github.io/Week08-Shaders/) · [Slides](https://anthonymonteagudo.github.io/Week08-Shaders/docs/slides/) · [Activities](docs/activities.html)
+
+## Week 9
+
+[Open all Week 9 materials](https://anthonymonteagudo.github.io/Week08-Shaders/week09/): slides, lab references, shader cheat sheet and final-project outline. Finish your existing shader; the advanced references are optional. The instructor demo’s paid editable source assets are not redistributed here.
 
 ## Edit a shader
 
