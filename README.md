@@ -4,7 +4,7 @@
 
 ## Week 9
 
-[Open all Week 9 materials](https://anthonymonteagudo.github.io/Week08-Shaders/week09/): slides, lab references, shader cheat sheet and final-project outline. Finish your existing shader; the advanced references are optional. The instructor demo’s licensed editable source assets are not redistributed here.
+[Open all Week 9 materials](https://anthonymonteagudo.github.io/Week08-Shaders/week09/): slides, lab references, shader cheat sheet and final-project outline. Finish your existing shader; the advanced references are optional. The complete Unreal gallery is downloadable from [Week09-Gallery](https://github.com/anthonymonteagudo/Week09-Gallery).
 
 ## Edit a shader
 
@@ -31,4 +31,4 @@ Use Canvas for deadlines and submission requirements. Save baseline A and change
 
 ## Another machine: Week9
 
-Clone this repository or download and extract its complete ZIP. Open `week09/slides/index.html` directly for the 40-slide offline viewer; no Node or Python is needed for those slides, the lab or cheat sheet. External videos require internet. Run `START-WINDOWS.cmd` for interactive Week8 shaders. The public repository includes Week8Student, not the licensed Week9 instructor scene; the instructor has a separate private release bundle.
+Clone this repository or download and extract its complete ZIP. Open `week09/slides/index.html` directly for the 40-slide offline viewer; no Node or Python is needed for those slides, the lab or cheat sheet. External videos require internet. Run `START-WINDOWS.cmd` for interactive Week8 shaders. This repository includes Week8Student. Download the complete Week 9 Unreal project from the separate public [Week09-Gallery repository](https://github.com/anthonymonteagudo/Week09-Gallery/releases/latest).
