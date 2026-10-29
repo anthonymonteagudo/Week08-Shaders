@@ -28,3 +28,7 @@ Right mouse + WASD moves; F frames a selection. Select a display, open its mater
 - [Ned's slides](docs/guest/Rasterization.pdf): download to annotate.
 
 Use Canvas for deadlines and submission requirements. Save baseline A and changed B for Week 9; appearance alone does not establish performance. See [permissions and credits](THIRD_PARTY_NOTICES.md).
+
+## Another machine: Week9
+
+Clone this repository or download and extract its complete ZIP. Open `week09/slides/index.html` directly for the46-slide offline viewer; no Node or Python is needed for those slides, the lab or cheat sheet. External videos require internet. Run `START-WINDOWS.cmd` for interactive Week8 shaders. The public repository includes Week8Student, not the licensed Week9 instructor scene; the instructor has a separate private release bundle.
