@@ -450,9 +450,27 @@
     "id": 281
   },
   {
+    "number": 21,
+    "id": 308,
+    "title": "Shader homework: what to submit",
+    "text": [
+      "SHADER HOMEWORK · SUBMISSION",
+      "Shader homework: what to submit",
+      "01  A video showcasing your shader/material",
+      "Show it clearly in your scene. Demonstrate the effect and its useful controls.",
+      "02  A breakdown explaining how it works",
+      "Show the graph and walk through the main inputs, masks and logic.",
+      "03  Connect the graph to the visible result",
+      "Explain how key parts produce the effect. Use narration or on-screen annotations."
+    ],
+    "tables": [],
+    "links": [],
+    "image": "images/submission.jpg"
+  },
+  {
     "title": "Final project: exploratory technical art",
     "image": "images/21.jpg",
-    "number": 21,
+    "number": 22,
     "text": [
       "FINAL ASSIGNMENT · ROUGH OUTLINE · 6:50–6:55",
       "Final project: exploratory technical art",
@@ -474,7 +492,7 @@
   {
     "title": "Your project starting point",
     "image": "images/22.jpg",
-    "number": 22,
+    "number": 23,
     "text": [
       "PROJECT DISCUSSION · 6:55–7:00",
       "Your project starting point",
@@ -494,7 +512,7 @@
   {
     "title": "Parameter troubleshooting",
     "image": "images/23.jpg",
-    "number": 23,
+    "number": 24,
     "text": [
       "REFERENCE • EXPLORE AFTER THE LIVE WALKTHROUGH",
       "Parameter troubleshooting",
@@ -514,7 +532,7 @@
   {
     "title": "Parallax: height changes the texture lookup",
     "image": "images/24.jpg",
-    "number": 24,
+    "number": 25,
     "text": [
       "OPTIONAL STATION 07 EXTENSION",
       "Parallax: height changes the texture lookup",
@@ -528,7 +546,7 @@
   {
     "title": "Parallax: test depth, then test quality",
     "image": "images/25.jpg",
-    "number": 25,
+    "number": 26,
     "text": [
       "OPTIONAL STATION 07 EXTENSION",
       "Parallax: test depth, then test quality",
@@ -548,7 +566,7 @@
   {
     "title": "Lab review: finish your shader",
     "image": "images/26.jpg",
-    "number": 26,
+    "number": 27,
     "text": [
       "OPTIONAL LAB COMPANION",
       "Lab review: finish your shader",
@@ -568,7 +586,7 @@
   {
     "title": "B · Painted height transition",
     "image": "images/27.jpg",
-    "number": 27,
+    "number": 28,
     "text": [
       "OPTIONAL LAB COMPANION",
       "B · Painted height transition",
@@ -588,7 +606,7 @@
   {
     "title": "C · Shared and per-object controls",
     "image": "images/28.jpg",
-    "number": 28,
+    "number": 29,
     "text": [
       "OPTIONAL LAB COMPANION",
       "C · Shared and per-object controls",
@@ -608,7 +626,7 @@
   {
     "title": "D · Decal surface response",
     "image": "images/29.jpg",
-    "number": 29,
+    "number": 30,
     "text": [
       "OPTIONAL LAB COMPANION",
       "D · Decal surface response",
@@ -628,7 +646,7 @@
   {
     "title": "Optional · Parallax depth",
     "image": "images/30.jpg",
-    "number": 30,
+    "number": 31,
     "text": [
       "OPTIONAL LAB COMPANION",
       "Optional · Parallax depth",
@@ -648,7 +666,7 @@
   {
     "title": "Lab review: explain your result",
     "image": "images/31.jpg",
-    "number": 31,
+    "number": 32,
     "text": [
       "OPTIONAL LAB COMPANION",
       "Lab review: explain your result",
@@ -668,7 +686,7 @@
   {
     "title": "Channel packing, atlases and arrays",
     "image": "images/32.jpg",
-    "number": 32,
+    "number": 33,
     "text": [
       "OPTIONAL · TEXTURE ORGANIZATION",
       "Channel packing, atlases and arrays",
@@ -682,7 +700,7 @@
   {
     "title": "Flow mask and flow direction",
     "image": "images/33.jpg",
-    "number": 33,
+    "number": 34,
     "text": [
       "OPTIONAL · WATER SHADER REFERENCE",
       "Flow mask and flow direction",
@@ -696,7 +714,7 @@
   {
     "title": "Custom decal response",
     "image": "images/34.jpg",
-    "number": 34,
+    "number": 35,
     "text": [
       "OPTIONAL · DECAL RECEIVERS",
       "Custom decal response",
@@ -716,7 +734,7 @@
   {
     "title": "Snow that remembers contact",
     "image": "images/35.jpg",
-    "number": 35,
+    "number": 36,
     "text": [
       "OPTIONAL · OUTSIDE EXAMPLE",
       "Snow that remembers contact",
@@ -740,7 +758,7 @@
   {
     "title": "Grass that bends with the world",
     "image": "images/36.jpg",
-    "number": 36,
+    "number": 37,
     "text": [
       "OPTIONAL · OUTSIDE EXAMPLE",
       "Grass that bends with the world",
@@ -764,7 +782,7 @@
   {
     "title": "Interior depth and glass response",
     "image": "images/37.jpg",
-    "number": 37,
+    "number": 38,
     "text": [
       "OPTIONAL REFERENCE",
       "Interior depth and glass response",
@@ -778,7 +796,7 @@
   {
     "title": "A portable ShaderToy example",
     "image": "images/38.jpg",
-    "number": 38,
+    "number": 39,
     "text": [
       "OPTIONAL REFERENCE",
       "A portable ShaderToy example",
@@ -795,7 +813,7 @@
   {
     "title": "GLSL → HLSL → Unreal Material",
     "image": "images/39.jpg",
-    "number": 39,
+    "number": 40,
     "text": [
       "OPTIONAL REFERENCE",
       "GLSL → HLSL → Unreal Material",
@@ -814,7 +832,7 @@
   {
     "title": "Shader ideas to build on",
     "image": "images/40.jpg",
-    "number": 40,
+    "number": 41,
     "text": [
       "OPTIONAL REFERENCE",
       "Shader ideas to build on",

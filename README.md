@@ -31,4 +31,4 @@ Use Canvas for deadlines and submission requirements. Save baseline A and change
 
 ## Another machine: Week9
 
-Clone this repository or download and extract its complete ZIP. Open `week09/slides/index.html` directly for the 40-slide offline viewer; no Node or Python is needed for those slides, the lab or cheat sheet. External videos require internet. Run `START-WINDOWS.cmd` for interactive Week8 shaders. This repository includes Week8Student. Download the complete Week 9 Unreal project from the separate public [Week09-Gallery repository](https://github.com/anthonymonteagudo/Week09-Gallery/releases/latest).
+Clone this repository or download and extract its complete ZIP. Open `week09/slides/index.html` directly for the 41-slide offline viewer; no Node or Python is needed for those slides, the lab or cheat sheet. External videos require internet. Run `START-WINDOWS.cmd` for interactive Week8 shaders. This repository includes Week8Student. Download the complete Week 9 Unreal project from the separate public [Week09-Gallery repository](https://github.com/anthonymonteagudo/Week09-Gallery/releases/latest).
