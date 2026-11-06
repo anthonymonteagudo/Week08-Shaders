@@ -11,7 +11,7 @@ let checked=0;
 for(const file of html){
   const source=await fs.readFile(file,'utf8');
   for(const m of source.matchAll(/\b(?:href|src)=["']([^"']+)["']/g)){
-    const url=m[1];if(/^(?:[a-z]+:|\/\/)/i.test(url))continue;
+    const url=m[1];if(/^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(url))continue;
     const [raw,anchor]=url.split('#'),rel=decodeURIComponent(raw.split('?')[0]);
     let target=rel?path.resolve(path.dirname(file),rel):file;
     if(!(target===root||target.startsWith(root+path.sep)))throw Error(`Link escapes student repo: ${url}`);
